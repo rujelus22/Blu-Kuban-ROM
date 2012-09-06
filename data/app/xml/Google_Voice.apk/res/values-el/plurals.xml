@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s μηνύματα Google Voice</item>
+        <item quantity="one">1 μήνυμα Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Υπάρχουν %1$d μη αναγνωσμένα μηνύματα</item>
+        <item quantity="one">Υπάρχει ένα μη αναγνωσμένο μήνυμα</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">αναπάντητες κλήσεις</item>
+        <item quantity="one">αναπάντητη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">ληφθείσες κλήσεις</item>
+        <item quantity="one">ληφθείσα κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">μηνύματα αυτόματου τηλεφωνητή</item>
+        <item quantity="one">αυτόματος τηλεφωνητής</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">συνακροάσεις</item>
+        <item quantity="one">συνακρόαση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">εγγραφές</item>
+        <item quantity="one">εγγραφή</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">έλεγχοι αυτόματου τηλεφωνητή</item>
+        <item quantity="one">έλεγχος μηνυμάτων αυτόματου τηλεφωνητή</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">ρυθμίσεις</item>
+        <item quantity="one">ρύθμιση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">κείμενα</item>
+        <item quantity="one">κείμενο</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">κείμενα</item>
+        <item quantity="one">κείμενο</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">πραγματοποιημένες κλήσεις</item>
+        <item quantity="one">πραγματοποιημένη κλήση</item>
+    </plurals>
+</resources>

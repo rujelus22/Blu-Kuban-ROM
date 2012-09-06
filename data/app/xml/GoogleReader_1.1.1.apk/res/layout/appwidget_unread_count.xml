@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@android:id/background" android:background="@drawable/shortcut_selector" android:focusable="true" android:clickable="true" android:layout_width="72.0dip" android:layout_height="72.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_launcher_shortcut_folder" android:scaleType="center" />
+            <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="bottom|right|center" android:id="@android:id/text2" android:background="@drawable/appwidget_unread_count_background" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#ff000000" android:shadowRadius="1.0" />
+        </FrameLayout>
+    </FrameLayout>
+    <TextView android:textSize="13.0dip" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@android:id/text1" android:background="@drawable/appwidget_text_background" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#ff000000" android:shadowRadius="2.0" android:layout_weight="0.0" />
+</LinearLayout>

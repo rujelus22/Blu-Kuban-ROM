@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="1,3">
+        <TableRow>
+            <TextView android:textStyle="bold" android:gravity="right" android:padding="3.0dip" android:text=" >= " />
+            <EditText android:id="@id/search_scope_min" android:text="129" android:scrollHorizontally="true" android:inputType="numberSigned" style="@style/editInputText" />
+            <Spinner android:id="@id/search_scope_unit_min" />
+        </TableRow>
+        <TableRow>
+            <TextView android:textStyle="bold" android:gravity="right" android:padding="3.0dip" android:text=" &lt;= " />
+            <EditText android:id="@id/search_scope_max" android:text="512" android:scrollHorizontally="true" android:inputType="numberSigned" style="@style/editInputText" />
+            <Spinner android:id="@id/search_scope_unit_max" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

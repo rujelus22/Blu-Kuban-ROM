@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/main_container" android:background="#ffebebeb" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="top" android:id="@id/title_bar_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/title_bar" layout="@layout/editor_title_bar" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.google.android.apps.docs.editors.kix.KixFastScrollView android:orientation="vertical" android:id="@id/kix_editor_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+                <com.google.android.apps.docs.editors.kix.KixEditText android:scrollbarAlwaysDrawVerticalTrack="true" android:textSize="22.0sp" android:id="@id/editor" android:paddingLeft="@dimen/kix_edit_left_padding" android:paddingTop="@dimen/collaborator_padding_top" android:paddingRight="@dimen/kix_edit_right_padding" android:paddingBottom="@dimen/kix_edit_bottom_padding" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cursorVisible="true" android:inputType="textCapSentences|textMultiLine" android:isScrollContainer="true" />
+            </com.google.android.apps.docs.editors.kix.KixFastScrollView>
+            <ProgressBar android:id="@id/loading_spinner" android:layout_width="50.0dip" android:layout_height="50.0dip" android:indeterminate="true" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <FrameLayout android:id="@id/discussion_holder_tablet_landscape" android:background="@drawable/discussion_holder_right_background" style="@style/discussion_holder_tablet_landscape_style" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/discussion_holder_tablet_portrait" android:background="@drawable/discussion_holder_bottom_background" style="@style/discussion_holder_tablet_portrait_style" />
+    <FrameLayout android:id="@id/discussion_holder_phone" android:background="@drawable/discussion_holder_bottom_background" style="@style/discussion_holder_phone_style" />
+    <FrameLayout android:id="@id/phone_color_popup_holder" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="222.0dip" />
+    <FrameLayout android:id="@id/phone_alignment_popup_holder" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="180.0dip" />
+</LinearLayout>

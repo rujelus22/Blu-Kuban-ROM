@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_edit" android:id="@id/menu_edit" android:title="@string/edit_menu" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_comments" android:id="@id/menu_discussion" android:title="@string/discussion_menu" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_add_collaborator" android:id="@id/menu_add_collaborator" android:title="@string/menu_add_collaborator" android:showAsAction="ifRoom" />
+    <item android:icon="@android:drawable/ic_menu_view" android:id="@id/menu_mobix" android:title="@string/menu_mobix" android:showAsAction="never" />
+    <item android:icon="@android:drawable/ic_menu_send" android:id="@id/menu_send_feedback" android:title="@string/menu_send_feedback" android:showAsAction="never" />
+</menu>

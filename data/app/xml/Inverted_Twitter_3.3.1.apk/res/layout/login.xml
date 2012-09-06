@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:twitter="http://schemas.android.com/apk/res/com.twitter.android">
+    <com.twitter.android.widget.Navbar android:id="@id/navbar" style="@style/Navbar.Signup">
+        <TextView android:id="@id/title" android:text="@string/login_signin" android:layout_alignParentLeft="false" style="@style/NavbarTitle" />
+        <Button android:id="@id/title_button_3" android:text="@string/signup_sign_up" android:layout_alignParentRight="true" style="@style/TextTitleBtn.Dark" />
+    </com.twitter.android.widget.Navbar>
+    <ScrollView android:background="@color/bg_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.twitter.android.widget.CardRowView android:id="@id/login_form" android:layout_width="fill_parent" android:layout_height="wrap_content" twitter:single="true">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SignupForm">
+                    <TextView android:text="@string/login_username" style="@style/SignupLabel" />
+                    <EditText android:textColor="#ffebebeb" android:id="@id/login_username" android:background="@drawable/textfield_search" android:inputType="textEmailAddress" style="@style/SignupEdit" />
+                    <TextView android:text="@string/login_password" style="@style/SignupLabel" />
+                    <EditText android:textColor="#ffebebeb" android:id="@id/login_password" android:background="@drawable/textfield_search" android:password="true" android:singleLine="true" android:inputType="textPassword" style="@style/SignupEdit" />
+                </LinearLayout>
+            </com.twitter.android.widget.CardRowView>
+            <Button android:enabled="false" android:id="@id/login_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/list_row_padding" android:layout_marginRight="@dimen/list_row_padding" android:text="@string/login_signin" android:layout_below="@id/login_form" style="@style/Button.Submit" />
+            <ImageButton android:id="@id/settings_button" android:layout_margin="@dimen/list_row_padding" android:layout_below="@id/login_login" android:layout_alignParentRight="true" style="@style/SettingsButton" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

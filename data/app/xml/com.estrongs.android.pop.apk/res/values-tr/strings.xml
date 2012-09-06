@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES File Explorer</string>
+    <string name="title_note">ES Not Düzenleyici</string>
+    <string name="image_browser_title">ES Resim Tarayıcı</string>
+    <string name="app_zip">ES Zip Görüntüleyici</string>
+    <string name="video_player_title">ES Medya Oynatıcı</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Reader" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@color/main_window_bg</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="listSelector">?android:listChoiceBackgroundIndicator</item>
+    </style>
+    <style name="Theme.Reader.DialogWhenLarge" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:windowBackground">@color/main_window_bg</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+</resources>

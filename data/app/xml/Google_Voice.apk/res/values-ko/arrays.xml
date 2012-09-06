@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>모든 통화에 Google 보이스 사용</item>
+        <item>국제전화에만 Google 보이스 사용</item>
+        <item>모든 통화에 Google 보이스 사용 안함</item>
+        <item>전화를 걸 때마다 확인</item>
+        <item>국제전화를 걸 때마다 확인</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>5분마다</item>
+        <item>10분마다</item>
+        <item>15분마다</item>
+        <item>20분마다</item>
+        <item>30분마다</item>
+        <item>60분마다</item>
+        <item>안함</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>기존 Google 보이스 번호 사용</item>
+        <item>이 휴대전화 번호 사용</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>이 휴대전화에서 전화를 걸거나 문자 메시지를 보내면 내 Google 보이스 번호가 표시됩니다.</item>
+        <item>이 작업을 수행하면 내 Google 보이스 번호가 바뀝니다.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Google 보이스를 사용하여 다시 시도</item>
+        <item>Google 보이스를 사용하지 않고 전화걸기</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Google 보이스로 전화걸기</item>
+        <item>Google 보이스를 사용하지 않고 전화걸기</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>전화하기</item>
+        <item>클릭 투 콜</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Google 보이스 앱을 통해서 받음</item>
+        <item>메시지 앱을 통해서 받음</item>
+    </string-array>
+</resources>

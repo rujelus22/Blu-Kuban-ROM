@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="Dropbox Preferences" android:orderingFromXml="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_account_title">
+        <Preference android:enabled="false" android:title="@string/settings_name_prompt" android:key="settings_name" android:summary="This is my name" />
+        <Preference android:enabled="false" android:title="@string/settings_space_prompt" android:key="settings_space" android:summary="10% of 20 GB" />
+        <CheckBoxPreference android:title="@string/settings_lock_code" android:key="settings_lock_code" />
+        <Preference android:title="@string/settings_unlink_device" android:key="settings_unlink" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/camera_upload_prefs_title" android:key="camera_upload_category">
+        <Preference android:title="@string/camera_upload_prefs_turn_on" android:key="camera_upload_on_off" />
+        <ListPreference android:entries="@array/camera_upload_connection_entries" android:title="@string/camera_upload_prefs_connection" android:key="camera_upload_connection" android:entryValues="@array/camera_upload_connection_values" />
+        <ListPreference android:entries="@array/camera_upload_3g_limit_entries" android:title="@string/camera_upload_prefs_3g_limit" android:key="camera_upload_3g_limit" android:entryValues="@array/camera_upload_3g_limit_entries_values" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_about_title">`
+<Preference android:enabled="false" android:title="@string/settings_version_prompt" android:key="settings_version" android:summary="4.0.5" />
+        <Preference android:title="@string/settings_watch_video" android:key="settings_watch_video" />
+        <Preference android:title="@string/settings_tell_friends" android:key="settings_tell_friends" />
+        <Preference android:title="@string/settings_legal" android:key="settings_legal" />
+        <Preference android:title="@string/settings_send_feedback" android:key="settings_send_feedback" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_advanced_title">
+        <Preference android:enabled="false" android:title="@string/settings_cache_prompt" android:key="settings_cache" android:summary="25 MB" />
+        <Preference android:title="@string/settings_clear_cache" android:key="settings_clear_cache" />
+    </PreferenceCategory>
+</PreferenceScreen>

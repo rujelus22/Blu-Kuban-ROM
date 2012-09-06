@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Sebenzisa i-Google Voice ukwenza wonke amakholi</item>
+        <item>Sebenzisa kuphela i-Google Voice yamakholi amanye amazwi</item>
+        <item>Ningasebenzisi i-Google Voice ukwenza noma yimaphi amakholi</item>
+        <item>Ngibuze njalo Uma ngifona</item>
+        <item>Buza njalo uma Ngenza ikholi kwamanye amazwe</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Njalo ngamaminithi angu-5</item>
+        <item>Njalo ngamaminithi angu-10</item>
+        <item>Njalo ngamaminithiu angu-15</item>
+        <item>Njalo ngamaminithi angu-20</item>
+        <item>Njalo ngamaminithi angu-30</item>
+        <item>Njalo ngamaminithi angu-60</item>
+        <item>Akusoze</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Sebenzisa inombolo yami ekhona kakade Yezwi le-Google</item>
+        <item>Sebenzisa lenombolo yefoni</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Amakholi/imlayezo yombhalo kusuka kule foni izobonisa inombolo yami Yezwi le-Google</item>
+        <item>Lokhu kuzothathela isikhundla inombolo yami Yezwi le-Google</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Zama futhi nge-Google Voice</item>
+        <item>Shayela ngaphandle kwe-Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Shayela nge-Google Voice</item>
+        <item>Shayela ngaphandle kwe-Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Shayela</item>
+        <item>I-Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Ngohlelo lokusebenza Lezwi le-Google</item>
+        <item>Ngohlelo lokusebenza lomlayezo</item>
+    </string-array>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/bar" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/addressbar" android:background="@drawable/addressbar_bg" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/tab_change" android:background="@color/imagebutton" android:focusable="true" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="12.0dip" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="left" android:id="@id/current_tab" android:focusable="true" android:layout_width="32.0dip" android:layout_height="22.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="4.0dip" android:text="@string/tab_local" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/show_history_layout" android:background="@color/historybutton" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/addressbar_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:src="@drawable/addressbar_local" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/current_path" android:paddingLeft="2.0dip" android:paddingRight="18.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="28.0dip" android:scrollHorizontally="true" android:singleLine="true" android:freezesText="true" android:marqueeRepeatLimit="marquee_forever" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/toggle_toolbar_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="2.0dip" android:layout_height="fill_parent" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/refresh_toolbar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:id="@id/slide_toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" android:src="@drawable/toolbar_slide_up" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/toolbar" android:background="@drawable/toolbar_bg_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0dip">
+        <LinearLayout android:id="@id/layout_home" style="@style/ToolbarTd">
+            <ImageView android:id="@id/home" android:src="@drawable/toolbar_star" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/back" android:visibility="gone" android:src="@drawable/toolbar_back" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_1_text" android:text="Favority" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_select" style="@style/ToolbarTd">
+            <ImageView android:id="@id/select" android:src="@drawable/toolbar_select" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_2_text" android:text="@string/toolbar_icon_text_select" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_search" style="@style/ToolbarTd">
+            <ImageView android:id="@id/search" android:src="@drawable/toolbar_search" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/copy" android:visibility="gone" android:src="@drawable/toolbar_copy" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/programs" android:visibility="gone" android:src="@drawable/toolbar_backup" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/recomm_apk_button" android:visibility="gone" android:src="@drawable/toolbar_recommend" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_3_text" android:text="Search" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_uplevel" style="@style/ToolbarTd">
+            <ImageView android:id="@id/uplevel" android:src="@drawable/toolbar_uplevel" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/cut" android:visibility="gone" android:src="@drawable/toolbar_cut" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/uninstall" android:visibility="gone" android:src="@drawable/toolbar_uninstall" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/category" android:visibility="gone" android:src="@drawable/toolbar_category" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_4_text" android:text="Up" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_supportBtn" style="@style/ToolbarTd">
+            <ImageView android:id="@id/supportBtn" android:src="@drawable/toolbar_help" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/delete" android:visibility="gone" android:src="@drawable/toolbar_uninstall" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/paste" android:visibility="gone" android:src="@drawable/toolbar_paste" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/backup" android:visibility="gone" android:src="@drawable/toolbar_backup" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/newBtn" android:visibility="gone" android:src="@drawable/toolbar_new" style="@style/ToolbarItem" />
+            <FrameLayout android:id="@id/toolbar_pos_5_text_framelayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/toolbar_pos_5_text" android:text="Taskmgr" style="@style/ToolbarText" />
+                <ImageView android:layout_gravity="bottom|right|center" android:id="@id/toolbar_more" android:layout_width="wrap_content" android:layout_height="7.0dip" android:layout_marginRight="2.0px" android:layout_marginBottom="1.0px" android:src="@drawable/toolbar_more" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@id/layout_app_backup_type" android:visibility="gone" style="@style/ToolbarTd">
+            <ImageView android:id="@id/app_backup_type" android:src="@drawable/toolbar_star_all" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_5_text_2" android:text="@string/toolbar_icon_text_type" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_listmode" style="@style/ToolbarTd">
+            <ImageView android:id="@id/listmode" android:src="@drawable/toolbar_mode_list" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/compress" android:visibility="gone" android:src="@drawable/toolbar_compress" style="@style/ToolbarItem" />
+            <ImageView android:id="@id/pastecancel" android:visibility="gone" android:src="@drawable/toolbar_paste_cancel" style="@style/ToolbarItem" />
+            <TextView android:id="@id/toolbar_pos_6_text" android:text="View" style="@style/ToolbarText" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s messaggi di Google Voice</item>
+        <item quantity="one">1 messaggio di Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Ci sono %1$d messaggi da leggere</item>
+        <item quantity="one">"C'è un messaggio da leggere"</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">chiamate senza risposta</item>
+        <item quantity="one">chiamata senza risposta</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">chiamate ricevute</item>
+        <item quantity="one">chiamata ricevuta</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">messaggi vocali</item>
+        <item quantity="one">messaggio vocale</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">listen-in</item>
+        <item quantity="one">listen-in</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">registrazioni</item>
+        <item quantity="one">registrazione</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">verifiche segreteria</item>
+        <item quantity="one">verifica segreteria</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">impostazioni</item>
+        <item quantity="one">impostazione</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">messaggi di testo</item>
+        <item quantity="one">testo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">messaggi di testo</item>
+        <item quantity="one">testo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">chiamate effettuate</item>
+        <item quantity="one">chiamata effettuata</item>
+    </plurals>
+</resources>

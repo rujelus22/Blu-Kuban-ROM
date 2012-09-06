@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style type="text/css">
+      body      { background-color: black; }
+      a:hover   { text-decoration: none; }
+      a:link    { color: #155496; }
+      a:visited { color: #155496; }
+      #main {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        padding: 0%;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <table height="100%" width="100%">
+        <tr>
+          <td align="center" valign="middle" height="100%">
+            <a id="url" target="_top">
+              <img id="play" src="/android_res/drawable/play" style="border:0px;max-width:30%;max-height:auto;" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript">
+      var data = document.location.hash.slice(1);
+      var url = document.getElementById("url");
+      url.href = "data:text/html," + data;
+  </script>
+  </body>
+</html>

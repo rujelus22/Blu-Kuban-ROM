@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" style="@style/alignment_dropdown_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ToggleButton android:id="@id/alignment_left_icon" android:background="@drawable/action_text_align_left" android:contentDescription="@string/alignment_left" style="@style/alignment_dropdown_toggleButton" />
+    <View style="@style/alignment_horizontal_separator" />
+    <ToggleButton android:id="@id/alignment_center_icon" android:background="@drawable/action_text_align_center" android:contentDescription="@string/alignment_center" style="@style/alignment_dropdown_toggleButton" />
+    <View style="@style/alignment_horizontal_separator" />
+    <ToggleButton android:id="@id/alignment_right_icon" android:background="@drawable/action_text_align_right" android:contentDescription="@string/alignment_right" style="@style/alignment_dropdown_toggleButton" />
+    <View style="@style/alignment_horizontal_separator" />
+    <ToggleButton android:id="@id/alignment_justified_icon" android:background="@drawable/action_text_align_justified" android:contentDescription="@string/alignment_justified" style="@style/alignment_dropdown_toggleButton" />
+</LinearLayout>

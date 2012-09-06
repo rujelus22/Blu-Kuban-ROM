@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/filelistBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.dropbox.android.widget.SweetListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@color/filelistBackground" android:divider="@null" android:fastScrollEnabled="@bool/fastScroll" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="@dimen/filelistTextMedium" android:textColor="@color/listEmptyText" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@android:id/empty" android:padding="20.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gallery_picker_empty" />
+    </FrameLayout>
+    <include layout="@layout/picker_bottom_panel_light" />
+</LinearLayout>

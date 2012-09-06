@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Používat službu Google Voice pro všechny hovory</item>
+        <item>Používat službu Google Voice pouze pro mezinárodní hovory</item>
+        <item>Nepoužívat službu Google Voice pro žádné hovory</item>
+        <item>Při každém hovoru se zeptat</item>
+        <item>Při každém mezinárodním hovoru se zeptat</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Každých 5 minut</item>
+        <item>Každých 10 minut</item>
+        <item>Každých 15 minut</item>
+        <item>Každých 20 minut</item>
+        <item>Každých 30 minut</item>
+        <item>Každých 60 minut</item>
+        <item>Nikdy</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Použít mé existující číslo Google Voice</item>
+        <item>Použít toto telefonní číslo</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>U hovorů/textových zpráv z tohoto telefonu se zobrazí mé číslo Google Voice</item>
+        <item>Tímto bude nahrazeno mé číslo Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Zkusit znovu pomocí služby Google Voice</item>
+        <item>Volat bez služby Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Volat pomocí služby Google Voice</item>
+        <item>Volat bez služby Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Volat</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Prostřednictvím aplikace Google Voice</item>
+        <item>Prostřednictvím aplikace pro zasílání zpráv</item>
+    </string-array>
+</resources>

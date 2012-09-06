@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Выкарыстоўваць Google Voice для ўсіх выклікаў</item>
+        <item>Выкарыстоўваць Google Voice толькі для міжнародных выклікаў</item>
+        <item>Не выкарыстоўваць Google Voice для выклікаў</item>
+        <item>Пытацца кожны раз, калі робіцца выклік</item>
+        <item>Пытацца кожны раз, калі робіцца міжнародны выклік</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Кожныя 5 хвілін</item>
+        <item>Кожныя 10 хвілін</item>
+        <item>Кожныя 15 хвілін</item>
+        <item>Кожныя 20 хвілін</item>
+        <item>Кожныя 30 хвілін</item>
+        <item>Кожныя 60 хвілін</item>
+        <item>Ніколі</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Выкарыстоўваць існуючы нумар Google Voice</item>
+        <item>Выкарыстоўваць нумар гэтага тэлефона</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Пры тэлефанаванні/адпраўцы тэкставых паведамленняў з гэтага тэлефона будзе паказвацца мой нумар Google Voice</item>
+        <item>Гэта заменіць мой нумар Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Паўтарыць з Google Voice</item>
+        <item>Выклікаць без Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Выклік праз Google Voice</item>
+        <item>Выклікаць без Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Выклікаць</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>З дапамогай прыкладання Google Voice</item>
+        <item>"Праз прыкладанне  абмену паведамленнямi"</item>
+    </string-array>
+</resources>

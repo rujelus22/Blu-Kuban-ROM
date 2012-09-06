@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="account_count">
+        <item quantity="other">%d accounts</item>
+        <item quantity="one">%d account</item>
+    </plurals>
+    <plurals name="like_count">
+        <item quantity="other">%d people liked this</item>
+        <item quantity="one">%d person liked this</item>
+    </plurals>
+    <plurals name="feed_count">
+        <item quantity="other">%d feeds</item>
+        <item quantity="one">%d feed</item>
+    </plurals>
+</resources>

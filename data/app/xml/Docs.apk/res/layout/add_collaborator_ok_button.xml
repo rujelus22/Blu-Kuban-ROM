@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/add" android:layout_width="fill_parent" android:layout_height="@dimen/default_list_item_height" android:text="@string/add_collaborator_accept" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

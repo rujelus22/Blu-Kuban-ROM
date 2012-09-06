@@ -1,0 +1,136 @@
+/*
+ * Copyright (C) 2010 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// Matches YouTube embed and iframe source URLs and captures the video ID
+var YOUTUBE_PATTERN = '://(?:[^\.]+\.)?youtube(?:-nocookie)?\.[^?/]+/(?:v|embed)/([^?&]*)';
+
+function forEach(elements, f) {
+  for (var i = 0; i < elements.length; i++) {
+    f(elements[i]);
+  }
+}
+
+function copyNodeList(input) {
+  var output = new Array(input.length);
+  for (var i = 0; i < input.length; i++) {
+    output[i] = input[i];
+  }
+  return output;
+}
+
+function iframe(src) {
+  var width = Math.max(240, Math.min(360, (window.innerWidth || 0) * 3 / 4));
+  var height = width * 360 / 480;
+  return '<iframe src="' + src + '" width="' + width + '" height="' + height + '" />';
+}
+
+function image(src) {
+  return '<img src="' + src + '" />';
+}
+
+function nullPlugin() {
+  return image('/android_res/drawable/null_plugin');
+}
+
+function anchor(href, text) {
+  return '<a href="' + href + '">' + text + '</a>';
+}
+
+function dataUri(html) {
+  return 'data:text/html,' + encodeURI(html);
+}
+
+// Replaces video embeds with a thumbnail that either launches the YouTube app
+// or launches the browser to view the video full-screen as a data URI://.
+// Non-video embeds are replaced with a "missing plug-in" icon.
+function replaceEmbed(embed) {
+  if (embed.src) {
+    var parts = embed.src.match(YOUTUBE_PATTERN);
+    if (parts && parts.length == 2) {
+      // Show the thumbnail for the YouTube video with a play button,
+      // and link to the native YouTube application.
+      var videoId = parts[1];
+      embed.outerHTML = iframe('/android_res/raw/youtube_html#' + videoId);
+      return;
+    }
+
+    // If the embed wants to go fullscreen, it is probably a video.
+    if (embed.getAttribute('allowfullscreen') == 'true') {
+      // Show a black rectangle with a play button,
+      // and link to a data URI containing the embed HTML.
+      // On platforms that support Flash, the video will
+      // be playable in the browser.
+      embed.outerHTML = iframe('/android_res/raw/video_html#' + encodeURI(embed.outerHTML));
+      return;
+    }
+  }
+  embed.outerHTML = anchor(dataUri(embed.outerHTML), nullPlugin());
+}
+
+// Replaces YouTube iframes with a thumbnail that launches the YouTube app
+function replaceIframe(iframeNode) {
+  if (iframeNode.src) {
+    var parts = iframeNode.src.match(YOUTUBE_PATTERN);
+    if (parts && parts.length == 2) {
+      // Show the thumbnail for the YouTube video with a play button,
+      // and link to the native YouTube application.
+      var videoId = parts[1];
+      iframeNode.outerHTML = iframe('/android_res/raw/youtube_html#' + videoId);
+    }
+  }
+}
+
+function resizeVideo(videoNode) {
+  var originalWidth = videoNode.width;
+  var originalHeight = videoNode.height;
+  var maxWidth = Math.floor((window.innerWidth || 320) * 0.85);
+
+  // If we don't know the size, we can't shrink things proportionally,
+  // so the best we can do is set a max-width and hope the browser
+  // does the right thing.
+  if (!originalWidth || !originalHeight) {
+    videoNode.style.maxWidth = maxWidth + 'px';
+    return;
+  }
+
+  // No need to resize
+  if (originalWidth <= maxWidth) {
+    return;
+  }
+
+  videoNode.style.width = maxWidth;
+  videoNode.style.height = Math.floor(maxWidth * originalHeight / originalWidth);
+}
+
+function onDataSetChanged() {
+  document.getElementById('title').innerHTML = data.get('titleHtml');
+  document.getElementById('subtitle').innerHTML = data.get('subtitleHtml');
+  document.getElementById('liked').innerHTML = data.get('likedByHtml');
+  document.getElementById('shared').innerHTML = data.get('sharedByHtml');
+  document.getElementById('annotation').innerHTML = data.get('annotationHtml');
+}
+
+onDataSetChanged();
+
+if (settings.getPluginsEnabled()) {
+  // Resize Flash videos to fit screen width
+  forEach(document.getElementsByTagName('EMBED'), resizeVideo);
+} else {
+  // Replace Flash videos and YouTube iframes with placeholders and link to external apps;
+  // make a copy to safely iterate through the NodeList while it is being modified
+  forEach(copyNodeList(document.getElementsByTagName('EMBED')), replaceEmbed);
+  forEach(copyNodeList(document.getElementsByTagName('IFRAME')), replaceIframe);
+}

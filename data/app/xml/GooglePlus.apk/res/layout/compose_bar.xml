@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/compose_bar" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/compose_post" android:background="@drawable/compose_button_background" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_compose_post" android:layout_weight="1.0" />
+    <ImageButton android:id="@id/compose_photos" android:background="@drawable/compose_button_background" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_compose_photo" android:layout_weight="1.0" />
+    <ImageButton android:id="@id/compose_location" android:background="@drawable/compose_button_background" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_compose_location" android:layout_weight="1.0" />
+</LinearLayout>

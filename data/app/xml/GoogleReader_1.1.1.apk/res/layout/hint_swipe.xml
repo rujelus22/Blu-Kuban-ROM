@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/hint_swipe" android:background="#ff000000" android:padding="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/hint_swipe" android:layout_weight="1.0" />
+    <Button android:id="@id/hint_swipe_dismiss" android:background="#ff155496" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/hint_dismiss" style="?android:buttonStyleSmall" />
+</LinearLayout>

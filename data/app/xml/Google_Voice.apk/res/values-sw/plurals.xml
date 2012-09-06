@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Ujumbe %1$s wa Google Voice</item>
+        <item quantity="one">Ujumbe mmoja wa sauti wa Google</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Kuna %1$d ujumbe ambao haujasoomwa</item>
+        <item quantity="one">Kuna ujuambe ambao hujasomwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">simu zisizojibiwa</item>
+        <item quantity="one">simu isiyojibiwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">simu zilizopokelewa</item>
+        <item quantity="one">simu iliyopokewa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">barua za sauti</item>
+        <item quantity="one">barua ya sauti</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">Visikizi</item>
+        <item quantity="one">sikiliza katika</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">rekodi</item>
+        <item quantity="one">rekodi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">kaguzi za barua ya sauti</item>
+        <item quantity="one">ukaguzi wa barua ya sauti</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">mipangilio</item>
+        <item quantity="one">mpangilio</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">maandishi</item>
+        <item quantity="one">maandishi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">maandishi</item>
+        <item quantity="one">maandishi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">simu zilizopigwa</item>
+        <item quantity="one">simu iliyopigwa</item>
+    </plurals>
+</resources>

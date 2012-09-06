@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="text_input_languages">
+        <item>en</item>
+        <item>fr</item>
+        <item>it</item>
+        <item>de</item>
+        <item>es</item>
+        <item>pt</item>
+        <item>nl</item>
+        <item>ru</item>
+        <item>cs</item>
+        <item>tr</item>
+        <item>pl</item>
+    </string-array>
+    <string-array name="text_restrict_suggestions">
+        <item>nike running shoes</item>
+        <item>high heeled shoes</item>
+        <item>handbags</item>
+    </string-array>
+    <string-array name="voiceInputLocales">
+        <item>af-ZA</item>
+        <item>ar-AE</item>
+        <item>ar-BH</item>
+        <item>ar-EG</item>
+        <item>ar-IL</item>
+        <item>ar-JO</item>
+        <item>ar-KW</item>
+        <item>ar-LB</item>
+        <item>ar-OM</item>
+        <item>ar-PS</item>
+        <item>ar-QA</item>
+        <item>ar-SA</item>
+        <item>cmn-Hans-CN</item>
+        <item>cmn-Hans-HK</item>
+        <item>cmn-Hant-TW</item>
+        <item>yue-Hant-HK</item>
+        <item>cs-CZ</item>
+        <item>nl-NL</item>
+        <item>en-AU</item>
+        <item>en-CA</item>
+        <item>en-IN</item>
+        <item>en-NZ</item>
+        <item>en-ZA</item>
+        <item>en-GB</item>
+        <item>en-US</item>
+        <item>en-001</item>
+        <item>fr-FR</item>
+        <item>de-DE</item>
+        <item>he-IL</item>
+        <item>id-ID</item>
+        <item>zu-ZA</item>
+        <item>it-IT</item>
+        <item>ja-JP</item>
+        <item>ko-KR</item>
+        <item>ms-MY</item>
+        <item>pl-PL</item>
+        <item>pt-BR</item>
+        <item>ru-RU</item>
+        <item>es-AR</item>
+        <item>es-BO</item>
+        <item>es-CL</item>
+        <item>es-CO</item>
+        <item>es-CR</item>
+        <item>es-DO</item>
+        <item>es-EC</item>
+        <item>es-SV</item>
+        <item>es-GT</item>
+        <item>es-HN</item>
+        <item>es-MX</item>
+        <item>es-NI</item>
+        <item>es-PA</item>
+        <item>es-PY</item>
+        <item>es-PE</item>
+        <item>es-PR</item>
+        <item>es-ES</item>
+        <item>es-US</item>
+        <item>es-UY</item>
+        <item>es-VE</item>
+        <item>tr-TR</item>
+        <item>la</item>
+    </string-array>
+</resources>

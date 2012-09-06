@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="96" android:versionName="1.6.1.8" android:installLocation="auto" package="com.estrongs.android.pop"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    <uses-permission android:name="com.estrongs.android.pop.PERMISSION" />
+    <uses-sdk android:minSdkVersion="4" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <application android:label="@string/app_name" android:icon="@drawable/fex" android:debuggable="false">
+        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name=".view.FileExplorerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.estrongs.action.PICK_FILE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.estrongs.action.PICK_FILE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.estrongs.action.PICK_DIRECTORY" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.estrongs.action.PICK_DIRECTORY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.estrongs.action.OPEN_DIRECTORY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.RINGTONE_PICKER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="resource/folder" />
+            </intent-filter>
+        </activity>
+        <service android:name=".bt.OBEXFtpServerService">
+            <intent-filter>
+                <action android:name="android.intent.action.START_OBEX_FTP_SERVER" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.CreateSmbServerActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.CreateFtpServerActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.CreateNetDiskActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.CreateOAuthNetDisk" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".view.SearchPageActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.ImageMenuActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.Downloader" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.ChangePermActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.FilemgrUpgrade" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.OpenRecomm" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.HideList" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".view.KuaipanGuide" android:screenOrientation="nosensor" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".view.PopPreferenceActivity" />
+        <activity android:name=".view.HelpActivity" />
+        <activity android:theme="@android:style/Theme.Light" android:label="@string/title_note" android:icon="@drawable/note_editor" android:name=".app.PopNoteEditor" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/title_note">
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.ImageBrowser" android:configChanges="keyboardHidden|orientation" />
+        <activity android:icon="@drawable/image_browser" android:name=".app.PopRemoteImageBrowser" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/image_browser_title">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/media_player" android:name=".app.PopVideoPlayer" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/video_player_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gpp" />
+            </intent-filter>
+            <intent-filter android:label="@string/video_player_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:mimeType="video/mp4" />
+                <data android:mimeType="video/3gpp" />
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/media_player" android:name=".app.AudioPlaylistPlayer" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/video_player_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:mimeType="audio/mpeg" />
+                <data android:mimeType="audio/x-wav" />
+                <data android:mimeType="audio/mid" />
+                <data android:mimeType="audio/amr" />
+                <data android:mimeType="audio/ogg" />
+            </intent-filter>
+            <intent-filter android:label="@string/video_player_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:mimeType="audio/mpeg" />
+                <data android:mimeType="audio/x-wav" />
+                <data android:mimeType="audio/mid" />
+                <data android:mimeType="audio/amr" />
+                <data android:mimeType="audio/ogg" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.StreamingMediaPlayer" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.TitleEditor" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/support_us" android:name=".view.SupportActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.ConfirmTaskCancelDialog" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.ESFtpStopConfirmDialog" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.SearchConditionView" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.SearchAdvanceConditionView" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.NewUserView" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.Property" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".view.MultiFilesProperty" />
+        <receiver android:name=".scanner.WifiStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LAN_SCAN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".app.AudioPlayerService$MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".scanner.WifiNetworkScannerService">
+            <intent-filter>
+                <action android:name="android.intent.action.SCAN_WIFINETWORK" />
+            </intent-filter>
+        </service>
+        <activity android:label="@string/app_zip" android:icon="@drawable/zip_viewer" android:name=".app.ZipViewer" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/app_zip">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-rar-compressed" />
+                <data android:mimeType="application/rar" />
+                <data android:mimeType="application/x-gzip" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Dialog" android:label="@string/app_zip" android:name=".app.CompressActivity" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/title_note">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Dialog" android:label="@string/menu_one_key_backup" android:name=".app.OneKeyBackupActivity" android:configChanges="keyboardHidden|orientation">
+            <intent-filter android:label="@string/menu_one_key_backup">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Dialog" android:name=".app.ArchiveExtractEditActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@android:style/Theme.Dialog" android:label="@string/app_zip" android:name=".app.ArchiveProgressActivity" android:configChanges="keyboardHidden|orientation" />
+        <service android:name=".app.ArchiveService" />
+        <activity android:name=".app.diskusage.DiskUsageActivity" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.estrongs.android.SHOW_DISK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.imageviewer.CropImage" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".app.imageviewer.ViewImage21" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".app.imageviewer.ViewImage" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".app.imageviewer.Wallpaper" />
+        <activity android:theme="@style/Transparent" android:label="@string/app_name" android:name=".view.GuideActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" />
+        <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <service android:name=".app.AudioPlayerService" android:exported="false" />
+        <service android:name=".ftp.ESFtpService" android:exported="false" />
+        <activity android:theme="@style/Transparent" android:label="@string/app_name" android:name=".ftp.ESFtpShortcut" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <provider android:name=".FexProvider" android:authorities="com.estrongs.android.provider.fex" />
+        <provider android:name=".app.FileContentProvider" android:authorities="com.estrongs.files" />
+    </application>
+</manifest>

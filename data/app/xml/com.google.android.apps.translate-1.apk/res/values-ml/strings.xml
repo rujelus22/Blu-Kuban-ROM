@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_feature_new">പുതിയത്!</string>
+    <string name="label_feature_alpha">ആല്‍ഫ!</string>
+    <string name="label_feature_beta">ബീറ്റ!</string>
+    <string name="label_suggested_translations">നിര്‍ദ്ദേശിത വിവര്‍ത്തനങ്ങള്‍</string>
+    <string name="label_translate_to">ഈ ഭാഷയിലേയ്‍ക്ക് വിവര്‍ത്തനം ചെയ്യുക:</string>
+    <string name="label_translate_from">ഈ ഭാഷയില്‍ നിന്ന് വിവര്‍ത്തനം ചെയ്യുക:</string>
+    <string name="annotation_rencently_used">സമീപകാലത്ത് ഉപയോഗിച്ചവ</string>
+    <string name="annotation_ui_language">ഉപാധി ഭാഷ</string>
+    <string name="summary_conversation_input_confirm">വിവര്‍ത്തനം ചെയ്യുന്നതിനുമുമ്പ് സ്ഥിരീകരണത്തിനായി കാത്തിരിക്കുക</string>
+    <string name="title_sms_translation">SMS വിവര്‍ത്തനം</string>
+    <string name="title_text_translation">വാചക സന്ദേശ വിവര്‍ത്തനം</string>
+    <string name="conversation_mode">സംഭാഷണ മോഡ്</string>
+    <string name="conversation_my_language">എന്‍റെ ഭാഷ:</string>
+    <string name="conversation_their_language">അവരുടെ ഭാഷ:</string>
+    <string name="label_start_conversation">ഒരു സംഭാഷണം ആരംഭിക്കുക</string>
+    <string name="label_enter_conversation">സംഭാഷണ മോഡ് നല്‍കുക</string>
+    <string name="label_speak_in_language">മലയാളത്തില്‍ സംസാരിക്കുക</string>
+    <string name="label_reply_in_language">മലയാളത്തില്‍ മറുപടി നല്‍കുക</string>
+    <string name="label_speak_more_in_language">കൂടുതല്‍ മലയാളം സംസാരിക്കുക</string>
+    <string name="label_speak_again">വീണ്ടും സംസാരിക്കുക</string>
+    <string name="label_more_language">കൂടുതല്‍ മലയാളം</string>
+    <string name="label_speak_now">ഇപ്പോള്‍ സംസാരിക്കുക</string>
+    <string name="label_did_you_say">നിങ്ങള്‍ ഇതാണോ പറഞ്ഞത്:</string>
+    <string name="label_about_to_speak">സംസാരിയ്‍ക്കാന്‍ തുടങ്ങുകയാണ് ...</string>
+    <string name="label_right">ശരി</string>
+    <string name="label_short_wrong">തെറ്റ്</string>
+    <string name="label_ok">ശരി</string>
+    <string name="label_cancel">റദ്ദാക്കുക</string>
+    <string name="label_conversation_instruction">%s എന്നതിലെ നിര്‍ദ്ദേശങ്ങള്‍:</string>
+    <string name="label_conversation_instruction_native">മലയാളത്തിലെ നിര്‍ദ്ദേശങ്ങള്‍:</string>
+    <string name="label_continue">തുടരുക</string>
+    <string name="label_voice_recognition_howto">വിവര്‍ത്തനം ചെയ്യുന്നതിന്, ദയവായി അടുത്ത സ്‍ക്രീനില്‍ %s കാണുമ്പോള്‍ സംസാരിക്കുക.</string>
+    <string name="label_continue_to_proceed">തുടരുന്നതിന് തുടരുക എന്നത് അമര്‍ത്തുക.</string>
+    <string name="label_conversation_mode_green_howto">പച്ച %s അമര്‍ത്തിയ ശേഷം സംസാരിയ്‍ക്കാന്‍ തുടങ്ങുക. Google നിങ്ങളുടെ സംഭാഷണം വിവര്‍ത്തനം ചെയ്യുകയും ഉച്ചത്തില്‍ പറയുകയും ചെയ്യും.</string>
+    <string name="label_conversation_mode_blue_howto">നീല %s അമര്‍ത്തിയ ശേഷം സംസാരിയ്‍ക്കാന്‍ തുടങ്ങുക. Google നിങ്ങളുടെ സംഭാഷണം വിവര്‍ത്തനം ചെയ്യുകയും ഉച്ചത്തില്‍ പറയുകയും ചെയ്യും.</string>
+    <string name="label_instruction_for_continue">മലയാളത്തില്‍ പ്രതികരിക്കുന്നതിന് ഈ ബട്ടണ്‍ അമര്‍ത്തുക. നിങ്ങള്‍ %s കാണുമ്പോള്‍ സംസാരിക്കുക</string>
+</resources>

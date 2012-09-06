@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fast_scroll_time_grouper_in_month">
+        <item>január</item>
+        <item>február</item>
+        <item>március</item>
+        <item>április</item>
+        <item>május</item>
+        <item>június</item>
+        <item>július</item>
+        <item>augusztus</item>
+        <item>szeptember</item>
+        <item>október</item>
+        <item>november</item>
+        <item>december</item>
+    </string-array>
+    <string-array name="grayscale_colors">
+        <item>\#000000</item>
+        <item>\#575757</item>
+        <item>\#999999</item>
+        <item>\#b7b7b7</item>
+        <item>\#d9d9d9</item>
+        <item>\#efefef</item>
+        <item>\#ffffff</item>
+    </string-array>
+    <string-array name="primary_colors">
+        <item>\#ba0000</item>
+        <item>\#ff902f</item>
+        <item>\#00ff57</item>
+        <item>\#00ffff</item>
+        <item>\#008de1</item>
+        <item>\#b829f4</item>
+        <item>\#ff00f4</item>
+    </string-array>
+    <string-array name="grid_colors">
+        <item>\#fcb5b0</item>
+        <item>\#fff0d0</item>
+        <item>\#cfead5</item>
+        <item>\#c6e1e3</item>
+        <item>\#c2e3f2</item>
+        <item>\#dcd3e7</item>
+        <item>\#f7d0db</item>
+        <item>\#ff776c</item>
+        <item>\#ffe2a2</item>
+        <item>\#a0d7ad</item>
+        <item>\#89c5c9</item>
+        <item>\#81c8e5</item>
+        <item>\#baa8d2</item>
+        <item>\#eaa4bb</item>
+        <item>\#f62f27</item>
+        <item>\#ffd577</item>
+        <item>\#6cc486</item>
+        <item>\#4aa7ae</item>
+        <item>\#25acd8</item>
+        <item>\#957ebe</item>
+        <item>\#de789d</item>
+        <item>\#ca0000</item>
+        <item>\#d58b2c</item>
+        <item>\#19a85c</item>
+        <item>\#00838d</item>
+        <item>\#00588f</item>
+        <item>\#7052a1</item>
+        <item>\#c44875</item>
+        <item>\#700000</item>
+        <item>\#8d5d1a</item>
+        <item>\#004e1e</item>
+        <item>\#00353c</item>
+        <item>\#004982</item>
+        <item>\#231549</item>
+        <item>\#5d0a2d</item>
+    </string-array>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Uporabi Google Voice za opravljanje vseh klicev</item>
+        <item>Za mednarodne klice uporabi samo Google Voice</item>
+        <item>Storitve Google Voice ne uporabi za noben klic</item>
+        <item>Vprašaj vsakič, ko kličem</item>
+        <item>Vprašaj vsakič, ko opravljam mednarodni klic</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Vsakih 5 minut</item>
+        <item>Vsakih 10 minut</item>
+        <item>Vsakih 15 minut</item>
+        <item>Vsakih 20 minut</item>
+        <item>Vsakih 30 minut</item>
+        <item>Vsakih 60 minut</item>
+        <item>Nikoli</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Uporabi mojo obstoječo številko za Google Voice</item>
+        <item>Uporabi to telefonsko številko</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Pri klicih/SMS-ih iz tega telefona bo prikazana moja številka za Google Voice</item>
+        <item>To bo nadomestilo mojo številko za Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Poskusi znova z Google Voice</item>
+        <item>Klic brez storitve Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Klic s storitvijo Google Voice</item>
+        <item>Klic brez storitve Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Kliči</item>
+        <item>Klic s klikom</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>S programom Google Voice</item>
+        <item>S programom za sporočila</item>
+    </string-array>
+</resources>

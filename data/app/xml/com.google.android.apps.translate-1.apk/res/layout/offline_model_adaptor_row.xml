@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/fromlang" android:padding="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/totext" android:padding="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" to " android:singleLine="true" />
+        <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/tolang" android:padding="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:ellipsize="marquee" android:gravity="center" android:id="@id/download" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <Button android:ellipsize="marquee" android:gravity="center" android:id="@id/delete" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

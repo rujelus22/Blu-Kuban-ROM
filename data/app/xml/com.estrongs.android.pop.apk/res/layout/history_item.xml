@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/history_item_bk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/history_item_icon" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="2.0dip" android:src="@drawable/fex" android:scaleType="fitCenter" />
+    <LinearLayout android:orientation="vertical" android:id="@id/history_item_name_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="48.0dip">
+        <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="bottom|left|center" android:layout_gravity="center" android:id="@id/history_item_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="ES文件管理器" android:scrollHorizontally="false" android:singleLine="true" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffc0c0c0" android:gravity="top|left|center" android:layout_gravity="center" android:id="@id/history_item_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="千万用户，装机必备,一定要装啊，必须" android:scrollHorizontally="false" android:singleLine="false" />
+    </LinearLayout>
+</LinearLayout>

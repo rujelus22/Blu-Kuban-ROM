@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/tourCameraSettingsMargin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/tourTextSize" android:textColor="@color/tourText" android:id="@id/camera_upload_settings_explanation" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/tourSectionMargin" android:text="@string/camera_upload_setup_title" />
+    <LinearLayout android:orientation="vertical" android:id="@id/connection_options" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/tourTextSize" android:textColor="@color/tourText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_upload_tour_connection_choice" />
+        <LinearLayout android:orientation="vertical" android:background="@drawable/white_with_border_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tourSubsectionMargin">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/connection_wifi_only_layout" android:padding="@dimen/tourBoxPadding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/tourBoxText" android:textColor="@color/tourBoxText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_upload_tour_connection_wifi_only" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/connection_wifi_only" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0" style="@style/RadioButton" />
+            </LinearLayout>
+            <View android:background="@color/tourGrayBorder" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/connection_wifi_3g_layout" android:padding="@dimen/tourBoxPadding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/tourBoxText" android:textColor="@color/tourBoxText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera_upload_tour_connection_wifi_3g" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/connection_wifi_3g" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0" style="@style/RadioButton" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/tourTextSizeSmaller" android:textColor="@color/red" android:gravity="left" android:layout_gravity="center_horizontal" android:id="@id/data_warning" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/camera_upload_tour_connection_3g_warning" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center" android:id="@id/wifi_only_extras" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginBottom="@dimen/tourCameraSettingsImageBottomMargin" android:src="@drawable/nessie" android:adjustViewBounds="true" android:layout_weight="1.0" />
+    <CheckBox android:textSize="@dimen/tourTextSizeSmaller" android:textColor="@color/tourText" android:id="@id/upload_existing" android:paddingLeft="36.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tourSubsectionMargin" android:checked="true" android:text="@string/camera_upload_tour_upload_existing_choice" style="@style/CheckboxLight" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="@color/pin_button_text_color" android:layout_gravity="center_vertical" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    <ProgressBar android:layout_gravity="center_vertical" android:id="@id/progress" android:layout_width="0.0dip" android:layout_height="5.0dip" android:layout_marginLeft="10.0dip" android:layout_weight="1.0" style="@android:style/Widget.ProgressBar.Horizontal" />
+    <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/ic_cross" />
+</LinearLayout>

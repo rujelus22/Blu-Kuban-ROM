@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="punch_main_webview_frame_width_thick">6.0dip</dimen>
+    <dimen name="punch_main_webview_frame_width_thin">4.0dip</dimen>
+    <dimen name="speaker_notes_content_right_margin">50.0dip</dimen>
+    <dimen name="speaker_notes_content_left_margin">0.0dip</dimen>
+    <dimen name="speaker_notes_content_close_button_side_margin">15.0dip</dimen>
+</resources>

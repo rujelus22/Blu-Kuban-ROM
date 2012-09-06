@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="button_setting">-1</integer>
+    <integer name="button_delete">-2</integer>
+    <integer name="button_input_method_keyboard">-4</integer>
+    <integer name="button_help">-8</integer>
+    <integer name="button_return">10</integer>
+    <integer name="button_space">32</integer>
+    <integer name="handwriting_pre_context_size">20</integer>
+    <integer name="handwriting_post_context_size">20</integer>
+    <integer name="InputMaxLines">5</integer>
+</resources>

@@ -1,0 +1,31 @@
+.class public interface abstract Lcom/google/goggles/AndroidVersionInfoProtos$AndroidVersionInfoResponseOrBuilder;
+.super Ljava/lang/Object;
+.source "AndroidVersionInfoProtos.java"
+
+# interfaces
+.implements Lcom/google/protobuf/MessageLiteOrBuilder;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/goggles/AndroidVersionInfoProtos;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "AndroidVersionInfoResponseOrBuilder"
+.end annotation
+
+
+# virtual methods
+.method public abstract getLatestVersionCode()I
+.end method
+
+.method public abstract getShouldUpgrade()Z
+.end method
+
+.method public abstract hasLatestVersionCode()Z
+.end method
+
+.method public abstract hasShouldUpgrade()Z
+.end method

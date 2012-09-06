@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.googlevoice.VoiceCallWithRecordingView android:orientation="vertical" android:id="@id/phonecall" android:paddingLeft="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.googlevoice.TranscriptView android:id="@id/transcript" android:background="@drawable/transcript_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" />
+    <TextView android:textStyle="italic" android:id="@id/no_transcript" android:background="@drawable/transcript_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:text="@string/no_transcript" android:editable="false" />
+    <TextView android:id="@id/edited_transcript" android:background="@drawable/transcript_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip" android:editable="false" />
+</com.google.android.apps.googlevoice.VoiceCallWithRecordingView>

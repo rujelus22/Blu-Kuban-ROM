@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="appwidget_news_ticker_enabled">true</bool>
+    <bool name="appwidget_news_list_enabled">false</bool>
+</resources>

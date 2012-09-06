@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s (de) mesaje Google Voice</item>
+        <item quantity="one">1 mesaj Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Există %1$d (de) mesaje necitite</item>
+        <item quantity="one">Există un mesaj necitit</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">apeluri nepreluate</item>
+        <item quantity="one">apel nepreluat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">apeluri primite</item>
+        <item quantity="one">apel primit</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">mesaje vocale</item>
+        <item quantity="one">mesagerie vocală</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">recepţii</item>
+        <item quantity="one">recepţie</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">înregistrări</item>
+        <item quantity="one">se înregistrează</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">verificări mesagerie vocală</item>
+        <item quantity="one">verificarea mesageriei vocale</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">setări</item>
+        <item quantity="one">setare</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">texte</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">texte</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">apeluri efectuate</item>
+        <item quantity="one">apel efectuat</item>
+    </plurals>
+</resources>

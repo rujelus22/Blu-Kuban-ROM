@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_pressed="false">
+        <shape>
+            <solid android:color="#ff1f1f1f" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:startColor="#ff1865b2" android:endColor="#ff155496" android:angle="270.0" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/localFilelistBackground" />
+        </shape>
+    </item>
+</selector>

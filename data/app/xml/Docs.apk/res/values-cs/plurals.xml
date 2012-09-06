@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">Před %d dny</item>
+        <item quantity="one">Před %d dnem</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">Před %d týdny</item>
+        <item quantity="one">Před %d týdnem</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">Soubory nyní dostupné offline: %1$d z %2$s.</item>
+        <item quantity="one">%1$d z %2$s je nyní dostupných offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Všechny soubory (%1$d) nyní dostupné offline</item>
+        <item quantity="one">%1$d soubor je nyní dostupný offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Zpřístupňování %1$d souborů offline.</item>
+        <item quantity="one">Zpřístupňování %1$d souboru offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">Počet souborů: %1$d</item>
+        <item quantity="one">Počet souborů: %1$d</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">Počet účtů: %1$d</item>
+        <item quantity="one">Počet účtů: %1$d</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s nejsou platné e-mailové adresy.</item>
+        <item quantity="one">%s není platná e-mailová adresa.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Přesunout (%d)</item>
+        <item quantity="one">Přesunout „%s“</item>
+    </plurals>
+</resources>

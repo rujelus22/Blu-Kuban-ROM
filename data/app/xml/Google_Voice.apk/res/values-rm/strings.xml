@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_page_welcome_title">Bainvegni a Google Voice</string>
+    <string name="setup_page_welcome_explanation">"\"Google Voice porscha in servetsch da mailbox per Voss telefonin che po remplazzar il servetsch da Voss purschider da telefonia mobila. Cun Google Voice pudais Vus vesair transcripziuns e tadlar Voss messadis sin Voss telefonin e sin Voss computer. Vus pudais era adattar il messadi da bainvegni als singuls clamaders e profitar da pretschs favuraivels per cloms en l'exteriur. &lt;p>Sche Vus avais agiuntà in numer Google Voice a Voss conto Google Voice, al pudais Vus mussar sco ID dal clamader cun telefonar cun quest telefonin. Vus pudais era duvrar il numer per scriver SMS gratuits.\""</string>
+    <string name="setup_page_welcome_explanation_donut">"\"Cun Google Voice pudais Vus vesair transcripziuns e tadlar Voss messadis sin Voss telefonin e sin Voss computer. Vus pudais era adattar il messadi da bainvegni als singuls clamaders e profitar da pretschs favuraivels per cloms en l'exteriur. &lt;p>Sche Vus avais agiuntà in numer Google Voice a Voss conto Google Voice, al pudais Vus mussar sco ID dal clamader cun telefonar cun quest telefonin. Vus pudais era duvrar il numer per scriver SMS gratuits.\""</string>
+    <string name="setup_page_sign_in_title">"S'annunziar a Google Voice"</string>
+    <string name="setup_page_account_prompt">Tscherni il conto cun il qual Vus vulais utilisar Google Voice:</string>
+    <string name="setup_page_sign_in_progress_title">Annunzia en process</string>
+    <string name="setup_page_welcome_info_title">Configurar Google Voice</string>
+    <string name="setup_not_subscribed_donut_title">Betg abunà</string>
+    <string name="setup_not_subscribed_donut_message">"\"Il servetsch Google Voice n'è anc betg activà en Voss conto Google. Per s'inscriver, visitai la pagina www.google.com/voice.\""</string>
+    <string name="setup_page_choose_phone_title">Numer da quest telefon</string>
+    <string name="setup_page_choose_phone_prompt">Tscherni il numer da quest telefon:</string>
+    <string name="setup_page_sign_in_prompt">Endatai Vossas infurmaziuns da conto:</string>
+    <string name="setup_page_verify_number_title">Verifitgai Voss numer</string>
+    <string name="setup_page_verify_number_explanation">Google Voice verifitgescha ussa Voss numer da telefon cun trametter in SMS da Voss telefon al servetsch Google Voice. Ils custs da quest messadi correspundan al pretsch dad in SMS usità tar Voss purschider da telefonia mobila.</string>
+    <string name="setup_page_select_pin_title">Definir in PIN per la mailbox</string>
+    <string name="setup_page_select_pin_prompt">Endatai in PIN da 4 cifras per la mailbox:</string>
+    <string name="setup_page_select_pin_hint_pin">PIN</string>
+    <string name="setup_page_select_pin_hint_confirm_pin">Confermar il PIN</string>
+    <string name="setup_page_phone_verified_title">Verifitgar Voss numer</string>
+    <string name="setup_page_making_calls_title">Far ils telefons cun Google Voice</string>
+    <string name="setup_page_making_calls_explanation">"\"Cun Google Voice pudais Vus spargnar cun telefonar en l'exteriur. &lt;a href=\"\"http://www.google.com/support/voice/bin/topic.py?hl=de&amp;topic=20759\"\">Ulteriuras infurmaziuns&lt;/a>\""</string>
+    <string name="setup_page_pre_configure_title">Configurar la mailbox</string>
+    <string name="setup_page_pre_configure_explanation">"\"Per configurar Vossa mailbox, duvrain nus l'access a Voss parameters actuals.\""</string>
+    <string name="setup_page_configure_title">Configurar la mailbox</string>
+    <string name="setup_page_configure_explanation_generic">"\"Nus empruvain ussa da configurar Google Voice sco servetsch da mailbox sin Voss telefonin. Cura che Vus n'essas betg disponibels vegnan clamaders renviads a la mailbox da Google Voice e betg a la mailbox da Voss purschider da telefonia mobila.&lt;p>Quai na funcziunescha betg tar tut ils purschiders. En cas da problems pudais Vus visitar &lt;a href=\"\"http://google.com/support/mobile/bin/topic.py?hl=de&amp;topic=22030\"\">l'agid Google Voice&lt;/a> per retschaiver ulteriuras infurmaziuns.&lt;p>Vus pudais sursiglir quest pass sche Vus na vulais betg utilisar Google Voice sco servetsch da mailbox sin quest telefonin.\""</string>
+    <string name="setup_page_configure_explanation_manual">"\"Deplorablamain na vegn Voss purschider da telefonia mobila betg sustegnì per la configuraziun automatica da la mailbox. Sche Vus vulais utilisar Google Voice sco servetsch da mailbox visitai &lt;a href=\"\"http://www.google.com/support/voice/bin/answer.py?hl=de&amp;answer=165656\"\">l'agid Google Voice&lt;/a> per retschaiver ulteriuras infurmaziuns.&lt;p>Vus pudais sursiglir quest pass sche Vus na vulais betg utilisar Google Voice sco servetsch da mailbox sin quest telefonin.\""</string>
+    <string name="setup_page_configure_explanation_none">"\"Deplorablamain na pudain nus betg eruir co Vossa mailbox duai vegnir configurada per Voss purschider da telefonia mobila. Sche Vus vulais utilisar Google Voice sco servetsch da mailbox, visitai &lt;a href=\"\"http://google.com/support/mobile/bin/topic.py?hl=en&amp;topic=22030\"\">l'agid da Google Voice&lt;/a> per ulteriuras infurmaziuns.&lt;p> \""</string>
+    <string name="setup_page_push_notifications_title">Sincronisaziun da la posta entrada</string>
+    <string name="setup_page_push_notifications_explanation_lite">"Google Voice sincronisescha cuntinuadamain Vossa posta entrada ed infurmescha Vus en cas da l'entrada da novs messadis. Considerai che la sincronisaziun da la posta entrada funcziunescha mo sche las datas da fund davos èn activadas en ils parameters dal conto e da la sincronisaziun da Voss telefonin."</string>
+    <string name="app_name">Google Voice</string>
+    <string name="app_icon_name">Google Voice</string>
+    <string name="menu_item_refresh">Actualisar</string>
+    <string name="menu_item_balance">Saldo</string>
+    <string name="menu_item_compose">Scriver</string>
+    <string name="menu_item_labels">Etichettas</string>
+    <string name="menu_item_settings">Parameters</string>
+    <string name="menu_item_help">Agid</string>
+    <string name="menu_item_call">Telefonar</string>
+    <string name="menu_item_sms">SMS</string>
+    <string name="menu_item_add_star">Agiuntar ina staila</string>
+    <string name="menu_item_remove_star">Allontanar la marcaziun</string>
+    <string name="menu_item_delete">Stizzar</string>
+    <string name="menu_item_archive">Archivar</string>
+    <string name="menu_item_restore">Spustar en la posta entrada</string>
+    <string name="menu_item_view_contact">Mussar il contact</string>
+    <string name="menu_item_add_contact">Agiuntar in contact</string>
+    <string name="compose_hint">Tippar per scriver</string>
+    <string name="compose_button">Trametter</string>
+    <string name="conversation_view_downloading">Telechargia en process</string>
+    <string name="conversation_view_network_error">Errur da la rait</string>
+    <string name="conversation_view_empty">Nagins elements en questa vista</string>
+    <string name="conversation_view_more">Ulteriurs elements…</string>
+    <string name="conversation_context_menu_title">Opziuns da conversaziun</string>
+    <string name="conversation_context_menu_open">Avrir</string>
+    <string name="conversation_context_menu_call">Telefonar a %1$s</string>
+    <string name="conversation_context_menu_delete">Stizzar</string>
+    <string name="conversation_context_menu_archive">Archivar</string>
+    <string name="conversation_context_menu_restore">Spustar en la posta entrada</string>
+    <string name="conversation_context_menu_mark_read">Marcar sco legì</string>
+    <string name="conversation_context_menu_mark_unread">Marcar sco nunlegì</string>
+    <string name="conversation_context_menu_mark_starred">Agiuntar ina staila</string>
+    <string name="conversation_context_menu_mark_not_starred">Allontanar la marcaziun</string>
+    <string name="conversation_context_menu_mark_spam">Nungiavischà</string>
+    <string name="conversation_context_menu_mark_not_spam">Betg nungiavischà</string>
+    <string name="conversation_context_menu_view_contact">Mussar %1$s</string>
+    <string name="conversation_context_menu_add_contact">Agiuntar %1$s sco contact</string>
+    <string name="phonecall_context_menu_title">Opziuns da messadi</string>
+    <string name="phonecall_context_menu_call">Telefonar a %1$s</string>
+    <string name="phonecall_context_menu_copy_sms">Copiar il text dal messadi</string>
+    <string name="phonecall_context_menu_copy_transcript">Copiar il text da la transcripziun</string>
+    <string name="phonecall_context_menu_details_sms">Mussar ils detagls dal messadi</string>
+    <string name="phonecall_context_menu_details">Mussar ils detagls dal clom</string>
+    <string name="phonecall_context_menu_view_contact">Mussar %1$s</string>
+    <string name="phonecall_context_menu_add_contact">Agiuntar %1$s sco contact</string>
+    <string name="phonecall_action_call">Telefonar a %1$s</string>
+    <string name="phonecall_action_sms">Trametter in SMS</string>
+    <string name="phonecall_action_add_contact">Agiuntar sco contact</string>
+    <string name="phonecall_action_view_contact">Mussar il contact</string>
+    <string name="phonecall_details_title">Detagls dal clom</string>
+    <string name="phonecall_details_title_sms">Detagls dal messadi</string>
+    <string name="phonecall_details_missed">"Tip: Clom manchentà
+Da: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_details_received">"Tip: Clom entrant
+Da: %1$s
+Recepì: %2$s"</string>
+    <string name="phonecall_details_voicemail">"Tip: Mailbox
+Da: %1$s
+Recepì: %2$s"</string>
+    <string name="phonecall_details_listened">"Tip: Tadlà viaden
+Da: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_details_recorded">"Tip: Registraziun audio
+Da: %1$s
+Registrà: %2$s"</string>
+    <string name="phonecall_details_checked">"Tip: Controllà la mailbox
+Da: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_details_settings">"Tip: Parameters modifitgads
+Da: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_details_placed">"Tip: Clom sortint
+A: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_details_generic">"Tip: Clom da telefon
+Cun: %1$s
+Data e temp: %2$s"</string>
+    <string name="phonecall_type_missed">Manchentà</string>
+    <string name="phonecall_type_received">Retschavì</string>
+    <string name="phonecall_type_voicemail">Mailbox</string>
+    <string name="phonecall_type_listen_in">Tadlà viaden</string>
+    <string name="phonecall_type_recording">Registraziun</string>
+    <string name="phonecall_type_check_voicemail">Controlla da la mailbox</string>
+    <string name="phonecall_type_settings">Parameters</string>
+    <string name="phonecall_type_call_return">Effectuà</string>
+    <string name="phonecall_type_click2call">Effectuà</string>
+    <string name="phonecall_type_web_call">Effectuà</string>
+    <string name="phonecall_type_sms_in">SMS</string>
+    <string name="phonecall_type_sms_out">SMS</string>
+    <string name="phonecall_type_call_through">Effectuà</string>
+    <string name="phonecall_type_google_talk">Effectuà</string>
+    <string name="phonecall_type_sip">Effectuà</string>
+    <string name="contact_me">Jau</string>
+    <string name="call_routing_preference_title">Far telefons</string>
+    <string name="call_routing_error_title">Errur</string>
+    <string name="call_routing_error_message">"La memorisaziun dals parameters da clom n'è betg reussida"</string>
+    <string name="call_routing_error_format">Errur: $\\{0\\}</string>
+    <string name="update_interval_preference_title">Actualisar la posta entrada</string>
+    <string name="update_interval_error_title">Errur</string>
+    <string name="update_interval_error_message">"La memorisaziun dals parameters d'actualisaziun n'è betg reussida"</string>
+    <string name="googlevoice_preferences">General</string>
+    <string name="information_settings_title">Davart</string>
+    <string name="googlevoice_toggle_shortcut">Activar/deactivar Google Voice</string>
+    <string name="dialog_account_balance_message">Saldo dal conto:</string>
+    <string name="dialog_title_error">In problem è cumparì.</string>
+    <string name="dialog_title_call_routing">Telefonar</string>
+    <string name="dialog_title_update_interval">Actualisar la posta entrada</string>
+    <string name="dialog_title_voicemail_playback">Reproducziun dals messadis da la mailbox</string>
+    <string name="retrieving_settings_progress_message">Retschaiver ils parameters…</string>
+    <string name="saving_settings_progress_message">Ils parameters vegnan memorisads…</string>
+    <string name="title_compose">Scriver</string>
+    <string name="choose_phone_add_main">Agiuntar quest telefon</string>
+    <string name="choose_phone_add_secondary">Quest telefon na figurescha betg en la glista survart</string>
+    <string name="dialog_message_settings_request_fail">Impussibel da retschaiver Voss parameters dal servetsch.</string>
+    <string name="forwarding_phone_preference_title">Numer da quest telefon</string>
+    <string name="voicemail_playback_title">Reproducziun dals messadis da la mailbox</string>
+    <string name="voicemail_playback_speaker">"Tadlar sur l'autpledader"</string>
+    <string name="voicemail_playback_handset">Tadlar tras il telefonin</string>
+    <string name="time_format_sent">Tramess: %1$s</string>
+    <string name="time_format_received">Retschavì: %1$s</string>
+    <string name="time_format_placed">Effectuà: %1$s</string>
+    <string name="time_format_recorded">Registrà: %1$s</string>
+    <string name="no_transcript">Transcripziun betg disponibla</string>
+    <string name="connecting">La connexiun vegn stabilida…</string>
+    <string name="dialing">Stabilir la lingia…</string>
+    <string name="calling_with">Telefon cun</string>
+    <string name="notification_unread_title">Google Voice</string>
+    <string name="notification_unread_content">Posta entrada: %1$s da leger</string>
+    <string name="notification_account_upgrade_ticker">Agiuntà in numer Google Voice</string>
+    <string name="notification_account_upgrade_title">Agiuntà in numer Google Voice</string>
+    <string name="notification_account_upgrade_content">Tutgar per configurar</string>
+    <string name="notification_account_downgrade_ticker">Allontanà il numer Google Voice</string>
+    <string name="notification_account_downgrade_title">Allontanà il numer Google Voice</string>
+    <string name="notification_account_downgrade_content">Tutgar per configurar</string>
+    <string name="notification_inbox_registration_ticker">In problem è cumparì.</string>
+    <string name="notification_inbox_registration_title">Google Voice</string>
+    <string name="notification_inbox_registration_content">"Durant l'actualisaziun dals avis a la posta entrada è cumparì in problem.
+Smatgai per configurar."</string>
+    <string name="notification_settings_title">Avis</string>
+    <string name="legal_information_preference_title">Infurmaziuns legalas</string>
+    <string name="terms_of_service_preference_title">"Cundiziuns d'utilisaziun"</string>
+    <string name="privacy_policy_preference_title">Reglas da la protecziun da datas</string>
+    <string name="program_policy_preference_title">Directiva dal program</string>
+    <string name="legal_notices_preference_title">Indicaziuns legalas</string>
+    <string name="google_voice_number_preference_title">Mes numer Google Voice</string>
+    <string name="build_number_preference_title">Numer da build</string>
+    <string name="hint_recipient">A</string>
+    <string name="message_sms_sending">Vegn tramess…</string>
+    <string name="message_sms_send_failed">Betg reussì da trametter il SMS.</string>
+    <string name="message_recording_download_failed">"La telechargiada da la registraziun n'è betg reussida."</string>
+    <string name="message_recording_download_failed_no_network">Errur cun telechargiar la registraziun: betg connectà cun la rait</string>
+    <string name="label_inbox">Posta entrada</string>
+    <string name="label_starred">Marcà</string>
+    <string name="label_voicemail">Mailbox</string>
+    <string name="label_sms">SMS</string>
+    <string name="label_recorded">Registrà</string>
+    <string name="label_placed">Effectuà</string>
+    <string name="label_received">Recepì</string>
+    <string name="label_missed">Manchentà</string>
+    <string name="label_all">Tuts</string>
+    <string name="label_unread">Nunlegì</string>
+    <string name="label_spam">Spam</string>
+    <string name="label_trash">Chanaster da palpiri</string>
+    <string name="call_through_failed">"Google Voice n'ha betg pudì stabilir ina connexiun"</string>
+    <string name="confirm_call_with_google_voice">Google Voice</string>
+    <string name="login_dialog_existing_account_title">Conto Google Voice</string>
+    <string name="login_dialog_existing_account_message">"S'annunziar sco 
+%1$s"</string>
+    <string name="login_dialog_existing_account_positive_button">Gea</string>
+    <string name="login_dialog_existing_account_negative_button">Na</string>
+    <string name="login_dialog_enter_credentials_title">Conto Google Voice</string>
+    <string name="login_dialog_enter_credentials_prompt_account">"Num d'utilisader"</string>
+    <string name="login_dialog_enter_credentials_prompt_password">Pled-clav</string>
+    <string name="login_dialog_enter_credentials_positive_button">"S'annunziar"</string>
+    <string name="login_dialog_authenticating_title">Spetgai per plaschair</string>
+    <string name="login_dialog_authenticating_message">Annunzia en process…</string>
+    <string name="login_dialog_authentication_error_title">"S'annunziar a Google Voice"</string>
+    <string name="login_dialog_authentication_failed">"Ina errur da rait è cumparida cun s'annunziar al conto %1$s. Empruvai anc ina giada u smatgai il buttun Enavos per interrumper."</string>
+    <string name="login_dialog_authentication_failed_try_again">Repeter</string>
+    <string name="login_dialog_authentication_incorrect">"Il num d'utilisader ed il pled-clav èn nuncorrects. Controllai ed endatai danovamain els."</string>
+    <string name="login_dialog_captcha_title">Annunzia Google Voice</string>
+    <string name="login_dialog_captcha_prompt">Endatai il text suandant:</string>
+    <string name="login_notification_title">"S'annunziar a Google Voice"</string>
+    <string name="login_notification_body">Smatgai qua per endatar Voss pled-clav.</string>
+    <string name="sign_out_preference_title">Sortir</string>
+    <string name="sign_out_activity_title">Sortir</string>
+    <string name="sign_out_activity_message">Tut ils parameters e tut las datas da Google Voice vegnan stizzadas dal telefon.</string>
+    <string name="sign_out_activity_ok_button">Sortir</string>
+    <string name="voicemail_provider_label">Google Voice</string>
+    <string name="voicemail_provider_account_status_failed_title">Ina errur è cumparida.</string>
+    <string name="voicemail_provider_account_status_failed_message">Betg reussì da chargiar il status da Voss conto. Empruvai anc ina giada.</string>
+    <string name="voicemail_provider_subscribe_failed_title">"La configuraziun dal conto n'è betg reussida"</string>
+    <string name="voicemail_provider_subscribe_failed_message">"Nus n'avain betg pudì crear Voss conto Google Voice. Empruvai per plaschair anc ina giada."</string>
+    <string name="voicemail_provider_settings_failed_title">In problem è cumparì.</string>
+    <string name="voicemail_provider_settings_failed_message">Impussibel da chargiar ils parameters. Empruvai per plaschair anc ina giada.</string>
+    <string name="voicemail_provider_verify_phone_failed_title">In problem è cumparì.</string>
+    <string name="voicemail_provider_verify_phone_failed_message">"Voss numer da telefon n'ha betg pudì vegnir verifitgà. Empruvai anc ina giada."</string>
+    <string name="voicemail_provider_verify_phone_failed_message_in_use">Deplorablamain è quest telefon gia associà cun in auter conto Google Voice.</string>
+    <string name="voicemail_provider_voicemail_configuration_failed_title">Nus avain in problem</string>
+    <string name="voicemail_provider_voicemail_configuration_failed_message">"I n'è betg reussì da chargiar ils parameters da mailbox. Empruvai anc ina giada."</string>
+    <string name="voicemail_provider_configure_carrier_specific_title">Configuraziun dal purschider</string>
+    <string name="voicemail_provider_configure_manual_title">Configuraziun dal purschider</string>
+    <string name="voicemail_provider_configure_manual_message">"\"Deplorablamain na vegn Voss purschider da telefonia mobila betg sustegnì per la configuraziun automatica da la mailbox. Sche Vus vulais utilisar Google Voice sco servetsch da mailbox visitai il &lt;a href=\"\"http://google.com/support/mobile/bin/topic.py?hl=en&amp;topic=22030\"\">center d'agid&lt;/a> da Google Voice per ulteriuras infurmaziuns.\""</string>
+    <string name="voicemail_configuration_preference_title">Numer da la mailbox</string>
+    <string name="googlevoice_voicemail_preferences">Mailbox Google Voice</string>
+    <string name="voicemail_progress_checking_carrier">Verificaziun dal purschider da telefonia mobila</string>
+    <string name="voicemail_progress_checking_account">Annunzia en process…</string>
+    <string name="voicemail_progress_provisioning">"S'annunziar…"</string>
+    <string name="voicemail_progress_getting_settings">Annunzia en process…</string>
+    <string name="voicemail_progress_getting_sms_token">Voss numer da telefon vegn verifitgà</string>
+    <string name="voicemail_progress_sending_sms">Voss numer da telefon vegn verifitgà…</string>
+    <string name="voicemail_progress_confirming_sms">Voss numer da telefon vegn verifitgà…</string>
+    <string name="voicemail_progress_getting_configuration">Access als parameters da mailbox…</string>
+    <string name="voicemail_progress_push_notifications">Ils parameters vegnan actualisads…</string>
+    <string name="push_notifications_setting_progress">Memorisar ils parameters…</string>
+    <string name="push_notifications_setting_failed">Betg reussì da memorisar ils parameter da sincronisaziun</string>
+    <string name="must_specify_phone_title">Numer da quest telefon</string>
+    <string name="must_specify_phone_message">\"Per che Vus possias telefonar, stuain nus enconuscher il numer da quest telefon.\"</string>
+    <string name="button_next">Vinavant</string>
+    <string name="button_back">Enavos</string>
+    <string name="button_exit">Serrar</string>
+    <string name="button_finish">Terminar</string>
+    <string name="button_sign_in">"S'annunziar"</string>
+    <string name="button_configure_voicemail">Configurar</string>
+    <string name="button_skip">Sursiglir</string>
+    <string name="onscreenEndCallText">Serrar</string>
+    <string name="duration_seconds_short">%1$d sec</string>
+    <string name="duration_minutes_seconds_short">\"%1$d min, %2$d sec\"</string>
+    <string name="permission_group_google_voice_label">Google Voice</string>
+    <string name="permission_group_google_voice_description">Access a Voss conto Google Voice</string>
+    <string name="permission_google_voice_notifications_label">Avis Google Voice</string>
+    <string name="permission_google_voice_notifications_description">Retschaiver avis a novs messadis da Google Voice</string>
+    <string name="no_background_data_title">Naginas datas da fund davos</string>
+    <string name="no_background_data_description">Per la sincronisaziun da la posta entrada ston las datas dal fund davos esser activadas.</string>
+</resources>

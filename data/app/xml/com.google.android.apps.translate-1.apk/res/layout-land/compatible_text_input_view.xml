@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.unveil.textinput.TextInput android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.unveil.ui.CameraWrappingLayout android:id="@id/camera_wrapping_layout" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.google.android.apps.unveil.sensors.CameraManager android:id="@id/camera_manager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.google.android.apps.unveil.textinput.GridOverlayView android:id="@id/grid" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.google.android.apps.unveil.ui.CameraWrappingLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+        <FrameLayout android:layout_gravity="bottom" android:id="@id/ime_controls" android:layout_width="fill_parent" android:layout_height="0.0px">
+            <com.google.android.apps.unveil.textinput.ZoomableContainer android:layout_gravity="center_horizontal" android:id="@id/zoomable_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.google.android.apps.unveil.textinput.SmudgeView android:id="@id/smudge_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.0" />
+                <com.google.android.apps.unveil.textinput.BoundingBoxView android:id="@id/bounding_box_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.google.android.apps.unveil.textinput.ZoomableContainer>
+            <com.google.android.apps.unveil.nonstop.DebugView android:id="@id/debug_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.google.android.apps.unveil.textinput.InstructionsView android:layout_gravity="top" android:id="@id/instructions" style="@style/hintOverlay" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+                    <FrameLayout android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <ProgressBar android:layout_gravity="center" android:id="@id/progress_bar" android:background="@drawable/feedback_background" android:paddingLeft="8.0dip" android:paddingTop="12.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:indeterminate="true" style="@style/indeterminateProgressBar" />
+                    </FrameLayout>
+                    <FrameLayout android:layout_gravity="right" android:id="@id/text_controller_container" android:background="#ff000000" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <LinearLayout android:orientation="vertical" android:id="@id/ime_overlay" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                            <ImageButton android:layout_gravity="center" android:id="@id/keyboard" android:background="@drawable/overlay_button" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_marginBottom="3.0dip" android:src="@drawable/keyboard" />
+                            <ImageButton android:layout_gravity="center" android:id="@id/retry" android:background="@drawable/overlay_button" android:layout_width="50.0dip" android:layout_height="0.0px" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/refresh" android:layout_weight="1.0" />
+                            <ImageButton android:layout_gravity="center" android:id="@id/snapshot" android:background="@drawable/overlay_button" android:layout_width="50.0dip" android:layout_height="0.0px" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/snapshot" android:layout_weight="1.0" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</com.google.android.apps.unveil.textinput.TextInput>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preference_display" android:key="preference_display_category">
+        <PreferenceScreen android:persistent="true" android:title="@string/preference_theme_setting_text" android:key="theme_setting" android:summary="@string/preference_theme_setting_summary">
+            <Preference android:persistent="true" android:title="@string/preference_color_title" android:key="color" android:summary="@string/preference_color_text" />
+            <ListPreference android:persistent="true" android:entries="@array/theme_style_entries" android:title="@string/preference_theme_text" android:key="theme" android:summary="@string/preference_theme_summary" android:defaultValue="-1" android:entryValues="@array/theme_style_values" />
+            <Preference android:persistent="true" android:title="@string/preference_set_custom_bk_title" android:key="customtheme" android:summary="@string/preference_set_custom_bk_summary" />
+            <ListPreference android:persistent="true" android:entries="@array/folder_style_entries" android:title="@string/preference_folder_style" android:key="folder_icon" android:summary="@string/preference_folder_summary" android:defaultValue="0" android:entryValues="@array/folder_style_values" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/preference_hide_screen_text" android:key="screen_preference" android:summary="@string/preference_hide_screen_summary">
+            <PreferenceCategory android:title="@string/preference_tabs" android:key="preference_tabs_category">
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_tabs_hide_smb_text" android:key="hide_tabs_smb" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_tabs_hide_ftp_text" android:key="hide_tabs_ftp" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_tabs_hide_bt_text" android:key="hide_tabs_bt" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_tabs_hide_net_text" android:key="hide_tabs_net" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_tabs_hide_local_text" android:key="hide_tabs_local" android:defaultValue="false" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/preference_layout" android:key="preference_layout_category">
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_toolbar_hide_text" android:key="hide_toolbar" android:summary="@string/preference_toolbar_hide_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_enable_toolbar_text_text" android:key="hide_toolbar_text" android:summary="@string/preference_enable_toolbar_text_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_clipboard_hide_text" android:key="hide_clipboard" android:summary="@string/preference_clipboard_hide_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/hide_clipboard_on_paste_title" android:key="hide_clipboard_on_paste" android:summary="@string/hide_clipboard_on_paste_hint" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_full_screen_text" android:key="hide_statusbar" android:summary="@string/preference_full_screen_summary" android:defaultValue="false" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/preference_others" android:key="preference_others_category">
+                <ListPreference android:persistent="true" android:entries="@array/preference_language_setting_entries" android:title="@string/preference_language_setting_title" android:key="language_setting" android:summary="@string/preference_language_setting_summary" android:defaultValue="-1" android:entryValues="@array/preference_language_setting_values" />
+                <ListPreference android:persistent="true" android:entries="@array/preference_dateformat_entries" android:title="@string/preference_dateformat_title" android:key="dateformat" android:summary="@string/preference_dateformat_text" android:defaultValue="2" android:entryValues="@array/preference_dateformat_values" />
+                <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_history_number" android:key="app_history_number" android:dialogTitle="@string/preference_history_number_ind" android:inputType="number" />
+                <ListPreference android:persistent="true" android:entries="@array/preference_toolbar_hide_delay_entries" android:title="@string/preference_hide_toolbar_text" android:key="toolbar_hide_delay" android:summary="@string/preference_show_toolbar_tip" android:defaultValue="-1" android:entryValues="@array/preference_toolbar_hide_delay_values" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_show_scroll_not_use_cache_title" android:key="scroll_not_use_cache" android:summary="@string/preference_show_scroll_not_use_cache_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_enable_animation_text" android:key="enable_animation" android:summary="@string/preference_enable_animation_summary" android:defaultValue="false" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/preference_file_text" android:key="file_preference" android:summary="@string/preference_file_summary">
+            <PreferenceCategory android:title="@string/preference_show_settings" android:key="preference_show_settings_category">
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_thumbnail_title" android:key="thumbnail" android:summary="@string/preference_thumbnail_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_hidden_file_title" android:key="hidden_file" android:summary="@string/preference_hidden_file_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_sdcard_size_text" android:key="sdcard_size" android:summary="@string/preference_sdcard_size_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_show_scroll_thumb" android:key="scroll_thumb" android:summary="@string/preference_show_scroll_thumb_summary" android:defaultValue="false" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/preference_bt_turnoff" android:key="preference_bt_turnoff_category">
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_bt_turnoff_text" android:key="bt_turnoff" android:summary="@string/preference_bt_turnoff_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:persistent="true" android:title="@string/preference_clean_history_exit" android:key="app_clean_history_exit" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:enabled="true" android:title="@string/clear_cache_on_exit" android:key="auto_clear" android:defaultValue="false" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/preference_others" android:key="preference_file_others_category">
+                <Preference android:persistent="false" android:title="@string/preference_cache_title" android:key="cache" android:summary="@string/preference_cache_summary" />
+                <Preference android:persistent="false" android:title="@string/preference_clean_prefer_title" android:key="clean_prefer" android:summary="@string/preference_clean_prefer_summary" />
+                <CheckBoxPreference android:persistent="true" android:enabled="true" android:title="@string/stop_mount_broadcast" android:key="stop_mount_broadcast" android:summary="@string/stop_mount_broadcast_summary" android:defaultValue="false" />
+                <CheckBoxPreference android:persistent="true" android:enabled="true" android:title="@string/auto_backup_installed_app" android:key="auto_backup_installed_app" android:summary="@string/auto_backup_installed_app_summary" android:defaultValue="false" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_view" android:key="preference_view_category">
+        <ListPreference android:persistent="true" android:entries="@array/preference_list_entries" android:title="@string/preference_list_title" android:key="list" android:summary="@string/preference_view_text" android:defaultValue="0" android:entryValues="@array/preference_list_values" />
+        <ListPreference android:persistent="true" android:entries="@array/preference_size_entries" android:title="@string/preference_size_title" android:key="size" android:summary="@string/preference_size_text" android:defaultValue="0" android:entryValues="@array/preference_size_values" />
+        <Preference android:persistent="true" android:title="@string/preference_sort_title" android:key="sort_" android:summary="@string/preference_sortby_text" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_general_settings" android:key="preference_general_settings_category">
+        <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_root_dir" android:key="root_dir" android:dialogTitle="@string/preference_root_dir" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/preference_home_up_title" android:key="home_up_enabled" android:summary="@string/preference_home_up_summary" android:defaultValue="false" />
+        <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_app_backup_dir" android:key="app_backup_dir" android:dialogTitle="@string/preference_app_backup_dir" />
+        <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_bt_dir" android:key="bt_dir" android:dialogTitle="@string/preference_bt_dir" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_network_setting" android:key="preference_network_setting_category">
+        <PreferenceScreen android:persistent="true" android:title="@string/preference_security_setting_text" android:key="preference_net_settings_category" android:summary="@string/preference_security_setting_summary">
+            <CheckBoxPreference android:persistent="true" android:title="@string/preference_start_protect_title" android:key="start_passwd_enable" android:summary="@string/preference_start_protect_summary" android:defaultValue="false" />
+            <CheckBoxPreference android:persistent="true" android:title="@string/preference_net_passwd_title" android:key="net_passwd_enable" android:summary="@string/preference_net_passwd_summary" android:defaultValue="false" />
+            <Preference android:persistent="true" android:title="@string/preference_net_passwd_change_title" android:key="net_passwd_change" android:summary="@string/preference_net_passwd_change_summary" />
+        </PreferenceScreen>
+        <PreferenceScreen android:persistent="true" android:title="@string/preference_remote_settings_text" android:key="preference_remote_settings_text_category" android:summary="@string/preference_remote_settings_summary">
+            <CheckBoxPreference android:persistent="true" android:title="@string/preference_ftpsvr_text" android:key="ftp_server" android:summary="@string/preference_ftpsvr_summary" android:defaultValue="false" />
+            <CheckBoxPreference android:persistent="true" android:title="@string/preference_ftpsvr_auto_exit_text" android:key="ftpsvr_auto_exit" android:summary="@string/preference_ftpsvr_auto_exit_summary" android:defaultValue="true" />
+            <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_ftpsvr_port_title" android:key="ftpsvr_port" android:dialogTitle="@string/preference_ftpsvr_port_title" android:inputType="number" />
+            <EditTextPreference android:persistent="false" android:singleLine="true" android:title="@string/preference_ftpsvr_root_dir" android:key="ftpsvr_root_dir" android:dialogTitle="@string/preference_ftpsvr_root_dir" />
+            <Preference android:persistent="true" android:title="@string/preference_ftpsvr_account_change_title" android:key="ftpsvr_account_change" android:summary="@string/preference_ftpsvr_account_change_summary" />
+            <Preference android:persistent="true" android:title="@string/preference_ftpsvr_charset_change_title" android:key="ftpsvr_charset_change" android:summary="@string/preference_ftpsvr_charset_change_summary" />
+            <Preference android:persistent="true" android:title="@string/preference_ftpsvr_create_shortcut_title" android:key="ftpsvr_create_shortcut" android:summary="@string/preference_ftpsvr_create_shortcut_summary" />
+        </PreferenceScreen>
+        <PreferenceScreen android:persistent="true" android:title="@string/preference_upgrade_settings_text" android:key="preference_upgrade_settings_text_category" android:summary="@string/preference_upgrade_settings_summary">
+            <CheckBoxPreference android:persistent="true" android:enabled="true" android:title="@string/preference_upgrade_auto_check_title" android:key="upgrade_auto_check" android:summary="@string/preference_upgrade_auto_check_summary" android:defaultValue="true" />
+            <Preference android:persistent="false" android:title="@string/preference_upgrade_manual_check_title" android:key="upgrade_check" android:summary="@string/preference_upgrade_manual_check_summary" />
+        </PreferenceScreen>
+        <Preference android:persistent="false" android:title="@string/preference_hide_dirfiles_title" android:key="hidedirfiles" android:summary="@string/preference_hide_dirfiles_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_root_settings_text" android:key="preference_root_settings_text_category">
+        <CheckBoxPreference android:persistent="true" android:title="@string/preference_root_settings" android:key="su" android:summary="@string/preference_su_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:persistent="true" android:enabled="false" android:title="@string/preference_mount_text" android:key="mount" android:summary="@string/preference_mount_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:persistent="true" android:title="@string/preference_backup_sysapp_text" android:key="sysapp_backup" android:summary="@string/preference_backup_sysapp_summary" android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.twitter.android.widget.CardRowView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.twitter.android.widget.TwitterLinearLayout android:orientation="horizontal" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+        <include android:id="@id/stat_1" layout="@layout/stat" />
+        <View android:background="@drawable/list_rule" android:layout_width="@dimen/divider_thickness" android:layout_height="fill_parent" />
+        <include android:id="@id/stat_2" layout="@layout/stat" />
+        <View android:background="@drawable/list_rule" android:layout_width="@dimen/divider_thickness" android:layout_height="fill_parent" />
+        <include android:id="@id/stat_3" layout="@layout/stat" />
+    </com.twitter.android.widget.TwitterLinearLayout>
+</com.twitter.android.widget.CardRowView>

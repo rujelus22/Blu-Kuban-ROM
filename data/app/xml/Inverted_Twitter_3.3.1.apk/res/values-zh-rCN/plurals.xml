@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="time_secs">
+        <item quantity="other">%d秒</item>
+        <item quantity="one">1秒</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="other">%d分钟</item>
+        <item quantity="one">1分钟</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="other">%d小时</item>
+        <item quantity="one">1小时</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="other">%d天</item>
+        <item quantity="one">1天</item>
+    </plurals>
+    <plurals name="social_proof">
+        <item quantity="other">由 \"%s\" 等人发布</item>
+        <item quantity="one">由 \"%s\" 发布</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_summary_on">
+        <item quantity="other">来自 %d 人</item>
+        <item quantity="one">来自 1 人</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_count">
+        <item quantity="other">%d 人</item>
+        <item quantity="one">1 人</item>
+    </plurals>
+</resources>

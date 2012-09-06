@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Št. sporočil storitve Google Voice: %1$s</item>
+        <item quantity="one">1 sporočilo v storitvi Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Št. neprebranih sporočil: %1$d</item>
+        <item quantity="one">Imate neprebrano sporočilo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">neodgovorjenih klicev</item>
+        <item quantity="one">neodgovorjeni klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">prejetih klicev</item>
+        <item quantity="one">prejet klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">glasovnih sporočil</item>
+        <item quantity="one">glasovna pošta</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">poslušani</item>
+        <item quantity="one">poslušan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">posnetkov</item>
+        <item quantity="one">posnetek</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">preverjanj glasovne pošte</item>
+        <item quantity="one">preverjanje glasovne pošte</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">nastavitve</item>
+        <item quantity="one">nastavitev</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">besedila</item>
+        <item quantity="one">besedilo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">besedila</item>
+        <item quantity="one">besedilo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">opravljenih klicev</item>
+        <item quantity="one">opravljen klic</item>
+    </plurals>
+</resources>

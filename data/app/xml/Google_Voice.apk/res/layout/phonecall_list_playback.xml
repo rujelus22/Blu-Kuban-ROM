@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/playback" android:background="@drawable/playback_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/play" android:background="@drawable/play_pause_button" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:src="@drawable/play" android:scaleType="center" android:layout_weight="0.0" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="11.0sp" android:gravity="top|left|center" android:layout_gravity="top|left|center" android:id="@id/current_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="00:00" />
+            <TextView android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <TextView android:textSize="11.0sp" android:gravity="top|right|center" android:layout_gravity="top|right|center" android:id="@id/max_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="01:23" />
+        </LinearLayout>
+        <SeekBar android:layout_gravity="fill_horizontal|center" android:id="@id/playback_bar" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:progressDrawable="@drawable/playback_bar" android:thumb="@drawable/playback_head" android:thumbOffset="0.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ImageButton android:id="@id/speaker" android:background="@drawable/play_pause_button" android:paddingLeft="6.0dip" android:paddingTop="10.0dip" android:paddingRight="6.0dip" android:paddingBottom="7.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:src="@drawable/speaker_off_combined" android:scaleType="centerInside" android:layout_weight="0.0" />
+</LinearLayout>

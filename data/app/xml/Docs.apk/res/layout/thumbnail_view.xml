@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@drawable/thumbnail_background" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip">
+        <ImageView android:id="@id/thumbnailImage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="center" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/thumbnail_progress_bar" android:layout_width="50.0dip" android:layout_height="50.0dip" android:indeterminate="true" />
+        <TextView android:textSize="17.0dip" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/open_button" android:background="@drawable/open_document_button_background" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/thumbnail_open" />
+    </FrameLayout>
+    <View android:layout_gravity="bottom" android:background="@drawable/ic_thumbnail_frame_btm" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+</merge>

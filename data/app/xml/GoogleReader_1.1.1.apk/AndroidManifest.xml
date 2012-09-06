@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="538" android:versionName="1.1.1" package="com.google.android.apps.reader"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="@string/app_name" android:icon="@drawable/icon" android:name=".app.ReaderApplication" android:description="@string/description" android:logo="@drawable/icon" android:hardwareAccelerated="true">
+        <activity android:theme="@style/Theme.Reader.DialogWhenLarge" android:name=".app.WelcomeActivity" />
+        <activity android:theme="@style/Theme.Reader.DialogWhenLarge" android:label="@string/title_about" android:name=".app.AboutActivity" />
+        <activity android:theme="@style/Theme.Reader" android:label="@string/title_overview" android:name=".app.OverviewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.overview" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.StreamListActivity" android:launchMode="singleTop">
+            <intent-filter android:label="@string/launcher_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.stream" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.AccountSearchActivity" />
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialog" android:label="@string/title_subscription_tag_editor" android:name=".app.SubscriptionTagEditorActivity">
+            <intent-filter>
+                <action android:name="org.openintents.action.TAG" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialog" android:label="@string/title_item_tag_editor" android:name=".app.ItemTagEditorActivity">
+            <intent-filter>
+                <action android:name="org.openintents.action.TAG" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.item" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialog" android:label="@string/title_insert_tag" android:name=".app.InsertTagActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.tag" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialog" android:label="@string/title_note" android:name=".app.NoteActivity" android:enabled="false" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.SubscriptionListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.tag" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.StreamSearchActivity" />
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.FriendListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.friend" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.StreamSearchActivity" />
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.RecommendationListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.recommendation" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.StreamSearchActivity" />
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:label="@string/stream_picker_title" android:name=".app.StreamPickerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.stream" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:label="@string/stream_picker_title" android:name=".app.CreateShortcutActivity">
+            <intent-filter android:label="@string/create_shortcut_label">
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.StreamActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.item" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.stream" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:mimeType="application/rss+xml" />
+                <data android:mimeType="application/atom+xml" />
+                <data android:mimeType="application/xml" />
+                <data android:mimeType="text/xml" />
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:host="feeds.feedburner.com" />
+                <data android:host="feeds2.feedburner.com" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.StreamSearchActivity" />
+        </activity>
+        <activity-alias android:theme="@style/Theme.Reader" android:name=".app.AccountSearchActivity" android:launchMode="singleTop" android:targetActivity=".app.StreamActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity-alias>
+        <activity-alias android:theme="@style/Theme.Reader" android:name=".app.StreamSearchActivity" android:launchMode="singleTop" android:targetActivity=".app.StreamActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable_stream" />
+        </activity-alias>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.FeedSearchActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable_directory" />
+            <meta-data android:name="android.app.default_searchable" android:value=".app.FeedSearchActivity" />
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:label="@string/title_discovery_and_search" android:name=".app.DiscoveryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.SubscribeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.SocialActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Reader" android:name=".app.BundleListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.subscription" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialog" android:name=".app.BundleActivity" />
+        <activity android:theme="@style/Theme.Reader" android:name=".app.ItemActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.google.android.apps.reader.item" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.reader.intent.action.VIEW_ITEM" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.com.google.android.apps.reader.item" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".app.StreamSearchActivity" />
+        </activity>
+        <activity android:theme="@style/ThemeHoloDialogWhenLargeNoActionBar" android:label="@string/title_accounts" android:name=".app.AccountListActivity" />
+        <activity android:theme="@style/ThemeHoloDialogWhenLarge" android:label="@string/title_settings" android:name=".app.SettingsActivity" />
+        <provider android:label="@string/app_name" android:name=".content.ReaderProvider" android:readPermission="com.google.android.apps.reader.READ" android:writePermission="com.google.android.apps.reader.WRITE" android:authorities="com.google.android.apps.reader">
+            <path-permission android:readPermission="android.permission.GLOBAL_SEARCH" android:pathPrefix="/search_suggest_query" />
+            <grant-uri-permission android:path="/items" />
+        </provider>
+        <receiver android:name="com.google.android.accounts.PeriodicSyncReceiver" />
+        <receiver android:name=".app.ConnectivityBroadcastReceiver" android:enabled="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".app.DeviceStorageBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".app.ReaderCleanupService" />
+        <service android:name=".app.ReaderConnectService" />
+        <service android:name=".app.ReaderSyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter" />
+        </service>
+        <service android:name=".app.GoogleAuthenticatorService">
+            <intent-filter>
+                <action android:name="com.google.android.accounts.DatabaseAuthenticator" />
+            </intent-filter>
+            <meta-data android:name="com.google.android.accounts.DatabaseAuthenticator" android:resource="@xml/database_authenticator" />
+        </service>
+        <receiver android:label="@string/appwidget_unread_count" android:name=".appwidget.UnreadCountWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.google.reader.intent.action.CONTENT_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_unread_count" />
+        </receiver>
+        <service android:name=".appwidget.UnreadCountWidgetUpdateService" />
+        <receiver android:label="@string/appwidget_news_ticker" android:name=".appwidget.NewsTickerWidget" android:enabled="@bool/appwidget_news_ticker_enabled">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.google.reader.intent.action.CONTENT_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_news_ticker" />
+        </receiver>
+        <service android:name=".appwidget.NewsTickerWidgetUpdateService" />
+        <service android:name=".appwidget.NewsTickerWidgetRemoteViewsService" android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <receiver android:label="@string/appwidget_news_list" android:name=".appwidget.NewsListWidget" android:enabled="@bool/appwidget_news_list_enabled">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.google.reader.intent.action.CONTENT_CHANGED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_news_list" />
+        </receiver>
+        <service android:name=".appwidget.NewsListWidgetUpdateService" />
+        <service android:name=".appwidget.NewsListWidgetRemoteViewsService" android:permission="android.permission.BIND_REMOTEVIEWS" />
+    </application>
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="11" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true" />
+    <permission android:label="@string/permission_label_read" android:name="com.google.android.apps.reader.READ" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.PERSONAL_INFO" android:description="@string/permission_description_read" />
+    <permission android:label="@string/permission_label_write" android:name="com.google.android.apps.reader.WRITE" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.PERSONAL_INFO" android:description="@string/permission_description_write" />
+    <uses-permission android:name="com.google.android.apps.reader.READ" />
+    <uses-permission android:name="com.google.android.apps.reader.WRITE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.cp" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.reader" />
+</manifest>

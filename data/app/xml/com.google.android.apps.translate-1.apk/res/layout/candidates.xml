@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/candidate_background" android:paddingLeft="@dimen/candidate_strip_padding" android:paddingRight="@dimen/candidate_strip_padding" android:paddingBottom="@dimen/candidate_strip_bottom_padding" android:layout_width="fill_parent" android:layout_height="@dimen/candidate_strip_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:id="@id/candidates_scroll_view" android:scrollbars="none" android:fadingEdge="horizontal" android:fadingEdgeLength="@dimen/candidate_strip_fading_edge_length" android:layout_width="0.0dip" android:layout_height="@dimen/candidate_strip_height" android:layout_weight="1.0">
+        <com.google.research.handwriting.gui.CandidateView android:orientation="horizontal" android:id="@id/candidates" android:layout_width="wrap_content" android:layout_height="@dimen/candidate_strip_height" />
+    </HorizontalScrollView>
+    <Button android:id="@id/ask_the_cloud" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Ask the cloud" />
+</LinearLayout>

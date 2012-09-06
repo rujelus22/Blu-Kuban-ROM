@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES Explorateur de fichiers</string>
+    <string name="title_note">ES Éditeur de notes</string>
+    <string name="image_browser_title">"ES Lecteur d'images"</string>
+    <string name="video_player_label">ES Lecteur multimédia</string>
+    <string name="app_zip">ES Afficheur de ZIP</string>
+</resources>

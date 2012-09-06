@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s missatges de Google Voice</item>
+        <item quantity="one">1 missatge de Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Hi ha %1$d missatges no llegits</item>
+        <item quantity="one">Hi ha un missatge no llegit</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">trucades perdudes</item>
+        <item quantity="one">trucada perduda</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">trucades rebudes</item>
+        <item quantity="one">trucada rebuda</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">correus de veu</item>
+        <item quantity="one">correu de veu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">escoltes</item>
+        <item quantity="one">escolta</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">enregistraments</item>
+        <item quantity="one">"s'està enregistrant"</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">comprovacions de correu de veu</item>
+        <item quantity="one">comprovació de correu de veu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">configuració</item>
+        <item quantity="one">configuració</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">textos</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">textos</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">trucades realitzades</item>
+        <item quantity="one">trucada realitzada</item>
+    </plurals>
+</resources>

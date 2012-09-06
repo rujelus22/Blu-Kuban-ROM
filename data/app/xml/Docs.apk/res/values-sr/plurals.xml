@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">Пре %d дана</item>
+        <item quantity="one">Пре %d дан</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">Пре %d недеље(а)</item>
+        <item quantity="one">Пре %d недељу</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">Датотеке (%1$d од %2$s) су доступне ван мреже.</item>
+        <item quantity="one">Датотеке (%1$d од %2$s) су доступне ван мреже.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Све датотеке (%1$d) су доступне ван мреже.</item>
+        <item quantity="one">%1$d датотека је сада доступна ван мреже.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Омогућава се употреба датотека (%1$d) ван мреже.</item>
+        <item quantity="one">Омогућава се употреба %1$d датотеке ван мреже.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">Датотека: %1$d</item>
+        <item quantity="one">Датотека: %1$d</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d налога</item>
+        <item quantity="one">%1$d налог</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s нису важеће адресе е-поште.</item>
+        <item quantity="one">%s није важећа адреса е-поште.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Премести ставке: %d</item>
+        <item quantity="one">Премести „%s“</item>
+    </plurals>
+</resources>

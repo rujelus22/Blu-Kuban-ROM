@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="operation_dialog_error">#ff990000</color>
+    <color name="operation_dialog_syncing">#ff155496</color>
+    <color name="progress_title_foreground">@android:color/black</color>
+    <color name="list_entry_focused">#ff155496</color>
+    <color name="list_entry_pressed">#ff155496</color>
+    <color name="migration_font_color">@android:color/white</color>
+    <color name="action_bar_text">#ffc0c0c0</color>
+</resources>

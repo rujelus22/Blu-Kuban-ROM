@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/pop_outmost_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.estrongs.android.pop">
+    <include layout="@layout/res_manager_main" />
+    <com.estrongs.android.pop.clipboardview.SlidingDrawer android:gravity="bottom" android:id="@id/drawer" android:layout_width="fill_parent" android:layout_height="fill_parent" app:handle="@id/clipboard_icon" app:content="@id/content" app:orientation="1" app:topOffset="90.0dip" app:allowSingleTap="true">
+        <ImageView android:id="@id/clipboard_icon" android:background="@drawable/handle" android:focusable="true" android:nextFocusDown="@id/content" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/handle_icon" android:scaleType="center" />
+        <com.estrongs.android.pop.clipboardview.ClipboardGridView android:gravity="center" android:id="@id/content" android:background="@color/tray_bg" android:paddingBottom="15.0dip" android:scrollbars="vertical" android:nextFocusLeft="@id/clipboard_icon" android:nextFocusRight="@id/content" android:nextFocusUp="@id/content" android:nextFocusDown="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:drawSelectorOnTop="false" android:verticalSpacing="2.0dip" android:stretchMode="columnWidth" android:columnWidth="76.0dip" android:numColumns="auto_fit" />
+    </com.estrongs.android.pop.clipboardview.SlidingDrawer>
+</RelativeLayout>

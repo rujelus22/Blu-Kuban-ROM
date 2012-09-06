@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/translate_app_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/fragments_translate_title_bar_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <include android:id="@id/fragments_translate_title_bar" layout="@layout/translate_title" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/home_left_pane" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/input_method_view_wrapper" android:layout_below="@id/fragments_translate_title_bar_wrapper">
+            <FrameLayout android:id="@id/tab_menu_fragment_container_wrapper" android:background="@drawable/action_bar_color_normal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/tab_menu_fragment_container" android:layout_width="240.0dip" android:layout_height="fill_parent" />
+                <LinearLayout android:orientation="vertical" android:id="@id/tab_menu_fake_list" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/TextSize_MediumLarge" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btn_translate" android:drawableLeft="@drawable/spinner_icon_translate_bw" />
+                    <TextView android:textSize="@dimen/TextSize_MediumLarge" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_conversation_mode" android:drawableLeft="@drawable/spinner_icon_conversation_bw" />
+                    <TextView android:textSize="@dimen/TextSize_MediumLarge" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_history" android:drawableLeft="@drawable/spinner_icon_history_bw" />
+                    <TextView android:textSize="@dimen/TextSize_MediumLarge" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_favorites" android:drawableLeft="@drawable/spinner_icon_starred_bw" />
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/input_method_view_wrapper" android:background="@color/input_panel_list_view_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <include layout="@layout/input_method_view" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

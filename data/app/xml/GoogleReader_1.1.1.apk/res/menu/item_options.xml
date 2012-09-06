@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:orderInCategory="0">
+        <item android:icon="@drawable/ic_menu_star_off" android:id="@id/menu_add_star" android:title="@string/menu_add_star" android:titleCondensed="@string/menu_add_star_condensed" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_star" android:id="@id/menu_remove_star" android:visible="false" android:title="@string/menu_remove_star" android:titleCondensed="@string/menu_remove_star_condensed" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_emoticons" android:id="@id/menu_like" android:title="@string/menu_like" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_emoticons" android:id="@id/menu_unlike" android:visible="false" android:title="@string/menu_unlike" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_broadcast" android:id="@id/menu_share" android:title="@string/menu_share" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_broadcast" android:id="@id/menu_unshare" android:visible="false" android:title="@string/menu_unshare" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_mark_unread" android:id="@id/menu_mark_unread" android:title="@string/menu_mark_unread" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_mark_read" android:id="@id/menu_mark_read" android:visible="false" android:title="@string/menu_mark_read" android:showAsAction="ifRoom|withText" />
+        <item android:icon="@drawable/ic_menu_delete" android:id="@id/menu_delete" android:visible="false" android:title="@string/menu_delete" android:showAsAction="ifRoom" />
+        <item android:icon="@drawable/ic_menu_archive" android:id="@id/menu_tag" android:title="@string/menu_tag" />
+        <item android:icon="@drawable/ic_menu_compose" android:id="@id/menu_share_with_note" android:title="@string/menu_share_with_note" />
+        <item android:icon="@drawable/ic_menu_share" android:id="@id/menu_send" android:title="@string/menu_send" />
+        <item android:icon="@drawable/ic_menu_send" android:id="@id/menu_email" android:title="@string/menu_email" />
+    </group>
+</menu>

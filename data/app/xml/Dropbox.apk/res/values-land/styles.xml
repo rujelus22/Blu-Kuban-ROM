@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SingleCharacterPasscodeBox">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:digits">0123456789</item>
+    </style>
+</resources>

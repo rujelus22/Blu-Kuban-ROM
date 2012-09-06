@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/loButtnBar" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/addressbar" android:background="@drawable/addressbar_bg" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/addressbar_icon" android:paddingLeft="4.0dip" android:paddingTop="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/addressbar_disk" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ffffffff" android:ellipsize="start" android:gravity="center_vertical" android:id="@id/current_path" android:paddingLeft="2.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+            <ImageView android:id="@id/slide_toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" android:src="@drawable/toolbar_slide_up" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/toolbar" android:background="@drawable/toolbar_bg_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0dip">
+            <LinearLayout android:id="@id/layout_btnHome" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnHome" android:src="@drawable/toolbar_back" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_1_text" android:text="@string/menu_exit" style="@style/ToolbarText" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:id="@id/layout_btnDiskType" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnDiskType" android:src="@drawable/toolbar_cards" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_2_text" android:text="@string/toolbar_icon_text_disks" style="@style/ToolbarText" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:id="@id/layout_btnShowStat" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnShowStat" android:src="@drawable/toolbar_statistics" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_3_text" android:text="@string/toolbar_menu_analyse" style="@style/ToolbarText" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:id="@id/layout_btnUp" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnUp" android:src="@drawable/toolbar_uplevel" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_4_text" android:text="@string/toolbar_icon_text_up" style="@style/ToolbarText" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:id="@id/layout_btnSort" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnSort" android:src="@drawable/toolbar_sort" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_5_text" android:text="@string/toolbar_icon_text_sort" style="@style/ToolbarText" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:id="@id/layout_btnHelp" style="@style/ToolbarTd">
+                <ImageView android:id="@id/btnHelp" android:src="@drawable/toolbar_help" style="@style/ToolbarItem" />
+                <TextView android:id="@id/disk_toolbar_pos_6_text" android:text="@string/menu_help" style="@style/ToolbarText" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="fill_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/loSummary" android:layout_below="@id/loButtnBar">
+        <ListView android:id="@id/lvFileList" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/left_disk_graphic_outmost" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/left_disk_graphic_layout" android:background="@drawable/left_disk_graphic_bg" android:layout_width="48.0dip" android:layout_height="368.0dip">
+                <LinearLayout android:orientation="horizontal" android:id="@id/left_disk_graphic_title" android:layout_width="216.0dip" android:layout_height="36.0dip">
+                    <ImageView android:id="@id/left_disk_show_ind" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/left_disk_icon_show" android:scaleType="centerInside" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_gravity="left|center" android:id="@id/left_disk_graphic_dir_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/left_disk_graphic_below_layout" android:layout_width="216.0dip" android:layout_height="332.0dip">
+                    <FrameLayout android:id="@id/disk_graphic_left_panel" android:layout_width="36.0dip" android:layout_height="282.0dip">
+                        <com.estrongs.android.pop.app.diskusage.DiskUsageGraphView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_disk_view" android:layout_width="16.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" />
+                        <ImageView android:layout_gravity="center_vertical" android:background="@drawable/left_disk_graphic_bg_2" android:layout_width="16.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" />
+                    </FrameLayout>
+                    <ScrollView android:id="@id/left_disk_graphic_scroll" android:layout_width="164.0dip" android:layout_height="300.0dip">
+                        <LinearLayout android:orientation="vertical" android:layout_width="164.0dip" android:layout_height="300.0dip">
+                            <LinearLayout android:orientation="horizontal" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_pic_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_pic_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:background="#ff1a1a1a" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_music_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_music_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_video_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_video_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:background="#ff1a1a1a" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_doc_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_doc_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_apk_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_apk_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:background="#ff1a1a1a" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                                <TextView android:layout_gravity="center_vertical" android:id="@id/disk_graphic_other_ind" android:background="@drawable/diskusage_round_square" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="12.0dip" />
+                                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/disk_graphic_other_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout android:id="@id/loSummary" android:background="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <TextView android:textColor="#ffffffff" android:id="@id/tvTotalLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/diskusage_total" android:layout_alignParentLeft="true" />
+        <TextView android:textColor="#ff155496" android:id="@id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/tvTotalLabel" />
+        <LinearLayout android:id="@id/loUsed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+            <TextView android:textColor="#ffffffff" android:id="@id/tvUsedLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/diskusage_used" />
+            <TextView android:textColor="#ff900000" android:id="@id/tvUsed" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textColor="#ffffffff" android:id="@id/tvFreeLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/diskusage_avail" android:layout_toLeftOf="@id/tvFree" />
+        <TextView android:textColor="#ff155496" android:id="@id/tvFree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

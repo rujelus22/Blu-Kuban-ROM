@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:id="@id/frame_tts_speak" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center" android:id="@id/translate_tts_loading" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <ImageButton android:layout_gravity="center" android:id="@id/btn_translate_tts_speak" android:background="@drawable/btn_chip_actions" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/tts_speak" android:contentDescription="@string/description_tts_speaker" />
+</FrameLayout>

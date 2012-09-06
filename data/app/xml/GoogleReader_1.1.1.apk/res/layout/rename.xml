@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/prompt_rename" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/prompt_rename" />
+    <EditText android:id="@id/edit_rename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="textCapWords" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.googlevoice.activity.conversationlist.ConversationListItem android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/conversation" android:paddingRight="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="60.0dip" android:layout_height="60.0dip">
+            <ImageView android:id="@id/photo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/default_contact_picture" android:scaleType="centerCrop" />
+            <ImageView android:id="@id/badge" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/voicemail_with_border" android:scaleType="fitCenter" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <LinearLayout android:layout_gravity="top|left|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="true">
+                <LinearLayout android:gravity="top" android:layout_gravity="top" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="true" android:layout_weight="1.0">
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@drawable/conversation_text_color" android:ellipsize="end" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="0.0dip" android:layout_marginRight="3.0dip" android:layout_marginBottom="0.0dip" android:text="@string/example_conversation_name" android:singleLine="true" />
+                    <TextView android:textSize="16.0sp" android:textColor="#ff155496" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:text="@string/example_conversation_count" android:singleLine="true" android:layout_alignBaseline="@id/name" />
+                </LinearLayout>
+                <TextView android:textSize="14.0sp" android:textColor="@drawable/conversation_text_color_light" android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/example_conversation_time" android:layout_alignBaseline="@id/name" />
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginBottom="2.0dip">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@drawable/conversation_text_color_light" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/example_conversation_message" android:maxLines="3" android:layout_toLeftOf="@id/sms_sending_status" />
+                <ImageView android:id="@id/sms_sending_status" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/message_waiting" android:scaleType="fitStart" android:layout_toLeftOf="@id/starred" android:layout_alignTop="@id/starred" android:layout_alignBottom="@id/starred" />
+                <ImageView android:id="@id/starred" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/star_off" android:adjustViewBounds="true" android:baselineAlignBottom="false" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/status" android:paddingLeft="0.0dip" android:paddingTop="5.0dip" android:paddingRight="7.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/status_progress" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" android:indeterminateBehavior="repeat" style="@android:style/Widget.ProgressBar.Small" />
+        <ImageView android:id="@id/status_icon" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/error" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/status_message_text_color" android:layout_gravity="center" android:id="@id/status_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Getting messages" />
+    </LinearLayout>
+</com.google.android.apps.googlevoice.activity.conversationlist.ConversationListItem>

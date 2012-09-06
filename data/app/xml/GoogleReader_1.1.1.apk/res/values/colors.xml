@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_read">#ff0a2a4b</color>
+    <color name="background_unread">#ff000000</color>
+    <color name="window_title_background">#ff000000</color>
+    <color name="window_title_foreground">#ffffffff</color>
+    <color name="window_title_separator">#40ffffff</color>
+    <color name="list_separator_background_normal">#ff155496</color>
+    <color name="list_separator_background_normal_disabled">#80155496</color>
+    <color name="list_separator_background_inverse">#ff1b71c6</color>
+    <color name="list_separator_background_inverse_disabled">#801b71c6</color>
+    <color name="link_text_dark">#ff155496</color>
+    <color name="link_text_light">#ff155496</color>
+</resources>

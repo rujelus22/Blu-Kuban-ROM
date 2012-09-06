@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:id="@id/quickaction_delete_button" android:text="@string/quickaction_delete" android:drawableTop="@drawable/ic_delete" style="@style/QuickactionButton"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

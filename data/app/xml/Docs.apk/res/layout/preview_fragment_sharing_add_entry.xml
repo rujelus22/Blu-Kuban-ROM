@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.docs.fragment.CustomFocusRelativeLayout style="@style/PreviewFragmentSharingItem"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/add_collaborator_icon" android:src="@drawable/ic_acl_add" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/PreviewFragmentSharingItemIcon" />
+    <TextView android:padding="10.0dip" android:text="@string/preview_sharing_list_add" android:layout_toRightOf="@id/add_collaborator_icon" android:layout_centerVertical="true" style="@style/PreviewFragmentSharingItemText" />
+    <View android:layout_alignParentBottom="true" style="@style/PreviewFragmentSharingItemSeparator" />
+</com.google.android.apps.docs.fragment.CustomFocusRelativeLayout>

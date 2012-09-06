@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Google 보이스 메일 %1$s개</item>
+        <item quantity="one">Google 보이스 메시지 1개</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">읽지 않은 메시지가 %1$d개 있습니다.</item>
+        <item quantity="one">읽지 않은 메시지가 1개 있습니다.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">부재중 통화</item>
+        <item quantity="one">부재중 전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">수신전화</item>
+        <item quantity="one">수신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">음성사서함</item>
+        <item quantity="one">음성사서함</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">청취</item>
+        <item quantity="one">청취</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">녹음</item>
+        <item quantity="one">녹음</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">음성사서함 확인</item>
+        <item quantity="one">음성사서함 확인</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">설정</item>
+        <item quantity="one">설정</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">문자</item>
+        <item quantity="one">문자</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">문자</item>
+        <item quantity="one">문자</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">발신전화</item>
+        <item quantity="one">발신전화</item>
+    </plurals>
+</resources>

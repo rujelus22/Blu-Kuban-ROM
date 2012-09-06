@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.plus.views.AlbumGridItemView android:background="@drawable/album_view_selector" android:padding="4.0dip" android:longClickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

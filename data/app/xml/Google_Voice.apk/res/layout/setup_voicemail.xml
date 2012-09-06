@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:textAppearance="?android:textAppearanceMedium" android:id="@id/configure_voicemail_prompt" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="Text" android:layout_weight="1.0" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setup_page_welcome_explanation_sprint" android:layout_weight="1.0" />
+    <Button android:layout_gravity="left|center" android:id="@id/configure_voicemail_skip_button" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="@string/button_skip" android:layout_weight="0.0" />
+</LinearLayout>

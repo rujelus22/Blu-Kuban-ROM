@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_read">#ff181a1c</color>
+    <color name="background_unread">#ff282a2c</color>
+    <color name="main_window_bg">#ff181a1c</color>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/home_page_background_proxy" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:screenEntry="http://schemas.android.com/apk/res/com.google.android.apps.docs">
+    <FrameLayout android:id="@id/wrapper_on_optional_title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <view android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.TitleBar" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/wrapper_on_optional_account_switcher" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:textSize="16.0sp" android:textColor="@android:color/white" android:ellipsize="end" android:gravity="center" android:id="@id/account_switcher" android:background="@drawable/account_background" android:paddingLeft="6.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/account_bar_height" android:lines="1" android:scrollHorizontally="true" android:drawablePadding="5.0dip" style="@style/HomeScreen.AccountSwitcher" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/menu_body" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_above="@id/wrapper_on_optional_account_switcher" android:layout_below="@id/wrapper_on_optional_title_bar">
+        <include android:id="@id/home_screen_table" layout="@layout/home_screen_activity_table" />
+        <include android:id="@id/home_screen_list" layout="@layout/home_screen_activity_list" />
+    </FrameLayout>
+</RelativeLayout>

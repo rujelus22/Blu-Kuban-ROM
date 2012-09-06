@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/pin_mode_done" android:layout_width="40.0dip" android:layout_height="fill_parent" android:src="@drawable/check" android:scaleType="center" />
+    <TextView android:textSize="18.0sp" android:layout_gravity="center_vertical" android:id="@id/done_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/pin_mode_done" />
+    <view android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" class="com.google.android.apps.docs.view.FreeStorageIndicator" />
+</LinearLayout>

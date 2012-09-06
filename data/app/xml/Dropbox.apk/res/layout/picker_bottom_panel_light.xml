@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/bottom_bar" android:background="@drawable/bar_silver_bottom" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" style="@style/BottomBarContainer">
+        <TextView android:textColor="@color/text" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/selection_status_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <Button android:textColor="@color/grayButtonText" android:gravity="left|center" android:id="@id/localist_folder_picker" android:background="@drawable/gray_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/folderPickerButtonLowerMargin" android:drawableLeft="@drawable/folder_42" android:drawablePadding="@dimen/folderPickerIconToTextMargin" />
+        <include layout="@layout/bottom_buttons_light" />
+    </LinearLayout>
+</FrameLayout>

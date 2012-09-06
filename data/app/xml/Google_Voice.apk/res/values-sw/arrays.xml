@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Tumia Google Voice ili kupiga simu zote</item>
+        <item>Tumia tu Google Voice kwa simu za kimataifa</item>
+        <item>Usitumie Google Voice kupiga simu yoyote</item>
+        <item>Uliza kila wakati ninapo piga simu</item>
+        <item>Uliza kila wakati ninapopiga simu ya kimataifa</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Kila dakika 5</item>
+        <item>Kila dakika10</item>
+        <item>Kila dakika 15</item>
+        <item>Kila dakika 20</item>
+        <item>Kila dakika 30</item>
+        <item>Kila dakika 60</item>
+        <item>Katu</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Tumia namba yangu ya sauti ya google ya sasa</item>
+        <item>Tumia hii namba ya simu</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Simu/ujumbe wa maandishi kutoka kwenye simu yataonyesha nambari yangu ya Google Voice</item>
+        <item>Hii itabadilisha nambari yangu ya sauti ya Google.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Jaribu upya na Google Voice</item>
+        <item>Piga simu bila Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Piga simu na Google Voice</item>
+        <item>Piga simu bila Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Piga simu</item>
+        <item>Bofya-ili-Kupiga Simu</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Kupitia programu ya Google Voice</item>
+        <item>Kupitia programu ya ujumbe</item>
+    </string-array>
+</resources>

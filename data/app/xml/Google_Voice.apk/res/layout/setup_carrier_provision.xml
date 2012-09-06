@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:textAppearance="?android:textAppearanceMedium" android:id="@id/carrier_provision_prompt" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="3" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setup_page_carrier_provision_prompt" />
+    <ListView android:id="@id/carrier_provision_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

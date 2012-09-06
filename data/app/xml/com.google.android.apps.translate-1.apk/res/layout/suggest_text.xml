@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/suggest_divider_side_margin" android:paddingRight="@dimen/suggest_divider_side_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/input_panel_list_view_divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:paddingRight="@dimen/suggest_divider_side_margin" android:layout_width="@dimen/input_mode_side_margin" android:layout_height="@dimen/suggest_text_box_height" android:src="@drawable/ic_history_suggest" android:scaleType="centerInside" />
+        <TextView android:textAppearance="@style/TextAppearance_Medium" android:textStyle="bold" android:textColor="@color/suggest_original_text_color" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/text" android:paddingLeft="@dimen/suggest_text_box_side_padding" android:paddingRight="@dimen/suggest_text_box_side_padding" android:layout_width="0.0dip" android:layout_height="@dimen/suggest_text_box_height" android:singleLine="true" android:layout_weight="1.0" />
+        <ImageView android:layout_gravity="center" android:paddingLeft="@dimen/suggest_divider_side_margin" android:layout_width="@dimen/input_mode_side_margin" android:layout_height="@dimen/suggest_text_box_height" android:src="@drawable/ic_query_build" android:scaleType="centerInside" />
+    </LinearLayout>
+    <TextView android:textAppearance="@style/TextAppearance_Medium" android:textColor="@color/suggest_translation_color" android:ellipsize="end" android:id="@id/translation" android:paddingLeft="@dimen/text_box_side_padding" android:paddingRight="@dimen/text_box_side_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+</LinearLayout>

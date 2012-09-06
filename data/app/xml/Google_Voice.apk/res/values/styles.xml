@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="gf_PageHeader">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:id">@id/header</item>
+        <item name="android:background">@color/gf_header_background</item>
+        <item name="android:padding">@dimen/gf_padding</item>
+    </style>
+    <style name="gf_SectionHeader">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:drawable/dark_header</item>
+        <item name="android:paddingLeft">@dimen/gf_padding</item>
+    </style>
+    <style name="gf_Separator">
+        <item name="android:src">@android:drawable/divider_horizontal_dark</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="gf_ListItem">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/gf_list_item_padding</item>
+        <item name="android:paddingTop">3.0dip</item>
+        <item name="android:paddingRight">@dimen/gf_list_item_padding</item>
+        <item name="android:paddingBottom">3.0dip</item>
+        <item name="android:minHeight">@dimen/gf_list_item_height</item>
+    </style>
+    <style name="LightThemeSelector" parent="@android:style/Theme.Black" />
+    <style name="InCallTouchButton">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_button</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="InCallTouchButtonFaded">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_button_faded</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
+    <style name="InCallTouchToggleButton">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_button</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="InCallTouchToggleButtonFaded">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_button_faded</item>
+        <item name="android:layout_marginLeft">8.0dip</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
+    <style name="LightThemeNoActionBar" parent="@android:style/Theme.Black.NoTitleBar" />
+    <style name="TranslucentThemeNoActionBar" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/transparent_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="SettingsTheme" parent="@android:style/Theme.Black" />
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog" />
+    <style name="setup_helper">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">#ff000000</item>
+    </style>
+</resources>

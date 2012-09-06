@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Koristi Google Voice za uspostavljanje svih poziva</item>
+        <item>Koristi Google Voice samo za međunarodne pozive</item>
+        <item>Ne koristi Google Voice za uspostavu nijednog poziva</item>
+        <item>Pitaj me svaki put kada uspostavljam poziv</item>
+        <item>Pitaj me svaki put kada uspostavljam međunarodni poziv</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Svakih 5 minuta</item>
+        <item>Svakih 10 minuta</item>
+        <item>Svakih 15 minuta</item>
+        <item>Svakih 20 minuta</item>
+        <item>Svakih 30 minuta</item>
+        <item>Svakih 60 minuta</item>
+        <item>Nikad</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Upotrijebite moj postojeći broj za Google Voice</item>
+        <item>Upotrijebite ovaj telefonski broj</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Pozivi/tekstualne poruke s ovog telefona prikazivat će moj broj za Google</item>
+        <item>Ovo će zamijeniti moj broj za Google</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Pokušajte ponovo s uslugom Google Voice</item>
+        <item>Poziv bez usluge Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Poziv s uslugom Google Voice</item>
+        <item>Poziv bez usluge Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Poziv</item>
+        <item>Klikni za poziv</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Putem aplikacije Google Voice</item>
+        <item>Putem aplikacije za slanje poruka</item>
+    </string-array>
+</resources>

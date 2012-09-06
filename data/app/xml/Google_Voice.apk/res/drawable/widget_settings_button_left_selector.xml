@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false" android:state_enabled="true" android:drawable="@drawable/widget_settings_button_default_left" />
+    <item android:state_pressed="true" android:drawable="@drawable/widget_settings_button_press_left" />
+    <item android:state_focused="true" android:state_enabled="true" android:drawable="@drawable/widget_settings_button_focus_left" />
+    <item android:state_enabled="true" android:drawable="@drawable/widget_settings_button_default_left" />
+    <item android:drawable="@drawable/widget_settings_button_default_left" />
+</selector>

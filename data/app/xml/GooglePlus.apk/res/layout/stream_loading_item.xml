@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/footer" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/list_empty_progress" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <TextView android:textSize="18.0sp" android:id="@id/list_empty_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading" android:layout_centerInParent="true" />
+        <ProgressBar android:id="@id/list_empty_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:indeterminate="true" android:layout_toLeftOf="@id/list_empty_progress_text" android:layout_centerVertical="true" style="?android:attr/progressBarStyleSmall" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/list_error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <TextView android:textSize="18.0sp" android:id="@android:id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_connection" android:layout_centerInParent="true" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@android:drawable/ic_dialog_alert" android:layout_toLeftOf="@android:id/text1" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</FrameLayout>

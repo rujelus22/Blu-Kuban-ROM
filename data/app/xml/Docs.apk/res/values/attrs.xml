@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="title" format="string" />
+    <attr name="icon" format="reference" />
+    <attr name="controls_enabled" format="boolean" />
+    <attr name="scrubberBackgroundDrawable" format="reference" />
+    <attr name="scrubberDrawable" format="reference" />
+    <attr name="scrubberCalloutDrawable" format="reference" />
+    <attr name="scrubberTrackDrawable" format="reference" />
+    <attr name="scrubberUndoDrawable" format="reference" />
+    <attr name="layout" format="reference" />
+    <attr name="entryLayout" format="reference" />
+    <attr name="childWidth" format="dimension" />
+</resources>

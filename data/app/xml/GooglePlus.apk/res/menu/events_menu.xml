@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_new_event" android:id="@id/create" android:title="@string/menu_new_event" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" android:title="@string/menu_refresh" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_search_action_bar" android:id="@id/menu_switcher_search" android:title="@string/menu_search" android:showAsAction="always" />
+</menu>

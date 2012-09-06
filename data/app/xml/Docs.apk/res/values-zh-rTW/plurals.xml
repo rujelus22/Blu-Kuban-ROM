@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d 天前</item>
+        <item quantity="one">%d 天前</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d 週前</item>
+        <item quantity="one">%d 週前</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d 個檔案現在可供離線使用 (共 %2$s 個檔案)。</item>
+        <item quantity="one">%1$d 個檔案現在可供離線使用 (共 %2$s 個檔案)。</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">全部 %1$d 個檔案可供離線使用。</item>
+        <item quantity="one">%1$d 個檔案現在可供離線使用。</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">正在下載 %1$d 個檔案以供離線使用。</item>
+        <item quantity="one">正在下載 %1$d 個檔案以供離線使用。</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d 個檔案</item>
+        <item quantity="one">%1$d 個檔案</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d 個帳戶</item>
+        <item quantity="one">%1$d 個帳戶</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s 不是有效的電子郵件地址。</item>
+        <item quantity="one">%s 不是有效的電子郵件地址。</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">移動 %d 個項目</item>
+        <item quantity="one">移動「%s」</item>
+    </plurals>
+</resources>

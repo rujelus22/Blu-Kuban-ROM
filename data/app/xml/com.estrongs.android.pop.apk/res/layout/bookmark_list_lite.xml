@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff1a1a1a" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0dip" android:textColor="@drawable/white" android:gravity="center" android:autoLink="all" android:linksClickable="true" android:id="@id/info_bar" android:background="#ff252525" android:paddingLeft="2.0dip" android:paddingTop="4.0dip" android:paddingRight="2.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/info_download_bookmark_module" />
+    <HorizontalScrollView android:gravity="center" android:scrollbars="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/fastAccessPanel" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </HorizontalScrollView>
+    <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:divider="@drawable/line" android:layout_weight="1.0" />
+    <ImageView android:background="@drawable/history_seprate" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip" />
+</LinearLayout>

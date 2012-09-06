@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/activity_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <view android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.TitleBar" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/webviewparentlayout" android:background="@color/kix_webview_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <fragment android:name="com.google.android.apps.docs.kixwebview.KixWebViewFragment" android:id="@id/kix_web_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:id="@id/left_curtain" android:background="@color/kix_webview_background" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignLeft="@id/kix_web_view" android:layout_alignTop="@id/kix_web_view" />
+            <ImageView android:id="@id/right_curtain" android:background="@color/kix_webview_background" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignTop="@id/kix_web_view" android:layout_alignRight="@id/kix_web_view" />
+            <fragment android:name="com.google.android.apps.docs.kixwebview.PageScrubber" android:id="@id/page_scrubber" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0px" android:layout_alignBottom="@id/kix_web_view" />
+            <ProgressBar android:id="@id/loading_spinner" android:layout_width="50.0dip" android:layout_height="50.0dip" android:indeterminate="true" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/side_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <FrameLayout android:background="#ff1a1a1a" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <FrameLayout android:id="@id/side_fragment_holder" android:background="#ff252525" android:layout_width="@dimen/preview_panel_width" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

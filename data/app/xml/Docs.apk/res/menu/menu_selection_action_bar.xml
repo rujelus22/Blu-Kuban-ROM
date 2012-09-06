@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_add_collaborator" android:id="@id/menu_sharing" android:title="@string/preview_sharing_list_add" android:showAsAction="ifRoom" />
+    <item android:icon="@android:drawable/ic_menu_share" android:id="@id/menu_send" android:title="@string/menu_send" android:showAsAction="ifRoom" />
+    <item android:icon="@android:drawable/ic_menu_delete" android:id="@id/menu_delete" android:title="@string/menu_delete" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_offline" android:id="@id/menu_pin" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_rename" android:id="@id/menu_rename" android:title="@string/menu_rename" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_send_link" android:id="@id/menu_send_link" android:title="@string/menu_send_link" android:showAsAction="never" />
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView android:id="@id/toolbar_slider" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/toolbar_buttons_frame" android:layout_width="wrap_content" android:layout_height="fill_parent" style="@style/ToolbarButtonsFrame.WithAnimation">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@color/dark_grey_background" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <ImageButton android:id="@id/toolbar_undo_button" android:background="@drawable/action_undo" android:contentDescription="@string/undo" style="@style/ToolbarButton" />
+            <ImageButton android:id="@id/toolbar_redo_button" android:background="@drawable/action_redo" android:contentDescription="@string/redo" style="@style/ToolbarButton" />
+            <ToggleButton android:id="@id/toolbar_bold_button" android:background="@drawable/action_bold" android:contentDescription="@string/bold" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_italic_button" android:background="@drawable/action_italic" android:contentDescription="@string/italic" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_underline_button" android:background="@drawable/action_underline" android:contentDescription="@string/underline" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_color_button" android:background="@drawable/action_colour" android:contentDescription="@string/text_color" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_alignment_button" android:background="@drawable/action_text_align_left" android:contentDescription="@string/text_alignment" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_numbered_list_button" android:background="@drawable/action_numbered_list" android:contentDescription="@string/numbered_list" style="@style/ToolbarToggleButton" />
+            <ToggleButton android:id="@id/toolbar_bulleted_list_button" android:background="@drawable/action_bulleted_list" android:contentDescription="@string/bulleted_list" style="@style/ToolbarToggleButton" />
+            <ImageButton android:id="@id/toolbar_outdent_button" android:background="@drawable/action_decrease_indent" android:contentDescription="@string/decrease_indent" style="@style/ToolbarToggleButton" />
+            <ImageButton android:id="@id/toolbar_indent_button" android:background="@drawable/action_increase_indent" android:layout_marginRight="1.0dip" android:contentDescription="@string/increase_indent" style="@style/ToolbarToggleButton" />
+        </LinearLayout>
+    </LinearLayout>
+</HorizontalScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="password_keyboard_key_spacing">2.0dip</dimen>
+    <dimen name="filelistPadding">2.0dip</dimen>
+    <dimen name="filelistIconSize">32.0px</dimen>
+    <dimen name="filelistThumbailFrameSize">44.0dip</dimen>
+    <dimen name="filelistIconHalfMargin">4.0dip</dimen>
+    <dimen name="filelistIconOverlayRight">3.0dip</dimen>
+    <dimen name="filelistIconOverlayBottom">2.0dip</dimen>
+    <dimen name="filelistThumbIconOverlayBottom">3.0dip</dimen>
+    <dimen name="filelistTextMedium">14.0sp</dimen>
+    <dimen name="filelistTextSmall">11.0sp</dimen>
+    <dimen name="tourTextSize">16.0sp</dimen>
+    <dimen name="tourTextLineSpacingExtra">6.0dip</dimen>
+    <dimen name="tourMargin">14.0dip</dimen>
+    <dimen name="filelistModifiedLeft">2.0dip</dimen>
+</resources>

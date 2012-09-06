@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  -webkit-text-size-adjust: none;
+  word-wrap: break-word;
+}
+
+.doctitle,.backbutton {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.bottombar {
+  font-family: sans-serif;
+}
+
+.bottombar a {
+  color: #000;
+  text-decoration: none;
+}
+
+.doctitle {
+  font-size: 13px;
+  font-weight: bold;
+  color: #182647;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 2px;
+  height: 44px;
+  line-height: 34px;
+}
+
+.bottombar { /* 1px wide image (thus repeat-x) for the toolbar as shown in
+       https://sites.google.com/a/google.com/wui/widgets/toolbar */
+  background:
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAsCAIAAAArRUU2AAAAOElEQVQIW2O6+egX0///DEwMDAxM/xkYEOz/ED7DfwQbhUZWB1fzH87+hyGHykfRi2Y2AzIb1V0AEFlAz5gMk7cAAAAASUVORK5CYII=)
+    repeat-x;
+  height: 44px;
+  padding-top: 5px;
+}
+
+.backbutton {
+  font-size: 13.5px;
+  display: inline-block;
+  line-height: 32px;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.backbutton {
+  border-width: 0 6px 0 14px;
+  /* Image for the back button which has pointy shape on its left edge, as shown in
+       https://sites.google.com/a/google.com/wui/widgets/button. */
+  -webkit-border-image:
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAhCAYAAAA74pBqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtNJREFUeNqklktPE1EYhs+Zy5kp6Y1WgVou5S5OICCtAoFolBJBA8aFiURduPUPuOSXuHPjRpSNUZRgQCI2JIKXAKUxQsuiqOXSzkwvM35TGwLRtnTmS96kOdM+85yZc04/rKoqOloTj7dRnhqCdEHaICQ39guyCnmifWZQ8XJAHl7ptow2uTl3pYOpoClMaxcSsiKu/ZBDz+diHeA0UQzGY4wejfXbR9obeCGjqCiVUlAqd5HGyCR4OIGw5eyz2dh4QRgY3PL7LP7WGlYQ5XTe77lPUQ1wI6EQrFJR1eGWGiLIKbXIBDAD0iQvjKXx+EivxUthxKITVj5Yc8MZMuypImdVFSFDMIbG99sbTc2lgPLBfJ1NpksuJ+MpkXUcBguWoil0r7WWK9nqHxhFoav9HeZeu5muMgQDKx6sbte7SJMe0DGYtkAvd5m9Jo6y62T9hYGVA9bTUKObCHqtDmGwFO4Mdlu8GGHWEAys6mAz99VUknOKAVAWBlZ3h3usF8AII4NFWcooLrafkbTpGUkWBmfV24Uv8UAsnvmpjelNFuZxkYXzLabA+qYcNGwGkUd6bS/CO8n3G2H5m1GYVptDPsvL+ZWDwIGo7BqFodZafq69kV8KRWC6ep/ZkTebuHbRNhWKSPPft+VVQ2bZvyKCQ36f9dXc8n5AlJWEIZhmLNTzs20efjlY4sv4H0zb9Aej/fbJ4Jb4YSuaDOp9ZofFsXh90Gt98+7T3qKUVEXdZjk7tbPZNN1Wxy9vhKWvxazSipqG8zBN5du0ANwbG7BPhqPybHBLWilkFYmmQk4bHSnYHsB0124O2KeezvwmCUlJOG2M02yi7WU8ZYXThiTTqgQ321hajX+83medwcVaqokHLpLOqD3Tgf3OyE7q9G48Y4uLigXGOMJg0WFlojf6bIvVFexrfJL+DIDaWVcNKYdYIWatg9D2da5H+wy/k/4IMAB5jhZTe9Hz4wAAAABJRU5ErkJggg==)
+    0 5 0 13;
+}
+
+a.backbutton {
+  color: #2E4987;
+}
+
+.left-group {
+  margin-left: 6px;
+  float: left;
+}

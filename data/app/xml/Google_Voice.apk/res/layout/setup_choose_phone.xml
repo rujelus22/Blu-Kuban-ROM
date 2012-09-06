@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/choose_phone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView android:textAppearance="?android:textAppearanceMedium" android:id="@id/prompt_choose_phone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="2" android:layout_weight="0.0" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setup_page_choose_phone_prompt" android:layout_weight="0.0" />
+    <ListView android:layout_gravity="top|center" android:id="@id/phones" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonBar" parent="@android:style/ButtonBar" />
+    <style name="AlertDialog">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@android:drawable/alert_dark_frame</item>
+        <item name="android:layout_margin">8.0dip</item>
+    </style>
+    <style name="TextAppearance" />
+    <style name="TextAppearance.WindowTitle" parent="@style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/window_title_foreground</item>
+    </style>
+    <style name="WindowTitleBackground">
+        <item name="android:background">@color/window_title_background</item>
+    </style>
+    <style name="WindowTitle">
+        <item name="android:textAppearance">@style/TextAppearance.WindowTitle</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="WidgetTextViewListSeparator">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/list_separator_background</item>
+        <item name="android:paddingLeft">5.0sp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">25.0dip</item>
+    </style>
+    <style name="WidgetProgressBarHorizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+    </style>
+    <style name="WidgetProgressBarSmallTitle" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:paddingLeft">14.0dip</item>
+        <item name="android:paddingRight">15.0dip</item>
+        <item name="android:maxWidth">16.0dip</item>
+        <item name="android:maxHeight">16.0dip</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDuration">3500</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:minWidth">16.0dip</item>
+        <item name="android:minHeight">16.0dip</item>
+    </style>
+    <style name="NewsTicker" />
+    <style name="NewsTicker.Title" parent="@style/NewsTicker">
+        <item name="android:maxLines">2</item>
+    </style>
+    <style name="NewsTicker.Label" parent="@style/NewsTicker" />
+    <style name="CustomWindowTitle">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:id">@id/custom_window_title</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">?android:windowTitleSize</item>
+    </style>
+    <style name="CustomWindowTitleText" parent="@style/WindowTitle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:id">@android:id/title</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="CustomWindowTitleAction">
+        <item name="android:background">@drawable/title_button</item>
+        <item name="android:layout_width">?android:windowTitleSize</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+    <style name="CustomWindowTitleHome" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_home</item>
+        <item name="android:src">@drawable/ic_title_home</item>
+        <item name="android:contentDescription">@string/title_home_description</item>
+    </style>
+    <style name="CustomWindowTitleAdd" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_add</item>
+        <item name="android:src">@drawable/ic_title_add</item>
+        <item name="android:contentDescription">@string/title_add_description</item>
+    </style>
+    <style name="CustomWindowTitleRefresh" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_refresh</item>
+        <item name="android:src">@drawable/ic_title_refresh</item>
+        <item name="android:contentDescription">@string/title_refresh_description</item>
+    </style>
+    <style name="CustomWindowTitleShare" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_share</item>
+        <item name="android:src">@drawable/ic_title_share</item>
+        <item name="android:contentDescription">@string/title_share_description</item>
+    </style>
+    <style name="CustomWindowTitleSearch" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_search</item>
+        <item name="android:src">@drawable/ic_title_search</item>
+        <item name="android:contentDescription">@string/title_search_description</item>
+    </style>
+    <style name="CustomWindowTitleStar" parent="@style/CustomWindowTitleAction">
+        <item name="android:id">@id/btn_title_star</item>
+        <item name="android:button">@drawable/ic_title_star</item>
+        <item name="android:contentDescription">@string/title_star_description</item>
+    </style>
+    <style name="CustomWindowTitleProgressCircular" parent="@style/WidgetProgressBarSmallTitle">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:id">@id/progress_circular</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="CustomWindowTitleProgressHorizontal" parent="@style/WidgetProgressBarHorizontal">
+        <item name="android:id">@id/progress_horizontal</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:max">10000</item>
+    </style>
+    <style name="CustomWindowTitleSeparator">
+        <item name="android:background">@color/window_title_separator</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="WidgetTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColorLink">@color/link_text_dark</item>
+        <item name="android:textColorLinkInverse">@color/link_text_light</item>
+    </style>
+    <style name="Theme" />
+    <style name="Theme.Reader" parent="@android:style/Theme.Holo">
+        <item name="android:windowTitleSize">@dimen/window_title_size</item>
+        <item name="android:windowTitleStyle">@style/WindowTitle</item>
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+        <item name="android:progressBarStyleHorizontal">@style/WidgetProgressBarHorizontal</item>
+        <item name="android:textViewStyle">@style/WidgetTextView</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:listSeparatorTextViewStyle">@style/WidgetTextViewListSeparator</item>
+        <item name="android:progressBarStyleSmallTitle">@style/WidgetProgressBarSmallTitle</item>
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+        <item name="listSelector">@android:drawable/list_selector_background</item>
+    </style>
+    <style name="Theme.Reader.DialogWhenLarge" parent="@style/Theme.Reader" />
+    <style name="ThemeHolo" parent="@android:style/Theme.Holo">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+    </style>
+    <style name="ThemeHoloDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+    </style>
+    <style name="ThemeHoloDialogWhenLarge" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+    </style>
+    <style name="ThemeHoloDialogWhenLargeNoActionBar" parent="@android:style/Theme.Holo.Wallpaper.NoTitleBar">
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">?android:buttonStyle</item>
+    </style>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Выполнять все вызовы с помощью Google Voice</item>
+        <item>Использовать Google Voice только для международных вызовов</item>
+        <item>Не выполнять вызовы с помощью Google Voice</item>
+        <item>Спрашивать каждый раз при вызове</item>
+        <item>Спрашивать каждый раз при международном вызове</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Каждые 5 минут</item>
+        <item>Каждые 10 минут</item>
+        <item>Каждые 15 минут</item>
+        <item>Каждые 20 минут</item>
+        <item>Каждые 30 минут</item>
+        <item>Каждые 60 минут</item>
+        <item>Никогда</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Использовать существующий номер Google Voice</item>
+        <item>Использовать этот номер телефона</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>При звонке и отправке сообщения с этого номера будет отображаться номер Google Voice</item>
+        <item>Мой номер в Google Voice будет изменен</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Повторить попытку с помощью Google Voice</item>
+        <item>Позвонить без использования Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Позвонить с помощью Google Voice</item>
+        <item>Позвонить без использования Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Вызов</item>
+        <item>Интерактивный вызов</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Через Google Voice</item>
+        <item>Через чат</item>
+    </string-array>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Викор. Google Voice для всіх дзвінків</item>
+        <item>Викор. Google Voice лише для міжнар. дзвінків</item>
+        <item>Не викор. Google Voice для жодних дзвінків</item>
+        <item>Запитувати при кожному дзвінку</item>
+        <item>Запитувати при кожному міжнародному дзвінку</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Кожні 5 хвилин</item>
+        <item>Кожні 10 хвилин</item>
+        <item>Кожні 15 хвилин</item>
+        <item>Кожні 20 хвилин</item>
+        <item>Кожні 30 хвилин</item>
+        <item>Кожні 60 хвилин</item>
+        <item>Ніколи</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Використати мій існуючий номер Google Voice</item>
+        <item>Використати цей номер телефону</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Дзвінки чи SMS із цього телефону відображатимуть мій номер Google Voice</item>
+        <item>Мій номер Google Voice буде замінено.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Повт. за доп. Google Voice</item>
+        <item>Набрати без Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Дзв. за доп. Google Voice</item>
+        <item>Набрати без Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Набрати</item>
+        <item>Інтерактивний номер</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Через програму Google Voice</item>
+        <item>Через програму для обміну повідомленнями</item>
+    </string-array>
+</resources>

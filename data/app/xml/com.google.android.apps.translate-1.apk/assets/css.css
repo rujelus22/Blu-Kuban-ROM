@@ -1,0 +1,279 @@
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    word-wrap: break-word;
+    padding-bottom: 50px;
+}
+
+div {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* arabic font */
+:lang(ar) {
+    font-family: ar;
+    font-size: 1.25em;
+}
+/* hebrew font */
+:lang(iw) {
+    font-family: iw;
+}
+/* phonetic font */
+.phonetic, #translit {
+    font-family: phonetic;
+}
+/* right to left language */
+.rtl {
+  direction: rtl;
+}
+
+/* small font */
+.panel, .header, .content, #translit, .dictContent, .expand {
+    font-size: 0.875em;
+}
+/* medium font */
+.word {
+    font-size: 1.125em;
+}
+/* large font */
+#message, #trans {
+    font-size: 1.375em;
+}
+/* Do not use font size set before, then the font sizes of their chidren's could be used. */
+#transPanel .content, #primaries .content, #dictionary .content {
+    font-size: 1em;
+}
+
+/* colors */
+/* message color */
+.MESSAGE, #dictMessage, #srcLang, #alpha {
+    color: #606060;
+}
+/* error color */
+.ERROR {
+    color: #900000;
+}
+/* secondary color */
+.termLabel {
+    color: #323232;
+}
+/* tertiary color */
+#translit {
+    color: #939393;
+}
+/* secondary label color */
+#dictionary .header, #spellings .header, #primaries .header, #dictMessage .header {
+    color: #3e5999;
+}
+
+/* panels */
+.section, #transPanel, #message {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.header {
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+.content {
+    margin-top: 10px;
+}
+
+.section>:first-child:before {
+    content: " ";
+    display: block;
+    border: 1px inset;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+/* translate */
+#transPanel {
+    margin-bottom: 7px;
+}
+
+#srcLang, #message, #trans {
+    padding-top: 3px;
+}
+
+#translit {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#srcLang, #alpha, #message, #dictMessage {
+  /* Source language & alpha message is in UI language.
+   * Do not apply target language direction
+   */
+  direction: ltr;
+}
+
+/* dictionary */
+.word {
+    padding-bottom: 1px;
+}
+
+/* simple dictionary*/
+#dictionary .dictContent {
+    line-height: 1.5em;
+}
+
+/* rich dictionary */
+.innerword>.term {
+    font-weight: bold;
+}
+
+.containerLabel {
+    font-weight: bold;
+}
+
+#attribution {
+    text-align: right;
+}
+
+ol, ul {
+    padding-left: 0px;
+}
+
+ol>li, ol>ul {
+    margin-left: 30px;
+}
+
+ol, ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+ol>li {
+    margin-bottom: 4px;
+}
+
+ul>li {
+    margin-left: 18px;
+}
+
+ol>ul>li {
+    margin-left: 10px;
+}
+
+ol ul {
+    list-style-type: disc;
+}
+
+/* images in rich dictionary */
+.image {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+.image>* {
+    display: block;
+}
+
+/* controls */
+.speaker, .star, .superSize {
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px; height: 27px;
+}
+#transPanel .speaker, .star, .superSize {
+    margin-left: 0px;
+    margin-right: 24px;
+}
+.rtl #transPanel .speaker, .rtl .star, .rtl .superSize {
+    margin-left: 24px;
+    margin-right: 0px;
+}
+.speaker {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.star {
+    content: url(images/ic_starinactive_normal.png);
+}
+.star.pressed {
+    content: url(images/ic_starinactive_focused.png);
+}
+.star.checked {
+    content: url(images/ic_staractive_normal.png);
+}
+.star.checked.pressed {
+    content: url(images/ic_staractive_focused.png);
+}
+
+.speaker>* {
+    position: absolute;
+    width: 27px; height: 27px;
+    margin: 0px;
+    display: block;
+}
+.speaker>.speakerImage {
+    content: url(images/ic_listen_normal.png);
+}
+.speaker>.spinner {
+    width: 22px; height: 22px;
+    padding: 2px;
+}
+.speaker>.white {
+    position: absolute;
+    background-color: white;
+}
+.speaker.pressed>.speakerImage {
+    content: url(images/ic_listen_pressed.png);
+}
+.speaker.loading>.white {
+    display: none
+}
+.speaker.loading>.speakerImage {
+    display: none;
+}
+
+.superSize {
+    content: url(images/btn_zoom_normal.png);
+}
+.superSize.pressed {
+    content: url(images/btn_zoom_pressed.png);
+}
+
+/* expanders */
+.expand {
+    display: block;
+    text-align: right;
+}
+.expand .arrow {
+    width: 32px; height: 32px;
+    vertical-align: middle;
+    content: url(images/expander_unexpanded.png);
+}
+.expand .less {
+    display: none;
+}
+.expand.pressed .arrow {
+    content: url(images/expander_unexpanded_pressed.png);
+}
+.expand.checked .arrow {
+    content: url(images/expander_expanded.png);
+}
+.expand.checked .less {
+    display: inline
+}
+.expand.checked .more {
+    display: none;
+}
+.expand.checked.pressed .arrow {
+    content: url(images/expander_expanded_pressed.png);
+}
+
+.folded .fold {
+    display: none;
+}

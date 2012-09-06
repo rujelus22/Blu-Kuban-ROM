@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES 檔案瀏覽器</string>
+    <string name="title_note">ES 文字編輯器</string>
+    <string name="image_browser_title">ES 圖像瀏覽器</string>
+    <string name="video_player_label">ES 媒體播放器</string>
+    <string name="app_zip">ES 壓縮查看器</string>
+</resources>

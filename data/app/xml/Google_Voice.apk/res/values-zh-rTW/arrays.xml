@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>使用「Google 語音服務」撥打所有電話</item>
+        <item>僅使用「Google 語音服務」撥打國際電話</item>
+        <item>不使用「Google 語音服務」撥打任何電話</item>
+        <item>每當我撥打電話時詢問</item>
+        <item>每當我打國際電話時詢問</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>每 5 分鐘檢查一次</item>
+        <item>每 10 分鐘檢查一次</item>
+        <item>每 15 分鐘檢查一次</item>
+        <item>每 20 分鐘檢查一次</item>
+        <item>每 30 分鐘檢查一次</item>
+        <item>每 60 分鐘檢查一次</item>
+        <item>永不</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>使用我現有的「Google 語音服務」號碼</item>
+        <item>使用這支手機的號碼</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>使用這支手機撥打電話/傳送簡訊時會顯示我的「Google 語音服務」號碼</item>
+        <item>這會取代我的的「Google 語音服務」號碼</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>使用「Google 語音服務」重試</item>
+        <item>不使用「Google 語音服務」撥打電話</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>使用「Google 語音服務」撥打電話</item>
+        <item>不使用「Google 語音服務」撥打電話</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>撥號</item>
+        <item>點選通話</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>透過 Google 語音服務應用程式</item>
+        <item>透過簡訊應用程式</item>
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_plus1" android:id="@id/menu_plus_one" android:title="@string/menu_add_plus_one" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_remove_plus1" android:id="@id/menu_remove_plus1" android:title="@string/menu_remove_plus_one" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_edit" android:id="@id/menu_edit" android:title="@string/menu_edit" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_reshare" android:id="@id/menu_reshare_post" android:title="@string/menu_reshare_post" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/menu_refresh" android:title="@string/menu_refresh" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_map" android:id="@id/menu_show_post_location" android:title="@string/menu_show_post_location" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_mute" android:id="@id/menu_mute_post" android:title="@string/menu_mute_post" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_report_spam" android:id="@id/menu_report_abuse" android:title="@string/menu_report_abuse" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/menu_remove_post" android:title="@string/menu_remove_post" android:showAsAction="never" />
+</menu>

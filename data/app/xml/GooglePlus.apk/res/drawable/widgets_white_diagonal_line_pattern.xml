@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#ff1a1a1a" />
+        </shape>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/widgets_white_diagonal_line_tile" android:tileMode="repeat" />
+    </item>
+</layer-list>

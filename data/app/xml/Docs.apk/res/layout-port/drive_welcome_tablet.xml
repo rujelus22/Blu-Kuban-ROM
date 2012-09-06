@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:drawableTop="@drawable/logo_drive_big" style="@style/MigrationModalScreen.DriveWelcome"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

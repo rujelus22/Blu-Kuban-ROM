@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_feature_new">नवीन!</string>
+    <string name="label_feature_alpha">अल्फा!</string>
+    <string name="label_feature_beta">बीटा!</string>
+    <string name="label_suggested_translations">सूचविलेले अनुवाद</string>
+    <string name="label_translate_to">यामध्ये अनुवाद करा:</string>
+    <string name="label_translate_from">यामधून अनुवाद करा:</string>
+    <string name="annotation_rencently_used">अलीकडे वापरलेले</string>
+    <string name="annotation_ui_language">डिव्हाइसची भाषा</string>
+    <string name="summary_conversation_input_confirm">अनुवाद करण्यापूर्वी पुष्टीकरणाची प्रतीक्षा करा</string>
+    <string name="title_sms_translation">SMS चा अनुवाद</string>
+    <string name="title_text_translation">मजकूर संदेशाचा अनुवाद</string>
+    <string name="conversation_mode">"संभाषण मोड "</string>
+    <string name="conversation_my_language">माझी भाषा:</string>
+    <string name="conversation_their_language">त्यांची भाषा:</string>
+    <string name="label_start_conversation">संभाषण प्रारंभ करा</string>
+    <string name="label_enter_conversation">संभाषण मोड प्रविष्ट करा</string>
+    <string name="label_speak_in_language">मराठीमध्ये बोला</string>
+    <string name="label_reply_in_language">"मराठीमध्ये उत्तर द्या "</string>
+    <string name="label_speak_more_in_language">अधिक मराठी बोला</string>
+    <string name="label_speak_again">पुन्हा बोला</string>
+    <string name="label_more_language">अधिक मराठी</string>
+    <string name="label_speak_now">आता बोला</string>
+    <string name="label_did_you_say">आपण असे म्हटले:</string>
+    <string name="label_about_to_speak">बोलण्याबद्दल ...</string>
+    <string name="label_right">उजवे</string>
+    <string name="label_short_wrong">चूक</string>
+    <string name="label_ok">ओके</string>
+    <string name="label_cancel">रद्द करा</string>
+    <string name="label_conversation_instruction">%s मध्ये निर्देश:</string>
+    <string name="label_conversation_instruction_native">मराठीमध्ये निर्देश:</string>
+    <string name="label_continue">सुरू ठेवा</string>
+    <string name="label_voice_recognition_howto">अनुवाद करण्यासाठी, कृपया आपल्याला पुढील स्क्रीनवर %s दिसल्यानंतर बोला.</string>
+    <string name="label_continue_to_proceed">"पुढे चालू ठेवण्यासाठी सुरू ठेवा दाबा. "</string>
+    <string name="label_conversation_mode_green_howto">हिरवे %s दाबा आणि बोलण्यास सुरवात करा. Google आपल्या बोलण्याचा अनुवाद करेल आणि तो मोठ्याने बोलेल.</string>
+    <string name="label_conversation_mode_blue_howto">निळे %s दाबा आणि बोलण्यास सुरवात करा. Google आपल्या बोलण्याचा अनुवाद करेल आणि तो मोठ्याने बोलेल.</string>
+    <string name="label_instruction_for_continue">मराठीमध्ये प्रतिसाद देण्यासाठी हे बटण दाबा. आपल्याला %s दिसल्यानंतर बोला</string>
+</resources>

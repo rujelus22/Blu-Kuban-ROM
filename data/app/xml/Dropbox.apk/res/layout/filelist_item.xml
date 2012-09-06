@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/filelist_row" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="@dimen/filelistPadding" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <FrameLayout android:duplicateParentState="true" android:layout_width="@dimen/filelistThumbailFrameSize" android:layout_height="@dimen/filelistThumbailFrameSize">
+            <ImageView android:id="@id/filelist_behind_thumb" android:visibility="gone" android:layout_width="@dimen/filelistThumbailFrameSize" android:layout_height="@dimen/filelistThumbailFrameSize" android:src="@drawable/camera_upload_done" />
+            <ImageView android:id="@id/filelist_thumb_frame" android:layout_width="@dimen/filelistThumbailFrameSize" android:layout_height="@dimen/filelistThumbailFrameSize" android:src="@drawable/thumbnail_loading" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/filelist_thumbnail_img_container" android:layout_width="@dimen/filelistThumbnailSize" android:layout_height="@dimen/filelistThumbnailSize">
+                <ImageView android:id="@id/filelist_thumbnail" android:layout_width="@dimen/filelistThumbnailSize" android:layout_height="@dimen/filelistThumbnailSize" android:scaleType="centerCrop" />
+                <ImageView android:layout_gravity="bottom|left|center" android:id="@id/video_icon" android:padding="@dimen/status_video_icon_padding" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/video_icon" />
+            </FrameLayout>
+            <ImageView android:layout_gravity="center" android:id="@id/filelist_icon" android:layout_width="@dimen/filelistIconSize" android:layout_height="@dimen/filelistIconSize" android:scaleType="centerCrop" />
+            <ImageView android:layout_gravity="bottom|right|center" android:id="@id/filelist_sync" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/filelistIconOverlayRight" android:layout_marginBottom="@dimen/filelistIconOverlayBottom" />
+        </FrameLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/filelistIconRight" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/filelistTextMedium" android:textColor="@color/filelist_text_name" android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/filelist_name" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" />
+                <TextView android:textSize="@dimen/filelistTextSmall" android:textColor="@color/filelist_text_small" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/filelist_name_subtext" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:maxLines="1" android:singleLine="true" />
+            </LinearLayout>
+            <FrameLayout android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                <ProgressBar android:id="@id/filelist_status_progressbar" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/filelistIconRight" android:max="100" android:indeterminate="false" style="@style/StatusProgressBar" />
+                <TextView android:textSize="@dimen/filelistTextSmall" android:textColor="@color/filelist_text_small" android:id="@id/filelist_status" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:id="@id/filelist_quickaction_button" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginRight="3.0dip" android:button="@drawable/quickaction_arrow" />
+</LinearLayout>

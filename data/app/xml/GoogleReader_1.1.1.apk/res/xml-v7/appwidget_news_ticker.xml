@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:minWidth="288.0dip" android:minHeight="72.0dip" android:updatePeriodMillis="@integer/appwidget_flip_interval" android:initialLayout="@layout/appwidget_news_ticker" android:configure="com.google.android.apps.reader.app.CreateShortcutActivity"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

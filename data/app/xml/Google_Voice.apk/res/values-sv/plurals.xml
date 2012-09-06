@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice-meddelanden</item>
+        <item quantity="one">1 Google Voice-meddelande</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Det finns %1$d olästa meddelanden</item>
+        <item quantity="one">Det finns ett oläst meddelande</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">missade samtal</item>
+        <item quantity="one">missat samtal</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">mottagna samtal</item>
+        <item quantity="one">mottaget samtal</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">röstmeddelanden</item>
+        <item quantity="one">röstbrevlåda</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">avlyssningar</item>
+        <item quantity="one">avlyssna</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">inspelningar</item>
+        <item quantity="one">inspelning</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">lyssna av röstbrevlåda</item>
+        <item quantity="one">lyssna av röstbrevlåda</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">inställningar</item>
+        <item quantity="one">inställning</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringt nummer</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringt nummer</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringt nummer</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">skickar SMS</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">skickar SMS</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringt nummer</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringda samtal</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">uppringda nummer</item>
+        <item quantity="one">uppringt nummer</item>
+    </plurals>
+</resources>

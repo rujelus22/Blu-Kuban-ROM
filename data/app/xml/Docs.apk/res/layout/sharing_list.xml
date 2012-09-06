@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="1000.0dip" android:layout_weight="1.0">
+        <ListView android:gravity="center_horizontal" android:id="@android:id/list" android:background="@color/sharing_list_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@color/sharing_list_background" android:layout_weight="1.0" android:fastScrollEnabled="true" />
+        <FrameLayout android:gravity="center_horizontal" android:id="@id/empty_sharing_list" android:background="@color/sharing_list_background" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textStyle="bold" android:textColor="@color/sharing_list_empty_text" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/empty_list_message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/empty_sharing_list" />
+        </FrameLayout>
+        <RelativeLayout android:gravity="center_horizontal" android:id="@id/loading_sharing_list" android:background="@color/sharing_list_background" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </FrameLayout>
+    <Button android:id="@id/save_sharing_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_save_sharing" android:onClick="onSaveClicked" />
+    <Button android:id="@id/add_collaborators_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_add_collaborators" android:onClick="onAddClicked" />
+    <Button android:id="@id/create_contact_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_create_contact" android:onClick="onCreateContactClicked" />
+</LinearLayout>

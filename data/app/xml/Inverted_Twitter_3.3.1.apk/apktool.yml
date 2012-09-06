@@ -1,0 +1,6 @@
+version: 1.4.3
+apkFileName: Inverted_Twitter_3.3.1.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/home_page_background_proxy" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:screenEntry="http://schemas.android.com/apk/res/com.google.android.apps.docs">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="51.0dip" android:src="@drawable/launcher_drive_icon" />
+        <TextView android:textColor="@android:color/white" android:gravity="center_horizontal" android:id="@id/main_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="37.0dip" android:layout_marginRight="20.0dip" android:inputType="textMultiLine" />
+        <FrameLayout android:id="@id/progress_indicator" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginTop="30.0dip">
+            <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

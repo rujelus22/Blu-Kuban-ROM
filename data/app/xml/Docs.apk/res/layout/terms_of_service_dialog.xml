@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:orientation="vertical" android:id="@id/terms_of_service_dialog_text" android:background="#ff000000" android:paddingLeft="10.0dip" android:paddingTop="16.0dip" android:paddingRight="10.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:lineSpacingMultiplier="1.2" />
+    <include layout="@layout/term_of_service_dialog_buttons" />
+</LinearLayout>

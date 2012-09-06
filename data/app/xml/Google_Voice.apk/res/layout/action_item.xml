@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingLeft="11.0dip" android:paddingTop="16.0dip" android:paddingRight="11.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:src="@drawable/ic_menu_view_contact" android:adjustViewBounds="true" />
+    <LinearLayout android:gravity="left|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/example_label_name" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ffc0c0c0" android:layout_gravity="center_vertical" android:id="@id/secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/example_label_name" />
+    </LinearLayout>
+</LinearLayout>

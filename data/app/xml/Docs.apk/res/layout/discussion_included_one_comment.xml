@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/discussion_comment_container_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/discussion_comment_header_style">
+        <ImageView android:id="@id/contact_picture" android:src="@drawable/contact_android" android:contentDescription="@string/discussion_contact_picture" style="@style/discussion_comment_contact_picture_style" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/comment_author_date" style="@style/discussion_comment_author_date_style" />
+    </LinearLayout>
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/comment_text" style="@style/discussion_comment_text_style" />
+</LinearLayout>

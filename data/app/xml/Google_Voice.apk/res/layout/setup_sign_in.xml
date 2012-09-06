@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <WebView android:textAppearance="?android:textAppearanceMedium" android:id="@id/sign_in_prompt" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="5" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setup_page_select_pin_prompt" />
+        <EditText android:id="@id/sign_in_username" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:minWidth="250.0dip" android:hint="@string/login_dialog_enter_credentials_prompt_account" android:scrollHorizontally="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:inputType="textEmailAddress" android:imeOptions="actionNext" />
+        <EditText android:id="@id/sign_in_password" android:nextFocusDown="@id/button_right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:minWidth="250.0dip" android:hint="@string/login_dialog_enter_credentials_prompt_password" android:scrollHorizontally="true" android:password="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:imeOptions="actionDone" />
+        <WebView android:textAppearance="?android:textAppearanceMedium" android:id="@id/sign_in_add_account_prompt" android:layout_width="0.0dip" android:layout_height="0.0dip" android:text="@string/setup_page_sign_in_add_account_prompt" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setup_page_sign_in_add_account_prompt" />
+        <Button android:id="@id/add_account" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/setup_page_sign_in_add_account_button" />
+    </LinearLayout>
+</ScrollView>

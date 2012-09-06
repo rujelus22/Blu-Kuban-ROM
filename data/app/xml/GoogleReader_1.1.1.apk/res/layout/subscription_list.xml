@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/spliced" android:background="?listSelector" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/tag_list_item" />
+        <ImageView android:layout_gravity="bottom" android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scrollbarDefaultDelayBeforeFade="0" />
+        <include android:layout_gravity="center" android:id="@id/empty" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/subscription_list_empty" />
+        <include android:layout_gravity="center" android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/loading" />
+        <include android:layout_gravity="center" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/error" />
+    </FrameLayout>
+    <fragment android:name="com.google.android.apps.reader.fragment.ReaderPreferencesFragment" android:id="@id/fragment_subscriptions_reader_preferences" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+</LinearLayout>

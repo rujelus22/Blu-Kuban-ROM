@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/translate_app_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/input_method_view_wrapper" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+            <include layout="@layout/input_panel" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/input_method_view_wrapper" android:background="@color/input_panel_list_view_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <include layout="@layout/input_method_view" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

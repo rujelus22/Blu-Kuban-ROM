@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="realtimechat_acl_options_keys">
+        <item>@string/key_acl_setting_anyone</item>
+        <item>@string/key_acl_setting_my_circles</item>
+        <item>@string/key_acl_setting_extended_circles</item>
+    </array>
+    <array name="realtimechat_acl_options_labels">
+        <item>@string/realtimechat_acl_anyone</item>
+        <item>@string/realtimechat_acl_my_circles</item>
+        <item>@string/realtimechat_acl_extended_circles</item>
+    </array>
+    <string-array name="photo_connection_preference_entry_values">
+        <item>WIFI_OR_MOBILE</item>
+        <item>WIFI_ONLY</item>
+    </string-array>
+    <array name="photo_connection_preference_entry_labels">
+        <item>@string/photo_connection_wifi_and_mobile</item>
+        <item>@string/photo_connection_wifi_only</item>
+    </array>
+    <string-array name="video_connection_preference_entry_values">
+        <item>WIFI_OR_MOBILE</item>
+        <item>WIFI_ONLY</item>
+    </string-array>
+    <array name="video_connection_preference_entry_labels">
+        <item>@string/photo_connection_wifi_and_mobile</item>
+        <item>@string/photo_connection_wifi_only</item>
+    </array>
+    <string-array name="network_statistics_types">
+        <item>Bytes sent+received</item>
+        <item>Bytes sent</item>
+        <item>Bytes received</item>
+        <item>Network+processing time</item>
+        <item>Network time</item>
+        <item>Processing time</item>
+        <item>Requests</item>
+    </string-array>
+    <string-array name="network_statistics_types_units">
+        <item>bytes</item>
+        <item>bytes</item>
+        <item>bytes</item>
+        <item>ms</item>
+        <item>ms</item>
+        <item>ms</item>
+        <item>requests</item>
+    </string-array>
+    <array name="event_activity_invite_strings">
+        <item>@string/event_activity_invite_1</item>
+        <item>@string/event_activity_invite_2</item>
+        <item>@string/event_activity_invite_3</item>
+        <item>@string/event_activity_invite_4</item>
+        <item>@string/event_activity_invite</item>
+    </array>
+    <array name="event_activity_rsvp_yes_strings">
+        <item>@string/event_activity_rsvp_yes_1</item>
+        <item>@string/event_activity_rsvp_yes_2</item>
+        <item>@string/event_activity_rsvp_yes_3</item>
+        <item>@string/event_activity_rsvp_yes_4</item>
+        <item>@string/event_activity_rsvp_yes</item>
+    </array>
+    <array name="event_activity_rsvp_no_strings">
+        <item>@string/event_activity_rsvp_no_1</item>
+        <item>@string/event_activity_rsvp_no_2</item>
+        <item>@string/event_activity_rsvp_no_3</item>
+        <item>@string/event_activity_rsvp_no_4</item>
+        <item>@string/event_activity_rsvp_no</item>
+    </array>
+    <array name="event_activity_checked_in_strings">
+        <item>@string/event_activity_checked_in_1</item>
+        <item>@string/event_activity_checked_in_2</item>
+        <item>@string/event_activity_checked_in_3</item>
+        <item>@string/event_activity_checked_in_4</item>
+        <item>@string/event_activity_checked_in</item>
+    </array>
+    <array name="incoming_hangout_widget_2way_targets">
+        <item>@drawable/ic_hangout_ringing_accept</item>
+        <item>@null</item>
+        <item>@drawable/ic_hangout_ringing_ignore</item>
+        <item>@null</item>
+    </array>
+    <array name="incoming_hangout_widget_2way_target_descriptions">
+        <item>@string/hangout_ringing_accept</item>
+        <item>@null</item>
+        <item>@string/hangout_ringing_ignore</item>
+        <item>@null</item>
+    </array>
+    <array name="incoming_hangout_widget_2way_direction_descriptions">
+        <item>@string/hangout_ringing_accept</item>
+        <item>@null</item>
+        <item>@string/hangout_ringing_ignore</item>
+        <item>@null</item>
+    </array>
+    <array name="switcher_item_names">
+        <item>@string/home_stream_label</item>
+        <item>@string/home_screen_profile_label</item>
+        <item>@string/home_screen_huddle_label</item>
+        <item>@string/home_screen_hangout_label</item>
+        <item>@string/home_screen_photos_label</item>
+        <item>@string/home_screen_people_label</item>
+        <item>@string/home_screen_events_label</item>
+        <item>@string/home_screen_local_label</item>
+    </array>
+    <array name="switcher_item_icons">
+        <item>@drawable/ic_nav_home</item>
+        <item>@drawable/ic_nav_profile</item>
+        <item>@drawable/ic_nav_messenger</item>
+        <item>@drawable/ic_nav_start_new_hangout</item>
+        <item>@drawable/ic_nav_photos</item>
+        <item>@drawable/ic_nav_circles</item>
+        <item>@drawable/ic_nav_events</item>
+        <item>@drawable/ic_nav_local</item>
+    </array>
+    <array name="event_spinner_items">
+        <item>@string/events_current_tab_text</item>
+        <item>@string/events_past_tab_text</item>
+    </array>
+    <string-array name="realtimechat_backends">
+        <item>realtime-chat@bot.talk.google.com</item>
+        <item>realtime-chat-dev@bot.talk.google.com</item>
+        <item>realtime-chat-canary@bot.talk.google.com</item>
+    </string-array>
+</resources>

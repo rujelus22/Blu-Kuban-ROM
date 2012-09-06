@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="InsetText">
+        <item name="android:shadowColor">@android:color/black</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+    <style name="Button" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:paddingLeft">@dimen/button_padding</item>
+        <item name="android:paddingRight">@dimen/button_padding</item>
+    </style>
+    <style name="Button.Btn" parent="@style/Button">
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+    <style name="Theme" parent="@android:style/Theme.Black">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColorLink">@color/link_color</item>
+        <item name="refreshableListViewStyle">@style/List.Refreshable</item>
+        <item name="tweetViewStyle">@style/TweetView</item>
+        <item name="cardRowViewStyle">@style/CardRowView</item>
+        <item name="popupEditTextStyle">@style/PopupEditText</item>
+        <item name="shadowTextViewStyle">@android:style/Widget.TextView</item>
+        <item name="notchViewStyle">@style/NotchView</item>
+        <item name="segmentedControlStyle">@style/SegmentedControl</item>
+        <item name="navbarStyle">@style/Navbar</item>
+    </style>
+    <style name="Theme.Dark" parent="@style/Theme">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+    <style name="Theme.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@android:style/TextAppearance.Large</item>
+    </style>
+    <style name="Theme.Compose" parent="@style/Theme.Dark">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateVisible|adjustResize</item>
+    </style>
+    <style name="HoneycombComposeTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:progressBarStyle">@android:style/Widget.ProgressBar.Inverse</item>
+        <item name="android:progressBarStyleSmall">@android:style/Widget.ProgressBar.Small.Inverse</item>
+        <item name="android:progressBarStyleLarge">@android:style/Widget.ProgressBar.Large.Inverse</item>
+        <item name="android:textColorLink">@color/link_color</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateVisible|adjustResize</item>
+        <item name="android:progressBarStyleInverse">@android:style/Widget.ProgressBar</item>
+        <item name="android:progressBarStyleSmallInverse">@android:style/Widget.ProgressBar.Small</item>
+        <item name="android:progressBarStyleLargeInverse">@android:style/Widget.ProgressBar.Large</item>
+        <item name="refreshableListViewStyle">@style/List.Refreshable</item>
+        <item name="tweetViewStyle">@style/TweetView</item>
+        <item name="cardRowViewStyle">@style/CardRowView</item>
+        <item name="popupEditTextStyle">@style/PopupEditText</item>
+        <item name="shadowTextViewStyle">@android:style/Widget.TextView</item>
+        <item name="notchViewStyle">@style/NotchView</item>
+        <item name="segmentedControlStyle">@style/SegmentedControl</item>
+        <item name="navbarStyle">@style/Navbar</item>
+    </style>
+    <style name="ComposeTheme" parent="@style/Theme.Compose" />
+    <style name="Button.Submit" parent="@style/Button">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:background">@drawable/btn_submit</item>
+    </style>
+    <style name="Button.Action" parent="@style/Button">
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginLeft">5.0dip</item>
+        <item name="android:layout_marginRight">5.0dip</item>
+    </style>
+    <style name="Button.Start" parent="@style/Button">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:textColor">@color/solid_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:shadowColor">@color/soft_black</item>
+        <item name="android:shadowDy">-1.0</item>
+    </style>
+    <style name="Button.Btn.Follow" parent="@style/Button.Btn">
+        <item name="android:textColor">@color/follow_btn_text</item>
+        <item name="shadowRadius">0.5px</item>
+        <item name="shadowDy">-1.0px</item>
+        <item name="shadowColor">@color/soft_black</item>
+    </style>
+    <style name="IconButton">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="SettingsButton">
+        <item name="android:background">@null</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_proxy_settings_button</item>
+    </style>
+    <style name="Byline">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textColorLink">@color/link_color</item>
+        <item name="android:paddingTop">2.0dip</item>
+    </style>
+    <style name="Navbar">
+        <item name="android:background">@drawable/bg_titlebar</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">44.0dip</item>
+    </style>
+    <style name="Navbar.Signup" parent="@style/Navbar">
+        <item name="android:background">@drawable/bg_titlebar_signup</item>
+    </style>
+    <style name="TitleText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/solid_white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">@color/title_shadow_color</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+    </style>
+    <style name="NavbarTitle" parent="@style/TitleText">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10.0dip</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="NavbarLogo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10.0dip</item>
+        <item name="android:src">@drawable/ic_title_logo</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="NavbarSep">
+        <item name="android:background">@drawable/nav_line_separator</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+    <style name="NavbarProgress" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/standard_spacing</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="NavbarBtn">
+        <item name="android:background">@color/clear</item>
+        <item name="android:layout_width">50.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignWithParentIfMissing">true</item>
+    </style>
+    <style name="Pill" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:background">@null</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">3.0dip</item>
+    </style>
+    <style name="TweetView">
+        <item name="promotedDrawable">@drawable/ic_badge_promoted</item>
+        <item name="politicalDrawable">@drawable/ic_badge_gov</item>
+        <item name="lineSpacingMultiplier">1.2</item>
+        <item name="lineSpacingExtra">0.0dip</item>
+        <item name="contentSize">@dimen/font_size_default</item>
+        <item name="contentColor">@color/list_item_text</item>
+        <item name="bylineSize">@dimen/font_size_small</item>
+        <item name="bylineColor">@color/list_item_secondary_text</item>
+        <item name="timestampColor">@color/list_item_timestamp_text</item>
+        <item name="iconSpacing">@dimen/icon_spacing</item>
+        <item name="placeholderDrawable">@drawable/ic_no_profile_photo_md</item>
+        <item name="retweetDrawable">@drawable/ic_badge_retweet</item>
+        <item name="dogearRTFavDrawable">@drawable/ic_dogear_both</item>
+        <item name="dogearRTDrawable">@drawable/ic_dogear_rt</item>
+        <item name="dogearFavDrawable">@drawable/ic_dogear_fave</item>
+        <item name="topPillDrawable">@drawable/ic_badge_topt</item>
+        <item name="locationIcon">@drawable/ic_tweet_attr_geo</item>
+        <item name="mediaIcon">@drawable/ic_tweet_attr_photo</item>
+        <item name="replyIcon">@drawable/ic_tweet_attr_convo</item>
+        <item name="playerIcon">@drawable/ic_tweet_attr_video</item>
+        <item name="summaryIcon">@drawable/ic_tweet_attr_summary</item>
+        <item name="profileImageMarginTop">2.0px</item>
+        <item name="profileImageOverlayDrawable">@drawable/ic_avatar_overlay</item>
+        <item name="profileImageWidth">@dimen/user_image_size</item>
+        <item name="profileImageHeight">@dimen/user_image_size</item>
+        <item name="badgeSpacing">@dimen/badge_spacing</item>
+    </style>
+    <style name="Profile">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Profile.Title" parent="@style/Profile">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="ButtonBar">
+        <item name="android:background">@drawable/btn_bar_bg</item>
+        <item name="android:padding">8.0dip</item>
+        <item name="android:layout_marginLeft">@dimen/standard_spacing</item>
+        <item name="android:layout_marginTop">12.0dip</item>
+        <item name="android:layout_marginRight">@dimen/standard_spacing</item>
+        <item name="android:layout_marginBottom">@dimen/standard_spacing</item>
+    </style>
+    <style name="Toolbar">
+        <item name="android:background">@drawable/tool_bar_background</item>
+        <item name="android:padding">@dimen/standard_spacing</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">46.0dip</item>
+    </style>
+    <style name="SignupForm">
+        <item name="android:background">@color/solid_black</item>
+        <item name="android:paddingTop">@dimen/list_row_padding</item>
+        <item name="android:paddingBottom">@dimen/list_row_padding</item>
+    </style>
+    <style name="SignupLabel">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:paddingLeft">@dimen/list_row_padding</item>
+        <item name="android:paddingRight">@dimen/list_row_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">3.0dip</item>
+    </style>
+    <style name="SignupLabel.Err" parent="@style/SignupLabel">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:background">@drawable/bg_error</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="SignupEdit">
+        <item name="android:textColor">#ffebebeb</item>
+        <item name="android:background">@drawable/textfield_search</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/list_row_padding</item>
+        <item name="android:layout_marginRight">@dimen/list_row_padding</item>
+        <item name="android:drawablePadding">2.0dip</item>
+    </style>
+    <style name="Map">
+        <item name="android:background">@color/action_bar</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/map_height</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="List" parent="@android:style/Widget.ListView">
+        <item name="android:background">@color/bg_list</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">@color/clear</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:divider">@drawable/list_rule</item>
+        <item name="android:dividerHeight">@dimen/divider_thickness</item>
+    </style>
+    <style name="List.Refreshable" parent="@style/List">
+        <item name="android:footerDividersEnabled">false</item>
+        <item name="refreshHeader">@layout/pull_to_refresh</item>
+        <item name="refreshFooter">@layout/list_footer_view</item>
+        <item name="pullText">@string/refresh_pull_down</item>
+        <item name="loadingText">@string/loading</item>
+        <item name="releaseText">@string/refresh_release</item>
+        <item name="pullBackgroundColor">#ff252525</item>
+        <item name="rotateUpAnim">@anim/rotate_up</item>
+        <item name="rotateDownAnim">@anim/rotate_down</item>
+    </style>
+    <style name="List.Refreshable.Card" parent="@style/List.Refreshable">
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0.0px</item>
+    </style>
+    <style name="MiniUserImage">
+        <item name="android:layout_width">@dimen/mini_user_image_size</item>
+        <item name="android:layout_height">@dimen/mini_user_image_size</item>
+        <item name="android:layout_marginTop">@dimen/image_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/icon_spacing</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="ActivityText">
+        <item name="android:gravity">bottom</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="ActivityText.Title" parent="@style/ActivityText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textColor">@color/list_item_text</item>
+    </style>
+    <style name="ActivityText.Byline" parent="@style/ActivityText">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/list_item_secondary_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/text_single_line_height</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="InterestsUserImage">
+        <item name="android:layout_width">@dimen/user_image_size</item>
+        <item name="android:layout_height">@dimen/user_image_size</item>
+        <item name="android:layout_marginTop">@dimen/image_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/icon_spacing</item>
+    </style>
+    <style name="CardRowView">
+        <item name="inset">@dimen/card_inset</item>
+        <item name="cornerRadius">5.0</item>
+        <item name="strokeWidth">1.0dip</item>
+        <item name="strokeColor">@color/card_stroke</item>
+        <item name="dividerHeight">@dimen/divider_thickness</item>
+        <item name="dividerColor">@color/list_divider_color</item>
+    </style>
+    <style name="MediaDescription">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:lineSpacingExtra">1.0sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="MediaByline">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:lineSpacingExtra">6.0sp</item>
+    </style>
+    <style name="Story">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textColor">@color/list_item_text</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="Story.Title" parent="@style/Story">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Story.Byline" parent="@style/Story">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/list_item_secondary_text</item>
+        <item name="android:layout_height">@dimen/text_single_line_height</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Story.SocialProof" parent="@style/Story">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/list_item_secondary_text</item>
+    </style>
+    <style name="CardHeader" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/action_bar</item>
+        <item name="android:paddingLeft">@dimen/list_row_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">32.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="CardFooter" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/badge_bg</item>
+        <item name="android:padding">@dimen/list_row_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:minHeight">@dimen/list_preferred_height</item>
+    </style>
+    <style name="ListFooter" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="IconTitleBtn">
+        <item name="android:background">@drawable/btn_title_icon</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">44.0dip</item>
+    </style>
+    <style name="TextTitleBtn">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/btn_titlebar_text</item>
+        <item name="android:background">@drawable/btn_titlebar</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingRight">10.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">34.0dip</item>
+        <item name="android:layout_marginLeft">@dimen/standard_spacing</item>
+        <item name="android:layout_marginRight">@dimen/standard_spacing</item>
+        <item name="android:minWidth">44.0dip</item>
+        <item name="android:shadowColor">@color/soft_black</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">0.5</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="TextTitleBtn.Dark" parent="@style/TextTitleBtn">
+        <item name="android:background">@drawable/btn_signup_titlebar</item>
+    </style>
+    <style name="PopupEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">#ffebebeb</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/textfield_search</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:popupBackground">@android:drawable/spinner_dropdown_background</item>
+        <item name="dropDownSelector">@android:drawable/list_selector_background</item>
+        <item name="dropDownVerticalOffset">-6.0dip</item>
+        <item name="dropDownHorizontalOffset">0.0dip</item>
+        <item name="dropDownRowHeight">38.0dip</item>
+    </style>
+    <style name="NotchView">
+        <item name="android:background">#ff252525</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="notch">@drawable/ic_card_notch</item>
+        <item name="bg">@drawable/bg_card_notch</item>
+        <item name="offsetLeft">28.0dip</item>
+    </style>
+    <style name="ListItem">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/list_item_text</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="ListRow">
+        <item name="android:textColor">@color/list_item_text</item>
+        <item name="android:background">@drawable/list_row_background</item>
+        <item name="android:padding">@dimen/list_row_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/list_preferred_height</item>
+    </style>
+    <style name="ListRow.Tweet" parent="@style/ListRow">
+        <item name="android:background">@drawable/list_row_background</item>
+    </style>
+    <style name="Chevron">
+        <item name="android:paddingLeft">@dimen/chevron_padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_chevron</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="InsetText.CharCount" parent="@style/InsetText">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/solid_white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">@color/secondary_text</item>
+    </style>
+    <style name="SegmentedControl">
+        <item name="shadowRadius">0.25px</item>
+        <item name="shadowDy">1.0px</item>
+        <item name="shadowColor">@color/solid_black</item>
+        <item name="textSize">@dimen/font_size_small</item>
+        <item name="textColor">@color/solid_white</item>
+        <item name="src">@drawable/segmented_control</item>
+    </style>
+    <style name="Dot">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/dot</item>
+        <item name="android:text">@string/dot</item>
+    </style>
+    <style name="Promoted">
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/list_item_secondary_text</item>
+        <item name="android:text">@string/promoted_trend</item>
+        <item name="android:drawableLeft">@drawable/ic_badge_promoted</item>
+        <item name="android:drawablePadding">@dimen/standard_spacing</item>
+    </style>
+    <style name="HorizontalRule">
+        <item name="android:background">@drawable/list_rule</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/divider_thickness</item>
+    </style>
+    <style name="SearchBox">
+        <item name="android:textSize">@dimen/font_size_default</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:background">@drawable/bg_search</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:hint">@string/search_hint</item>
+        <item name="android:drawableLeft">@drawable/ic_search</item>
+        <item name="android:drawablePadding">10.0dip</item>
+    </style>
+</resources>

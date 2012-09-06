@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice messages</item>
+        <item quantity="one">1 Google Voice message</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">There are %1$d unread messages</item>
+        <item quantity="one">There is an unread message</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">missed calls</item>
+        <item quantity="one">missed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">received calls</item>
+        <item quantity="one">received call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">voicemails</item>
+        <item quantity="one">voicemail</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">listen-ins</item>
+        <item quantity="one">listen-in</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">recordings</item>
+        <item quantity="one">recording</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">voicemail checks</item>
+        <item quantity="one">voicemail check</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">settings</item>
+        <item quantity="one">setting</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">texts</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">texts</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">placed calls</item>
+        <item quantity="one">placed call</item>
+    </plurals>
+</resources>

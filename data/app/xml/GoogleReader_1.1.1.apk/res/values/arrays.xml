@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tag_header_keys_collapsed">
+        <item>home</item>
+        <item>user/-/state/com.google/reading-list</item>
+        <item>user/-/state/com.google/itemrecs/en</item>
+        <item>subscriptions</item>
+    </string-array>
+    <array name="tag_header_labels_collapsed">
+        <item>@string/nav_home</item>
+        <item>@string/nav_reading_list</item>
+        <item>@string/nav_explore</item>
+        <item>@string/nav_subscriptions</item>
+    </array>
+    <array name="tag_header_layouts_collapsed">
+        <item>@layout/stream_list_header</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_header</item>
+    </array>
+    <string-array name="tag_header_keys_expanded">
+        <item>home</item>
+        <item>user/-/state/com.google/reading-list</item>
+        <item>user/-/state/com.google/starred</item>
+        <item>user/-/state/com.google/self</item>
+        <item>user/-/state/com.google/itemrecs/en</item>
+        <item>subscriptions</item>
+    </string-array>
+    <array name="tag_header_labels_expanded">
+        <item>@string/nav_home</item>
+        <item>@string/nav_reading_list</item>
+        <item>@string/nav_starred</item>
+        <item>@string/nav_self</item>
+        <item>@string/nav_explore</item>
+        <item>@string/nav_subscriptions</item>
+    </array>
+    <array name="tag_header_layouts_expanded">
+        <item>@layout/stream_list_header</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_item</item>
+        <item>@layout/stream_list_header</item>
+    </array>
+    <string-array name="ranking_keys">
+        <item>newest</item>
+        <item>oldest</item>
+        <item>auto</item>
+    </string-array>
+    <array name="ranking_labels">
+        <item>@string/ranking_newest</item>
+        <item>@string/ranking_oldest</item>
+        <item>@string/ranking_auto</item>
+    </array>
+    <array name="mark_all_as_read_labels">
+        <item>@string/mark_all_items_as_read</item>
+        <item>@string/mark_items_older_than_a_day_as_read</item>
+        <item>@string/mark_items_older_than_a_week_as_read</item>
+        <item>@string/mark_items_older_than_two_weeks_as_read</item>
+    </array>
+    <integer-array name="mark_all_as_read_offsets">
+        <item>0</item>
+        <item>-86400000</item>
+        <item>-604800000</item>
+        <item>-1209600000</item>
+    </integer-array>
+    <string-array name="text_size_keys">
+        <item>SMALLEST</item>
+        <item>SMALLER</item>
+        <item>NORMAL</item>
+        <item>LARGER</item>
+        <item>LARGEST</item>
+    </string-array>
+    <array name="text_size_labels">
+        <item>@string/text_size_smallest</item>
+        <item>@string/text_size_smaller</item>
+        <item>@string/text_size_normal</item>
+        <item>@string/text_size_larger</item>
+        <item>@string/text_size_largest</item>
+    </array>
+</resources>

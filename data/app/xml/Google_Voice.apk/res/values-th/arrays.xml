@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>ใช้ Google วอยซ์เพื่อทำการโทรทั้งหมด</item>
+        <item>ใช้ Google วอยซ์เฉพาะในการโทรออกต่างประเทศ</item>
+        <item>ไม่ใช้ Google วอยซ์เพื่อทำการโทร</item>
+        <item>ถามทุกครั้งที่ฉันโทรออก</item>
+        <item>ถามทุกครั้งที่ฉันโทรออกต่างประเทศ</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>ทุก 5 นาที</item>
+        <item>ทุก 10 นาที</item>
+        <item>ทุก 15 นาที</item>
+        <item>ทุก 20 นาที</item>
+        <item>ทุก 30 นาที</item>
+        <item>ทุก 60 นาที</item>
+        <item>ไม่มี</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>ใช้หมายเลข Google Voice ที่ฉันมีอยู่</item>
+        <item>ใช้หมายเลขโทรศัพท์นี้</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>การโทร/ส่งข้อความจากโทรศัพท์เครื่องนี้จะแสดงหมายเลข Google Voice ของฉัน</item>
+        <item>ใช้หมายเลขนี้แทนหมายเลข Google Voice ของฉัน</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>ลองอีกครั้งด้วย Google วอยซ์</item>
+        <item>โทรโดยไม่ใช้ Google วอยซ์</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>โทรด้วย Google วอยซ์</item>
+        <item>โทรโดยไม่ใช้ Google วอยซ์</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>โทร</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>ผ่านแอปพลิเคชัน Google วอยซ์</item>
+        <item>ผ่านแอปพลิเคชันรับส่งข้อความ</item>
+    </string-array>
+</resources>

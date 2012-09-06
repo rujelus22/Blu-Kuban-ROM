@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s件のGoogle Voiceメッセージ</item>
+        <item quantity="one">1件のGoogle Voiceメッセージ</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d件の未読メッセージ</item>
+        <item quantity="one">1件の未読メッセージ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">不在着信</item>
+        <item quantity="one">不在着信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">着信</item>
+        <item quantity="one">着信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">ボイスメール</item>
+        <item quantity="one">ボイスメール</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">聞き取り</item>
+        <item quantity="one">聞き取り</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">録音</item>
+        <item quantity="one">録音</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">ボイスメール確認</item>
+        <item quantity="one">ボイスメール確認</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">設定</item>
+        <item quantity="one">設定</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">テキスト</item>
+        <item quantity="one">テキスト</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">テキスト</item>
+        <item quantity="one">テキスト</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">発信</item>
+        <item quantity="one">発信</item>
+    </plurals>
+</resources>

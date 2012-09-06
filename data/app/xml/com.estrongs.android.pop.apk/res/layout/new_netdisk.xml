@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableLayout android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1">
+            <TableRow android:paddingTop="4.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/nn_network_type" android:text="@string/network_type" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="left|center" android:id="@id/netdisktype_icon" android:layout_width="36.0dip" android:layout_height="36.0dip" />
+                    <TextView android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                    <Button android:layout_gravity="right|center" android:id="@id/switch_login_reg_mode" android:layout_width="100.0dip" android:layout_height="fill_parent" android:text="@string/register" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow android:paddingTop="6.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:id="@id/network_location_user" android:text="@string/network_location_user" />
+                <EditText android:id="@id/username" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:paddingTop="6.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:id="@id/nn_network_location_password" android:text="@string/network_location_password" />
+                <EditText android:id="@id/password" android:password="true" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/firstname_row" android:paddingTop="6.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:id="@id/nn_reg_first_name" android:text="@string/reg_first_name" />
+                <EditText android:id="@id/reg_first_name" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/vdisk_weibo_row" android:visibility="gone">
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <CheckBox android:gravity="right" android:layout_gravity="right|center" android:id="@id/nn_is_weibo_account" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="14.0dip" android:layout_gravity="left|center" android:id="@id/nn_is_weibo_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="sina微博帐号" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow android:id="@id/lastname_row" android:paddingTop="6.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:id="@id/nn_reg_last_name" android:text="@string/reg_last_name" />
+                <EditText android:id="@id/reg_last_name" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/image_auth_code_row" android:paddingTop="6.0dip">
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ProgressBar android:gravity="right" android:layout_gravity="center" android:id="@id/download_auth_code_progress" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+                    <ImageView android:layout_gravity="center" android:id="@id/image_auth_code" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_weight="1.0" />
+                    <Button android:layout_gravity="center" android:id="@id/refresh_img_auth_button" android:layout_width="80.0dip" android:layout_height="fill_parent" android:text="@string/menu_fresh" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow android:id="@id/user_auth_code_row" android:paddingTop="6.0dip">
+                <TextView android:textStyle="bold" android:gravity="right" android:id="@id/nn_auth_code" android:text="@string/auth_code" />
+                <EditText android:id="@id/user_auth_code" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/s3_location_row" android:visibility="gone">
+                <TextView android:gravity="right" android:id="@id/s3_location_text" android:text="@string/s3_location_text" />
+                <Button android:textSize="14.0dip" android:gravity="center_vertical" android:id="@id/s3_set_location" android:text="@string/ftp_codepage_set" />
+            </TableRow>
+            <TableRow android:paddingTop="6.0dip">
+                <TextView android:gravity="right" android:id="@id/nn_network_location_display" android:text="@string/network_location_display" />
+                <EditText android:id="@id/display" android:hint="@string/network_location_display_hint_text" style="@style/editInputText" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:background="#55e0e0e0" android:paddingTop="8.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/login" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/ok" />
+            <Button android:id="@id/cancel" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="@string/cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Google Voice für alle Anrufe verwenden</item>
+        <item>Google Voice nur für Anrufe ins Ausland verwenden</item>
+        <item>Google Voice nicht für Anrufe verwenden</item>
+        <item>Jedes Mal fragen, wenn ich einen Anruf tätige</item>
+        <item>Jedes Mal fragen, wenn ich einen Anruf ins Ausland tätige</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Alle 5 Minuten</item>
+        <item>Alle 10 Minuten</item>
+        <item>Alle 15 Minuten</item>
+        <item>Alle 20 Minuten</item>
+        <item>Alle 30 Minuten</item>
+        <item>Alle 60 Minuten</item>
+        <item>Nie</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Vorhandene Google Voice-Nummer verwenden</item>
+        <item>Diese Telefonnummer immer verwenden</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Anrufe/SMS von diesem Telefon zeigen meine Google Voice-Nummer an.</item>
+        <item>Diese Nummer ersetzt meine Google Voice-Nummer.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Erneut mit Google Voice versuchen</item>
+        <item>Anruf ohne Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Mit Google Voice anrufen</item>
+        <item>Anruf ohne Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Anrufen</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Über die Google Voice-App</item>
+        <item>Über die SMS/MMS-App</item>
+    </string-array>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/send_logs_heading" android:layout_weight="0.0" />
+    <EditText android:textColor="#ffffffff" android:gravity="top|left|center" android:id="@id/send_logs_note_text" android:background="@drawable/textfield_search" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:singleLine="false" android:layout_weight="1.0" />
+    <Button android:id="@id/send_logs_ok_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="100.0dip" android:text="@string/send_logs_ok_button_text" android:layout_weight="0.0" />
+</LinearLayout>

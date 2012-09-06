@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="handwriting_background">#80000000</item>
+    <item type="drawable" name="empty">#00000000</item>
+    <item type="drawable" name="input_selector_pressed">#ff155496</item>
+    <item type="drawable" name="input_selector_focused">#ff155496</item>
+    <item type="drawable" name="input_selector_normal">#ff3d3d3d</item>
+    <item type="drawable" name="chip_color_unselected_pressed">#ff155496</item>
+    <item type="drawable" name="chip_color_unselected_focused">#ff155496</item>
+    <item type="drawable" name="chip_color_unselected_normal">#ff000000</item>
+    <item type="drawable" name="chip_color_selected_pressed">#ff155496</item>
+    <item type="drawable" name="chip_color_selected_focused">#ff155496</item>
+    <item type="drawable" name="chip_color_selected_normal">#ff000000</item>
+    <item type="drawable" name="chip_button_color_normal">#00ffffff</item>
+    <item type="drawable" name="chip_button_color_pressed">#ff155496</item>
+    <item type="drawable" name="chip_button_color_focused">#ff155496</item>
+    <item type="drawable" name="conv_speak_button_color_normal">#ff1a1a1a</item>
+    <item type="drawable" name="conv_speak_button_color_pressed">#ff155496</item>
+    <item type="drawable" name="conv_speak_button_color_focused">#ff155496</item>
+    <item type="drawable" name="conv_speak_button_color_disabled">#ff000000</item>
+    <item type="drawable" name="conv_bubble_color_pressed">#dd155496</item>
+    <item type="drawable" name="conv_bubble_color_focused">#dd155496</item>
+    <item type="drawable" name="conv_bubble_color_normal">#00ffffff</item>
+    <item type="drawable" name="edit_panel_action_button_color_normal">#ff1a1a1a</item>
+    <item type="drawable" name="edit_panel_action_button_color_pressed">#ff155496</item>
+    <item type="drawable" name="edit_panel_action_button_color_focused">#ff155496</item>
+    <item type="drawable" name="action_bar_color_pressed">#77155496</item>
+    <item type="drawable" name="action_bar_color_focused">#77155496</item>
+    <item type="drawable" name="action_bar_color_normal">#ff1a1a1a</item>
+    <item type="drawable" name="language_switcher_color_pressed">#77155496</item>
+    <item type="drawable" name="language_switcher_color_focused">#77155496</item>
+    <item type="drawable" name="language_switcher_color_normal">#00000000</item>
+    <item type="drawable" name="supersize_clear_bg_pressed">#77155496</item>
+    <item type="drawable" name="supersize_clear_bg_normal">#00000000</item>
+</resources>

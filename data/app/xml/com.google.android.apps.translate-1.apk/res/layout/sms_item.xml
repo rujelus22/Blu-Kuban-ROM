@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:ellipsize="marquee" android:id="@id/sms_person" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="?android:textColorSecondary" android:ellipsize="marquee" android:id="@id/sms_date" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_alignBottom="@id/sms_person" android:layout_alignParentRight="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:ellipsize="marquee" android:id="@id/sms_body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="10.0dip" android:singleLine="true" android:layout_below="@id/sms_person" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/file_list_item_container" layout="@layout/filelist_item" />
+    <ViewStub android:id="@id/separator_stub" android:layout="@layout/filelist_group_header" android:inflatedId="@id/separator_container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

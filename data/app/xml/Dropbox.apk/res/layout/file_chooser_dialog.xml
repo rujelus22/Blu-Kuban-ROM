@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/whiteBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_bar" android:background="@color/dialogBoxTitleBackground" android:paddingLeft="8.0dip" android:paddingTop="12.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <TextView android:textSize="20.0dip" android:textColor="@color/loginText" android:ellipsize="middle" android:gravity="center" android:id="@id/chooser_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" />
+    </LinearLayout>
+    <include android:id="@id/bottom_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/bottom_bar_light" />
+    <include android:id="@id/filelist_include" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_bar" android:layout_below="@id/top_bar" layout="@layout/filelist_screen" />
+</RelativeLayout>

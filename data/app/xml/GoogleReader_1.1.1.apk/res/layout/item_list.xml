@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:name="com.google.android.apps.reader.fragment.NotSubscribedFragment" android:id="@id/fragment_not_subscribed" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:nextFocusUp="@id/button_subscribe" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:layout_gravity="center" android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/loading" />
+        <include android:layout_gravity="center" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/error" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="center" android:id="@id/empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/empty_stream" />
+    </FrameLayout>
+    <fragment android:name="com.google.android.apps.reader.fragment.ReaderPreferencesFragment" android:id="@id/fragment_stream_reader_preferences" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <fragment android:name="com.google.android.apps.reader.fragment.StreamPreferencesFragment" android:id="@id/fragment_stream_stream_preferences" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+</LinearLayout>

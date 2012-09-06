@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s پیام Google Voice</item>
+        <item quantity="one">1 پیام Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d پیام خوانده نشده وجود دارد</item>
+        <item quantity="one">یک پیام خوانده نشده وجود دارد</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">تماس های بی پاسخ</item>
+        <item quantity="one">تماس بی پاسخ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">تماس های دریافتی</item>
+        <item quantity="one">تماس دریافتی</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">پست های صوتی</item>
+        <item quantity="one">پست صوتی</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">موارد استراق سمع</item>
+        <item quantity="one">استراق سمع</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">موارد ضبط شده</item>
+        <item quantity="one">مورد ضبط شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">بررسی های پست صوتی</item>
+        <item quantity="one">بررسی پست صوتی</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">تنظیمات</item>
+        <item quantity="one">تنظیم</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">متن ها</item>
+        <item quantity="one">متن</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">متن ها</item>
+        <item quantity="one">متن</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">تماس های برقرار شده</item>
+        <item quantity="one">تماس برقرار شده</item>
+    </plurals>
+</resources>

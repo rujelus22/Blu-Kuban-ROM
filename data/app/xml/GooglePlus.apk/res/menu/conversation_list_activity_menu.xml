@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@android:drawable/ic_menu_preferences" android:id="@id/settings_menu_item" android:title="@string/realtimechat_settings_menu_item_text" />
+    <item android:icon="@drawable/ic_menu_feedback" android:id="@id/feedback_menu_item" android:title="@string/home_menu_feedback" android:showAsAction="never" />
+    <item android:icon="@android:drawable/ic_menu_help" android:id="@id/realtimechat_help_menu_item" android:title="@string/realtimechat_help_menu_item_text" />
+    <item android:icon="@drawable/ic_menu_start_new_huddle_action_bar" android:id="@id/realtimechat_new_conversation_menu_item" android:title="@string/realtimechat_new_conversation_menu_item_text" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_search_action_bar" android:id="@id/menu_switcher_search" android:title="@string/menu_search" android:showAsAction="always" />
+</menu>

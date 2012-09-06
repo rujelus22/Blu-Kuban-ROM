@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice-meddelelser</item>
+        <item quantity="one">1 Google Voice-besked</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Der er %1$d ulæste beskeder</item>
+        <item quantity="one">Der er én ulæst besked</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">ubesvarede opkald</item>
+        <item quantity="one">ubesvaret opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">indgående opkald</item>
+        <item quantity="one">indgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">voicemail</item>
+        <item quantity="one">voicemail</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">medhør</item>
+        <item quantity="one">lyt med</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">optagelser</item>
+        <item quantity="one">optagelse</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">kontrol af voicemail</item>
+        <item quantity="one">kontrol af voicemail</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">indstillinger</item>
+        <item quantity="one">indstilling</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">sms-beskeder</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">sms-beskeder</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">udgående opkald</item>
+        <item quantity="one">udgående opkald</item>
+    </plurals>
+</resources>

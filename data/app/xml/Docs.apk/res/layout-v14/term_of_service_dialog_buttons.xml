@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/buttonBarStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include style="?android:attr/buttonBarButtonStyle" layout="@layout/term_of_service_dialog_decline_button" />
+    <include style="?android:attr/buttonBarButtonStyle" layout="@layout/term_of_service_dialog_accept_button" />
+</LinearLayout>

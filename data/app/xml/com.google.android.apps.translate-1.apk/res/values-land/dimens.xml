@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bubble_dialog_height">220.0dip</dimen>
+    <dimen name="bubble_dialog_marginTop">0.0dip</dimen>
+</resources>

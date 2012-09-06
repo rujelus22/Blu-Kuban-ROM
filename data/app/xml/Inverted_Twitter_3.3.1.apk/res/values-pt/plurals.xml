@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="time_secs">
+        <item quantity="other">%ds</item>
+        <item quantity="one">1seg</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="other">%dmin</item>
+        <item quantity="one">1min</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="other">%dh</item>
+        <item quantity="one">1hr</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="other">%dd</item>
+        <item quantity="one">1 dia</item>
+    </plurals>
+    <plurals name="social_proof">
+        <item quantity="other">Tweetado por \"%s\" e outros</item>
+        <item quantity="one">Tweetado por \"%s\"</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_summary_on">
+        <item quantity="other">De %d pessoas</item>
+        <item quantity="one">De 1 pessoa</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_count">
+        <item quantity="other">%d pessoas</item>
+        <item quantity="one">1 pessoa</item>
+    </plurals>
+</resources>

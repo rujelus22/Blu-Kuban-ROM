@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view android:id="@id/drag_knob" android:background="@android:color/transparent" android:paddingTop="@dimen/drag_knob_extra_touch_zone_per_side" android:paddingBottom="@dimen/drag_knob_extra_touch_zone_per_side" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.DragKnobView"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/visible_band" android:background="@color/drag_knob_band" android:layout_width="fill_parent" android:layout_height="@dimen/drag_knob_width_visible_size">
+        <ImageView android:layout_width="@dimen/drag_knob_pic_size" android:layout_height="@dimen/drag_knob_pic_size" android:src="@drawable/drag_knob_circle" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</view>

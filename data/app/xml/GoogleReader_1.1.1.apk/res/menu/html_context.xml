@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/group_link" android:visible="false">
+        <item android:id="@id/menu_link_open" android:title="@string/menu_link_open" />
+        <item android:id="@id/menu_link_share" android:title="@string/menu_link_share" />
+        <item android:id="@id/menu_link_copy" android:title="@string/menu_link_copy" />
+    </group>
+    <group android:id="@id/group_image" android:visible="false">
+        <item android:id="@id/menu_image_view" android:title="@string/menu_image_view" />
+        <item android:id="@id/menu_image_caption" android:title="@string/menu_image_caption" />
+        <item android:id="@id/menu_image_copy" android:title="@string/menu_image_copy" />
+        <item android:id="@id/menu_image_wallpaper" android:title="@string/menu_image_wallpaper" />
+    </group>
+</menu>

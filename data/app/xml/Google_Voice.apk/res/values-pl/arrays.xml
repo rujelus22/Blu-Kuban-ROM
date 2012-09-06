@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Korzystaj z usługi Google Voice przy wykonywaniu wszystkich połączeń</item>
+        <item>Korzystaj z usługi Google Voice tylko przy połączeniach międzynarodowych</item>
+        <item>Nie korzystaj z usługi Google Voice przy wykonywaniu połączeń</item>
+        <item>Pytaj przy każdym wykonywaniu połączenia</item>
+        <item>Pytaj przy każdym wykonywaniu połączenia międzynarodowego</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Co 5 minut</item>
+        <item>Co 10 minut</item>
+        <item>Co 15 minut</item>
+        <item>Co 20 minut</item>
+        <item>Co 30 minut</item>
+        <item>Co 60 minut</item>
+        <item>Nigdy</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Użyj mojego istniejącego numeru Google Voice</item>
+        <item>Użyj tego numeru telefonu</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>W połączeniach/wiadomościach SMS z tego telefonu będzie wyświetlany mój numer Google Voice</item>
+        <item>Spowoduje to zastąpienie mojego numeru Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Ponów próbę przy użyciu usługi Google Voice</item>
+        <item>Połącz bez użycia usługi Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Połącz przy użyciu usługi Google Voice</item>
+        <item>Połącz bez użycia usługi Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Zadzwoń</item>
+        <item>Kliknij, aby połączyć</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Przez Google Voice</item>
+        <item>Przez aplikację SMS</item>
+    </string-array>
+</resources>

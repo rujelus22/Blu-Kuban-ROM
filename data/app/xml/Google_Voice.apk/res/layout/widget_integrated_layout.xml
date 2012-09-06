@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/widget_layout" android:background="@drawable/widget_integrated_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/widget_header" android:background="@drawable/widget_integrated_header_repeat" android:paddingLeft="8.0dip" android:paddingTop="3.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="42.0sp">
+        <ImageView android:id="@id/widget_header_icon" android:paddingRight="4.0dip" android:layout_width="38.0dip" android:layout_height="fill_parent" android:src="@drawable/icon" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="10.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:id="@id/widget_unread_count" android:background="@drawable/widget_unread_background" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:freezesText="true" android:layout_alignRight="@id/widget_header_icon" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/widget_compose" android:paddingLeft="4.0dip" android:layout_width="38.0dip" android:layout_height="fill_parent" android:src="@drawable/widget_integrated_compose" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:id="@id/widget_label" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/app_name" android:singleLine="false" android:shadowColor="@color/widget_label_shadow_color" android:shadowRadius="3.0" android:freezesText="true" android:layout_toLeftOf="@id/widget_compose" android:layout_toRightOf="@id/widget_header_icon" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <ImageView android:background="@drawable/widget_integrated_list_div_top_btm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" />
+    <LinearLayout android:id="@id/widget_inbox" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListView android:id="@id/conversation_list" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="@drawable/widget_integrated_list_div" />
+    </LinearLayout>
+    <ImageView android:background="@drawable/widget_integrated_list_div_top_btm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/widget_integrated_header_repeat" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_weight="0.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/widget_balance_icon" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/widget_integrated_info_bar_balance" />
+        <TextView android:textSize="12.0dip" android:textColor="@android:color/white" android:id="@id/widget_balance_text" android:paddingLeft="2.0dip" android:paddingRight="5.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_weight="1.0"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageView android:id="@id/widget_call_settings_icon" android:paddingLeft="2.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/widget_integrated_info_bar_call_settings" />
+            <TextView android:textSize="12.0dip" android:textColor="@android:color/white" android:id="@id/widget_call_settings_text" android:paddingLeft="2.0dip" android:paddingRight="5.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

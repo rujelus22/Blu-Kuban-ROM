@@ -1,0 +1,25 @@
+.class public interface abstract Lcom/google/goggles/TracingCookieProtos$TracingCookieRequestOrBuilder;
+.super Ljava/lang/Object;
+.source "TracingCookieProtos.java"
+
+# interfaces
+.implements Lcom/google/protobuf/MessageLiteOrBuilder;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/goggles/TracingCookieProtos;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "TracingCookieRequestOrBuilder"
+.end annotation
+
+
+# virtual methods
+.method public abstract getMaxCookies()I
+.end method
+
+.method public abstract hasMaxCookies()Z
+.end method

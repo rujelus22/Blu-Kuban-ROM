@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scroll_container" android:background="@color/comments_thread_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="horizontal" android:id="@id/comment_context" android:paddingLeft="8.0dip" android:paddingTop="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/doc_icon" android:layout_width="23.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_type_doc" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffffffff" android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/comment_header_text" android:paddingLeft="10.0dip" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="Some header text, maybe it's really long? Yeah, that would be awesome." android:maxLines="2" android:minLines="1" android:layout_weight="1.0" />
+            <ImageButton android:id="@id/context_button" android:background="@null" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/right_arrow_normal" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel_yellow" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@android:id/list" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="18.0dip" android:layout_weight="1.0" />
+            <FrameLayout android:background="@color/comments_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <view android:id="@id/comment_view" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.SocialCommentView" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

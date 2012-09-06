@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/discussion_all_discussion_single_discussion_container" android:background="@drawable/discussion_all_discussions_discussion_open_background" style="@style/discussion_single_discussion_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/comment_container_first" layout="@layout/discussion_included_one_comment" />
+    <LinearLayout android:id="@id/comment_container_collapsed_replies" android:background="@drawable/discussion_all_discussions_collapsed_replies_open_background" style="@style/discussion_all_discussions_collapsed_replies_style">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/comment_container_collapsed_text" style="@style/discussion_all_discussions_collapsed_replies_text_style" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/discussion_is_resolved" style="@style/discussion_all_discussions_collapsed_replies_resolved_style" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/comment_separator" android:background="@drawable/discussion_separator_background" style="@style/discussion_separator_style" />
+    <include android:id="@id/comment_container_last" layout="@layout/discussion_included_one_comment" />
+</LinearLayout>

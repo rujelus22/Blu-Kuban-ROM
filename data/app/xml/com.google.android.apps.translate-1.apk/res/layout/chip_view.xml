@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.translate.translation.ChipView android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/mvh_chip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/mvh_input_text_wrapper" android:paddingTop="@dimen/chip_top_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance_Small" android:textColor="@color/debug_view_text_color" android:id="@id/mvh_create_time_stamp" android:background="@color/debug_view_background_color" android:paddingRight="20.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textAppearance="@style/TextAppearance_Small" android:textColor="@color/debug_view_text_color" android:id="@id/mvh_last_access_time_stamp" android:background="@color/debug_view_background_color" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance_Small" android:textStyle="bold" android:textColor="@color/chip_language_color" android:layout_gravity="bottom" android:id="@id/mvh_my_lang" android:paddingLeft="@dimen/dictionary_result_alignment_width" android:paddingBottom="3.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <ImageButton android:gravity="top" android:layout_gravity="top" android:id="@id/btn_little_star_button1" android:background="@drawable/btn_chip_actions" android:paddingTop="@dimen/chip_star_top_margin" android:paddingBottom="@dimen/chip_star_top_margin" android:focusable="true" android:layout_width="@dimen/chip_star_width" android:layout_height="wrap_content" android:contentDescription="@string/description_star" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:id="@id/frame_src_tts_speak" android:layout_width="@dimen/chip_tts_width" android:layout_height="fill_parent">
+                    <include layout="@layout/tts_icon_view" />
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance_Medium" android:textColor="@color/chip_input_text_color" android:id="@id/mvh_input_text" android:paddingLeft="@dimen/chip_left_margin" android:paddingRight="@dimen/chip_right_margin" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </LinearLayout>
+            <TextView android:textAppearance="@style/TextAppearance_Default" android:textColor="@color/chip_transliteration_color" android:id="@id/mvh_src_transliteration" android:paddingLeft="@dimen/dictionary_result_alignment_width" android:paddingRight="@dimen/chip_right_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/chip_divider" android:background="@drawable/chip_color_selected_normal" android:layout_width="fill_parent" android:layout_height="20.0dip">
+            <View android:background="@color/input_panel_list_view_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/chip_divider_margin" android:layout_marginRight="@dimen/chip_divider_margin" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/mvh_translation_text_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:orientation="horizontal" android:paddingLeft="@dimen/dictionary_result_alignment_width" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/TextAppearance_Small" android:textStyle="bold" android:textColor="@color/chip_language_color" android:id="@id/mvh_their_lang" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/frame_trg_tts_speak" android:layout_width="@dimen/chip_tts_width" android:layout_height="fill_parent">
+                    <include layout="@layout/tts_icon_view" />
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance_Medium" android:textColor="@color/chip_unselected_translation_text_color" android:id="@id/mvh_translated_text" android:paddingLeft="@dimen/chip_left_margin" android:paddingRight="@dimen/chip_right_margin" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView android:textAppearance="@style/TextAppearance_Default" android:textColor="@color/chip_transliteration_color" android:id="@id/mvh_trg_transliteration" android:paddingLeft="@dimen/dictionary_result_alignment_width" android:paddingRight="@dimen/chip_right_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <View android:id="@id/mvh_bottom_padding" android:paddingLeft="@dimen/dictionary_result_alignment_width" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+        </LinearLayout>
+        <com.google.android.apps.translate.translation.OutputPanelView android:orientation="horizontal" android:id="@id/panel_output" android:background="@drawable/chip_color_selected_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/output_panel" />
+        </com.google.android.apps.translate.translation.OutputPanelView>
+    </LinearLayout>
+    <ImageButton android:gravity="top" android:layout_gravity="top" android:id="@id/btn_little_star_button2" android:background="@drawable/btn_chip_actions" android:paddingTop="@dimen/chip_closed_star_top_margin" android:paddingBottom="@dimen/chip_star_top_margin" android:focusable="true" android:layout_width="@dimen/chip_star_width" android:layout_height="wrap_content" android:contentDescription="@string/description_star" />
+</com.google.android.apps.translate.translation.ChipView>

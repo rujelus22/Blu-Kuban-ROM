@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Utilisar Google Voice per tut ils cloms</item>
+        <item>Mo utilisar Google Voice per telefons internaziunals</item>
+        <item>Betg utilisar Google Voice per cloms</item>
+        <item>Ma dumandar mintga giada che jau telefonesch</item>
+        <item>"Ma dumandar mintga giada che jau telefonesch en l'ester"</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Mintga 5 minutas</item>
+        <item>Mintga 10 minutas</item>
+        <item>Mintga 15 minutas</item>
+        <item>Mintga 20 minutas</item>
+        <item>Mintga 30 minutas</item>
+        <item>Mintga 60 minutas</item>
+        <item>Mai</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Empruvar danovamain cun Google Voice</item>
+        <item>Clom senza Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Telefonar cun Google Voice</item>
+        <item>Telefonar senza Google Voice</item>
+    </string-array>
+</resources>

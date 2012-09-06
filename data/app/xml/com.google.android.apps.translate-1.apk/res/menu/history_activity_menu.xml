@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_sort_alphabetically" android:id="@id/menu_order_alphabetical" android:title="@string/menu_sort" android:alphabeticShortcut="a" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_recent_history" android:id="@id/menu_order_by_time" android:title="@string/menu_sort" android:alphabeticShortcut="t" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_search" android:id="@id/menu_filter" android:title="@string/menu_filter" android:alphabeticShortcut="f" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_star_active" android:id="@id/menu_star_all" android:title="@string/menu_star_all" android:alphabeticShortcut="s" />
+    <item android:icon="@drawable/ic_menu_star" android:id="@id/menu_unstar_all" android:title="@string/menu_unstar_all" android:alphabeticShortcut="u" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/menu_remove_all" android:title="@string/menu_remove_all" android:alphabeticShortcut="r" />
+    <item android:icon="@drawable/ic_feedback" android:id="@id/menu_feedback" android:title="@string/label_send_feedback" android:showAsAction="never" />
+</menu>

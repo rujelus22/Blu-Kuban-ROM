@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d giorni fa</item>
+        <item quantity="one">%d giorno fa</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d settimane fa</item>
+        <item quantity="one">%d settimana fa</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d su %2$s sono ora disponibili offline.</item>
+        <item quantity="one">%1$d su %2$s è ora disponibile offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Tutti i %1$d file sono ora disponibili offline.</item>
+        <item quantity="one">%1$d file è ora disponibile offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Download di %1$d file in modalità offline.</item>
+        <item quantity="one">Download di %1$d file in modalità offline.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d file</item>
+        <item quantity="one">%1$d file</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d account</item>
+        <item quantity="one">%1$d account</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s non sono indirizzi email validi.</item>
+        <item quantity="one">%s non è un indirizzo email valido.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Sposta %d elementi</item>
+        <item quantity="one">Sposta \"%s\"</item>
+    </plurals>
+</resources>

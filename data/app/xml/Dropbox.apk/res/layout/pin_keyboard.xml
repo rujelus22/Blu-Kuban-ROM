@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageButton android:id="@id/pin1" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num1" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin4" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num4" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin7" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num7" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin_blank" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:layout_width="@dimen/password_keyboard_key_spacing" android:layout_height="wrap_content" android:layout_weight="0.0" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageButton android:id="@id/pin2" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num2" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin5" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num5" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin8" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num8" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin0" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:src="@drawable/sym_keyboard_num0" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:layout_width="@dimen/password_keyboard_key_spacing" android:layout_height="wrap_content" android:layout_weight="0.0" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageButton android:id="@id/pin3" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num3" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin6" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num6" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin9" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:layout_marginBottom="@dimen/password_keyboard_key_spacing" android:src="@drawable/sym_keyboard_num9" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/pin_del" android:background="@drawable/gray_button" android:layout_width="fill_parent" android:layout_height="@dimen/password_keyboard_key_height" android:src="@drawable/sym_keyboard_delete" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

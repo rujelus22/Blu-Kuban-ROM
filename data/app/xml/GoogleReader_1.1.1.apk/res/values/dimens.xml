@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="window_title_size">42.0dip</dimen>
+    <dimen name="item_margin">4.0dip</dimen>
+</resources>

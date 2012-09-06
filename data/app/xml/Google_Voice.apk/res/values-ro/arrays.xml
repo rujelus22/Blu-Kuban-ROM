@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Utilizaţi Google Voice pentru a efectua toate apelurile</item>
+        <item>Utilizaţi Google Voice doar pentru apeluri internaţionale</item>
+        <item>Nu utilizaţi Google Voice pentru a efectua apeluri</item>
+        <item>Întreabă de fiecare dată când efectuez un a apel</item>
+        <item>Întreabă de fiecare dată când efectuez un apel internaţional</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>La fiecare 5 minute</item>
+        <item>La fiecare 10 minute</item>
+        <item>La fiecare 15 minute</item>
+        <item>La fiecare 20 de minute</item>
+        <item>La fiecare 30 de minute</item>
+        <item>La fiecare 60 de minute</item>
+        <item>Niciodată</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Utilizaţi numărul dvs. Google Voice existent</item>
+        <item>Utilizaţi acest număr de telefon</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Apelurile/mesajele text de pe acest telefon vor afişa numărul dvs. Google Voice</item>
+        <item>Acesta va înlocui numărul dvs. Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Încercaţi din nou prin Google Voice</item>
+        <item>Apelaţi fără Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Apelaţi prin Google Voice</item>
+        <item>Apelaţi fără Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Apelaţi</item>
+        <item>Clic pentru apelare</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Prin intermediul aplicaţiei Google Voice</item>
+        <item>Prin intermediul aplicaţiei de mesagerie</item>
+    </string-array>
+</resources>

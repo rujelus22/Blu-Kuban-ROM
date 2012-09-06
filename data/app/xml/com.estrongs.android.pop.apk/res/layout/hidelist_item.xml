@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/openapp_item_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/hidelist_item_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="12.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/fex" android:scaleType="fitCenter" />
+    <LinearLayout android:orientation="vertical" android:id="@id/histlist_item_name_path" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="60.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff111111" android:gravity="bottom|left|center" android:layout_gravity="center" android:id="@id/hidelist_item_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="ES文件管理器" android:scrollHorizontally="false" android:singleLine="true" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff555555" android:gravity="top|left|center" android:layout_gravity="center" android:id="@id/hidelist_item_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="千万用户，装机必备,一定要装啊，必须" android:scrollHorizontally="false" android:singleLine="false" />
+    </LinearLayout>
+    <FrameLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center" android:id="@id/hidelist_delete" android:background="@drawable/hidebutt_bg" android:layout_width="60.0dip" android:layout_height="36.0dip" android:text="@string/clipboard_menu_delete" />
+    </FrameLayout>
+</LinearLayout>

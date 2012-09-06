@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="handwritingStrokeColor" format="reference|color" />
+    <attr name="handwritingStrokeColorRecognized" format="reference|color" />
+    <attr name="handwritingPenDownColor" format="reference|color" />
+    <attr name="handwritingPenUpColor" format="reference|color" />
+</resources>

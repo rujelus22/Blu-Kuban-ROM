@@ -1,0 +1,1176 @@
+.class public final Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+.super Lcom/google/protobuf/GeneratedMessageLite;
+.source "Api2.java"
+
+# interfaces
+.implements Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequestOrBuilder;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/grandcentral/api2/Api2;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "ApiRegisterDestinationRequest"
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    }
+.end annotation
+
+
+# static fields
+.field public static final CLIENT_LOGIN_TOKEN_FIELD_NUMBER:I = 0x1
+
+.field public static final DESTINATION_FIELD_NUMBER:I = 0x2
+
+.field public static PARSER:Lcom/google/protobuf/Parser;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/protobuf/Parser",
+            "<",
+            "Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final defaultInstance:Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+
+# instance fields
+.field private bitField0_:I
+
+.field private clientLoginToken_:Ljava/lang/Object;
+
+.field private destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+.field private memoizedIsInitialized:B
+
+.field private memoizedSerializedSize:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .prologue
+    .line 37689
+    new-instance v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$1;
+
+    invoke-direct {v0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$1;-><init>()V
+
+    sput-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    .line 38072
+    new-instance v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;-><init>(Z)V
+
+    sput-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->defaultInstance:Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    .line 38073
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->defaultInstance:Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    invoke-direct {v0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->initFields()V
+
+    .line 38074
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
+    .registers 10
+    .parameter "input"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v5, -0x1
+
+    .line 37642
+    invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
+
+    .line 37752
+    iput-byte v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    .line 37784
+    iput v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedSerializedSize:I
+
+    .line 37643
+    invoke-direct {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->initFields()V
+
+    .line 37644
+    const/4 v2, 0x0
+
+    .line 37646
+    .local v2, mutable_bitField0_:I
+    const/4 v0, 0x0
+
+    .line 37647
+    .local v0, done:Z
+    :cond_d
+    :goto_d
+    if-nez v0, :cond_73
+
+    .line 37648
+    :try_start_f
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
+
+    move-result v4
+
+    .line 37649
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_78
+
+    .line 37654
+    invoke-virtual {p0, p1, p2, v4}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_d
+
+    .line 37656
+    const/4 v0, 0x1
+
+    goto :goto_d
+
+    .line 37651
+    :sswitch_1e
+    const/4 v0, 0x1
+
+    .line 37652
+    goto :goto_d
+
+    .line 37661
+    :sswitch_20
+    iget v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    or-int/lit8 v5, v5, 0x1
+
+    iput v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    .line 37662
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+    :try_end_2c
+    .catchall {:try_start_f .. :try_end_2c} :catchall_33
+    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_f .. :try_end_2c} :catch_2d
+    .catch Ljava/io/IOException; {:try_start_f .. :try_end_2c} :catch_64
+
+    goto :goto_d
+
+    .line 37680
+    .end local v4           #tag:I
+    :catch_2d
+    move-exception v1
+
+    .line 37681
+    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :try_start_2e
+    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    move-result-object v5
+
+    throw v5
+    :try_end_33
+    .catchall {:try_start_2e .. :try_end_33} :catchall_33
+
+    .line 37686
+    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_33
+    move-exception v5
+
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->makeExtensionsImmutable()V
+
+    throw v5
+
+    .line 37666
+    .restart local v4       #tag:I
+    :sswitch_38
+    const/4 v3, 0x0
+
+    .line 37667
+    .local v3, subBuilder:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;
+    :try_start_39
+    iget v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v5, v5, 0x2
+
+    const/4 v6, 0x2
+
+    if-ne v5, v6, :cond_46
+
+    .line 37668
+    iget-object v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    invoke-virtual {v5}, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;->toBuilder()Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;
+
+    move-result-object v3
+
+    .line 37670
+    :cond_46
+    sget-object v5, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v5, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    iput-object v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    .line 37671
+    if-eqz v3, :cond_5d
+
+    .line 37672
+    iget-object v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    invoke-virtual {v3, v5}, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;->mergeFrom(Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;)Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;
+
+    .line 37673
+    invoke-virtual {v3}, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;->buildPartial()Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    .line 37675
+    :cond_5d
+    iget v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    or-int/lit8 v5, v5, 0x2
+
+    iput v5, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+    :try_end_63
+    .catchall {:try_start_39 .. :try_end_63} :catchall_33
+    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_39 .. :try_end_63} :catch_2d
+    .catch Ljava/io/IOException; {:try_start_39 .. :try_end_63} :catch_64
+
+    goto :goto_d
+
+    .line 37682
+    .end local v3           #subBuilder:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination$Builder;
+    .end local v4           #tag:I
+    :catch_64
+    move-exception v1
+
+    .line 37683
+    .local v1, e:Ljava/io/IOException;
+    :try_start_65
+    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    move-result-object v5
+
+    throw v5
+    :try_end_73
+    .catchall {:try_start_65 .. :try_end_73} :catchall_33
+
+    .line 37686
+    .end local v1           #e:Ljava/io/IOException;
+    :cond_73
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->makeExtensionsImmutable()V
+
+    .line 37688
+    return-void
+
+    .line 37649
+    nop
+
+    :sswitch_data_78
+    .sparse-switch
+        0x0 -> :sswitch_1e
+        0xa -> :sswitch_20
+        0x12 -> :sswitch_38
+    .end sparse-switch
+.end method
+
+.method synthetic constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;Lcom/google/grandcentral/api2/Api2$1;)V
+    .registers 4
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37620
+    invoke-direct {p0, p1, p2}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;-><init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
+    .registers 3
+    .parameter "builder"
+
+    .prologue
+    const/4 v0, -0x1
+
+    .line 37625
+    invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
+
+    .line 37752
+    iput-byte v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    .line 37784
+    iput v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedSerializedSize:I
+
+    .line 37627
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;Lcom/google/grandcentral/api2/Api2$1;)V
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 37620
+    invoke-direct {p0, p1}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Z)V
+    .registers 3
+    .parameter "noInit"
+
+    .prologue
+    const/4 v0, -0x1
+
+    .line 37628
+    invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
+
+    .line 37752
+    iput-byte v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    .line 37784
+    iput v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedSerializedSize:I
+
+    .line 37628
+    return-void
+.end method
+
+.method static synthetic access$45600(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;)Ljava/lang/Object;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 37620
+    iget-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic access$45602(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 37620
+    iput-object p1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method static synthetic access$45702(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;)Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 37620
+    iput-object p1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    return-object p1
+.end method
+
+.method static synthetic access$45802(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;I)I
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 37620
+    iput p1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    return p1
+.end method
+
+.method public static getDefaultInstance()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 1
+
+    .prologue
+    .line 37632
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->defaultInstance:Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method private initFields()V
+    .registers 2
+
+    .prologue
+    .line 37749
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    .line 37750
+    invoke-static {}, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;->getDefaultInstance()Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    .line 37751
+    return-void
+.end method
+
+.method public static newBuilder()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    .registers 1
+
+    .prologue
+    .line 37861
+    #calls: Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;->create()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    invoke-static {}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;->access$45400()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static newBuilder(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    .registers 2
+    .parameter "prototype"
+
+    .prologue
+    .line 37864
+    invoke-static {}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->newBuilder()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;->mergeFrom(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static parseDelimitedFrom(Ljava/io/InputStream;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+    .parameter "input"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37841
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 3
+    .parameter "input"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37847
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Lcom/google/protobuf/ByteString;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+    .parameter "data"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37811
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 3
+    .parameter "data"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37817
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Lcom/google/protobuf/CodedInputStream;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+    .parameter "input"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37852
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 3
+    .parameter "input"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37858
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Ljava/io/InputStream;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+    .parameter "input"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37831
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 3
+    .parameter "input"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37837
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom([B)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+    .parameter "data"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37821
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public static parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 3
+    .parameter "data"
+    .parameter "extensionRegistry"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/InvalidProtocolBufferException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37827
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public getClientLoginToken()Ljava/lang/String;
+    .registers 5
+
+    .prologue
+    .line 37712
+    iget-object v1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    .line 37713
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-eqz v3, :cond_9
+
+    .line 37714
+    check-cast v1, Ljava/lang/String;
+
+    .line 37722
+    .end local v1           #ref:Ljava/lang/Object;
+    :goto_8
+    return-object v1
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_9
+    move-object v0, v1
+
+    .line 37716
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 37718
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 37719
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_18
+
+    .line 37720
+    iput-object v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    :cond_18
+    move-object v1, v2
+
+    .line 37722
+    goto :goto_8
+.end method
+
+.method public getClientLoginTokenBytes()Lcom/google/protobuf/ByteString;
+    .registers 4
+
+    .prologue
+    .line 37727
+    iget-object v1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    .line 37728
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v2, v1, Ljava/lang/String;
+
+    if-eqz v2, :cond_f
+
+    .line 37729
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 37731
+    .local v0, b:Lcom/google/protobuf/ByteString;
+    iput-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->clientLoginToken_:Ljava/lang/Object;
+
+    .line 37734
+    .end local v0           #b:Lcom/google/protobuf/ByteString;
+    :goto_e
+    return-object v0
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_f
+    check-cast v1, Lcom/google/protobuf/ByteString;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v0, v1
+
+    goto :goto_e
+.end method
+
+.method public getDefaultInstanceForType()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+    .registers 2
+
+    .prologue
+    .line 37636
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->defaultInstance:Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
+    .registers 2
+
+    .prologue
+    .line 37620
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->getDefaultInstanceForType()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getDestination()Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+    .registers 2
+
+    .prologue
+    .line 37745
+    iget-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    return-object v0
+.end method
+
+.method public getParserForType()Lcom/google/protobuf/Parser;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/protobuf/Parser",
+            "<",
+            "Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 37701
+    sget-object v0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->PARSER:Lcom/google/protobuf/Parser;
+
+    return-object v0
+.end method
+
+.method public getSerializedSize()I
+    .registers 6
+
+    .prologue
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    .line 37786
+    iget v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedSerializedSize:I
+
+    .line 37787
+    .local v0, size:I
+    const/4 v2, -0x1
+
+    if-eq v0, v2, :cond_9
+
+    move v1, v0
+
+    .line 37799
+    .end local v0           #size:I
+    .local v1, size:I
+    :goto_8
+    return v1
+
+    .line 37789
+    .end local v1           #size:I
+    .restart local v0       #size:I
+    :cond_9
+    const/4 v0, 0x0
+
+    .line 37790
+    iget v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v2, v2, 0x1
+
+    if-ne v2, v3, :cond_19
+
+    .line 37791
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->getClientLoginTokenBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-static {v3, v2}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/protobuf/ByteString;)I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    .line 37794
+    :cond_19
+    iget v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v2, v2, 0x2
+
+    if-ne v2, v4, :cond_26
+
+    .line 37795
+    iget-object v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    invoke-static {v4, v2}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    .line 37798
+    :cond_26
+    iput v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedSerializedSize:I
+
+    move v1, v0
+
+    .line 37799
+    .end local v0           #size:I
+    .restart local v1       #size:I
+    goto :goto_8
+.end method
+
+.method public hasClientLoginToken()Z
+    .registers 3
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 37709
+    iget v1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v1, v1, 0x1
+
+    if-ne v1, v0, :cond_8
+
+    :goto_7
+    return v0
+
+    :cond_8
+    const/4 v0, 0x0
+
+    goto :goto_7
+.end method
+
+.method public hasDestination()Z
+    .registers 3
+
+    .prologue
+    .line 37742
+    iget v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x2
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_8
+    return v0
+
+    :cond_9
+    const/4 v0, 0x0
+
+    goto :goto_8
+.end method
+
+.method public final isInitialized()Z
+    .registers 5
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 37754
+    iget-byte v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    .line 37755
+    .local v0, isInitialized:B
+    const/4 v3, -0x1
+
+    if-eq v0, v3, :cond_d
+
+    if-ne v0, v1, :cond_b
+
+    :goto_9
+    move v2, v1
+
+    .line 37770
+    :goto_a
+    return v2
+
+    :cond_b
+    move v1, v2
+
+    .line 37755
+    goto :goto_9
+
+    .line 37757
+    :cond_d
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->hasClientLoginToken()Z
+
+    move-result v3
+
+    if-nez v3, :cond_16
+
+    .line 37758
+    iput-byte v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    goto :goto_a
+
+    .line 37761
+    :cond_16
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->hasDestination()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1f
+
+    .line 37762
+    iput-byte v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    goto :goto_a
+
+    .line 37765
+    :cond_1f
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->getDestination()Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;->isInitialized()Z
+
+    move-result v3
+
+    if-nez v3, :cond_2c
+
+    .line 37766
+    iput-byte v2, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    goto :goto_a
+
+    .line 37769
+    :cond_2c
+    iput-byte v1, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->memoizedIsInitialized:B
+
+    move v2, v1
+
+    .line 37770
+    goto :goto_a
+.end method
+
+.method public newBuilderForType()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    .registers 2
+
+    .prologue
+    .line 37862
+    invoke-static {}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->newBuilder()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic newBuilderForType()Lcom/google/protobuf/MessageLite$Builder;
+    .registers 2
+
+    .prologue
+    .line 37620
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->newBuilderForType()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public toBuilder()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+    .registers 2
+
+    .prologue
+    .line 37866
+    invoke-static {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->newBuilder(Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;)Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic toBuilder()Lcom/google/protobuf/MessageLite$Builder;
+    .registers 2
+
+    .prologue
+    .line 37620
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->toBuilder()Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected writeReplace()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/ObjectStreamException;
+        }
+    .end annotation
+
+    .prologue
+    .line 37805
+    invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite;->writeReplace()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
+    .registers 5
+    .parameter "output"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x2
+
+    const/4 v1, 0x1
+
+    .line 37775
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->getSerializedSize()I
+
+    .line 37776
+    iget v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x1
+
+    if-ne v0, v1, :cond_12
+
+    .line 37777
+    invoke-virtual {p0}, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->getClientLoginTokenBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
+
+    .line 37779
+    :cond_12
+    iget v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x2
+
+    if-ne v0, v2, :cond_1d
+
+    .line 37780
+    iget-object v0, p0, Lcom/google/grandcentral/api2/Api2$ApiRegisterDestinationRequest;->destination_:Lcom/google/grandcentral/api2/Api2$ApiPushNotificationDestination;
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
+
+    .line 37782
+    :cond_1d
+    return-void
+.end method

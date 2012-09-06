@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="camera_upload_connection_entries">
+        <item>@string/camera_upload_tour_connection_wifi_only</item>
+        <item>@string/camera_upload_tour_connection_wifi_3g</item>
+    </array>
+    <string-array name="camera_upload_connection_values">
+        <item>wifi</item>
+        <item>3g</item>
+    </string-array>
+    <array name="camera_upload_3g_limit_entries">
+        <item>@string/camera_upload_prefs_3g_limit_25mb</item>
+        <item>@string/camera_upload_prefs_3g_limit_none</item>
+    </array>
+    <string-array name="camera_upload_3g_limit_entries_values">
+        <item>limit</item>
+        <item>nolimit</item>
+    </string-array>
+    <array name="settings_legal">
+        <item>@string/settings_tos</item>
+        <item>@string/settings_privacy</item>
+    </array>
+</resources>

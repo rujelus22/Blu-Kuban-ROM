@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/googlevoice_preferences" android:key="@string/googlevoice_preferences_key">
+        <CheckBoxPreference android:title="@string/do_not_disturb_preference_title" android:key="@string/do_not_disturb_preference_key" android:defaultValue="true" />
+        <Preference android:id="@id/call_routing_preference" android:title="@string/call_routing_preference_title" android:key="@string/call_routing_key">
+            <intent android:targetPackage="com.google.android.apps.googlevoice" android:targetClass="com.google.android.apps.googlevoice.CallRoutingActivity" />
+        </Preference>
+        <Preference android:id="@id/forwarding_number_preference" android:title="@string/forwarding_phone_preference_title" android:key="@string/forwarding_number_key">
+            <intent android:targetPackage="com.google.android.apps.googlevoice" android:targetClass="com.google.android.apps.googlevoice.activity.forwardingphone.ForwardingPhoneActivity" />
+        </Preference>
+        <Preference android:id="@id/voicemail_playback_via_speaker_preference" android:title="@string/dialog_title_voicemail_playback" android:key="@string/voicemail_playback_via_speaker_key" android:dialogTitle="@string/dialog_title_voicemail_playback">
+            <intent android:targetPackage="com.google.android.apps.googlevoice" android:targetClass="com.google.android.apps.googlevoice.VoicemailPlaybackActivity" />
+        </Preference>
+        <PreferenceScreen android:title="@string/sync_and_notification_settings_title">
+            <PreferenceCategory android:title="@string/synchronization_settings_title" android:key="@string/synchronization_settings_key">
+                <com.google.android.apps.googlevoice.UpdateIntervalPreference android:title="@string/update_interval_preference_title" android:key="@string/update_interval_key" android:defaultValue="600">
+                    <intent android:targetPackage="com.google.android.apps.googlevoice" android:targetClass="com.google.android.apps.googlevoice.UpdateIntervalActivity" />
+                </com.google.android.apps.googlevoice.UpdateIntervalPreference>
+                <PreferenceScreen android:title="@string/background_data_settings_preference_title" android:key="@string/background_data_key" android:summary="@string/background_data_settings_enabled">
+                    <intent android:action="android.settings.SYNC_SETTINGS" />
+                </PreferenceScreen>
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/notification_settings_title" android:key="@string/notification_settings_key">
+                <ListPreference android:entries="@array/receive_text_messages_preference_options" android:title="@string/receive_text_messages_preference_title" android:key="@string/receive_text_messages_key" android:defaultValue="1" android:entryValues="@array/receive_text_messages_preference_values" />
+                <CheckBoxPreference android:title="@string/text_notifications_preference_title" android:key="@string/text_notifications_key" android:summary="@string/text_notifications_preference_summary" />
+                <CheckBoxPreference android:title="@string/voicemail_notifications_preference_title" android:key="@string/voicemail_notifications_key" android:summary="@string/voicemail_notifications_preference_summary" />
+                <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/notification_vibrate_preference_title" android:key="@string/notification_vibrate_key" android:summary="@string/notification_vibrate_preference_summary" android:defaultValue="true" />
+                <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/notification_light_preference_title" android:key="@string/notification_light_key" android:summary="@string/notification_light_preference_summary" android:defaultValue="true" />
+                <RingtonePreference android:layout="?android:preferenceLayoutChild" android:title="@string/notification_ringtone_preference_title" android:key="@string/notification_ringtone_key" android:defaultValue="content://settings/system/notification_sound" android:ringtoneType="notification" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/vvm_preference_title" android:key="@string/vvm_preference_key" android:summary="@string/vvm_preference_summary" android:defaultValue="false" />
+        <Preference android:id="@id/sign_out_preference" android:title="@string/sign_out_preference_title" android:key="@string/sign_out_preference_key">
+            <intent android:targetPackage="com.google.android.apps.googlevoice" android:targetClass="com.google.android.apps.googlevoice.activity.signout.SignOutActivity" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/information_settings_title" android:key="@string/information_settings_category_key">
+        <PreferenceScreen android:id="@id/legal_information_preference" android:title="@string/legal_information_preference_title">
+            <PreferenceCategory android:title="@string/legal_information_preference_title">
+                <Preference android:id="@id/terms_of_service_preference" android:title="@string/terms_of_service_preference_title" android:key="@string/terms_of_service_preference_key" />
+                <Preference android:id="@id/privacy_policy_preference" android:title="@string/privacy_policy_preference_title" android:key="@string/privacy_policy_preference_key" />
+                <Preference android:id="@id/program_policy_preference" android:title="@string/program_policy_preference_title" android:key="@string/program_policy_preference_key" />
+                <Preference android:id="@id/legal_notices_preference" android:title="@string/legal_notices_preference_title" android:key="@string/legal_notices_preference_key" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <Preference android:enabled="false" android:id="@id/google_voice_number_preference" android:title="@string/google_voice_number_preference_title" android:key="@string/google_voice_number_preference_key" />
+        <Preference android:enabled="false" android:id="@id/build_number_preference" android:title="@string/build_number_preference_title" android:key="@string/build_number_preference_key" />
+    </PreferenceCategory>
+</PreferenceScreen>

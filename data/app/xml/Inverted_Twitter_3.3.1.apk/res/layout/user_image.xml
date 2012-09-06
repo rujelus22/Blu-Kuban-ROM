@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="@dimen/user_image_size" android:layout_height="fill_parent" android:layout_marginTop="@dimen/image_margin_top" android:layout_marginRight="@dimen/image_margin_right"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image" android:layout_width="@dimen/user_image_size" android:layout_height="@dimen/user_image_size" android:scaleType="center" />
+</RelativeLayout>

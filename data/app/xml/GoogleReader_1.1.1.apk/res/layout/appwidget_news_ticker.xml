@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/appwidget_background" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#bbffffff" android:gravity="center" android:id="@id/loading" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/loading" />
+    <LinearLayout android:orientation="vertical" android:id="@id/shortcut" android:background="@drawable/shortcut_selector" android:focusable="true" android:clickable="true" android:layout_width="48.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="6.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <ImageView android:layout_gravity="center" android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="marquee" android:layout_gravity="center" android:id="@id/label" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#ffffffff" android:shadowRadius="1.0" style="@style/NewsTicker.Label" />
+    </LinearLayout>
+    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#bbffffff" android:gravity="center" android:id="@id/no_items" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/empty_stream" android:layout_toRightOf="@id/shortcut" android:layout_alignParentRight="true" />
+    <ViewFlipper android:id="@id/flipper" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:measureAllChildren="false" android:inAnimation="@android:anim/fade_in" android:outAnimation="@android:anim/fade_out" android:flipInterval="@integer/appwidget_flip_interval" android:layout_toRightOf="@id/shortcut" android:layout_alignParentRight="true" android:autoStart="true" />
+</RelativeLayout>

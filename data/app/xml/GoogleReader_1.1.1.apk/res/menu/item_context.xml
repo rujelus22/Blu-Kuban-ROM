@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_mark_read" android:title="@string/menu_mark_read" />
+    <item android:id="@id/menu_mark_unread" android:visible="false" android:title="@string/menu_mark_unread" />
+    <item android:id="@id/menu_mark_previous_as_read" android:title="@string/menu_mark_previous_as_read" />
+    <item android:id="@id/menu_add_star" android:title="@string/menu_add_star" android:titleCondensed="@string/menu_add_star_condensed" />
+    <item android:id="@id/menu_remove_star" android:visible="false" android:title="@string/menu_remove_star" android:titleCondensed="@string/menu_remove_star_condensed" />
+    <item android:id="@id/menu_like" android:title="@string/menu_like" />
+    <item android:id="@id/menu_unlike" android:visible="false" android:title="@string/menu_unlike" />
+    <item android:id="@id/menu_share" android:title="@string/menu_share" />
+    <item android:id="@id/menu_unshare" android:visible="false" android:title="@string/menu_unshare" />
+    <item android:id="@id/menu_share_with_note" android:title="@string/menu_share_with_note" />
+    <item android:id="@id/menu_delete" android:title="@string/menu_delete" />
+    <item android:id="@id/menu_tag" android:title="@string/menu_tag" />
+    <item android:id="@id/menu_send" android:title="@string/menu_send" />
+    <item android:id="@id/menu_email" android:title="@string/menu_email" />
+</menu>

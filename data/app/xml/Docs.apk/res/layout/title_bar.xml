@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/drive_action_bar_background_color" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" style="@style/TitleBar"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/title_container" android:paddingLeft="4.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/logo" android:paddingTop="6.0dip" android:layout_width="43.0dip" android:layout_height="44.0dip" android:src="@drawable/topbar_docshome" android:layout_alignParentLeft="true" />
+        <RelativeLayout android:id="@id/titles" android:paddingLeft="3.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_toRightOf="@id/logo" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+            <TextView android:textColor="@android:color/white" android:id="@id/upper_title" android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentTop="true" style="@style/TitleBar.Text.Smaller" />
+            <TextView android:textColor="@android:color/white" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:singleLine="true" android:shadowColor="#55000000" android:shadowDx="0.0" android:shadowDy="1.0" android:shadowRadius="2.0" android:layout_alignParentBottom="true" style="@style/TitleBar.Text.Main" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ProgressBar android:layout_gravity="center" android:id="@id/layout_sync_progress_light" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="8.0dip" android:indeterminate="true" style="@android:style/Widget.ProgressBar" />
+    <LinearLayout android:id="@id/toolbar" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:id="@id/create_new_doc_action" android:src="@drawable/action_new" style="@style/TitleBar.Action" />
+        <ImageView android:id="@id/search_action" android:src="@drawable/action_search" style="@style/TitleBar.Action" />
+    </LinearLayout>
+</LinearLayout>

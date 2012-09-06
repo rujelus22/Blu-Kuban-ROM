@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s 則 Google 語音服務訊息</item>
+        <item quantity="one">1 則 Google 語音服務訊息</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d 則未讀取的訊息</item>
+        <item quantity="one">1 則未讀取的訊息</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">未接來電</item>
+        <item quantity="one">未接來電</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">已接來電</item>
+        <item quantity="one">已接來電</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">語音信箱</item>
+        <item quantity="one">語音信箱</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">監聽</item>
+        <item quantity="one">監聽</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">錄音</item>
+        <item quantity="one">錄音</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">語音留言聽取</item>
+        <item quantity="one">檢查語音信箱</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">設定</item>
+        <item quantity="one">設定</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">文字</item>
+        <item quantity="one">文字</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">文字</item>
+        <item quantity="one">文字</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">撥出電話</item>
+        <item quantity="one">撥出電話</item>
+    </plurals>
+</resources>

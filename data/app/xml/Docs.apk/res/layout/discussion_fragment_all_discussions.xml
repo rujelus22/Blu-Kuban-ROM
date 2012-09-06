@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/discussion_all_discussions_container" android:background="@drawable/discussion_all_discussions_tile_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/action_new_comment" android:background="@drawable/discussion_all_discussions_new_comment_background" android:focusable="true" android:text="@string/discussion_new_comment" android:layout_weight="1.0" style="@style/discussion_new_comment_style" />
+            <ImageView android:id="@id/action_all_close" android:paddingRight="10.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/action_discussion_close" android:contentDescription="@string/discussion_close_comments" />
+        </LinearLayout>
+        <ListView android:id="@android:id/list" android:divider="@null" style="@style/discussion_list_style" />
+    </LinearLayout>
+    <ProgressBar android:id="@id/discussion_loading_spinner" android:layout_width="50.0dip" android:layout_height="50.0dip" android:indeterminate="true" android:layout_centerInParent="true" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/discussion_no_comments" android:focusable="true" android:text="@string/discussion_no_comments" style="@style/discussion_all_discussions_no_comments_style" />
+</RelativeLayout>

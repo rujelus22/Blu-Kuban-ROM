@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Sử dụng Google Voice để thực hiện tất cả cuộc gọi</item>
+        <item>Chỉ sử dụng Google Voice cho cuộc gọi quốc tế</item>
+        <item>Không sử dụng Google Voice để thực hiện bất kỳ cuộc gọi nào</item>
+        <item>Hỏi mỗi khi tôi thực hiện cuộc gọi</item>
+        <item>Hỏi mỗi khi tôi thực hiện cuộc gọi quốc tế</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>5 phút một lần</item>
+        <item>10 phút một lần</item>
+        <item>15 phút một lần</item>
+        <item>20 phút một lần</item>
+        <item>30 phút một lần</item>
+        <item>60 phút một lần</item>
+        <item>Chưa bao giờ</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Sử dụng số Google Voice hiện tại của tôi</item>
+        <item>Sử dụng số điện thoại này</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Các cuộc gọi/tin nhắn văn bản từ điện thoại này sẽ hiển thị số Google Voice của tôi</item>
+        <item>Số này sẽ thay thế số Google Voice của tôi</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Thử lại bằng Google Voice</item>
+        <item>Gọi không cần Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Gọi bằng Google Voice</item>
+        <item>Gọi không cần Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Gọi</item>
+        <item>Nhấp để gọi</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Qua ứng dụng Google Voice</item>
+        <item>Qua ứng dụng nhắn tin</item>
+    </string-array>
+</resources>

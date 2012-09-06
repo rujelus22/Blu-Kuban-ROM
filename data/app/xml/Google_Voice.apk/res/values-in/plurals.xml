@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s pesan Google Voice</item>
+        <item quantity="one">1 Pesan Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Ada %1$d pesan yang belum dibaca</item>
+        <item quantity="one">Ada pesan yang belum dibaca</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">panggilan tak terjawab</item>
+        <item quantity="one">panggilan tak terjawab</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">panggilan diterima</item>
+        <item quantity="one">panggilan diterima</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">kotak pesan</item>
+        <item quantity="one">kotak pesan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">dengarkan</item>
+        <item quantity="one">dengarkan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">rekaman</item>
+        <item quantity="one">perekaman</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">pemeriksaan kotak pesan</item>
+        <item quantity="one">pemeriksaan kotak pesan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">setelan</item>
+        <item quantity="one">setelan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">teks</item>
+        <item quantity="one">teks</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">teks</item>
+        <item quantity="one">teks</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">panggilan yang dilakukan</item>
+        <item quantity="one">panggilan yang dilakukan</item>
+    </plurals>
+</resources>

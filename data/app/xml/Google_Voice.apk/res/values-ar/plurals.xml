@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s من رسائل Google Voice</item>
+        <item quantity="one">رسالة Google Voice واحدة</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">هناك %1$d من الرسائل غير المقروءة</item>
+        <item quantity="one">هناك رسالة غير مقروءة</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">مكالمات فائتة</item>
+        <item quantity="one">مكالمة فائتة</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">مكالمات مستلمة</item>
+        <item quantity="one">مكالمة مستلمة</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">رسائل البريد الصوتي</item>
+        <item quantity="one">البريد الصوتي</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">استماع</item>
+        <item quantity="one">استماع</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">التسجيلات</item>
+        <item quantity="one">تسجيل</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">اختبارات البريد الصوتي</item>
+        <item quantity="one">التحقق من البريد الصوتي</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">الإعدادات</item>
+        <item quantity="one">إعداد</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">نصوص</item>
+        <item quantity="one">ملف نصي</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">نصوص</item>
+        <item quantity="one">ملف نصي</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">مكالمات تم إجراؤها</item>
+        <item quantity="one">مكالمة تم إجراؤها</item>
+    </plurals>
+</resources>

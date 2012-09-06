@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Използване на Google Voice за провеждане на всички обаждания</item>
+        <item>Google Voice да се използва само за международни обаждания</item>
+        <item>Да не се използва Google Voice за провеждане на никакви разговори</item>
+        <item>Да се пита при всяко мое обаждане</item>
+        <item>Да се пита при всяко мое международно обаждане</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>На всеки 5 мин</item>
+        <item>На всеки 10 мин</item>
+        <item>На всеки 15 мин</item>
+        <item>На всеки 20 мин</item>
+        <item>На всеки 30 мин</item>
+        <item>На всеки 60 мин</item>
+        <item>Никога</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Да се използва съществуващият ми номер в Google Voice</item>
+        <item>Да се използва номера на този телефон</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Обажданията/текстовите съобщения от този телефон ще показват номера ми в Google Voice</item>
+        <item>Това ще замести номера ми в Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Повторен опит с Google Voice</item>
+        <item>Обаждане без Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Обаждане с Google Voice</item>
+        <item>Обаждане без Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Обаждане</item>
+        <item>Обаждане чрез кликване</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Чрез приложението Google Voice</item>
+        <item>Чрез приложението за съобщения</item>
+    </string-array>
+</resources>

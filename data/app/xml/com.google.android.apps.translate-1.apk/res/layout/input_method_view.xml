@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.translate.editor.InputMethodView android:textColor="#ffffffff" android:orientation="vertical" android:id="@id/control_panel" android:background="@drawable/input_selector_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/input_method_selector" android:layout_width="fill_parent" android:layout_height="@dimen/input_selector_height">
+        <ImageButton android:id="@id/input_method_keyboard_button" android:background="#ff000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/input_keyboard" android:scaleType="centerInside" android:layout_weight="0.1" />
+        <View android:id="@id/input_method_divider_1" android:background="@color/input_method_divider" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <ImageButton android:id="@id/input_method_mic_button" android:background="@drawable/btn_conv_speak" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/input_voice" android:scaleType="centerInside" android:layout_weight="0.1" android:contentDescription="@string/description_speech" />
+        <View android:id="@id/input_method_divider_2" android:background="@color/input_method_divider" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <ImageButton android:id="@id/input_method_handwriting_button" android:background="@drawable/btn_conv_speak" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/input_handwriting" android:scaleType="centerInside" android:layout_weight="0.1" android:contentDescription="@string/description_handwriting" />
+        <View android:id="@id/input_method_divider_3" android:background="@color/input_method_divider" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <ImageButton android:id="@id/input_method_camera_button" android:background="@drawable/btn_input_selector" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/input_camera" android:scaleType="centerInside" android:layout_weight="0.1" android:contentDescription="@string/description_camera" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/input_method_placeholder" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</com.google.android.apps.translate.editor.InputMethodView>

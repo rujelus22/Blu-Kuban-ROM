@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/context_menu_translate_input_text" android:title="@string/context_menu_translate" android:alphabeticShortcut="t" />
+    <item android:id="@id/context_menu_translate_translation" android:title="@string/context_menu_translate" android:alphabeticShortcut="t" />
+    <item android:id="@id/context_menu_copy_input_text" android:title="@string/context_menu_copy_text" android:alphabeticShortcut="c" />
+    <item android:id="@id/context_menu_search_input_text" android:title="@string/context_menu_search" android:alphabeticShortcut="q" />
+    <item android:id="@id/context_menu_copy" android:title="@string/context_menu_copy_text" android:alphabeticShortcut="c" />
+    <item android:id="@id/context_menu_search_translation" android:title="@string/context_menu_search" android:alphabeticShortcut="q" />
+    <item android:id="@id/context_menu_share" android:title="@string/menu_share" android:alphabeticShortcut="s" />
+    <item android:id="@id/context_menu_remove" android:title="@string/context_menu_remove" android:alphabeticShortcut="r" />
+</menu>

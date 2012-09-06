@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.plus.views.EventDetailsCardLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.plus.views.EventThemeView android:id="@id/theme" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+    <TextView android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/theme" android:layout_alignParentLeft="true" />
+</com.google.android.apps.plus.views.EventDetailsCardLayout>

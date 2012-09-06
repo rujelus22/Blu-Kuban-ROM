@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditorTheme" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:actionModeBackground">@drawable/action_mode_background</item>
+    </style>
+    <style name="ToolbarButtonsFrame">
+        <item name="android:layout_marginTop">0.0dip</item>
+        <item name="android:layout_marginBottom">2.0dip</item>
+    </style>
+</resources>

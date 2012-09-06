@@ -1,0 +1,61 @@
+.class public interface abstract Lcom/google/grandcentral/api2/Api2$ApiConfirmVerifiedViaSmsRequestOrBuilder;
+.super Ljava/lang/Object;
+.source "Api2.java"
+
+# interfaces
+.implements Lcom/google/protobuf/MessageLiteOrBuilder;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/grandcentral/api2/Api2;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "ApiConfirmVerifiedViaSmsRequestOrBuilder"
+.end annotation
+
+
+# virtual methods
+.method public abstract getClientLoginToken()Ljava/lang/String;
+.end method
+
+.method public abstract getClientLoginTokenBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getCreateNewAccount()Z
+.end method
+
+.method public abstract getPin()Ljava/lang/String;
+.end method
+
+.method public abstract getPinBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getTimezone()Ljava/lang/String;
+.end method
+
+.method public abstract getTimezoneBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getVerificationToken()Ljava/lang/String;
+.end method
+
+.method public abstract getVerificationTokenBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract hasClientLoginToken()Z
+.end method
+
+.method public abstract hasCreateNewAccount()Z
+.end method
+
+.method public abstract hasPin()Z
+.end method
+
+.method public abstract hasTimezone()Z
+.end method
+
+.method public abstract hasVerificationToken()Z
+.end method

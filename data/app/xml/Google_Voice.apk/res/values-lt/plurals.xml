@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s „Google Voice“ pranešimai (-ų)</item>
+        <item quantity="one">1 „Google Voice“ pranešimas</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Yra %1$d neperskaityti (-ų) pranešimai (-ų)</item>
+        <item quantity="one">Yra neperskaitytas pranešimas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">praleisti skambučiai</item>
+        <item quantity="one">praleistas skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">gauti skambučiai</item>
+        <item quantity="one">gautas skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">balso pašto pranešimai</item>
+        <item quantity="one">balso paštas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">klausymai</item>
+        <item quantity="one">klausytis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">įrašai</item>
+        <item quantity="one">įrašoma</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">balso pašto tikrinimai</item>
+        <item quantity="one">balso pašto patikrinimas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">nustatymai</item>
+        <item quantity="one">nustatymas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">teksto pranešimai</item>
+        <item quantity="one">tekstas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">teksto pranešimai</item>
+        <item quantity="one">tekstas</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">išeinantys skambučiai</item>
+        <item quantity="one">išeinantis skambutis</item>
+    </plurals>
+</resources>

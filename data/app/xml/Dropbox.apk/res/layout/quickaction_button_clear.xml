@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:id="@id/quickaction_clear_button" android:text="@string/quickaction_clear" android:drawableTop="@drawable/ic_clear" style="@style/QuickactionButton"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

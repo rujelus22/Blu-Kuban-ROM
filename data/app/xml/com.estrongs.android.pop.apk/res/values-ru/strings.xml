@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES Проводник</string>
+    <string name="title_note">ES Редактор</string>
+    <string name="image_browser_title">Просмотр изображений</string>
+    <string name="video_player_label">ES Медиаплеер</string>
+    <string name="app_zip">ES Архиватор</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Χρήση του Google Voice για την πραγματοποίηση όλων των κλήσεων</item>
+        <item>Χρήση του Google Voice μόνο για διεθνείς κλήσεις</item>
+        <item>Να μη χρησιμοποιείται το Google Voice για την πραγματοποίηση κλήσεων</item>
+        <item>Να ερωτώμαι κάθε φορά που κάνω μια κλήση</item>
+        <item>Να ερωτώμαι κάθε φορά που κάνω διεθνή κλήση</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Κάθε 5 λεπτά</item>
+        <item>Κάθε 10 λεπτά</item>
+        <item>Κάθε 15 λεπτά</item>
+        <item>Κάθε 20 λεπτά</item>
+        <item>Κάθε 30 λεπτά</item>
+        <item>Κάθε 60 λεπτά</item>
+        <item>Ποτέ</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Χρήση του υπάρχοντος αριθμού στο Google Voice</item>
+        <item>Χρησιμοποιήστε τον αριθμό αυτού του τηλεφώνου</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Οι κλήσεις και τα μηνύματα κειμένου από αυτό το τηλέφωνο θα εμφανίζουν τον αριθμό του Google Voice</item>
+        <item>Αυτό θα αντικαταστήσει τον αριθμό μου στο Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Επανάληψη με το Google Voice</item>
+        <item>Κλήση χωρίς το Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Κλήση με το Google Voice</item>
+        <item>Κλήση χωρίς το Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Κλήση</item>
+        <item>Κλικ-για-κλήση</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Μέσω της εφαρμογής Google Voice</item>
+        <item>Μέσω της εφαρμογής ανταλλαγής μηνυμάτων</item>
+    </string-array>
+</resources>

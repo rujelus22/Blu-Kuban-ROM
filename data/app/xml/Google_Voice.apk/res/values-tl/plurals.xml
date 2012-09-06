@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s (na) mensahe sa Google Voice</item>
+        <item quantity="one">1 mensahe sa Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Mayroong %1$d (na) hindi pa nababasang mensahe</item>
+        <item quantity="one">Mayroong hindi pa nababasang mensahe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">mga hindi nasagot na tawag</item>
+        <item quantity="one">hindi nasagot na tawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">mga natanggap na tawag</item>
+        <item quantity="one">natanggap na tawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">mga voicemail</item>
+        <item quantity="one">voicemail</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">mga pakikinig</item>
+        <item quantity="one">makinig</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">mga pag-record</item>
+        <item quantity="one">pag-record</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">mga pagsusuri ng voicemail</item>
+        <item quantity="one">pagsusuri sa voicemail</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">mga setting</item>
+        <item quantity="one">setting</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">mga teksto</item>
+        <item quantity="one">teksto</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">mga teksto</item>
+        <item quantity="one">teksto</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">tinawagan</item>
+        <item quantity="one">tumawag</item>
+    </plurals>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Naudokite „Google Voice“ visiems skambučiams</item>
+        <item>„Google Voice“ naudoti tik tarptautiniams skambučiams</item>
+        <item>Nenaudoti „Google Voice“ skambinant</item>
+        <item>Klausti kaskart, kai skambinu</item>
+        <item>Klausti kaskart, kai atlieku tarptautinį skambutį</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Kas 5 min.</item>
+        <item>Kas 10 min.</item>
+        <item>Kas 15 min.</item>
+        <item>Kas 20 min.</item>
+        <item>Kas 30 min.</item>
+        <item>Kas 60 min.</item>
+        <item>Niekada</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Naudoti esamą „Google Voice“ numerį</item>
+        <item>Naudoti šio telefono numerį</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Skambučiuose / teksto pranešimuose, siunčiamuose iš šio telefono, bus pateikiamas mano „Google Voice“ numeris</item>
+        <item>Tai pakeis mano „Google Voice“ numerį</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Bandyti dar kartą naudojant „Google Voice“</item>
+        <item>Skambinti nenaudojant „Google Voice“</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Skambutis naudojant „Google Voice“</item>
+        <item>Skambinti nenaudojant „Google Voice“</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Skambinti</item>
+        <item>Spustelėti ir skambinti</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Per programą „Google Voice“</item>
+        <item>Per susirašinėjimo pranešimais programą</item>
+    </string-array>
+</resources>

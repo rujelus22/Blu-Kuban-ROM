@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>استخدام Google Voice لإجراء المكالمات</item>
+        <item>استخدام Google Voice فقط للمكالمات الدولية.</item>
+        <item>عدم استخدام Google Voice لإجراء أية مكالمات</item>
+        <item>مطالبتي كل مرة يتم فيها إجراء مكالمة</item>
+        <item>مطالبتي كل مرة يتم فيها إجراء مكالمة دولية</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>كل 5 دقائق</item>
+        <item>كل 10 دقائق</item>
+        <item>كل 15 دقيقة</item>
+        <item>كل 20 دقيقة</item>
+        <item>كل 30 دقيقة</item>
+        <item>كل 60 دقيقة</item>
+        <item>مطلقًا</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>استخدام رقمي الحالي في Google Voice</item>
+        <item>استخدام رقم الهاتف هذا</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>ستعرض المكالمات/الرسائل النصية من هذا الهاتف رقمي في Google Voice.</item>
+        <item>سيؤدي هذا إلى استبدال رقمي في Google Voce.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>إعادة المحاولة باستخدام Google Voice</item>
+        <item>الاتصال بدون استخدام Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>الاتصال باستخدام Google Voice</item>
+        <item>الاتصال بدون استخدام Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>اتصال</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>عبر تطبيق Google Voice</item>
+        <item>عبر تطبيق المراسلة</item>
+    </string-array>
+</resources>

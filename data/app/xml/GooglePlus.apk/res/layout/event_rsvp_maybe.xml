@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/rsvp_spinner_icon_spacing" android:layout_marginRight="@dimen/rsvp_spinner_icon_spacing" android:src="@drawable/icn_events_maybe" android:layout_centerVertical="true" />
+    <com.google.android.apps.plus.views.UpperCaseLabel android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/event_rsvp_maybe_color" android:ellipsize="end" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/event_rsvp_maybe" android:singleLine="true" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true" />
+</RelativeLayout>

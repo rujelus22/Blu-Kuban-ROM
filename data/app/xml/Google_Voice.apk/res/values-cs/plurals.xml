@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Zprávy Google Voice: %1$s</item>
+        <item quantity="one">1 zpráva služby Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Počet nepřečtených zpráv: %1$d</item>
+        <item quantity="one">Nemáte žádnou nepřečtenou zprávu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">zmeškané hovory</item>
+        <item quantity="one">zmeškaný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">přijaté hovory</item>
+        <item quantity="one">přijatý hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">hlasové zprávy</item>
+        <item quantity="one">hlasová zpráva</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">naslouchání</item>
+        <item quantity="one">naslouchání</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">nahrávky</item>
+        <item quantity="one">nahrávka</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">kontroly hlasové schránky</item>
+        <item quantity="one">kontrola hlasové schránky</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">nastavení</item>
+        <item quantity="one">nastavení</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">Uskutečněný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">uskutečněný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">uskutečněný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">texty</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">texty</item>
+        <item quantity="one">text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">uskutečněný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">uskutečněný hovor</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">uskutečněné hovory</item>
+        <item quantity="one">uskutečněný hovor</item>
+    </plurals>
+</resources>

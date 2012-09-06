@@ -1,0 +1,40 @@
+.class public Lcom/google/android/googlelogindist/GoogleLoginServiceNotFoundException;
+.super Landroid/util/AndroidException;
+.source "GoogleLoginServiceNotFoundException.java"
+
+
+# instance fields
+.field private mErrorCode:I
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .registers 3
+    .parameter "errorCode"
+
+    .prologue
+    .line 30
+    invoke-static {p1}, Lcom/google/android/googlelogindist/GoogleLoginServiceConstants;->getErrorCodeMessage(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
+
+    .line 32
+    iput p1, p0, Lcom/google/android/googlelogindist/GoogleLoginServiceNotFoundException;->mErrorCode:I
+
+    .line 33
+    return-void
+.end method
+
+
+# virtual methods
+.method getErrorCode()I
+    .registers 2
+
+    .prologue
+    .line 41
+    iget v0, p0, Lcom/google/android/googlelogindist/GoogleLoginServiceNotFoundException;->mErrorCode:I
+
+    return v0
+.end method

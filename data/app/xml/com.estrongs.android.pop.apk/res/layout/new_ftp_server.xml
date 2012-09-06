@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableLayout android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1">
+            <TableRow android:paddingTop="4.0dip">
+                <TextView android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/nf_network_location" android:text="@string/network_location" />
+                <EditText android:id="@id/location" android:hint="@string/ftp_server_hint_text" style="@style/editInputText" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/nf_network_port" android:text="@string/network_port" />
+                <EditText android:id="@id/port" android:text="21" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/ftp_mode_table_row">
+                <TextView android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/nf_ftp_mode" android:text="@string/ftp_mode" />
+                <RadioGroup android:orientation="horizontal" android:id="@id/ftp_mode">
+                    <RadioButton android:textAppearance="@android:attr/textColorPrimaryDisableOnly" android:textSize="16.0dip" android:id="@id/mode_active" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/ftp_mode_active" />
+                    <RadioButton android:textAppearance="@android:attr/textColorPrimaryDisableOnly" android:textSize="16.0dip" android:id="@id/mode_passive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/ftp_mode_passive" />
+                </RadioGroup>
+            </TableRow>
+            <TableRow android:id="@id/ssl_enable_row" android:visibility="gone">
+                <TextView />
+                <CheckBox android:textSize="14.0dip" android:id="@id/enable_ssl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/network_enable_ssl" />
+            </TableRow>
+            <TableRow>
+                <TextView android:textSize="14.0dip" android:gravity="right" android:id="@id/nf_network_location_user" android:text="@string/network_location_user" />
+                <EditText android:id="@id/username" style="@style/editInputText" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/nf_network_location_password" android:text="@string/network_location_password" />
+                <EditText android:id="@id/password" android:password="true" style="@style/editInputText" />
+            </TableRow>
+            <TableRow android:id="@id/ftp_anonymous_table_row">
+                <TextView />
+                <CheckBox android:id="@id/use_anonymous" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/network_location_anonymous" />
+            </TableRow>
+            <TableRow android:id="@id/ftps_encrypt_row">
+                <TextView android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/nf_ftps_encrypt_text" android:text="@string/ftps_encrypt_text" />
+                <RadioGroup android:orientation="horizontal" android:id="@id/mode_encrypt_group">
+                    <RadioButton android:textAppearance="@android:attr/textColorPrimaryDisableOnly" android:textSize="16.0dip" android:id="@id/mode_implicit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/ftps_encrypt_implicit" />
+                    <RadioButton android:textAppearance="@android:attr/textColorPrimaryDisableOnly" android:textSize="16.0dip" android:id="@id/mode_explicit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/ftps_encrypt_explicit" />
+                </RadioGroup>
+            </TableRow>
+            <TableRow android:id="@id/ftp_codepage_table_row">
+                <TextView android:gravity="right" android:id="@id/nf_ftp_codepage_text" android:text="@string/ftp_codepage_text" />
+                <Button android:textSize="14.0dip" android:gravity="center_vertical" android:id="@id/setencoding" android:text="@string/ftp_codepage_set" />
+            </TableRow>
+            <TableRow android:paddingTop="10.0dip">
+                <TextView android:gravity="right" android:id="@id/nf_network_location_display" android:text="@string/network_location_display" />
+                <EditText android:id="@id/display" android:hint="@string/network_location_display_hint_text" style="@style/editInputText" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:background="#55e0e0e0" android:paddingTop="8.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/login" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/ok" />
+            <Button android:id="@id/cancel" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/cancel" android_layoutMarginLeft="30dip" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

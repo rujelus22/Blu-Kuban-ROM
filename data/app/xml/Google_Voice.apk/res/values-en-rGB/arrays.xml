@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Use Google Voice to make all calls</item>
+        <item>Only use Google Voice for international calls</item>
+        <item>Do not use Google Voice to make any calls</item>
+        <item>Ask every time that I make a call</item>
+        <item>Ask every time that I make an international call</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Every 5 minutes</item>
+        <item>Every 10 minutes</item>
+        <item>Every 15 minutes</item>
+        <item>Every 20 minutes</item>
+        <item>Every 30 minutes</item>
+        <item>Every 60 minutes</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Use my existing Google Voice number</item>
+        <item>"Use this phone's number"</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Calls/text messages from this phone will display my Google Voice number</item>
+        <item>This will replace my Google Voice number</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Retry with Google Voice</item>
+        <item>Call without Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Call with Google Voice</item>
+        <item>Call without Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Call</item>
+        <item>Click to Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via the Google Voice app</item>
+        <item>Via the messaging app</item>
+    </string-array>
+</resources>

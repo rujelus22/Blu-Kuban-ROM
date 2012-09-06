@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/filelistBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.dropbox.android.widget.ThreePieceLayout android:gravity="center" android:layout_gravity="center" android:id="@id/title_bar" android:background="@drawable/bar_silver_top" android:paddingLeft="@dimen/titleBarSidePadding" android:paddingRight="@dimen/titleBarSidePadding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:layout_width="0.0px" android:layout_height="0.0px" />
+        <TextView android:textSize="@dimen/filelistTextMedium" android:textStyle="bold" android:textColor="@color/titleBarText" android:ellipsize="middle" android:gravity="center" android:layout_gravity="center" android:id="@id/title_bar_text" android:paddingTop="@dimen/titleBarTextVerticalPadding" android:paddingBottom="@dimen/titleBarTextVerticalPadding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:maxLines="1" android:singleLine="true" />
+        <ImageButton android:gravity="center" android:id="@id/new_folder_button" android:background="@drawable/gray_button" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/add_folder" />
+    </com.dropbox.android.widget.ThreePieceLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/db_browser_list_item" android:scrollingCache="false" android:cacheColorHint="@color/filelistBackground" android:divider="@drawable/line" android:dividerHeight="1.0px" android:fastScrollEnabled="@bool/fastScroll" />
+        <FrameLayout android:id="@id/empty_list_layout" android:padding="@dimen/emptyListLayoutPadding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/filelist_empty_layout" android:paddingTop="@dimen/filelistEmptyPadding" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/filelist_empty_progress" android:paddingRight="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallInverse" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="@dimen/filelistTextMedium" android:textColor="@color/listEmptyText" android:gravity="center_horizontal" android:id="@id/filelist_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice-boodskappe</item>
+        <item quantity="one">1 Google Voice-boodskap</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Daar is %1$d ongeleesde boodskappe</item>
+        <item quantity="one">"Daar is 'n ongeleesde boodskap"</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">gemiste oproepe</item>
+        <item quantity="one">gemiste oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">ontvangde oproepe</item>
+        <item quantity="one">ontvangde oproepe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">stemboodskappe</item>
+        <item quantity="one">stemboodskap</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">inluisterings</item>
+        <item quantity="one">luister in</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">opnames</item>
+        <item quantity="one">neem op</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">stemboodskap-kontroles</item>
+        <item quantity="one">stemboodskap-kontrole</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">instellings</item>
+        <item quantity="one">instelling</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">tekste</item>
+        <item quantity="one">teks</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">tekste</item>
+        <item quantity="one">teks</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">gemaakte oproepe</item>
+        <item quantity="one">gemaakte oproep</item>
+    </plurals>
+</resources>

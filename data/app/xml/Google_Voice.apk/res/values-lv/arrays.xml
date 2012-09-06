@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Izmantot pakalpojumu Google Voice visu zvanu veikšanai</item>
+        <item>Izmantot pakalpojumu Google Voice tikai starptautisko zvanu veikšanai</item>
+        <item>Neizmantot pakalpojumu Google Voice neviena zvana veikšanai</item>
+        <item>Jautāt ikreiz, kad veicu zvanu</item>
+        <item>Jautāt ikreiz, kad veicu starptautisku zvanu</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Ik pēc 5 minūtēm</item>
+        <item>Ik pēc 10 minūtēm</item>
+        <item>Ik pēc 15 minūtēm</item>
+        <item>Ik pēc 20 minūtēm</item>
+        <item>Ik pēc 30 minūtēm</item>
+        <item>Ik pēc 60 minūtēm</item>
+        <item>Nekad</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Izmantot esošo Google balss numuru</item>
+        <item>Izmantot šo tālruņa numuru</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Zvanos/īsziņās no šī tālruņa tiks rādīts mans Google balss numurs</item>
+        <item>Ar šo tiks aizstāts mans Google balss numurs.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Mēģināt vēlreiz, izmantojot pakalpojumu Google Voice</item>
+        <item>Zvanīt, neizmantojot pakalpojumu Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Zvanīt, izmantojot pakalpojumu Google Voice</item>
+        <item>Zvanīt, neizmantojot pakalpojumu Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Zvanīt</item>
+        <item>Noklikšķināt, lai zvanītu</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Izmantojot lietotni Google Voice</item>
+        <item>Izmantojot ziņojumapmaiņas lietotni</item>
+    </string-array>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Gebruik Google Voice om alle oproepe te maak</item>
+        <item>Gebruik net Google Voice vir internasionale oproepe</item>
+        <item>Moenie Google Voice gebruik om enige oproepe te maak nie</item>
+        <item>"Vra elke keer as ek 'n oproep maak"</item>
+        <item>"Vra elke keer as ek 'n internasionale oproep maak"</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Elke 5 minute</item>
+        <item>Elke 10 minute</item>
+        <item>Elke 15 minute</item>
+        <item>Elke 20 minute</item>
+        <item>Elke 30 minute</item>
+        <item>Elke 60 minute</item>
+        <item>Nooit</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Gebruik my bestaande Google Voice-nommer</item>
+        <item>Gebruik hierdie foon se nommer</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>"Oproepe/SMS'e van hierdie foon sal my Google Voice-nommer wys"</item>
+        <item>Dit sal my Google Voice-nommer vervang</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Probeer weer met Google Voice</item>
+        <item>Bel sonder Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Bel met Google Voice</item>
+        <item>Bel sonder Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Bel</item>
+        <item>Klik-en-bel</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via die Google Voice-program</item>
+        <item>Via die boodskappe-program</item>
+    </string-array>
+</resources>

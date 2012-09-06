@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d ημέρες πριν</item>
+        <item quantity="one">%d ημέρα πριν</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d εβδομάδες πριν</item>
+        <item quantity="one">%d εβδομάδα πριν</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d από %2$s είναι τώρα διαθέσιμα εκτός σύνδεσης.</item>
+        <item quantity="one">%1$d από %2$s είναι τώρα διαθέσιμα εκτός σύνδεσης.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Όλα τα %1$d αρχεία είναι τώρα διαθέσιμα εκτός σύνδεσης.</item>
+        <item quantity="one">%1$d αρχείο διατίθεται τώρα εκτός σύνδεσης.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Δυνατότητα %1$d διαθέσ. αρχείων εκτός σύνδ.</item>
+        <item quantity="one">Δυνατότητα %1$d διαθέσ. αρχείου εκτός σύνδ.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d αρχεία</item>
+        <item quantity="one">%1$d αρχείο</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d λογαριασμοί</item>
+        <item quantity="one">%1$d λογαριασμός</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">Τα %s δεν είναι έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου.</item>
+        <item quantity="one">Το %s δεν είναι έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Μετακίνηση %d στοιχείων</item>
+        <item quantity="one">Μετακίνηση του \"%s\"</item>
+    </plurals>
+</resources>

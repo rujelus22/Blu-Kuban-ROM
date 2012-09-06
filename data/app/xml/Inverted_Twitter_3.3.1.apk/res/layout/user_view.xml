@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/user_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/action_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/mini_user_image_size" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/Button" />
+        <ImageView android:id="@id/user_image" android:layout_width="@dimen/mini_user_image_size" android:layout_height="@dimen/mini_user_image_size" android:layout_marginRight="@dimen/list_row_padding" android:scaleType="center" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/action_button" android:layout_toRightOf="@id/user_image" android:layout_centerVertical="true">
+            <LinearLayout android:id="@id/name_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_size_default" android:textStyle="bold" android:textColor="@color/list_item_text" android:id="@id/name_item" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/protected_item" android:paddingLeft="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_locked" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/verified_item" android:paddingLeft="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_verified" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/font_size_small" android:textColor="@color/list_item_secondary_text" android:id="@id/screenname_item" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/name_layout" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/font_size_small" android:textColor="@color/list_item_secondary_text" android:id="@id/extra_info" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="43.0dip" android:layout_marginTop="2.0dip" android:singleLine="true" android:layout_below="@id/user_container" />
+    <TextView android:id="@id/promoted" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="43.0dip" android:layout_marginTop="2.0dip" android:layout_below="@id/extra_info" style="@style/Promoted" />
+</merge>

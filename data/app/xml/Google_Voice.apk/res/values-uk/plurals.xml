@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s повідомл. Google Voice</item>
+        <item quantity="one">1 повідомлення Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Є стільки непрочитаних повідомлень: %1$d</item>
+        <item quantity="one">Є непрочитане повідомлення</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">пропущ. дзвінки</item>
+        <item quantity="one">пропущ. дзвін.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">отримані дзвінки</item>
+        <item quantity="one">отрим. дзвінок</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">голос. пошта</item>
+        <item quantity="one">голос. пошта</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">прослухані</item>
+        <item quantity="one">прослухана</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">записи</item>
+        <item quantity="one">запис</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">перевір. гол. пошти</item>
+        <item quantity="one">перевір. гол.пошти</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">налаштув-ня</item>
+        <item quantity="one">налашт-ня</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвін.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвінок</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвін.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">SMS</item>
+        <item quantity="one">SMS</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">SMS</item>
+        <item quantity="one">SMS</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвін.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвін.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">здійсн. дзвінки</item>
+        <item quantity="one">здійсн. дзвін.</item>
+    </plurals>
+</resources>

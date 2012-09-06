@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view android:layout_gravity="bottom" android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="22.0dip" android:layout_marginBottom="-11.0dip" class="com.google.android.apps.reader.widget.ProgressView"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

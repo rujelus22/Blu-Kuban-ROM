@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/action_bar_progress_spinner" android:background="@null" android:showAsAction="always" android:actionLayout="@layout/action_bar_progress_spinner_layout" android:selectableItemBackground="@null" />
+    <item android:icon="@drawable/ic_menu_camera" android:id="@id/post_camera_photo" android:title="@string/menu_take_camera_photo" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_choose_photo" android:id="@id/post_gallery_photo" android:title="@string/menu_choose_photo_from_gallery" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" android:title="@string/menu_refresh" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_preferences" android:id="@id/settings" android:title="@string/home_menu_settings" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_feedback" android:id="@id/feedback" android:title="@string/home_menu_feedback" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" android:title="@string/menu_home_help" />
+    <item android:icon="@drawable/ic_menu_search_action_bar" android:id="@id/menu_switcher_search" android:title="@string/menu_search" android:showAsAction="always" />
+</menu>

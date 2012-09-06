@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="key_root_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/title_settings" android:key="key_title_settings">
+        <PreferenceScreen android:title="@string/title_voice_input_settings" android:key="@string/key_settings_voice_input" android:summary="@string/summary_voice_input_settings" />
+        <CheckBoxPreference android:enabled="true" android:title="@string/title_tts_preference" android:selectable="true" android:key="key_prefer_network_tts" android:summary="@string/summary_prefer_network_tts" android:defaultValue="@string/default_prefer_network_tts" />
+        <CheckBoxPreference android:enabled="true" android:title="@string/title_instant_translation_preference" android:selectable="true" android:key="key_enable_instant_translation" android:summary="@string/summary_prefer_instant_translation" android:defaultValue="@string/default_enable_instant_translation" />
+        <CheckBoxPreference android:enabled="true" android:title="@string/label_camera_input" android:selectable="true" android:key="key_enable_camera_logging" android:summary="@string/camera_logging_pref" android:defaultValue="@string/default_enable_camera_logging" />
+        <CheckBoxPreference android:enabled="true" android:title="@string/conversation_mode" android:selectable="true" android:key="key_enable_conversation_confirm" android:summary="@string/summary_conversation_input_confirm" android:defaultValue="@string/default_enable_conversation_confirm" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/offline_translate" android:key="key_offline_translate_settings" android:summary="@string/summary_offline_translate">
+        <CheckBoxPreference android:enabled="true" android:title="@string/offline_translate_mode" android:selectable="true" android:key="key_enable_offline_translate_mode" android:summary="@string/summary_enable_offline_translate_mode" android:defaultValue="@string/default_enable_offline_translate_mode" />
+        <CheckBoxPreference android:enabled="true" android:title="@string/dual_mode" android:selectable="true" android:key="key_enable_dual_mode" android:summary="@string/summary_enable_dual_mode" android:defaultValue="@string/default_enable_dual_mode" />
+        <Preference android:enabled="true" android:title="@string/manage_offline_model" android:selectable="true" android:key="@string/key_manage_offline_model" android:summary="@string/summary_manage_offline_model" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/title_about">
+        <Preference android:enabled="true" android:title="@string/title_about" android:selectable="true" android:key="@string/key_settings_about" android:summary="@string/summary_about" />
+    </PreferenceCategory>
+</PreferenceScreen>

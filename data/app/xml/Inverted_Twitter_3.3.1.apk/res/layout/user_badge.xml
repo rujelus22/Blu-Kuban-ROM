@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:twitter="http://schemas.android.com/apk/res/com.twitter.android">
+    <com.twitter.android.widget.OverlayImageView android:id="@id/profile_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" android:layout_centerVertical="true" twitter:overlayDrawable="@drawable/ic_avatar_overlay" />
+    <ImageView android:id="@id/chevron" android:visibility="gone" style="@style/Chevron" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/list_row_padding" android:layout_marginRight="@dimen/list_row_padding" android:layout_toLeftOf="@id/chevron" android:layout_toRightOf="@id/profile_image" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true">
+        <include layout="@layout/user_profile_name" />
+    </RelativeLayout>
+</merge>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_plus1" android:id="@id/menu_plus_one" android:title="@string/menu_add_plus_one" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_remove_plus1" android:id="@id/menu_remove_plus1" android:title="@string/menu_remove_plus_one" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" android:title="@string/menu_refresh" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_blocked_user" android:id="@id/block" android:title="@string/menu_item_block_person" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_blocked_user" android:id="@id/unblock" android:title="@string/menu_item_unblock_person" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_flag_system" android:id="@id/report_abuse" android:title="@string/menu_item_report_abuse" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_search_action_bar" android:id="@id/menu_switcher_search" android:title="@string/menu_search" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_feedback" android:id="@id/feedback" android:title="@string/home_menu_feedback" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" android:title="@string/menu_home_help" android:showAsAction="never" />
+</menu>

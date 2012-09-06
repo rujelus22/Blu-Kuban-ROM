@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:choiceMode="multipleChoice" />
+        <include android:layout_gravity="center" android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/loading" />
+        <include android:layout_gravity="center" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/error" />
+        <FrameLayout android:layout_gravity="top" android:id="@id/empty" android:background="@android:drawable/list_selector_background" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/new_folder" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="?buttonBarStyle">
+        <Button android:id="@id/button_tag_dismiss" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_tag_dismiss" style="?buttonBarButtonStyle" />
+    </FrameLayout>
+</LinearLayout>

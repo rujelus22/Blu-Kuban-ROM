@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Google Voice поруке (%1$s)</item>
+        <item quantity="one">1 Google Voice порука</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Имате непрочитане поруке (%1$d)</item>
+        <item quantity="one">Имате једну непрочитану поруку</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">пропуштени позиви</item>
+        <item quantity="one">пропуштен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">примљени позиви</item>
+        <item quantity="one">примљени позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">гласовне поруке</item>
+        <item quantity="one">гласовна пошта</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">преслушавања уживо</item>
+        <item quantity="one">преслушавање уживо</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">снимци</item>
+        <item quantity="one">снимак</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">провере гласовне поште</item>
+        <item quantity="one">провера гласовне поште</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">подешавања</item>
+        <item quantity="one">подешавање</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">текстови</item>
+        <item quantity="one">текст</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">текстови</item>
+        <item quantity="one">текст</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">упућени позиви</item>
+        <item quantity="one">упућен позив</item>
+    </plurals>
+</resources>

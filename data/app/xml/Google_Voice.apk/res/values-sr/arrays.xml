@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Користи Google Voice за упућивање свих позива</item>
+        <item>Користи Google Voice само за међународне позиве</item>
+        <item>Не користи Google Voice за упућивање позива</item>
+        <item>Питај сваки пут када упућујем позив</item>
+        <item>Питај сваки пут када упућујем међународни позив</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Сваких 5 минута</item>
+        <item>Сваких 10 минута</item>
+        <item>Сваких 15 минута</item>
+        <item>Сваких 20 минута</item>
+        <item>Сваких 30 минута</item>
+        <item>Сваких 60 минута</item>
+        <item>Никад</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Користи мој постојећи Google Voice број</item>
+        <item>Користи број овог телефона</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Мој Google Voice број ће се приказивати у позивима/текстуалним порукама</item>
+        <item>Овим ћу заменити свој Google Voice број</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Покушајте поново помоћу Google Voice-а</item>
+        <item>Позив без Google Voice-а</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Позови помоћу Google Voice-а</item>
+        <item>Позив без Google Voice-а</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Позови</item>
+        <item>Кликни-и-позови</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Преко апликације Google Voice</item>
+        <item>Преко апликације за размену порука</item>
+    </string-array>
+</resources>

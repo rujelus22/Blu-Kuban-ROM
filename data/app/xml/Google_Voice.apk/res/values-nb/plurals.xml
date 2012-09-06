@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice-meldinger</item>
+        <item quantity="one">Én Google Voice-melding</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Du har %1$d uleste meldinger</item>
+        <item quantity="one">Du har én ulest melding</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">tapte anrop</item>
+        <item quantity="one">tapt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">mottatte anrop</item>
+        <item quantity="one">mottatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">talepostkasser</item>
+        <item quantity="one">talepostkasse</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">lytting</item>
+        <item quantity="one">lytt</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">innspillinger</item>
+        <item quantity="one">tar opp</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">talepostkassekontroller</item>
+        <item quantity="one">kontroll av taletjeneste</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">innstillinger</item>
+        <item quantity="one">innstilling</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">tekstmeldinger</item>
+        <item quantity="one">tekst</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">tekstmeldinger</item>
+        <item quantity="one">tekst</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">foretatte anrop</item>
+        <item quantity="one">foretatt anrop</item>
+    </plurals>
+</resources>

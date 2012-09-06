@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_account_list" android:id="@id/menu_show_all_accounts" android:title="@string/menu_show_all_accounts" android:titleCondensed="@string/menu_show_all_accounts_condensed" />
+    <item android:icon="@drawable/ic_menu_account_list" android:id="@id/menu_show_supported_accounts" android:title="@string/menu_show_supported_accounts" android:titleCondensed="@string/menu_show_supported_accounts_condensed" />
+</menu>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s ข้อความใน Google วอยซ์</item>
+        <item quantity="one">1 ข้อความบน Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">มี %1$d ข้อความที่ยังไม่อ่าน</item>
+        <item quantity="one">มีข้อความที่ยังไม่อ่าน</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">สายที่ไม่ได้รับ</item>
+        <item quantity="one">สายที่ไม่ได้รับ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">สายที่ได้รับ</item>
+        <item quantity="one">สายที่ได้รับ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">ข้อความเสียง</item>
+        <item quantity="one">ข้อความเสียง</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">การฟังเสียงข้อความ</item>
+        <item quantity="one">ฟังข้อความเสียง</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">การบันทึก</item>
+        <item quantity="one">กำลังบันทึก</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">การเช็คข้อความเสียง</item>
+        <item quantity="one">เช็คข้อความเสียง</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">การตั้งค่า</item>
+        <item quantity="one">การตั้งค่า</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">ข้อความ</item>
+        <item quantity="one">ข้อความ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">ข้อความ</item>
+        <item quantity="one">ข้อความ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">การโทรที่ดำเนินการไว้</item>
+        <item quantity="one">การโทรที่ดำเนินการไว้</item>
+    </plurals>
+</resources>

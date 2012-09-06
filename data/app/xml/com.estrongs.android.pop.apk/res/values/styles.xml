@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textShadow">
+        <item name="android:shadowColor">#ff333333</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="Transparent">
+        <item name="android:windowBackground">@color/translucent_background_80</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="ToolbarText">
+        <item name="android:textSize">10.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">top|center</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">16.0dip</item>
+        <item name="android:layout_marginTop">0.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#60155496</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">0.07</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="ToolbarItem">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="ToolbarTd">
+        <item name="android:gravity">top</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/toolbar_button</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">54.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="helpText">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50.0dip</item>
+        <item name="android:shadowColor">#ff333333</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="helpLayout">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+    <style name="editInputText">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@drawable/edit_text_holo_dark</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">4.0dip</item>
+        <item name="android:layout_marginRight">4.0dip</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_dark</item>
+    </style>
+</resources>

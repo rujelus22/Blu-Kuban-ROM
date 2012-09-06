@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="password_keyboard_key_height">56.0dip</dimen>
+    <dimen name="galleryPickerItemSize">190.0dip</dimen>
+    <dimen name="tourTextSize">20.0sp</dimen>
+    <dimen name="tourTextLineSpacingExtra">10.0dip</dimen>
+    <dimen name="tourMargin">75.0dip</dimen>
+    <dimen name="tourCameraSettingsMargin">0.0dip</dimen>
+    <dimen name="actionBarTabPadding">16.0dip</dimen>
+    <dimen name="cameraUploadPaddingSides">30.0dip</dimen>
+    <dimen name="cameraUploadPaddingVertical">30.0dip</dimen>
+    <dimen name="cameraUploadTextSpacing">15.0dip</dimen>
+    <dimen name="cameraUploadProgressSpacing">25.0dip</dimen>
+    <dimen name="cameraUploadThumbBottomMargin">22.0dip</dimen>
+</resources>

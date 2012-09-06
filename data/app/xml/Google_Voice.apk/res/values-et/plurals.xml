@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">"%1$s Google Voice'i sõnumit"</item>
+        <item quantity="one">"1 Google Voice'i sõnum"</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d lugemata sõnumit</item>
+        <item quantity="one">Lugemata sõnum</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">vastamata kõned</item>
+        <item quantity="one">vastamata kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">vastatud kõned</item>
+        <item quantity="one">vastatud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">kõnepostid</item>
+        <item quantity="one">kõnepost</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">kuulatud</item>
+        <item quantity="one">kuulatud</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">salvestused</item>
+        <item quantity="one">salvestamine</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">kõneposti kontrollimine</item>
+        <item quantity="one">kõneposti kontrollimine</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">seaded</item>
+        <item quantity="one">seade</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">tekstsõnumid</item>
+        <item quantity="one">tekstsõnum</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">tekstsõnumid</item>
+        <item quantity="one">tekstsõnum</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">valitud kõned</item>
+        <item quantity="one">valitud kõne</item>
+    </plurals>
+</resources>

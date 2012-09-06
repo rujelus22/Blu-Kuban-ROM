@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/hidelistbg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <TextView android:textSize="20.0dip" android:textColor="#ffeeeeee" android:gravity="center" android:id="@id/hidelist_title" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:text="@string/preference_hide_dirfiles_title" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:id="@id/hidelist_listview" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="#00000000" android:divider="@drawable/history_seprate" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="53.0dip">
+        <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center" android:id="@id/hidelist_delall" android:background="@drawable/hidebutt_bg" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/hidelist_clean_text" android:layout_weight="1.0" />
+        <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:gravity="center" android:layout_gravity="center" android:id="@id/hidelist_cancel" android:background="@drawable/hidebutt_bg" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:text="@string/cancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

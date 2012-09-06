@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.apps.plus.views.EventThemeView android:id="@id/event_theme_image" android:layout_width="fill_parent" android:layout_height="0.0dip" android:scaleType="centerCrop" />
+            <LinearLayout android:orientation="horizontal" android:background="@color/default_bg" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.apps.plus.views.AvatarView android:layout_gravity="center_vertical" android:id="@id/avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" size="small" />
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0sp" android:textStyle="bold" android:id="@id/event_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+                    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="14.0sp" android:id="@id/event_time" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="12.0sp" android:textColor="@color/event_inviter_text_color" android:id="@id/event_inviter" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0sp" android:textColor="@color/event_description_text_color" android:id="@id/event_description" android:background="@color/default_bg" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <View android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Divider" />
+            <RelativeLayout android:id="@id/event_instant_share" android:background="@color/default_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:id="@id/event_instant_share_label" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+                    <ImageView android:id="@id/event_instant_share_icon" android:layout_width="21.0dip" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" android:src="@drawable/ic_instant_photo_share_off" android:scaleType="center" android:minHeight="21.0dip" />
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_gravity="center_vertical" android:id="@id/event_instant_share_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/event_instant_share_label" android:layout_weight="1.0" />
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/event_instant_share_preference_color" android:layout_gravity="center_vertical" android:id="@id/event_instant_share_preference" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/preference_off" />
+                </LinearLayout>
+                <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/event_instant_share_description" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/event_instant_share_description" android:layout_below="@id/event_instant_share_label" />
+                <View android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/event_instant_share_description" style="@style/Divider" />
+            </RelativeLayout>
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/event_are_you_going_color" android:id="@id/event_rsvp_label" android:background="@color/default_bg" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/event_are_you_going_label" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/event_rsvp_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/StyledButtonBar">
+                <com.google.android.apps.plus.views.ActionButton android:id="@id/event_going_button" android:text="@string/yes" style="@style/StyledButton" />
+                <View style="@style/StyledButtonSeparator" />
+                <com.google.android.apps.plus.views.ActionButton android:id="@id/event_maybe_button" android:text="@string/maybe" style="@style/StyledButton" />
+                <View style="@style/StyledButtonSeparator" />
+                <com.google.android.apps.plus.views.ActionButton android:id="@id/event_not_going_button" android:text="@string/no" style="@style/StyledButton" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/event_rsvp_spinner_layout" android:background="@color/default_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Divider" />
+                <Spinner android:id="@id/event_rsvp_spinner" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Divider" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/invitee_summary" android:background="?buttonSelectableBackground" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <com.google.android.apps.plus.views.AvatarView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" size="tiny" />
+                <com.google.android.apps.plus.views.AvatarView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" size="tiny" />
+                <com.google.android.apps.plus.views.AvatarView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" size="tiny" />
+                <com.google.android.apps.plus.views.AvatarView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" size="tiny" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/event_invitee_summary_color" android:layout_gravity="center_vertical" android:id="@id/invitee_summary_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Divider" />
+            <RelativeLayout android:orientation="horizontal" android:id="@id/event_location" android:background="?listSelector" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/event_location_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_location_place" android:scaleType="center" />
+                <ImageView android:id="@id/event_directions_button" android:focusable="false" android:duplicateParentState="false" android:layout_width="56.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_location_directions" android:scaleType="center" android:minHeight="48.0dip" android:layout_alignParentRight="true" style="@style/ListItemAction" />
+                <View android:id="@id/vertical_divider" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:minHeight="32.0dip" android:layout_toLeftOf="@id/event_directions_button" style="@style/Divider" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/event_location_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_toLeftOf="@id/vertical_divider" android:layout_toRightOf="@id/event_location_icon" android:layout_centerVertical="true" />
+                <View android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/Divider" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <TextView android:textSize="18.0sp" android:gravity="center" android:id="@id/server_error" android:padding="24.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include layout="@layout/empty_layout" />
+</FrameLayout>

@@ -1,0 +1,242 @@
+.class public Lcom/google/userfeedback/android/api/UserFeedbackReport;
+.super Ljava/lang/Object;
+.source "UserFeedbackReport.java"
+
+
+# instance fields
+.field public accounts:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public board:Ljava/lang/String;
+
+.field public brand:Ljava/lang/String;
+
+.field public buildId:Ljava/lang/String;
+
+.field public buildType:Ljava/lang/String;
+
+.field public categoryTag:Ljava/lang/String;
+
+.field public chosenAccount:Ljava/lang/String;
+
+.field public codename:Ljava/lang/String;
+
+.field public crashData:Lcom/google/userfeedback/android/api/UserFeedbackCrashData;
+
+.field public description:Ljava/lang/String;
+
+.field public device:Ljava/lang/String;
+
+.field public incremental:Ljava/lang/String;
+
+.field public installedPackages:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public installerPackageName:Ljava/lang/String;
+
+.field private isSubmitted:Z
+
+.field public isSystemApp:Z
+
+.field public model:Ljava/lang/String;
+
+.field public networkName:Ljava/lang/String;
+
+.field public networkType:I
+
+.field public numGoogleAccounts:I
+
+.field public packageName:Ljava/lang/String;
+
+.field public packageVersion:I
+
+.field public packageVersionName:Ljava/lang/String;
+
+.field public phoneType:I
+
+.field public processName:Ljava/lang/String;
+
+.field public product:Ljava/lang/String;
+
+.field public productSpecificBinaryData:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/userfeedback/android/api/ProductSpecificBinaryDataHolder;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private readyToBeSubmitted:Z
+
+.field public release:Ljava/lang/String;
+
+.field public runningApplications:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public screenshot:[B
+
+.field public screenshotHeight:I
+
+.field public screenshotWidth:I
+
+.field public sdkInt:I
+
+.field public systemLog:Ljava/lang/String;
+
+.field public timestamp:J
+
+.field public uiLanguage:Ljava/lang/String;
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 220
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 106
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->installedPackages:Ljava/util/List;
+
+    .line 111
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->runningApplications:Ljava/util/List;
+
+    .line 204
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->productSpecificBinaryData:Ljava/util/List;
+
+    .line 221
+    invoke-virtual {p0, v1}, Lcom/google/userfeedback/android/api/UserFeedbackReport;->setSubmitted(Z)V
+
+    .line 222
+    invoke-virtual {p0, v1}, Lcom/google/userfeedback/android/api/UserFeedbackReport;->setReadyToSubmit(Z)V
+
+    .line 223
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->crashData:Lcom/google/userfeedback/android/api/UserFeedbackCrashData;
+
+    .line 224
+    return-void
+.end method
+
+
+# virtual methods
+.method public declared-synchronized setReadyToSubmit(Z)V
+    .registers 3
+    .parameter "shouldBeSubmitted"
+
+    .prologue
+    .line 231
+    monitor-enter p0
+
+    :try_start_1
+    iput-boolean p1, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->readyToBeSubmitted:Z
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    .line 232
+    monitor-exit p0
+
+    return-void
+
+    .line 231
+    :catchall_5
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized setSubmitted(Z)V
+    .registers 3
+    .parameter "isSubmitted"
+
+    .prologue
+    .line 227
+    monitor-enter p0
+
+    :try_start_1
+    iput-boolean p1, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->isSubmitted:Z
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    .line 228
+    monitor-exit p0
+
+    return-void
+
+    .line 227
+    :catchall_5
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public shouldSubmitReport()Z
+    .registers 2
+
+    .prologue
+    .line 235
+    iget-boolean v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->isSubmitted:Z
+
+    if-nez v0, :cond_a
+
+    iget-boolean v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackReport;->readyToBeSubmitted:Z
+
+    if-eqz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method

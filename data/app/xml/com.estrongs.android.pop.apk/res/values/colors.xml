@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="solid_red">#ffff0000</color>
+    <color name="solid_blue">#ff166cff</color>
+    <color name="solid_green">#ff166cff</color>
+    <color name="solid_yellow">#ff166cff</color>
+    <color name="solid_plain">#ffffffff</color>
+    <color name="delete_color_filter">#a5ff0000</color>
+    <color name="window_background">#ff1a1a1a</color>
+    <color name="grid_dark_background">#e81a1a1a</color>
+    <color name="bubble_dark_background">#b21a1a1a</color>
+    <color name="translucent_background_80">#80000000</color>
+</resources>

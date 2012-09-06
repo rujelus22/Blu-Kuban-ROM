@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">סייר קבצים ES</string>
+    <string name="title_note">ES עורך הערות</string>
+    <string name="image_browser_title">סייר תמונות ES</string>
+    <string name="video_player_label">נגן מדיה ES</string>
+    <string name="app_zip">מציג קבצי Zip</string>
+</resources>

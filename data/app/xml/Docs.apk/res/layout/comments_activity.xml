@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/home_page_background_proxy" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:cakemix="http://schemas.android.com/apk/res/com.google.android.apps.docs">
+    <view android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" cakemix:controls_enabled="false" class="com.google.android.apps.docs.view.TitleBar" />
+    <FrameLayout android:id="@id/comments_activity_holder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

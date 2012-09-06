@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1">
+        <TableRow android:id="@id/pincode_old_passwd_row">
+            <TextView android:gravity="right" android:id="@id/pincode_old_passwd_txt" android:text="Old Password : " />
+            <EditText android:id="@id/pincode_old_passwd" android:password="true" style="@style/editInputText" />
+        </TableRow>
+        <TableRow android:id="@id/pincode_username_row">
+            <TextView android:gravity="right" android:id="@id/pincode_username_txt" android:text="Username : " />
+            <EditText android:id="@id/pincode_username" android:inputType="text" style="@style/editInputText" />
+        </TableRow>
+        <TableRow>
+            <TextView android:gravity="right" android:id="@id/pincode_new_passwd_txt" android:text="New Password : " />
+            <EditText android:id="@id/pincode_new_passwd" android:password="true" style="@style/editInputText" />
+        </TableRow>
+        <TableRow android:id="@id/pincode_confirm_passwd_row">
+            <TextView android:gravity="right" android:id="@id/pincode_confirm_passwd_txt" android:text="Confirm Password : " />
+            <EditText android:id="@id/pincode_confirm_passwd" android:password="true" style="@style/editInputText" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

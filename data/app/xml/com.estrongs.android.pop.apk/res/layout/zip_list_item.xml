@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/Icon" android:paddingLeft="8.0dip" android:layout_width="48.0dip" android:layout_height="48.0dip" style="@style/textShadow" />
+    <TextView android:textSize="18.0dip" android:textColor="@color/bright_text_dark_focused" android:gravity="center_vertical" android:id="@id/FileName" android:paddingLeft="8.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:maxLines="2" android:layout_weight="1.0" style="@style/textShadow" />
+</LinearLayout>

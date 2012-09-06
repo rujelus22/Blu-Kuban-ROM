@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Usar o Google Voice para fazer chamadas</item>
+        <item>Usar o Google Voice apenas para chamadas internacionais</item>
+        <item>Não usar o Google Voice para fazer chamadas</item>
+        <item>Perguntar sempre que eu fizer uma chamada</item>
+        <item>Perguntar sempre que eu fizer uma chamada internacional</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>A cada 5 minutos</item>
+        <item>A cada 10 minutos</item>
+        <item>A cada 15 minutos</item>
+        <item>A cada 20 minutos</item>
+        <item>A cada 30 minutos</item>
+        <item>A cada 60 minutos</item>
+        <item>Nunca</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Usar meu número do Google Voice existente</item>
+        <item>Usar este número de telefone</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>As ligações/mensagens de texto feitas neste telefone exibirão meu número do Google Voice</item>
+        <item>Este número substituirá meu número do Google Voice</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Tentar novamente com o Google Voice</item>
+        <item>Chamar sem o Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Chamar com o Google Voice</item>
+        <item>Chamar sem o Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Ligar</item>
+        <item>Clique para ligar</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Através do aplicativo Google Voice</item>
+        <item>Através do aplicativo de mensagens</item>
+    </string-array>
+</resources>

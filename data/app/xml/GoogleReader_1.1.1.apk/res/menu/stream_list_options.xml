@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:orderInCategory="3">
+        <item android:icon="@drawable/ic_menu_add" android:id="@id/menu_add_subscription" android:title="@string/menu_add_subscription" android:alphabeticShortcut="a" android:showAsAction="ifRoom" />
+        <item android:icon="@drawable/ic_menu_view" android:id="@id/menu_show_all" android:title="@string/menu_show_all" />
+        <item android:icon="@drawable/ic_menu_view" android:id="@id/menu_show_updated" android:title="@string/menu_show_updated" />
+        <item android:icon="@drawable/ic_menu_sort_alphabetically" android:id="@id/menu_sort_alpha" android:title="@string/menu_sort_alpha" android:titleCondensed="@string/menu_sort_alpha_condensed" />
+        <item android:icon="@drawable/ic_menu_sort_manual" android:id="@id/menu_sort_manual" android:title="@string/menu_sort_manual" android:titleCondensed="@string/menu_sort_manual_condensed" />
+        <item android:icon="@drawable/ic_menu_info_details" android:id="@id/menu_show_unread_counts" android:title="@string/menu_show_unread_counts" android:titleCondensed="@string/menu_show_unread_counts_condensed" />
+        <item android:icon="@drawable/ic_menu_info_details" android:id="@id/menu_hide_unread_counts" android:title="@string/menu_hide_unread_counts" android:titleCondensed="@string/menu_hide_unread_counts_condensed" />
+        <item android:icon="@drawable/ic_menu_gallery" android:id="@id/menu_use_favicons" android:title="@string/menu_use_favicons" android:titleCondensed="@string/menu_use_favicons_condensed" />
+        <item android:icon="@drawable/ic_menu_gallery" android:id="@id/menu_use_default_icons" android:title="@string/menu_use_default_icons" android:titleCondensed="@string/menu_use_default_icons_condensed" />
+    </group>
+</menu>

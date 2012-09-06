@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s tin nhắn từ Google Voice</item>
+        <item quantity="one">1 tin nhắn Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Có %1$d thư chưa đọc</item>
+        <item quantity="one">Có một thư chưa đọc</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">cuộc gọi nhỡ</item>
+        <item quantity="one">cuộc gọi nhỡ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">cuộc gọi đã nhận</item>
+        <item quantity="one">cuộc gọi đã nhận</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">Thư thoại</item>
+        <item quantity="one">thư thoại</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">lắng nghe</item>
+        <item quantity="one">lắng nghe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">bản ghi</item>
+        <item quantity="one">đang ghi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">kiểm tra thư thoại</item>
+        <item quantity="one">kiểm tra thư thoại</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">cài đặt</item>
+        <item quantity="one">thiết lập</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">văn bản</item>
+        <item quantity="one">văn bản</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">văn bản</item>
+        <item quantity="one">văn bản</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">cuộc gọi đã thực hiện</item>
+        <item quantity="one">cuộc gọi đã thực hiện</item>
+    </plurals>
+</resources>

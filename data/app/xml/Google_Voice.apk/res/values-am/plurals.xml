@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s የGoogle Voice መልዕክቶች</item>
+        <item quantity="one">1 የGoogle የድምፅ መልዕክት</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d ያልተነበቡ መልዕክቶች አሉ።</item>
+        <item quantity="one">ያልተነበበ መልዕክት አለ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">ያመለጡ ጥሪዎች</item>
+        <item quantity="one">ያመለጠ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">ገቢ ጥሪዎች</item>
+        <item quantity="one">ገቢ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">የድምፅ መልዕክቶች</item>
+        <item quantity="one">የድምፅ መልዕክት</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">አዳማጮች አስገባ</item>
+        <item quantity="one">አዳማጭ አስገባ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">ቅጂዎች</item>
+        <item quantity="one">በመቅዳት ላይ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">የድምፅ መልዕክት አመልክቶች</item>
+        <item quantity="one">የድምፅ መልዕክት አመልክት</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">ቅንብሮች</item>
+        <item quantity="one">ቅንብር</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">ፅሁፎች</item>
+        <item quantity="one">ፅሁፍ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">ፅሁፎች</item>
+        <item quantity="one">ፅሁፍ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">የተደወሉ ጥሪዎች</item>
+        <item quantity="one">የተደወለ ጥሪ</item>
+    </plurals>
+</resources>

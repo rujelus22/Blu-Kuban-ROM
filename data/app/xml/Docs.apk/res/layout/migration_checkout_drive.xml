@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="14.0sp" style="@style/MigrationModalScreen.NotifyDrive"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

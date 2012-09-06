@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="122" android:versionName="2.5" android:installLocation="auto" package="com.google.android.apps.translate"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <application android:theme="@style/DefaultTranslateTheme" android:label="@string/short_app_launcher_name" android:icon="@drawable/icon" android:name=".TranslateApplication" android:hardwareAccelerated="true">
+        <activity android:theme="@style/DefaultTranslateLightNoTitleBarTheme" android:label="@string/short_app_launcher_name" android:name=".HomeActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" android:host="translate.google.com" android:path="/" />
+                <data android:scheme="http" android:host="translate.google.com" android:path="/m" />
+                <data android:scheme="http" android:host="translate.google.com" android:path="/m/translate" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:theme="@style/DefaultTranslateLightNoTitleBarTheme" android:name=".translation.TranslateActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="com.google.android.apps.translate.action.QUERY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/DefaultTranslateLightTheme" android:name=".SupersizeTextActivity" android:excludeFromRecents="true" android:screenOrientation="landscape" android:configChanges="orientation|screenSize" android:noHistory="true" android:hardwareAccelerated="false" />
+        <activity android:theme="@style/DefaultTranslateLightNoTitleBarTheme" android:name=".conversation.ConversationActivity" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:theme="@style/DefaultTranslateLightTheme" android:name=".history.HistoryActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".SettingsActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name=".EulaActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:label="@string/title_sms_picker" android:name=".SmsPickerActivity" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:label="@string/app_name" android:name=".offline.ModelManagementActivity" />
+        <activity android:theme="@style/DefaultTranslateDialogTheme" android:label="@string/title_handwriting_input" android:name=".HandwritingInputActivity" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden" />
+        <provider android:name=".QsbSuggestionProvider" android:authorities="com.google.android.apps.translate.QsbSuggestionProvider" />
+        <service android:label="Translate" android:name=".TranslateService">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <action android:name="android.intent.action.PICK" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.Dialog" android:name="com.google.userfeedback.android.api.UserFeedbackActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name="com.google.userfeedback.android.api.PreviewActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name="com.google.userfeedback.android.api.ShowTextActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@android:style/Theme.Dialog" android:name="com.google.userfeedback.android.api.ShowStringListActivity" android:excludeFromRecents="true" />
+        <service android:name="com.google.userfeedback.android.api.SendUserFeedbackService" />
+        <receiver android:name="com.google.userfeedback.android.api.FeedbackConnectivityReceiver" android:enabled="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="14" />
+</manifest>

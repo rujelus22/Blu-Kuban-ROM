@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.estrongs.android.pop.view.RealViewSwitcher android:id="@id/player_viewswitcher" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/audio_title_bg" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:layout_gravity="center" android:paddingLeft="10.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/audio_play_title" />
+                <TextView android:textSize="18.0dip" android:gravity="center_vertical" android:id="@id/audio_playlist_name" android:paddingLeft="10.0dip" android:paddingTop="6.0dip" android:layout_width="0.0dip" android:layout_height="30.0dip" android:text="One List" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_playlist_change" android:paddingRight="10.0dip" android:paddingBottom="1.0dip" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/audio_playlist_change" android:scaleType="center" />
+            </LinearLayout>
+            <ListView android:id="@id/audio_playlist" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/audio_selector" android:divider="@drawable/audio_list_seprator" android:dividerHeight="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/audio_title_bg" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <ImageView android:layout_gravity="center" android:paddingLeft="10.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/audio_playlist_change" />
+                <TextView android:textSize="18.0dip" android:gravity="center_vertical" android:id="@id/audio_playlist_set_name" android:paddingLeft="10.0dip" android:paddingTop="6.0dip" android:layout_width="0.0dip" android:layout_height="30.0dip" android:text="@string/playlist_title" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_playlist_set_change" android:paddingRight="10.0dip" android:paddingBottom="1.0dip" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/audio_play_title" android:scaleType="center" />
+            </LinearLayout>
+            <ListView android:id="@id/audio_playlist_set" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/audio_selector" android:divider="@drawable/audio_list_seprator" android:dividerHeight="1.0px" />
+        </LinearLayout>
+    </com.estrongs.android.pop.view.RealViewSwitcher>
+    <LinearLayout android:orientation="vertical" android:id="@id/audio_player_control_layout" android:background="@drawable/audio_ctrl_bg" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="0.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip">
+        <LinearLayout android:orientation="horizontal" android:background="#00000000" android:paddingTop="1.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="2.0">
+            <FrameLayout android:id="@id/audio_player_prev_layout" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_prev_sel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_prev_sel" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_prev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_prev" />
+            </FrameLayout>
+            <ImageView android:background="@drawable/audio_sperate" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+            <FrameLayout android:id="@id/audio_player_cycle_layout" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_cycle_sel_1" android:background="@drawable/audio_repeat_sel_1" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_cycle_sel" android:background="@drawable/audio_repeat_sel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_cycle" android:background="@drawable/audio_repeat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" />
+            </FrameLayout>
+            <ImageView android:background="@drawable/audio_sperate" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+            <FrameLayout android:id="@id/audio_player_play_layout" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_pause" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_pause" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_pause_sel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_pause_sel" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_play" />
+            </FrameLayout>
+            <ImageView android:background="@drawable/audio_sperate" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+            <FrameLayout android:id="@id/audio_player_shuffle_layout" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_shuffle_sel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_shuffle_sel" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_shuffle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_shuffle" />
+            </FrameLayout>
+            <ImageView android:background="@drawable/audio_sperate" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+            <FrameLayout android:id="@id/audio_player_next_layout" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_next_sel" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_next_sel" />
+                <ImageView android:layout_gravity="center" android:id="@id/audio_player_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:src="@drawable/audio_next" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="#00000000" android:paddingBottom="1.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="14.0sp" android:textStyle="bold" android:gravity="center" android:id="@id/audio_nowtime" android:background="#00000000" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="00:00" />
+            <SeekBar android:layout_gravity="center" android:id="@id/audio_progress" android:background="#00000000" android:layout_width="0.0dip" android:layout_height="30.0dip" android:maxHeight="30.0dip" android:progressDrawable="@drawable/seekbar_progress" android:minHeight="30.0dip" android:thumb="@drawable/seekbar_thumb_selector" android:thumbOffset="0.0dip" android:layout_weight="1.0" style="?android:attr/progressBarStyleHorizontal" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="14.0sp" android:textStyle="bold" android:gravity="center" android:id="@id/audio_totaltime" android:background="#00000000" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="04:30" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

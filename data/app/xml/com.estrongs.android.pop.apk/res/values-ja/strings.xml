@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES ファイルエクスプローラー</string>
+    <string name="title_note">ES テキストエディター</string>
+    <string name="image_browser_title">ESイメージブラウザ</string>
+    <string name="video_player_label">ESビデオプレイヤー</string>
+    <string name="app_zip">ES Zipビューア</string>
+</resources>

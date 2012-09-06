@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="account_count">
+        <item quantity="other">Аккаунтов: %d</item>
+        <item quantity="one">%d аккаунт</item>
+    </plurals>
+    <plurals name="like_count">
+        <item quantity="other">Понравилось другим людям (%d)</item>
+        <item quantity="one">Понравилось другим людям (%d)</item>
+    </plurals>
+    <plurals name="feed_count">
+        <item quantity="other">Фидов: %d</item>
+        <item quantity="one">%d фид</item>
+    </plurals>
+</resources>

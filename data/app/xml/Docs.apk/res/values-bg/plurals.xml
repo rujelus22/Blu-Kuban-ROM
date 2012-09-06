@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">Преди %d дни</item>
+        <item quantity="one">Преди %d ден</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">Преди %d седмици</item>
+        <item quantity="one">Преди %d седмица</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d от %2$s файла вече са налице офлайн.</item>
+        <item quantity="one">%1$d от %2$s файла вече е налице офлайн.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Всички %1$d файла вече са налице офлайн.</item>
+        <item quantity="one">%1$d файл вече е налице офлайн.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">%1$d файла се правят налични офлайн.</item>
+        <item quantity="one">%1$d файл се прави наличен офлайн.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d файла</item>
+        <item quantity="one">%1$d файл</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d профила</item>
+        <item quantity="one">%1$d профил</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s не са валидни имейл адреси.</item>
+        <item quantity="one">%s не е валиден имейл адрес.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Преместване на %d</item>
+        <item quantity="one">Преместване на „%s“</item>
+    </plurals>
+</resources>

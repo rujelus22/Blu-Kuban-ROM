@@ -1,0 +1,132 @@
+.class LUk;
+.super Ljava/lang/Object;
+.source "GellyInjectorStore.java"
+
+# interfaces
+.implements LWZ;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "LWZ",
+        "<",
+        "LVw;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic a:LUb;
+
+
+# direct methods
+.method constructor <init>(LUb;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1501
+    iput-object p1, p0, LUk;->a:LUb;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()LVw;
+    .registers 2
+
+    .prologue
+    .line 1504
+    invoke-static {}, LVb;->a()LanD;
+
+    move-result-object v0
+
+    invoke-interface {v0}, LanD;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LVw;
+
+    return-object v0
+.end method
+
+.method public a()Ljava/lang/Class;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class",
+            "<+",
+            "Ljava/lang/annotation/Annotation;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1514
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic a()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 1501
+    invoke-virtual {p0}, LUk;->a()LVw;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a()V
+    .registers 1
+
+    .prologue
+    .line 1524
+    invoke-static {}, LVb;->a()V
+
+    .line 1525
+    return-void
+.end method
+
+.method public a(LanD;)V
+    .registers 2
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "LanD",
+            "<",
+            "LVw;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 1519
+    invoke-static {p1}, LVb;->a(LanD;)V
+
+    .line 1520
+    return-void
+.end method
+
+.method public a(LanG;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1509
+    invoke-static {p1}, LVb;->a(LanG;)V
+
+    .line 1510
+    return-void
+.end method

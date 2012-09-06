@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Imiyalezo ye-Google Voice</item>
+        <item quantity="one">1 Umlayezo Wezwi le-Google</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Ku %1$d nemlayezo engafundiwe</item>
+        <item quantity="one">Kunomlayezo ongafundiwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">amakholi akulahlekele</item>
+        <item quantity="one">ikholi ekulahlekele</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">amakholi atholiwe</item>
+        <item quantity="one">ikholi etholiwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">ama-meyli ezwi</item>
+        <item quantity="one">imeyli yezwii</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">ukulalela</item>
+        <item quantity="one">ngena</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">okuqophiwe</item>
+        <item quantity="one">Iyaqopha</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">ukuhlola imeyli yezwi</item>
+        <item quantity="one">ukuhlola imeyli yezwi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">Izilungiselelo</item>
+        <item quantity="one">ilungiselelo</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">ikholi eyenziwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">ikholi eyenziwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">yenza ikholi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">imibhalo</item>
+        <item quantity="one">Okubhaliwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">imibhalo</item>
+        <item quantity="one">Okubhaliwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">ikholi eyenziwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">Ikholi eyenziwe</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">amakholi enziwe</item>
+        <item quantity="one">ikholi eyenziwe</item>
+    </plurals>
+</resources>

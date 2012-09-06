@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/panel_input" android:background="@color/input_panel_input_text_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:animateLayoutChanges="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/language_selector_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <include android:id="@id/translate_title_bar" layout="@layout/translate_title" />
+        <include android:id="@id/language_selection_panel" layout="@layout/language_selector" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/input_panel_intro_wrapper" android:focusable="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:layout_above="@id/input_panel_divider" android:layout_below="@id/language_selector_wrapper">
+        <include android:id="@id/input_panel_intro" layout="@layout/input_panel_intro" />
+        <ListView android:gravity="bottom" android:layout_gravity="bottom" android:id="@id/suggest_list" android:background="@color/input_panel_input_text_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stackFromBottom="true" android:textFilterEnabled="true" android:transcriptMode="alwaysScroll" android:divider="@null" android:choiceMode="singleChoice" />
+        <ScrollView android:id="@id/history_list_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:id="@id/input_panel_chip_view" layout="@layout/chip_view" />
+        </ScrollView>
+    </LinearLayout>
+    <View android:id="@id/input_panel_divider" android:background="@color/input_panel_list_view_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/input_panel_input_view" />
+    <include android:id="@id/input_panel_input_view" android:background="@color/input_panel_input_text_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" layout="@layout/edit_panel_view" />
+</RelativeLayout>

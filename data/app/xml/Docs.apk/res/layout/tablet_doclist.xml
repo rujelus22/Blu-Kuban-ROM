@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/main_container" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <view android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.TitleBar" style="@style/TitleBar" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/tablet_mainContainer" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <fragment android:name="com.google.android.apps.docs.fragment.NavigationFragment" android:id="@id/navigation_fragment" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <fragment android:name="com.google.android.apps.docs.fragment.DocListFragment" android:id="@id/doc_list_fragment" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <fragment android:name="com.google.android.apps.docs.fragment.PreviewFragment" android:layout_gravity="right" android:id="@id/preview_fragment" android:layout_width="@dimen/preview_panel_width" android:layout_height="fill_parent" />
+    </LinearLayout>
+</LinearLayout>

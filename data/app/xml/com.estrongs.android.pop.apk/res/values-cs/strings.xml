@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES Správce Souborů</string>
+    <string name="title_note">ES změnit poznámku</string>
+    <string name="image_browser_title">ES prohlížeč obrázků</string>
+    <string name="video_player_label">ES Video přehrávač</string>
+    <string name="app_zip">ES ZIP prohlížeč</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Gunakan Google Voice untuk melakukan semua panggilan</item>
+        <item>Gunakan Google Voice untuk semua panggilan internasional saja</item>
+        <item>Jangan menggunakan Google Voice untuk melakukan panggilan apa pun</item>
+        <item>Tanyakan setiap kali saya melakukan panggilan</item>
+        <item>Tanyakan setiap kali saya melakukan panggilan internasional</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Setiap 5 menit</item>
+        <item>Setiap 10 menit</item>
+        <item>Setiap 15 menit</item>
+        <item>Setiap 20 menit</item>
+        <item>Setiap 30 menit</item>
+        <item>Setiap 60 menit</item>
+        <item>Tidak pernah</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Gunakan nomor Google Voice saya yang ada</item>
+        <item>Gunakan nomor ponsel ini</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Panggilan/pesan singkat dari ponsel ini akan menampilkan nomor Google Voice saya</item>
+        <item>Nomor ini akan menggantikan nomor Google Voice saya</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Coba Lagi dengan Google Voice</item>
+        <item>Panggil tanpa Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Panggil dengan Google Voice</item>
+        <item>Panggil tanpa Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Panggil</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Melalui apl Google Voice</item>
+        <item>Melalui apl perpesanan</item>
+    </string-array>
+</resources>

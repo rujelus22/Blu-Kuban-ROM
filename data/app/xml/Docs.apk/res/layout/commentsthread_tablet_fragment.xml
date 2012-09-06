@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scroll_container" android:background="@color/comments_thread_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#ff1a1a1a" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RelativeLayout android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/button_resolve" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/menu_resolve" android:layout_centerVertical="true" />
+            <FrameLayout android:id="@id/button_close" android:focusable="true" android:clickable="true" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_alignTop="@id/button_resolve" android:layout_alignParentRight="true">
+                <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_cross" />
+            </FrameLayout>
+        </RelativeLayout>
+        <FrameLayout android:background="@color/comments_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@android:id/list" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <FrameLayout android:background="@color/comments_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <view android:id="@id/comment_view" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.docs.view.SocialCommentView" />
+    </LinearLayout>
+</ScrollView>

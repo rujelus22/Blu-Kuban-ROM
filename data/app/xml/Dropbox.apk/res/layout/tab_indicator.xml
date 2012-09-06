@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/new_tab" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/icon" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.dropbox.android.widget.BetterTextView android:textSize="14.0sp" android:textColor="@color/tab_text_foreground" android:id="@id/label" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip" />
+    </LinearLayout>
+</FrameLayout>

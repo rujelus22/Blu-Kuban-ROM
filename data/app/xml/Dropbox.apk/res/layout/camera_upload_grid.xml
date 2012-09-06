@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/filelistBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.dropbox.android.widget.SweetListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@color/filelistBackground" android:divider="@null" android:fastScrollEnabled="@bool/fastScroll" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@android:id/empty" android:padding="@dimen/emptyListLayoutPadding" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/grid_empty_progress" android:paddingRight="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmall" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="@dimen/filelistTextMedium" android:textColor="@color/listEmptyText" android:gravity="center" android:id="@id/grid_empty_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

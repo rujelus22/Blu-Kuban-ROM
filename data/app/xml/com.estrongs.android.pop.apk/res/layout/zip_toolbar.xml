@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/bar" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/addressbar" android:background="@drawable/addressbar_bg" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/addressbar_icon" android:paddingLeft="4.0dip" android:paddingTop="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/addressbar_zip" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="#ffffffff" android:ellipsize="start" android:gravity="center_vertical" android:id="@id/current_path" android:paddingLeft="2.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+        <ImageView android:id="@id/slide_toolbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" android:src="@drawable/toolbar_slide_up" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/toolbar" android:background="@drawable/toolbar_bg_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0dip">
+        <LinearLayout android:id="@id/layout_btnHome" style="@style/ToolbarTd">
+            <ImageView android:id="@id/btnHome" android:src="@drawable/toolbar_back" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_1_text" android:text="@string/back" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_btnMultiSelect" style="@style/ToolbarTd">
+            <ImageView android:id="@id/btnMultiSelect" android:src="@drawable/toolbar_select" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_2_text" android:text="@string/toolbar_icon_text_select" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_btnExtract" style="@style/ToolbarTd">
+            <ImageView android:id="@id/btnExtract" android:src="@drawable/toolbar_extract" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_3_text" android:text="@string/toolbar_icon_text_extract" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_uplevel" style="@style/ToolbarTd">
+            <ImageView android:id="@id/uplevel" android:src="@drawable/toolbar_uplevel" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_4_text" android:text="@string/toolbar_icon_text_up" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_btnCharset" style="@style/ToolbarTd">
+            <ImageView android:id="@id/btnCharset" android:src="@drawable/toolbar_multi_lang" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_5_text" android:text="@string/toolbar_icon_text_charset" style="@style/ToolbarText" />
+        </LinearLayout>
+        <ImageView android:background="@drawable/toolbar_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:id="@id/layout_zipBtnHelp" style="@style/ToolbarTd">
+            <ImageView android:id="@id/btnHelp" android:src="@drawable/toolbar_help" style="@style/ToolbarItem" />
+            <TextView android:id="@id/zip_toolbar_pos_6_text" android:text="@string/menu_help" style="@style/ToolbarText" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

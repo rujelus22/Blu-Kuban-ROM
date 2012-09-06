@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice ziņojumi</item>
+        <item quantity="one">Viens Google Voice ziņojums</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d nelasīti ziņojumi</item>
+        <item quantity="one">Viens nelasīts ziņojums</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">neatbildētie zvani</item>
+        <item quantity="one">neatbildēts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">saņemtie zvani</item>
+        <item quantity="one">saņemts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">balss pasta ziņojumi</item>
+        <item quantity="one">balss pasts</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">klausīšanās</item>
+        <item quantity="one">klausīšanās</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">ieraksti</item>
+        <item quantity="one">ieraksts</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">balss pasta pārbaudes</item>
+        <item quantity="one">balss pasta pārbaude</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">iestatījumi</item>
+        <item quantity="one">iestatījums</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">teksti</item>
+        <item quantity="one">teksts</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">teksti</item>
+        <item quantity="one">teksts</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">veiktie zvani</item>
+        <item quantity="one">veikts zvans</item>
+    </plurals>
+</resources>

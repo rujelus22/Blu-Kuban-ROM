@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>"Kasuta kõnede tegemiseks Google Voice'i"</item>
+        <item>"Kasuta Google Voice'i vaid rahvusvahelisteks kõnedeks"</item>
+        <item>"Ära kasuta kõnede tegemiseks Google Voice'i"</item>
+        <item>Küsi iga kord, kui helistan</item>
+        <item>Küsi iga kord, kui valin rahvusvahelise kõne</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Iga 5 minuti järel</item>
+        <item>Iga 10 minuti järel</item>
+        <item>Iga 15 minuti järel</item>
+        <item>Iga 20 minuti järel</item>
+        <item>Iga 30 minuti järel</item>
+        <item>Iga 60 minuti järel</item>
+        <item>Mitte kunagi</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>"Kasuta mu olemasolevat Google Voice'i numbrit"</item>
+        <item>Kasuta selle telefoni numbrit</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>"Kõned/tekstsõnumid sellelt telefonilt kuvavad minu Google Voice'i numbri"</item>
+        <item>"See asendab minu Google Voice'i numbri"</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>"Proovige uuesti Google Voice'iga"</item>
+        <item>"Helistage ilma Google Voice'ita"</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>"Helista Google Voice'iga"</item>
+        <item>"Helistage ilma Google Voice'ita"</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Helista</item>
+        <item>Kliki helistamiseks</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>"Google Voice'i rakenduse kaudu"</item>
+        <item>Sõnumiside rakenduse kaudu</item>
+    </string-array>
+</resources>

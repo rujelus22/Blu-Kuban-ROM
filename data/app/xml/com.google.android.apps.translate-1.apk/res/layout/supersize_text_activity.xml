@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/supersize_text" android:paddingLeft="4.0dip" android:paddingTop="4.0dip" android:nextFocusLeft="@id/btn_exit" android:nextFocusRight="@id/btn_exit" android:nextFocusUp="@id/btn_exit" android:nextFocusDown="@id/btn_exit" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageButton android:layout_gravity="top|right|center" android:id="@id/btn_exit" android:background="@drawable/btn_clear_bg" android:padding="8.0dip" android:focusable="true" android:nextFocusLeft="@id/supersize_text" android:nextFocusRight="@id/supersize_text" android:nextFocusUp="@id/supersize_text" android:nextFocusDown="@id/supersize_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_clear" android:contentDescription="@string/btn_close" />
+</merge>

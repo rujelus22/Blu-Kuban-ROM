@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>"Tüm çağrılar için Google Voice'u kullan"</item>
+        <item>Google Voice uygulamasını yalnızca uluslararası aramalarda kullan</item>
+        <item>Google Voice uygulamasını çağrı yapmak için kullanma</item>
+        <item>Her çağrı yaptığımda sor</item>
+        <item>Uluslararası çağrı yaptığımda her zaman sor</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Her 5 dakikada bir</item>
+        <item>Her 10 dakikada bir</item>
+        <item>Her 15 dakikada bir</item>
+        <item>Her 20 dakikada bir</item>
+        <item>Her 30 dakikada bir</item>
+        <item>Her 60 dakikada bir</item>
+        <item>Hiçbir zaman</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Mevcut Google Voice numaramı kullan</item>
+        <item>Bu telefonun numarasını kullan</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Bu telefondan giden çağrılarda/metin mesajlarında Google Voice numaram görüntülenecek</item>
+        <item>Bu, Google Voice numaramın yerini alacak</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Google Voice ile tekrar deneyin</item>
+        <item>Google Voice kullanmadan çağrı yapın</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Google Voice ile ara</item>
+        <item>Google Voice kullanmadan çağrı yap</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Çağrı Yap</item>
+        <item>Tıkla ve Ara</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Google Voice uygulaması üzerinden</item>
+        <item>Mesajlaşma uygulaması üzerinden</item>
+    </string-array>
+</resources>

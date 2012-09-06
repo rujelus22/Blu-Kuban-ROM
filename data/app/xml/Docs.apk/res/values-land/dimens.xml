@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_screen_top_padding">0.0dip</dimen>
+    <dimen name="home_screen_filters_top_padding">0.0dip</dimen>
+    <dimen name="speaker_notes_content_close_button_side_margin">10.0dip</dimen>
+</resources>

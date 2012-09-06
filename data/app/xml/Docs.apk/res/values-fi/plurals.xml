@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d päivää sitten</item>
+        <item quantity="one">%d päivä sitten</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d viikkoa sitten</item>
+        <item quantity="one">%d viikko sitten</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d/%2$s on nyt käytettävissä offline-tilassa.</item>
+        <item quantity="one">%1$d/%2$s on nyt käytettävissä offline-tilassa.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Kaikki %1$d tiedostoa ovat käyt. offline.</item>
+        <item quantity="one">%1$d tiedosto on käytössä offline-tilassa.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Ladataan %1$d tiedostoa offline-käyttöön.</item>
+        <item quantity="one">Ladataan %1$d tiedosto offline-käyttöön.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d tiedostoa</item>
+        <item quantity="one">%1$d tiedosto</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d tiliä</item>
+        <item quantity="one">%1$d tiliä</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s eivät ole kelvollisia sähköpostiosoitteita.</item>
+        <item quantity="one">%s ei ole kelvollinen sähköpostiosoite.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Siirrä %d kohd.</item>
+        <item quantity="one">Siirrä %s</item>
+    </plurals>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dropbox.android.widget.GalleryView android:id="@id/gallery_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/gallery_title_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <TextView android:textSize="@dimen/filelistTextMedium" android:textColor="#ffffffff" android:ellipsize="middle" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/gallery_titler" android:background="#ff1a1a1a" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" android:shadowColor="#ff000000" android:shadowRadius="4.0" />
+        <View android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <com.dropbox.android.widget.OffscreenProgressBar android:layout_gravity="center" android:id="@id/gallery_progress_a" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyle" />
+    <com.dropbox.android.widget.OffscreenProgressBar android:layout_gravity="center" android:id="@id/gallery_progress_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyle" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/gallery_button_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <View android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:background="#ff1a1a1a" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/gallery_favorite_button" android:text="@string/gallery_favorite" android:drawableTop="@drawable/ic_favorite" style="@style/GalleryButton" />
+            <Button android:id="@id/gallery_share_button" android:text="@string/gallery_share" android:drawableTop="@drawable/ic_share" style="@style/GalleryButton" />
+            <Button android:id="@id/gallery_export_button" android:text="@string/gallery_export" android:drawableTop="@drawable/ic_export" style="@style/GalleryButton" />
+            <Button android:id="@id/gallery_delete_button" android:text="@string/gallery_delete" android:drawableTop="@drawable/ic_delete" style="@style/GalleryButton" />
+        </LinearLayout>
+    </LinearLayout>
+</com.dropbox.android.widget.GalleryView>

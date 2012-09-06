@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/guide" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/header_space_1" android:layout_width="fill_parent" android:layout_height="28.0dip" />
+    <View android:id="@id/header_space_2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="96.0dip" />
+    <LinearLayout android:gravity="center" android:id="@id/toolbar" android:background="@drawable/toolbar_bg_" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:id="@id/guide_1" layout="@layout/guide_1" />
+    <include android:id="@id/guide_2" layout="@layout/guide_2" />
+    <include android:id="@id/baidu_guide_4" layout="@layout/baidu_guide_4" />
+    <include android:id="@id/baidu_guide_5" layout="@layout/baidu_guide_5" />
+</LinearLayout>

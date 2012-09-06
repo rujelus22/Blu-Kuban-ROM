@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+p {text-indent: 14pt;}
+h3 {?font-weight:bolder;color:red;}
+h4 {text-indent: 8pt;font-weight:bolder;color:blue;}
+</style>
+</head>
+<body>
+<a href="help_index.html">主頁</a><br>
+<h2>常見問題</h2>
+<h3>本地磁盤：</h3>
+<strong>問</strong>：當從局域網電腦傳輸整個檔案夾到手機，它經常停止第三或是第四個檔案<br>
+<strong>答</strong>：一般來說，當Wi-Fi處於睡眠狀態時，手機將切斷Wi-Fi，這將導致檔案傳輸停止。單擊系統設置/無線控件，選Wi-Fi設置，單擊菜單/高級，再單擊Wi-Fi休眠策略，選中”永不休眠“。這樣你傳輸比較大或是多檔案就沒問題了<br><br>
+<h3>局域網共享：</h3>
+<strong>問</strong>：你能一步步告訴我怎樣連接我的G1到遠程服務器。我的電腦是windows XP service pack3。 <br>
+<strong>答</strong>：
+<ol>
+<li>在電腦上，大多數用戶能使用默認的設置，而不需要任何操作。萬一出問題的話，請確認你的電腦能被局域網中的其他電腦訪問（如果不能，檢查防火牆設置），對於windows，你不需要安裝Samba(Windows系統本身支持網絡共享，即Samba)，但是需要你打開微軟網絡共享和打印共享</li>
+<li>在手機上，按照用戶手冊裡面的步驟。到遠程標籤，單擊菜單/增加，新建服務器，輸入你的電腦IP，輸入你登陸windows的用戶名、密碼。在Windows上，單擊開始/運行，輸入cmd，按回車，進入dos命令行，輸入ipconfig，按回車，你能獲得你自己的IP</li>
+</ol>
+<strong>問</strong>：我正在用Vista/XP/windows7, 我需要一個Samba服務器來同你們的程序一起工作嗎?<br>
+<strong>答</strong>：如果你想讓你的電腦和手機共享檔案的話，的確需要Samba服務，但是windows裡，它是內嵌的功能，因此用戶只需默認設置，不需要安裝它< br><br>
+<strong>問</strong>：我想知道是否你需要無線網絡來存取你的電腦上的檔案？ <br>
+<strong>答</strong>：你需要一種方式連接到本地網絡，一般來說，無線網絡是最好的選擇<br><br>
+<strong>問</strong>：我輸入我的電腦IP和用戶名，單擊連接，老是彈出個對話框，提示：“找不到路徑或超時，稍後再試”。 <br>
+<strong>答</strong>：
+<ol>
+<li>請確認你的手機和電腦是否在同一個局域網內</li>
+<li>你能通過局域網內的其他電腦訪問該服務器。如果也不能連接成功，它可能是一個網絡問題（或許防火牆，用戶權限等等）</li>
+</ol>
+<strong>問</strong>：當存取受保護的服務器時，我得到用戶名和口令錯誤。我確信我輸入了正確的用戶名和口令。 <br>
+<strong>答</strong>: 原因可能是：
+<ul>
+<li>錯誤的用戶名或空口令（你在手機上創建的用戶名和口令是和你的電腦的用戶名和口令是相同的）</li>
+<li>在你電腦上的共享配置不正確，意思是，你不能在同一局域網內通過其他電腦訪問你的電腦</li>
+<li>檔案夾有特殊的權限要求，該用戶沒有此權限</li>
+</ul>
+<strong>問</strong>：如果用匿名用戶登錄，我能瀏覽檔案，但是不能編輯、移除或是傳輸檔案，難道我不能存取？ <br>
+<strong>答</strong>：依據計算機系統設置，匿名用戶有不同的權限，能瀏覽但是不能移除等<br><br>
+<h3>FTP：</h3>
+<strong>Q</strong>: 用FTP還需要準備什麼嗎？ <br>
+<strong>A</strong>:
+<ul>
+<li>在你的電腦上安裝、配置FTP server（注意檔案所賦權限），我們僅為客戶端。 </li>
+<li>wifi或3G網絡（3G，連接可能是被動模式）</li>
+</ul>
+<strong>Q</strong>: 無法連接，一直提示得到檔案列表，最後顯示“網絡路徑沒有找到，稍後再試”，怎麼辦？ <br>
+<strong>A</strong>:
+<ul>
+<li>檢查網絡連接，看是否可也ping通ftp服務器(例如： 單擊"開始"->"運行"->鍵入"cmd"->按Enter->輸入"ping www.google.com"- >按Enter)。 </li>
+<li>如果用3G網絡，請嘗試被動連接模式（在新建ftp服務器對話框）。 </li>
+</ul>
+<strong>Q</strong>: 我能正常連接，但是檔案內容顯示為亂碼或者服務器檔案夾內容為空，怎麼辦？ <br>
+<strong>A</strong>: 請在編碼設置中選擇與你ftp服務器相匹配的字符集。你能通過IE(打開IE，單擊查看--->編碼)，查看你的FTP服務器端的字符編碼。 <br><br>
+<h3>藍牙：</h3>
+<strong>Q</strong>: 我的SDK是1.5,1.6版，藍牙不能用？ <br>
+<strong>A</strong>: 1.5，1.6版本（菜單->設置->關於手機->Android版本）暫不支持，請升級到2.0以上版本。 <br><br>
+<h3>任務管理：</h3>
+<strong>Q</strong>: 不能自動kill了？ <br>
+<strong>A</strong>: 自動kill是為widget準備的功能，所以請先在主屏幕增加widget。 <br><br>
+<strong>Q</strong>: 請詳細說明一下怎樣用widget？ <br>
+<strong>A</strong>: 步驟：
+<ul>
+<li>增加widget：<br>在主屏幕長按->窗口小部件-> ES 任務管理器即可；也可以單擊手機菜單->添加-> 窗口小部件-> ES 任務管理器。 </li>
+<li>設置widget：<br>菜單->設置->高級設置->小工具設置->小工具操作，選擇你想要的操作。 </li>
+<li>使用widget：<br>此時，可以通過widget隨時看看可用內存數和正在運行的進程數，單擊桌面widget，就可以響應你的操作。 </li>
+</ul>
+<strong>Q</strong>: 單擊widget，殺死了電話進程，主屏幕重啟？ <br>
+<strong>A</strong>: 選擇電話相關進程，長按，增加其到忽略列表即可。 <br><br>
+<strong>Q</strong>: 怎樣用忽視列表（加，刪）？ <br>
+<strong>A</strong>:
+<ul>
+<li>增加到忽略列表：<br>在任務管理器裡，長按該進程，在彈出的操作中選擇忽略即可。 </li>
+<li>從忽略列表中刪除：<br>在任務管理器裡，單擊Menu--->顯示忽略，長按該進程，在彈出的操作中選擇忽略。或者，單擊菜單--->設置--->忽略列表，找到該程序，單擊即可。 </li>
+</ul>
+<a href="help_index.html">主頁</a>
+<p style="text-align:center;color:#666">Copyright 2012 &copy; EStrongs Inc.<br>
+contact@estrongs.com</p>
+</body>
+</html>

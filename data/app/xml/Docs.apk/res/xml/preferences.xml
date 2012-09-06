@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/prefs_title_all_apps" android:key="docs_preference_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/prefs_additional_filters" android:key="additional_filters" android:summary="@string/prefs_additional_filters_summary" />
+    <PreferenceCategory android:title="@string/prefs_notify_category_title" android:key="docs_preference_screen.notify">
+        <CheckBoxPreference android:title="@string/prefs_notify_newdoc" android:key="shared_preferences.notify_newdoc" android:summary="@string/prefs_notify_newdoc_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/prefs_cache_category_title" android:key="cache_category">
+        <ListPreference android:title="@string/prefs_cache_size" android:key="shared_preferences.cache_size" />
+        <Preference android:title="@string/clear_cache" android:key="clear_cache" android:summary="@string/prefs_clear_cache_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/prefs_encryption_category" android:key="encryption">
+        <CheckBoxPreference android:title="@string/prefs_enable_pin_encryption_title" android:key="enable_pin_encryption" android:summary="@string/prefs_enable_pin_encryption_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/prefs_streaming_decryption_title" android:key="streaming_decryption" android:summary="@string/prefs_streaming_decryption_summary" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/prefs_offline_category" android:key="docs_preference_screen.offline">
+        <CheckBoxPreference android:title="@string/prefs_offline_data_usage_reminder_title" android:key="shared_preferences.warn_offline_sync_broadband" android:summary="@string/prefs_offline_data_usage_reminder_summary" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/prefs_storage_category_title" android:key="storage">
+        <Preference android:title="@string/prefs_storage_add_title" android:key="storage_add" android:summary="@string/prefs_storage_add_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/prefs_about_category_title_all_apps">
+        <Preference android:title="@string/prefs_about" android:key="about" />
+        <Preference android:title="@string/prefs_legal" android:key="legal" />
+    </PreferenceCategory>
+</PreferenceScreen>

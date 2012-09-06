@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/panel_subscribe" android:background="@drawable/subscribe_plate" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/not_subscribed" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/field_account" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_account" />
+        <view android:id="@id/spinner_account" android:nextFocusDown="@id/button_subscribe" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" class="com.google.android.apps.reader.widget.IntentSpinner" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:id="@id/button_subscribe" android:nextFocusRight="@id/button_decline" android:nextFocusUp="@id/spinner_account" android:nextFocusDown="@android:id/list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_subscribe" android:minEms="8" android:drawableLeft="@drawable/ic_list_new_window" />
+        <Button android:id="@id/button_decline" android:nextFocusLeft="@id/button_subscribe" android:nextFocusUp="@id/spinner_account" android:nextFocusDown="@android:id/list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_decline" android:minEms="8" android:drawableLeft="@drawable/ic_btn_stop_v2" />
+    </LinearLayout>
+</LinearLayout>

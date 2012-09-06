@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Ring med Google Voice</item>
+        <item>Bruk bare Google Voice til internasjonale samtaler</item>
+        <item>Bruk ikke Google Voice til å ringe ut med</item>
+        <item>Spør hver gang jeg ringer</item>
+        <item>Spør hver gang jeg ringer internasjonalt</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Hvert femte minutt</item>
+        <item>Hvert 10. minutt</item>
+        <item>Hvert 15. minutt</item>
+        <item>Hvert 20. minutt</item>
+        <item>Hvert 30. minutt</item>
+        <item>Hvert 60. minutt</item>
+        <item>Aldri</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Bruk mitt eksisterende Google Voice-nummer</item>
+        <item>Bruk denne telefonens telefonnummer</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Anrop og tekstmeldinger fra denne telefonen vil vise mitt Google Voice-nummer</item>
+        <item>Dette vil erstatte mitt Google Voice-nummer.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Prøv igjen med Google Voice</item>
+        <item>Ring uten Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Ring med Google Voice</item>
+        <item>Ring uten Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Ring</item>
+        <item>Klikk for å ringe</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via Google Voice-appen</item>
+        <item>Via meldingsappen</item>
+    </string-array>
+</resources>

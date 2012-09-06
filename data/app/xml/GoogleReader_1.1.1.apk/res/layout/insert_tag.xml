@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <EditText android:id="@id/edit_tag_label" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?buttonBarStyle">
+        <Button android:id="@id/button_confirm_create_folder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_confirm_create_folder" android:layout_weight="1.0" style="?buttonBarButtonStyle" />
+        <Button android:id="@id/button_abort_create_folder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_abort_create_folder" android:layout_weight="1.0" style="?buttonBarButtonStyle" />
+    </LinearLayout>
+</LinearLayout>

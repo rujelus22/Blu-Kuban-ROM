@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice iletisi</item>
+        <item quantity="one">1 Google Voice mesajı</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Okunmamış %1$d mesaj var</item>
+        <item quantity="one">Okunmamış bir mesaj var</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">cevapsız çağrı</item>
+        <item quantity="one">cevapsız çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">gelen çağrı</item>
+        <item quantity="one">gelen çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">sesli mesaj</item>
+        <item quantity="one">sesli mesaj</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">dinleme</item>
+        <item quantity="one">dinleme</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">kayıt</item>
+        <item quantity="one">kayıt</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">sesli mesaj denetimi</item>
+        <item quantity="one">sesli mesaj denetimi</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">ayar</item>
+        <item quantity="one">ayar</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">kısa mesajlar</item>
+        <item quantity="one">kısa mesaj</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">kısa mesajlar</item>
+        <item quantity="one">kısa mesaj</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">giden çağrı</item>
+        <item quantity="one">giden çağrı</item>
+    </plurals>
+</resources>

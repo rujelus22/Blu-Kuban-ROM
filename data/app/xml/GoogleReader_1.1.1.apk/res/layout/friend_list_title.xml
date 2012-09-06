@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/CustomWindowTitle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton style="@style/CustomWindowTitleHome" />
+    <ImageView style="@style/CustomWindowTitleSeparator" />
+    <TextView style="@style/CustomWindowTitleText" />
+    <ProgressBar style="@style/CustomWindowTitleProgressCircular" />
+    <ImageView style="@style/CustomWindowTitleSeparator" />
+    <ImageButton style="@style/CustomWindowTitleRefresh" />
+    <ImageView android:visibility="gone" style="@style/CustomWindowTitleSeparator" />
+    <ImageButton android:visibility="gone" style="@style/CustomWindowTitleAdd" />
+</LinearLayout>

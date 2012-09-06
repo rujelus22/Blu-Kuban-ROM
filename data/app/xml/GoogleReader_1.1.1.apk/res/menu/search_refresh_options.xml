@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:orderInCategory="0">
+        <item android:icon="@drawable/ic_menu_refresh" android:id="@id/menu_refresh" android:title="@string/menu_refresh" android:alphabeticShortcut="r" android:showAsAction="ifRoom" />
+        <item android:icon="@drawable/ic_menu_search" android:id="@id/menu_search" android:title="@string/menu_search" android:alphabeticShortcut="/" />
+    </group>
+</menu>

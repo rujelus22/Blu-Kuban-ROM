@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/accounts_pref_header_dropbox_settings" />
+    <PreferenceScreen android:title="@string/accounts_pref_item_settings_name" android:key="account_settings" android:summary="@string/accounts_pref_item_settings_desc">
+        <intent android:targetPackage="com.dropbox.android" android:action="com.dropbox.android.ACCOUNT_PREFERENCES" android:targetClass="com.dropbox.android.activity.ExternalPrefsLauncher" />
+    </PreferenceScreen>
+</PreferenceScreen>

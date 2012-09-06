@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/filelistBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/db_browser_list_item" android:scrollingCache="false" android:cacheColorHint="#00000000" android:divider="@drawable/line" android:dividerHeight="1.0px" android:fastScrollEnabled="@bool/fastScroll" />
+        <FrameLayout android:id="@android:id/empty" android:background="@color/lightBlueBackground" android:padding="@dimen/emptyPageOuterPadding" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <FrameLayout style="@style/BottomBar">
+        <LinearLayout android:orientation="horizontal" style="@style/BottomBarContainer">
+            <Button android:id="@id/btn_upload_photo" android:layout_marginRight="@dimen/fileChooserButtonRight" android:text="@string/upload_button_media" style="@style/UploadButton" />
+            <Button android:id="@id/btn_upload_other" android:layout_marginLeft="@dimen/fileChooserButtonLeft" android:text="@string/upload_button_other" style="@style/UploadButton" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

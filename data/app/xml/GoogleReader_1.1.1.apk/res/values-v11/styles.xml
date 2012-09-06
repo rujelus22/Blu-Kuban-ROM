@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Reader" parent="@android:style/Theme.Holo">
+        <item name="android:tabWidgetStyle">@style/WidgetHoloLightTabWidget</item>
+        <item name="android:textViewStyle">@style/WidgetTextView</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="listSelector">?android:listChoiceBackgroundIndicator</item>
+    </style>
+    <style name="Theme.Reader.DialogWhenLarge" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:tabWidgetStyle">@style/WidgetHoloLightTabWidget</item>
+        <item name="android:textViewStyle">@style/WidgetTextView</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+    <style name="ThemeHolo" parent="@android:style/Theme.Holo">
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+    <style name="ThemeHoloDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+    <style name="ThemeHoloDialogWhenLarge" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+    <style name="ThemeHoloDialogWhenLargeNoActionBar" parent="@android:style/Theme.Holo.DialogWhenLarge.NoActionBar">
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+    </style>
+    <style name="WidgetHoloLightTabWidget" parent="@android:style/Widget.Holo.TabWidget">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+</resources>

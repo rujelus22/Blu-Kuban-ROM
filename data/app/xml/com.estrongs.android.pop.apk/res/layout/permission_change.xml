@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_weight="1.0" />
+            <TextView android:gravity="left" android:id="@id/cp_permission_read" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_read" android:layout_weight="1.0" />
+            <TextView android:gravity="left" android:id="@id/cp_permission_write" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_write" android:layout_weight="1.0" />
+            <TextView android:gravity="left" android:id="@id/cp_permission_execute" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_execute" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="#ff155496" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="2.0dip" />
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="left|center" android:id="@id/cp_permission_user" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_user" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_user_read" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_user_write" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_user_exe" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="left|center" android:id="@id/cp_permission_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_group" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_group_read" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_group_write" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_group_exe" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="left|center" android:id="@id/cp_permission_other" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/permission_other" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_other_read" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_other_write" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <CheckBox android:gravity="center" android:id="@id/perm_other_exe" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="#ff155496" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="2.0dip" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/change_perm_ok" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/ok" />
+            <Button android:id="@id/change_perm_cancel" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

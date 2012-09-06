@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d дн. тому</item>
+        <item quantity="one">%d день тому</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d тиж. тому</item>
+        <item quantity="one">%d тиждень тому</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">Наразі доступно офлайн: %1$d з %2$s.</item>
+        <item quantity="one">Наразі доступно офлайн: %1$d з %2$s.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Наразі всі файли доступні офлайн: %1$d.</item>
+        <item quantity="one">Наразі доступно файлів офлайн: %1$d.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">Завантаження файлів (%1$d) для офлайн-роботи</item>
+        <item quantity="one">Завантаження файлу (%1$d) для роботи офлайн.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">Файлів: %1$d</item>
+        <item quantity="one">Файлів: %1$d</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">Кількість облікових записів: %1$d</item>
+        <item quantity="one">Кількість облікових записів: %1$d</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s не є дійсними адресами електронної пошти.</item>
+        <item quantity="one">%s не є дійсною адресою електронної пошти.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">Переміщення елементів: %d</item>
+        <item quantity="one">Переміщення \"%s\"</item>
+    </plurals>
+</resources>

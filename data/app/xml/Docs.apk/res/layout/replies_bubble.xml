@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_docos_gray" android:layout_centerInParent="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="12.0sp" android:textColor="#ffffffff" android:id="@id/replies" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="99" android:layout_centerInParent="true" />
+</RelativeLayout>

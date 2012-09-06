@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="61.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/navigation_icon" android:paddingLeft="17.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_drive_all_items" />
+    <TextView android:textSize="18.0sp" android:id="@id/navigation_name" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/navigation_pane_text" />
+</LinearLayout>

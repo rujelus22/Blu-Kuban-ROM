@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/googlevoice_voicemail_preferences">
+        <Preference android:id="@id/voicemail_configuration_preference" android:title="@string/voicemail_configuration_preference_title" android:key="@string/voicemail_configuration_key" />
+        <Preference android:id="@id/sign_out_preference" android:title="@string/sign_out_preference_title" android:key="@string/sign_out_preference_key" />
+    </PreferenceCategory>
+</PreferenceScreen>

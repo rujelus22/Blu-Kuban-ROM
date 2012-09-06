@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="3.0dip" android:paddingTop="0.0dip" android:paddingRight="2.0dip" android:paddingBottom="0.0dip" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_below="@id/sharing_group_header"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/share_user_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/share_options" android:layout_below="@id/sharing_group_header">
+        <QuickContactBadge android:gravity="center_vertical" android:id="@id/share_badge" android:layout_marginLeft="4.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="3.0dip" android:layout_centerVertical="true" style="?android:attr/quickContactBadgeStyleWindowMedium" />
+        <TextView android:textSize="24.0sp" android:textColor="@color/sharing_list_name" android:id="@id/share_name" android:paddingTop="3.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@id/share_badge" />
+        <TextView android:textStyle="bold" android:textColor="@color/sharing_list_email" android:id="@id/share_email" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@id/share_badge" android:layout_below="@id/share_name" />
+    </RelativeLayout>
+    <TextView android:textSize="20.0sp" android:textColor="@color/sharing_list_name" android:id="@id/sharing_option" android:paddingTop="3.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:layout_toLeftOf="@id/share_options" />
+    <ImageView android:gravity="center_vertical" android:id="@id/share_options" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_btn_round_more" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

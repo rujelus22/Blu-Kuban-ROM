@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_node" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minWidth="500.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/first_label" android:paddingLeft="18.0dip" android:paddingTop="16.0dip" android:paddingRight="18.0dip" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enter_new_name" />
+    <EditText android:id="@id/new_name" android:paddingLeft="18.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:inputType="text" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/operation_dialog_error" android:id="@id/status_message" android:paddingLeft="18.0dip" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+    <RelativeLayout android:id="@id/sync_in_progress" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <include layout="@layout/operation_dialog_buttons" />
+</LinearLayout>

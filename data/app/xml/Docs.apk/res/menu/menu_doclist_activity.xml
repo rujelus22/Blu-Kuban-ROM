@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@android:drawable/ic_menu_rotate" android:id="@id/menu_refresh" android:title="@string/menu_refresh" />
+    <item android:icon="@android:drawable/ic_menu_sort_alphabetically" android:id="@id/menu_sortings" android:title="@string/menu_sort_by" />
+    <item android:icon="@android:drawable/ic_menu_preferences" android:id="@id/menu_settings" android:title="@string/menu_settings" android:showAsAction="never" />
+    <item android:icon="@android:drawable/ic_menu_help" android:id="@id/menu_help" android:title="@string/menu_help" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_send_feedback" android:id="@id/menu_send_feedback" android:title="@string/menu_send_feedback" />
+</menu>

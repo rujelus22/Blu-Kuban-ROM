@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s הודעות של Google Voice</item>
+        <item quantity="one">הודעת Google Voice אחת</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">ישנן %1$d הודעות שלא נקראו</item>
+        <item quantity="one">ישנה הודעה שלא נקראה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">שיחות שלא נענו</item>
+        <item quantity="one">שיחה שלא נענתה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">שיחות שהתקבלו</item>
+        <item quantity="one">שיחה שהתקבלה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">הודעות דואר קולי</item>
+        <item quantity="one">דואר קולי</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">האזנות</item>
+        <item quantity="one">האזנה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">הקלטות</item>
+        <item quantity="one">מקליט</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">בדיקות דואר קולי</item>
+        <item quantity="one">בדיקת דואר קולי</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">הגדרות</item>
+        <item quantity="one">הגדרה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">הודעות טקסט</item>
+        <item quantity="one">הודעת טקסט</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">הודעות טקסט</item>
+        <item quantity="one">טקסט</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">שיחות שבוצעו</item>
+        <item quantity="one">שיחה שבוצעה</item>
+    </plurals>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/selection_popup" android:background="@drawable/selection_popup_background" style="@style/selection_popup"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/editPopup" android:visibility="gone" style="@style/selection_button_container">
+        <ImageView android:id="@id/editPopup_icon" android:contentDescription="@string/edit" style="@style/selection_icon" />
+        <TextView android:id="@id/editPopup_text" android:text="@string/edit" style="@style/selection_popup_text" />
+    </LinearLayout>
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <TextView android:id="@android:id/selectAll" android:visibility="gone" android:text="@android:string/selectAll" style="@style/selection_popup_text" />
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <LinearLayout android:id="@android:id/cut" android:visibility="gone" style="@style/selection_button_container">
+        <ImageView android:id="@id/cut_icon" android:contentDescription="@android:string/cut" style="@style/selection_icon" />
+        <TextView android:id="@id/cut_text" android:text="@android:string/cut" style="@style/selection_popup_text" />
+    </LinearLayout>
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <LinearLayout android:id="@android:id/copy" android:visibility="gone" style="@style/selection_button_container">
+        <ImageView android:id="@id/copy_icon" android:contentDescription="@android:string/copy" style="@style/selection_icon" />
+        <TextView android:id="@id/copy_text" android:text="@android:string/copy" style="@style/selection_popup_text" />
+    </LinearLayout>
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <LinearLayout android:id="@android:id/paste" android:visibility="gone" style="@style/selection_button_container">
+        <ImageView android:id="@id/paste_icon" android:contentDescription="@android:string/paste" style="@style/selection_icon" />
+        <TextView android:id="@id/paste_text" android:text="@android:string/paste" style="@style/selection_popup_text" />
+    </LinearLayout>
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <TextView android:id="@id/follow_link" android:visibility="gone" android:text="@string/open_link" style="@style/selection_popup_text" />
+    <View android:tag="selection_popup_separator" android:visibility="gone" style="@style/selection_button_separator" />
+    <LinearLayout android:id="@id/comment" android:visibility="gone" style="@style/selection_button_container">
+        <ImageView android:id="@id/comment_icon" android:contentDescription="@string/comment" style="@style/selection_icon" />
+        <TextView android:id="@id/comment_text" android:text="@string/comment" style="@style/selection_popup_text" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="album_grid_vertical_spacing">2.0dip</dimen>
+    <dimen name="album_grid_horizontal_spacing">2.0dip</dimen>
+    <dimen name="album_photo_grid_width">155.0dip</dimen>
+    <dimen name="album_photo_grid_height">155.0dip</dimen>
+</resources>

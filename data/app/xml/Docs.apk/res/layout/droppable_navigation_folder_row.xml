@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.docs.view.DroppableNavigationRowView android:background="@drawable/droppable_navigation_row_background" android:layout_width="fill_parent" android:layout_height="fill_parent" cakemix:entryLayout="@layout/navigation_folder_row"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:cakemix="http://schemas.android.com/apk/res/com.google.android.apps.docs" />

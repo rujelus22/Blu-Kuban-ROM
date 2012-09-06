@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/localitem_list_row" android:padding="@dimen/filelistPadding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:duplicateParentState="true" android:layout_width="@dimen/filelistThumbailFrameSize" android:layout_height="@dimen/filelistThumbailFrameSize">
+        <ImageView android:id="@id/localitem_thumb_frame" android:duplicateParentState="true" android:layout_width="@dimen/filelistThumbailFrameSize" android:layout_height="@dimen/filelistThumbailFrameSize" android:src="@drawable/thumbnail_loading" />
+        <ImageView android:layout_gravity="center" android:id="@id/localitem_thumbnail" android:duplicateParentState="true" android:layout_width="@dimen/filelistThumbnailSize" android:layout_height="@dimen/filelistThumbnailSize" android:scaleType="centerCrop" />
+        <ImageView android:layout_gravity="center" android:id="@id/localitem_icon" android:duplicateParentState="true" android:layout_width="@dimen/filelistIconSize" android:layout_height="@dimen/filelistIconSize" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/filelistIconRight" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/filelistTextMedium" android:textColor="@color/local_filelist_text_name" android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/localitem_name" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" />
+        <TextView android:textSize="@dimen/filelistTextSmall" android:textColor="@color/local_filelist_text_small" android:id="@id/localitem_info" android:paddingTop="3.0dip" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <CheckBox android:id="@id/localitem_checkbox" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" style="@style/Checkbox" />
+</LinearLayout>

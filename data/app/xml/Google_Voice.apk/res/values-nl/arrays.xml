@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Google Voice gebruiken voor alle oproepen</item>
+        <item>Google Voice alleen gebruiken voor internationale oproepen</item>
+        <item>Google Voice niet gebruiken voor oproepen</item>
+        <item>Altijd vragen wanneer ik bel</item>
+        <item>Altijd vragen bij internationale oproep</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Elke 5 minuten</item>
+        <item>Elke 10 minuten</item>
+        <item>Elke 15 minuten</item>
+        <item>Elke 20 minuten</item>
+        <item>Elke 30 minuten</item>
+        <item>Elke 60 minuten</item>
+        <item>Nooit</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Mijn bestaande Google Voice-nummer gebruiken</item>
+        <item>Nummer van deze telefoon gebruiken</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>"Bij oproepen/sms'jes vanaf deze telefoon wordt mijn Google Voice-nummer weergegeven"</item>
+        <item>Dit vervangt mijn Google Voice-nummer</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Opnieuw proberen met Google Voice</item>
+        <item>Niet via Google Voice bellen</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Bellen met Google Voice</item>
+        <item>Niet via Google Voice bellen</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Bellen</item>
+        <item>Klik om te bellen</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via de app Google Voice</item>
+        <item>Via de app Berichten</item>
+    </string-array>
+</resources>

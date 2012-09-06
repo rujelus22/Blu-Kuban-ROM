@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice -viestiä</item>
+        <item quantity="one">1 Google Voice -viesti</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d lukematonta viestiä</item>
+        <item quantity="one">Yksi lukematon viesti</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">vastaamattomat puhelut</item>
+        <item quantity="one">vastaamatta jäänyt puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">vastaanotetut puhelut</item>
+        <item quantity="one">vastaanotettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">vastaajan viestit</item>
+        <item quantity="one">vastaaja</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">kuuntelut</item>
+        <item quantity="one">kuuntelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">tallenteet</item>
+        <item quantity="one">tallenne</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">vastaajaviestien kuuntelut</item>
+        <item quantity="one">vastaajaviestien kuuntelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">asetukset</item>
+        <item quantity="one">asetus</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">tekstit</item>
+        <item quantity="one">teksti</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">tekstit</item>
+        <item quantity="one">teksti</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">soitetut puhelut</item>
+        <item quantity="one">soitettu puhelu</item>
+    </plurals>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <MultiAutoCompleteTextView android:id="@id/text_view" android:paddingLeft="20.0dip" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="280.0dip" android:layout_height="wrap_content" android:text="" android:hint="@string/add_collaborators_default" android:inputType="textEmailAddress" />
+    <include layout="@layout/add_collaborator_buttons" />
+</LinearLayout>

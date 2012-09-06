@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/chip_color_unselected_normal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.translate.history.FocusRequestingListView android:id="@android:id/list" android:animationCache="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scrollingCache="false" android:textFilterEnabled="true" android:choiceMode="singleChoice" />
+    <include layout="@layout/empty_list_view" />
+</LinearLayout>

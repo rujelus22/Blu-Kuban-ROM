@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Gunakan Google Voice untuk membuat semua panggilan</item>
+        <item>Gunakan Google Voice sahaja untuk panggilan antarabangsa</item>
+        <item>Jangan gunakan Google Voice untuk membuat sebarang panggilan</item>
+        <item>Tanya setiap kali saya membuat panggilan</item>
+        <item>Tanya setiap kali saya membuat panggilan antarabangsa</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Setiap 5 minit</item>
+        <item>Setiap 10 minit</item>
+        <item>Setiap 15 minit</item>
+        <item>Setiap 20 minit</item>
+        <item>Setiap 30 minit</item>
+        <item>Setiap 60 minit</item>
+        <item>Jangan sekali-kali</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Gunakan nombor Google Voice saya yang sedia ada</item>
+        <item>Gunakan nombor telefon ini</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Panggilan/mesej teks dari telefon ini akan memaparkan nombor Google Voice saya</item>
+        <item>Ini akan menggantikan nombor Google Voice saya</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Cuba semula dengan Google Voice</item>
+        <item>Panggil tanpa Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Panggil dengan Google Voice</item>
+        <item>Panggil tanpa Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Panggil</item>
+        <item>Klik-untuk-Panggil</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Melalui apl Google Suara</item>
+        <item>Melalui apl pemesejan</item>
+    </string-array>
+</resources>

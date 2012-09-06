@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.translate.editor.EditorLayout android:layout_gravity="top" android:orientation="vertical" android:id="@id/editor_dialog" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.translate.asreditor.AsrResultEditor android:textColor="#ffffffff" android:id="@id/slot_editor" android:background="@drawable/vs_editordialog_bubble" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <Button android:textSize="@dimen/TextSize_MediumLarge" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@id/editor_go_button" android:background="@drawable/btn_left" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="54.0dip" android:singleLine="true" android:layout_weight="0.5" />
+        <Button android:textSize="@dimen/TextSize_MediumLarge" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@id/editor_cancel_button" android:background="@drawable/btn_right" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="54.0dip" android:singleLine="true" android:layout_weight="0.5" />
+    </LinearLayout>
+</com.google.android.apps.translate.editor.EditorLayout>

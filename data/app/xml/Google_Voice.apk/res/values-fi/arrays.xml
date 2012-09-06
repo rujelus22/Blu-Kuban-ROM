@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Käytä Google Voicea kaikkiin puheluihin</item>
+        <item>Käytä Google Voicea vain kansainvälisiin puheluihin</item>
+        <item>Älä käytä Google Voicea minkään puheluiden soittamiseen</item>
+        <item>Kysy aina soittaessani puhelun</item>
+        <item>Kysy aina soittaessani kansainvälisen puhelun</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>5 minuutin välein</item>
+        <item>10 minuutin välein</item>
+        <item>15 minuutin välein</item>
+        <item>20 minuutin välein</item>
+        <item>30 minuutin välein</item>
+        <item>60 minuutin välein</item>
+        <item>Ei koskaan</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Käytä nykyistä Google Voice -numeroa</item>
+        <item>Käytä tätä puhelinnumeroa</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Tästä puhelimesta soitetut puhelut ja lähetetyt tekstiviestit näyttävät Google Voice -numeroni</item>
+        <item>Google Voice -numeroni korvataan</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Yritä uudelleen Google Voicen avulla</item>
+        <item>Soita käyttämättä Google Voicea</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Soita Google Voicen avulla</item>
+        <item>Soita käyttämättä Google Voicea</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Soita</item>
+        <item>Soita napsauttamalla</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Google Voice -sovelluksen kautta</item>
+        <item>Viestisovelluksen kautta</item>
+    </string-array>
+</resources>

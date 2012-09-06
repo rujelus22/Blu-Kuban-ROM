@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/property_type_icon" android:padding="2.0dip" android:layout_width="48.0dip" android:layout_height="48.0dip" />
+            <TextView android:id="@id/property_file_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TableLayout android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1">
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/property_type_title" android:text="@string/property_type" />
+                <TextView android:id="@id/property_type_text" android:padding="3.0dip" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/property_location_title" android:text="@string/property_location" />
+                <TextView android:ellipsize="end" android:id="@id/property_location_text" android:padding="3.0dip" android:scrollHorizontally="false" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/property_contains" />
+                <TextView android:id="@id/property_contains_summary" android:padding="3.0dip" android:text="@string/property_na" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/property_size_text" android:text="@string/property_size" />
+                <TextView android:id="@id/property_size" android:padding="3.0dip" android:text="@string/property_na" />
+            </TableRow>
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+            <TableRow android:visibility="gone">
+                <TextView android:gravity="right" android:id="@id/property_created_title" android:text="@string/property_created" />
+                <TextView android:id="@id/property_created_text" android:padding="3.0dip" />
+            </TableRow>
+            <TableRow>
+                <TextView android:gravity="right" android:id="@id/property_modified_title" android:text="@string/property_modified" />
+                <TextView android:id="@id/property_modified_text" android:padding="3.0dip" />
+            </TableRow>
+            <TableRow android:visibility="gone">
+                <TextView android:gravity="right" android:id="@id/property_accessed_title" android:text="@string/property_accessed" />
+                <TextView android:id="@id/property_accessed_text" android:padding="3.0dip" />
+            </TableRow>
+            <View android:background="#ff909090" android:layout_height="2.0dip" />
+            <TableRow android:id="@id/permission_readable_row">
+                <TextView android:gravity="right" android:id="@id/property_readable_title" android:text="@string/property_readable" />
+                <TextView android:id="@id/property_readable_text" android:padding="3.0dip" />
+            </TableRow>
+            <TableRow android:id="@id/permission_writeable_row">
+                <TextView android:gravity="right" android:id="@id/property_writable_title" android:text="@string/property_writable" />
+                <TextView android:id="@id/property_writable_text" android:padding="3.0dip" />
+            </TableRow>
+            <TableRow android:id="@id/permission_hidden_row">
+                <TextView android:gravity="right" android:id="@id/property_hidden_title" android:text="@string/property_hidden" />
+                <TextView android:id="@id/property_hidden_text" android:padding="3.0dip" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/permission_root_row" android:paddingLeft="5.0dip" android:paddingTop="15.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="center" android:id="@id/property_root_permission_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/property_root_permission" android:layout_weight="1.0" />
+            <TextView android:gravity="left" android:id="@id/property_root_permission_text" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <Button android:id="@id/property_root_chg_perm_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/property_chg_permission_text" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/property_checksum" android:visibility="gone" android:layout_width="150.0dip" android:layout_height="wrap_content" android:text="@string/lbl_show_checksum" />
+            <Button android:id="@id/property_ok" android:layout_width="150.0dip" android:layout_height="wrap_content" android:text="@string/ok" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

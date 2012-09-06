@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.googlevoice.activity.DndBarView android:id="@id/dnd_view" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="30.0dip">
+        <RelativeLayout android:gravity="center_vertical" android:id="@id/dnd_button" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/undo_descriptionview" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="&quot;Do not disturb&quot; is enabled" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/undo_actionview" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="Disable" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </com.google.android.apps.googlevoice.activity.DndBarView>
+    <ListView android:id="@android:id/list" android:fadingEdgeLength="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <RelativeLayout android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No messages" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/drag_knob_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/list_slide_picker_container" android:layout_width="244.0dip" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/current_slide_panel" android:background="@color/punch_grey_background" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/web_view_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="90.0dip" android:layout_marginTop="@dimen/punch_main_webview_side_margin" android:layout_marginBottom="22.0dip" android:layout_weight="1.0" />
+        <view android:id="@id/speaker_notes_presence_panel" android:layout_width="230.0dip" android:layout_height="fill_parent" class="com.google.android.apps.docs.view.SpeakerNotesPresence" />
+        <view android:orientation="vertical" android:id="@id/speaker_notes_content_panel" android:paddingLeft="40.0dip" android:paddingTop="20.0dip" android:layout_width="370.0dip" android:layout_height="fill_parent" class="com.google.android.apps.docs.view.SpeakerNotesContent" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:id="@id/quickaction_rename_button" android:text="@string/quickaction_rename" android:drawableTop="@drawable/ic_rename" style="@style/QuickactionButton"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

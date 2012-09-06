@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.translate.conversation.ConversationPanel android:orientation="vertical" android:id="@id/conversation_panel" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/language_selector_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <include android:id="@id/translate_title_bar" layout="@layout/translate_title" />
+        <include android:id="@id/language_selection_panel" layout="@layout/language_selector" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/conversation_list_wrapper" android:background="@color/input_panel_list_view_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/conversation_view_divider" android:layout_below="@id/language_selector_wrapper">
+        <com.google.android.apps.translate.history.InputPanelListView android:id="@android:id/list" android:fadingEdgeLength="4.0dip" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:transcriptMode="alwaysScroll" android:requiresFadingEdge="vertical" />
+        <include android:id="@id/conversation_list_empty_view" layout="@layout/conversation_panel_intro" />
+    </LinearLayout>
+    <View android:id="@id/conversation_view_divider" android:background="@color/input_panel_list_view_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/next_conversation_view_wrapper" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/next_conversation_view_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:textAppearance="@style/TextAppearance_Default" android:textColor="@color/conversation_input_text_color" android:layout_gravity="center" android:id="@id/left_speak_btn" android:background="@drawable/btn_conv_speak" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:drawableLeft="@drawable/btn_searchmic" android:layout_weight="0.5" />
+        <include android:id="@id/left_conv_edit_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/edit_panel_view" />
+        <View android:background="@color/input_panel_list_view_divider" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <Button android:textAppearance="@style/TextAppearance_Default" android:textColor="@color/conversation_input_text_color" android:layout_gravity="center" android:id="@id/right_speak_btn" android:background="@drawable/btn_conv_speak" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:drawableRight="@drawable/btn_searchmic" android:layout_weight="0.5" />
+        <include android:id="@id/right_conv_edit_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/edit_panel_view" />
+    </LinearLayout>
+</com.google.android.apps.translate.conversation.ConversationPanel>

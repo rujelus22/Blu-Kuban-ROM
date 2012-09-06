@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>استفاده از Google Voice جهت برقراری همه تماس ها</item>
+        <item>از Google Voice فقط برای تماس های بین المللی استفاده شود</item>
+        <item>از Google Voice برای برقراری هیچ گونه تماسی استفاده نشود</item>
+        <item>هر بار که من تماسی برقرار می کنم، سؤال شود</item>
+        <item>هر بار که من یک تماس بین المللی برقرار می کنم، سؤال شود</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>هر 5 دقیقه</item>
+        <item>هر 10 دقیقه</item>
+        <item>هر 15 دقیقه</item>
+        <item>هر 20 دقیقه</item>
+        <item>هر 30 دقیقه</item>
+        <item>هر 60 دقیقه</item>
+        <item>هرگز</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>استفاده از شماره Google Voice فعلی من</item>
+        <item>استفاده از این شماره تلفن</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>تماس ها/پیام های متنی از این تلفن شماره Google Voice من را نشان خواهند داد</item>
+        <item>جایگزین شماره Google Voice من خواهد شد</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>امتحان مجدد با Google Voice</item>
+        <item>تماس بدون Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>تماس با Google Voice</item>
+        <item>تماس بدون Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>تماس</item>
+        <item>کلیک برای تماس</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>از طریق برنامه Google Voice</item>
+        <item>از طریق برنامه پیام‌رسانی</item>
+    </string-array>
+</resources>

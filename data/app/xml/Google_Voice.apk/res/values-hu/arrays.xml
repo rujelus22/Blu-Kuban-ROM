@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>A Google Voice használata minden kezdeményezett híváshoz</item>
+        <item>Google Voice használata csak a nemzetközi hívások esetén</item>
+        <item>Ne használja a Google Voice szolgáltatást híváskezdeményezéshez</item>
+        <item>Minden hívásnál kérdezzen rá</item>
+        <item>Mindig kérdezzen rá nemzetközi hívásoknál</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>5 percenként</item>
+        <item>10 percenként</item>
+        <item>15 percenként</item>
+        <item>20 percenként</item>
+        <item>30 percenként</item>
+        <item>60 percenként</item>
+        <item>Soha</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Meglévő Google Voice-szám használata</item>
+        <item>Ezt a mobilszámot használja</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Az ettől a telefontól érkező hívások/SMS-ek megjelenítik a Google Voice-számomat</item>
+        <item>Ezzel lecseréli Google Voice-számát</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Újrapróbálás a Google Voice használatával</item>
+        <item>Hívás a Google Voice nélkül</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Hívás a Google Voice használatával</item>
+        <item>Hívás a Google Voice nélkül</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Hívás</item>
+        <item>Google Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>A Google Voice alkalmazáson keresztül</item>
+        <item>Az üzenetküldő alkalmazáson keresztül</item>
+    </string-array>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ES Εξερεύνηση αρχείων</string>
+    <string name="title_note">ES Επεξεργασία σημείωσης</string>
+    <string name="image_browser_title">ES Πλοηγού εικόνων</string>
+    <string name="video_player_label">ES Αναπαραγωγέας Ήχου/Βίντεο</string>
+    <string name="app_zip">ES Προβολέας αρχείων zip</string>
+</resources>

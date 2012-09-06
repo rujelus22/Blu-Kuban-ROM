@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.apps.unveil.textinput.InstructionsView android:id="@id/instructions" style="@style/hintOverlay" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+        <include layout="@layout/text_input" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/progress_bar" android:background="@drawable/feedback_background" android:paddingLeft="8.0dip" android:paddingTop="12.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:indeterminate="true" style="@style/indeterminateProgressBar" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/text_controller_container" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ime_overlay" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/keyboard" android:layout_width="0.0px" android:layout_height="wrap_content" android:src="@drawable/keyboard" android:layout_weight="1.0" />
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/retry" android:layout_width="0.0px" android:layout_height="wrap_content" android:src="@drawable/refresh" android:layout_weight="2.0" />
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/snapshot" android:layout_width="0.0px" android:layout_height="wrap_content" android:src="@drawable/snapshot" android:layout_weight="2.0" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

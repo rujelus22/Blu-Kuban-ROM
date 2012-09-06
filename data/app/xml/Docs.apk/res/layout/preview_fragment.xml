@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@drawable/bg_panel_gray" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/title_container" android:background="@drawable/state_selector_background" android:padding="5.0dip" android:focusable="true" android:nextFocusLeft="@id/title_container" android:nextFocusRight="@id/preview_close_button" android:nextFocusUp="@id/title_container" android:nextFocusDown="@id/thumbnail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+                <ImageView android:gravity="center" android:id="@id/doc_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/preview_primary_text" android:layout_gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <view android:layout_gravity="center" android:id="@id/thumbnail" android:focusable="true" android:nextFocusLeft="@id/thumbnail" android:nextFocusRight="@id/preview_close_button" android:nextFocusUp="@id/title_container" android:nextFocusDown="@id/pin_checkbox" android:layout_width="250.0dip" android:layout_height="190.0dip" android:layout_marginBottom="15.0dip" class="com.google.android.apps.docs.view.ThumbnailView" />
+            <LinearLayout android:orientation="vertical" android:id="@id/pin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/offline_title" android:text="@string/preview_offline_title" style="@style/PreviewFragmentSharingItemText.Indent.SectionTitle" />
+                <View android:layout_marginTop="10.0dip" style="@style/PreviewFragmentSharingItemSeparator.Thick" />
+                <CheckBox android:textSize="14.0sp" android:textColor="@color/preview_primary_text" android:layout_gravity="left" android:id="@id/pin_checkbox" android:paddingLeft="30.0dip" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:focusable="true" android:nextFocusLeft="@id/pin_checkbox" android:nextFocusRight="@id/pin_checkbox" android:nextFocusUp="@id/thumbnail" android:nextFocusDown="@id/pin_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:button="@drawable/pin_checkbox" android:text="@string/pin_checkbox_label" />
+            </LinearLayout>
+            <TextView android:id="@id/sharing_title" android:text="@string/preview_sharing_title" style="@style/PreviewFragmentSharingItemText.Indent.SectionTitle" />
+            <View android:layout_marginTop="10.0dip" style="@style/PreviewFragmentSharingItemSeparator.Thick" />
+            <LinearLayout android:orientation="vertical" android:id="@id/share_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/preview_primary_text" android:layout_gravity="center" android:id="@id/share_list_warning" android:padding="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/share_list_progress_bar" android:layout_width="50.0dip" android:layout_height="50.0dip" android:indeterminate="true" />
+            <TextView android:id="@id/general_info_title" android:text="@string/preview_general_info_title" style="@style/PreviewFragmentSharingItemText.Indent.SectionTitle" />
+            <View android:layout_marginTop="10.0dip" style="@style/PreviewFragmentSharingItemSeparator.Thick" />
+            <TextView android:id="@id/last_modified" android:text="@string/preview_general_info_modified" style="@style/PreviewFragmentSharingItemText.Indent" />
+            <TextView android:id="@id/last_modified_by_me" android:text="@string/preview_general_info_modified_by_me" style="@style/PreviewFragmentSharingItemText.Indent" />
+            <TextView android:id="@id/last_opened_by_me" android:text="@string/preview_general_info_opened_by_me" style="@style/PreviewFragmentSharingItemText.Indent" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="top|right|center" android:id="@id/preview_close_button" android:background="@drawable/state_selector_background" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:focusable="true" android:nextFocusLeft="@id/title_container" android:nextFocusRight="@id/preview_close_button" android:nextFocusUp="@id/preview_close_button" android:nextFocusDown="@id/preview_close_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close" android:contentDescription="@string/doclist_preview_close_button_content_description" />
+    </FrameLayout>
+</ScrollView>

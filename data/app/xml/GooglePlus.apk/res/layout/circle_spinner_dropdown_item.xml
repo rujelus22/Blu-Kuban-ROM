@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.plus.views.CircleNameAndCountView android:orientation="horizontal" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/dropdownListPreferredItemHeight" android:minWidth="240.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@android:id/text1" android:paddingRight="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <TextView android:textColor="@color/circle_member_count_color" android:id="@android:id/text2" android:paddingLeft="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+</com.google.android.apps.plus.views.CircleNameAndCountView>

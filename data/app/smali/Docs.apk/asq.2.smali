@@ -1,0 +1,35 @@
+.class Lasq;
+.super Ljava/lang/Object;
+.source "GellyInjectorStore.java"
+
+# interfaces
+.implements LWY;
+
+
+# instance fields
+.field final synthetic a:Lasp;
+
+
+# direct methods
+.method constructor <init>(Lasp;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 78
+    iput-object p1, p0, Lasq;->a:Lasp;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .registers 1
+
+    .prologue
+    .line 81
+    return-void
+.end method

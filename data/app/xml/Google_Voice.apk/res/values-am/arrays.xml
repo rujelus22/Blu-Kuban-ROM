@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>ሁሉንም ጥሪዎች ለማድረግGoogle Voiceን ተጠቀም</item>
+        <item>ለአለም አቀፍ ጥሪዎች የGoogle Voiceን ብቻ ተጠቀም</item>
+        <item>ማንኛውም ጥሪዎች ለማድረግ የGoogle Voice አትጠቀም</item>
+        <item>ጥሪ ባደረኩ ቁጥር ጠይቅ</item>
+        <item>አለም አቀፍ ጥሪ ባደረኩ ቁጥር ጠይቅ</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>በየ5 ደቂቃዎቹ</item>
+        <item>በየ10 ደቂቃዎቹ</item>
+        <item>በየ15 ደቂቃዎቹ</item>
+        <item>በየ20 ደቂቃዎቹ</item>
+        <item>በየ30 ደቂቃዎቹ</item>
+        <item>በየ60 ደቂቃዎቹ</item>
+        <item>በፍፁም</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>"ያለውን የእኔን የGoogle  ድምፅ ቁጥርተጠቀም"</item>
+        <item>ይህን ስልክ ቁጥር ተጠቀም</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>"የጥሪዎች/የፅሁፍ መልዕክቶች ከዚህ ስልክየእኔንየGoogle   ድምፅ ቁጥር ያሳያል"</item>
+        <item>"ይህ የእኔን የGoogle  ድምፅ ቁጥር ይተካል"</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>በGoogle Voice ድጋሚ ሞክር</item>
+        <item>ያለGoogle Voice ደውል</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>በGoogle Voice ደውል</item>
+        <item>ያለGoogle Voice ደውል</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>ደውል</item>
+        <item>ለመደወል ጠቅ አድርግ</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>በGoogle ድምፅ መተግበሪያ በኩል</item>
+        <item>በመልዕክት መተግበሪያ በኩል</item>
+    </string-array>
+</resources>

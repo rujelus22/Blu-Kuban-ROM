@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="top" android:orientation="vertical" style="@style/alignment_popup_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/back_to_keyboard" android:focusable="true" android:layout_width="80.0dip" android:layout_height="40.0dip" android:src="@drawable/action_keyboard" android:contentDescription="@string/keyboard" />
+    </LinearLayout>
+    <View style="@style/alignment_horizontal_separator" />
+    <LinearLayout style="@style/alignment_popup_layoutButton">
+        <LinearLayout android:id="@id/alignment_left_layout" style="@style/alignment_popup_layoutButton">
+            <ToggleButton android:id="@id/alignment_left_icon" android:background="@drawable/action_text_align_left" android:focusable="true" android:nextFocusUp="@id/back_to_keyboard" android:contentDescription="@string/alignment_left" style="@style/alignment_popup_toggleButton" />
+        </LinearLayout>
+        <View style="@style/alignment_vertical_separator" />
+        <LinearLayout android:id="@id/alignment_center_layout" style="@style/alignment_popup_layoutButton">
+            <ToggleButton android:id="@id/alignment_center_icon" android:background="@drawable/action_text_align_center" android:focusable="true" android:nextFocusUp="@id/back_to_keyboard" android:contentDescription="@string/alignment_center" style="@style/alignment_popup_toggleButton" />
+        </LinearLayout>
+    </LinearLayout>
+    <View style="@style/alignment_horizontal_separator" />
+    <LinearLayout style="@style/alignment_popup_layoutButton">
+        <LinearLayout android:id="@id/alignment_right_layout" style="@style/alignment_popup_layoutButton">
+            <ToggleButton android:id="@id/alignment_right_icon" android:background="@drawable/action_text_align_right" android:focusable="true" android:contentDescription="@string/alignment_right" style="@style/alignment_popup_toggleButton" />
+        </LinearLayout>
+        <View style="@style/alignment_vertical_separator" />
+        <LinearLayout android:id="@id/alignment_justified_layout" style="@style/alignment_popup_layoutButton">
+            <ToggleButton android:id="@id/alignment_justified_icon" android:background="@drawable/action_text_align_justified" android:focusable="true" android:contentDescription="@string/alignment_justified" style="@style/alignment_popup_toggleButton" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

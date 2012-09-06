@@ -1,0 +1,79 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+p {text-indent: 14pt;}
+</style>
+</head>
+<body>
+<a href="help_index.html">Home</a><br>
+<h2>FAQs</h2>
+<h3>SDCard:</h3>
+<strong>Q</strong>：When transferring entire folders from the LAN machine to the phone, It consistently hangs on the 3rd or 4th file.<br>
+<strong>A</strong>： Normally the phone will cut off Wi-Fi when sleeping, which might cause the file transferring to stop. Goto Setting in the system, then WiFi settings, Menu, Advanced,WiFi sleep policy, to change this option to Never if you need transfer files when the phone is sleeping.<br><br>
+<h3>LAN Share:</h3>
+<strong>Q</strong>: Can you tell me step by step on how to enable what's needed for my g1 to remote to pc I have windows XP service pack3.<br>
+<strong>A</strong>: 
+<ol>
+<li>On PC, most users can let it as default setting without any operation.In cases you have problems, make sure that you PC can be visited by other PCs in your local network(If not, examine the firewall settings)，For windows, you need not set Samba(Windows supports it inbuilt), but Microsoft network file and printer sharing should be open.</li>
+<li>On the phone, follow the steps in the user manual. That is, jump to Remote Tab/MENU/Add, Add a new Server, input the computer's ip, uncheck Anonymous box, input username and password. Username/password is what you use to logon windows. In Windows, you can Click Start/Run,type cmd,press Enter,type ipconfig, press Enter to get your computer's ip.</li>
+</ol>
+<strong>Q</strong>: I am using Vista/XP and, I would need a samba server to work with the android app?<br>
+<strong>A</strong>: This app needs a samba server if one wants to share PC files with the phone, but it's a built-in feature in Windows, so the user would just leave it as default and doesn't need to care about it.<br><br>
+<strong>Q</strong>: I just want to know if you need a wireless network to be able to access files on your computer.<br>
+<strong>A</strong>: You need a way to connect with local network; normally wireless is the best choice.<br><br>
+<strong>Q</strong>: I enter my computer IP and username, click to connect but it always pop up this text "path not found or time out try again later"<br>
+<strong>A</strong>: 
+<ol>
+<li>Please make sure your phone and your computer is in the same local network.</li>
+<li>You can visit the server through other pc in local networks. If it cannot connect successfully either, it might be the network problem (maybe firewall, user permission, etc.) </li>
+</ol>
+<strong>Q</strong>: When trying to access protected servers, I get a username and password error. I'm certain to have typed in the correct password and username.<br>
+<strong>A</strong>: the reasons might be:
+<ul>
+<li>Wrong Username or empty Password. (User name and password that you use in your phone might be the same as in your pc.)</li>
+<li>SAMBA configuration on the PC is not correct, that means, you cannot visit PC files from other PCs in the same network.</li>
+<li>Some folders have special permission request that your user don't have.</li>
+</ul>
+<strong>Q</strong>: If I login anonymously without this I can view but not edit move or transfer, trying to login with I've no access?<br>
+<strong>A</strong>: Depends on computer system settings, anonymous user has different permissions, cannot view/can view but not move/... etc.<br><br>
+<h3>FTP:</h3>
+<strong>Q</strong>: What need to be prepared to use ftp?<br>
+<strong>A</strong>: 
+<ul>
+<li>Install and configure your FTP Server (Note that files permissions). ES file explorer is only a client software.</li>
+<li>In the 3g network, if it can’t work, please try passive mode (change the property of the ftp).</li>
+</ul>
+<strong>Q</strong>: Can’t connect, It just hangs at "Getting file list". In the end, it show the information: "path not found or time out try again later"<br>
+<strong>A</strong>: 
+<ul>
+<li>Check network connection, Try to connect to your FTP Server with the ping command (e.g.: Click "Start"->"Run"->type "cmd"->press Enter->type "ping www.google.com"->press Enter).</li>
+<li>Wi-Fi network or 3g network.</li>
+</ul>
+<strong>Q</strong>: When it does connect successfully, it doesn't show any files or random code.<br>
+<strong>A</strong>: Try setting the character encoding in the property to match your server when new a server. To get the character encoding of FTP Server, open IE and click Source in the Menu---> Encoding.<br><br>
+<h3>Bluetooth:</h3>
+<strong>Q</strong>: My phone is 1.5 or 1.6 Rom, Bluetooth can’t work<br>
+<strong>A</strong>: To work well in Bluetooth, you need root permission in the 1.5 or 1.6 Rom (Menu--->settings--->About phone--->Firmware version). It is the limitation of android system.<br><br>
+<h3>Task Manager:</h3>
+<strong>Q</strong>: Can’t auto kill Apps?<br>
+<strong>A</strong>: Auto kill is the feature of widget. Please add the widget first on the home Screen. After two or three seconds off the screen, it will start.<br><br>
+<strong>Q</strong>: Could you tell me how to use widget in detail?<br>
+<strong>A</strong>: The step:
+<ul>
+<li>Add Widget:<br>Long press on Home Screen-> Widgets-> ES Task Manager; or Click Menu-> Add-> Widgets-> ES Task Manager.</li>
+<li>Set Widget:<br>Click Menu->Settings->Advanced Settings->Widget Operation/Widget Auto kill/Widget Refresh Time. Select one way.</li>
+<li>Use Widget:<br>At the moment，you can view available memory and the number of running processes with the widget. Click the widget to take action.</li>
+</ul>
+<strong>Q</strong>: It seems to make me drop calls when using it, occasionally when I use 'kill all', either from the app or the widget, my home screens all reset. This only takes 2-3 seconds to reload.<br>
+<strong>A</strong>: It's because the home screen program is killed, you need put the app into the ignore list to avoid being killed. And find the dialer program too, add it to Ignored List.<br><br>
+<strong>Q</strong>: How to use Ignored List?<br>
+<strong>A</strong>: 
+<ul>
+<li>Add App to Ignored List:<br>Long press the process, pop up the operation dialog, and select the option of Ignore/Show.</li>
+<li>Remove App from Ignored List:<br>Click Menu---> Settings ---> Ignored List, find and click it.</li>
+</ul>
+<a href="help_index.html">Home</a>
+<p style="text-align:center;color:#666">Copyright 2012 &copy; EStrongs Inc.<br>contact@estrongs.com</p>
+</body>
+</html>

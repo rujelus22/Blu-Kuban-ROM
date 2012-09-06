@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="top|right|center" android:id="@id/speaker_notes_close_button" android:background="@drawable/state_selector_background" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/speaker_notes_content_close_button_side_margin" android:layout_marginRight="15.0dip" android:src="@drawable/ic_close" android:contentDescription="@string/punch_speaker_notes_close_button_content_description" />
+    <TextView android:id="@id/no_notes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/speaker_notes_content_left_margin" android:layout_marginRight="@dimen/speaker_notes_content_right_margin" android:text="@string/punch_speaker_notes_absent" style="@style/punch_status_text" />
+    <WebView android:id="@id/speaker_notes" android:background="@color/punch_grey_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/speaker_notes_content_left_margin" android:layout_marginRight="@dimen/speaker_notes_content_right_margin" />
+</merge>

@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        background-image:url('./blue_gradient.png');
+        background-size: 100% 100%;
+        overflow-x: visible;
+      }
+
+      .errorMessage {
+        font-size: 12pt;
+        font-weight: bold;
+        line-height: 150%;
+      }
+      
+      table {
+        height: 100%;
+        width: 100%;
+      }
+
+      h1 {
+        color: #172351;
+      }
+    </style>
+  </head>
+  <body>
+    <meta name="viewport"
+      content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <table>
+      <tbody>
+        <tr>
+          <td style="vertical-align: middle">
+            <h1 align="center">
+              <script>
+                document.write(errorRetriever.getErrorTitle());
+              </script>
+            </h1>
+            <div align="center">
+              <img src="data:image/png;base64,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"/>
+            </div>
+            <div align="center">
+              <p class="errorMessage">
+                <script>
+                  document.write(errorRetriever.getError());
+                </script>
+              </p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

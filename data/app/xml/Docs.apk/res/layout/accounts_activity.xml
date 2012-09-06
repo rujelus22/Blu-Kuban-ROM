@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_layout" android:background="@drawable/home_page_background_proxy" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:cakemix="http://schemas.android.com/apk/res/com.google.android.apps.docs">
+    <view android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" cakemix:controls_enabled="false" class="com.google.android.apps.docs.view.TitleBar" />
+    <ListView android:textAppearance="?android:textAppearanceMedium" android:id="@android:id/list" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="0.0dip" android:divider="@color/default_list_divider" android:dividerHeight="@dimen/default_list_divider_height" android:layout_weight="1.0" />
+    <FrameLayout android:id="@id/add_account_container" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/new_account_button" android:background="@drawable/account_background" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_account" android:minEms="8" />
+    </FrameLayout>
+</LinearLayout>

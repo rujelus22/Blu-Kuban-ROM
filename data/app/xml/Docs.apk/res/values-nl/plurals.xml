@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="fast_scroll_time_grouper_n_days_ago">
+        <item quantity="other">%d dagen geleden</item>
+        <item quantity="one">%d dag geleden</item>
+    </plurals>
+    <plurals name="fast_scroll_time_grouper_n_weeks_ago">
+        <item quantity="other">%d weken geleden</item>
+        <item quantity="one">%d week geleden</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed">
+        <item quantity="other">%1$d van %2$s zijn nu offline beschikbaar.</item>
+        <item quantity="one">%1$d van %2$s is nu offline beschikbaar.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_completed_all">
+        <item quantity="other">Alle %1$d bestanden zijn nu offline beschikbaar.</item>
+        <item quantity="one">%1$d bestand is nu offline beschikbaar.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_progress">
+        <item quantity="other">%1$d bestanden worden offline beschikbaar gemaakt.</item>
+        <item quantity="one">%1$d bestanden worden offline beschikbaar gemaakt.</item>
+    </plurals>
+    <plurals name="pin_notification_sync_queued_files">
+        <item quantity="other">%1$d bestanden</item>
+        <item quantity="one">%1$d bestand</item>
+    </plurals>
+    <plurals name="accounts_title_all_apps">
+        <item quantity="other">%1$d accounts</item>
+        <item quantity="one">%1$d account</item>
+    </plurals>
+    <plurals name="add_collaborators_invalid_contact_address">
+        <item quantity="other">%s zijn geen geldige e-mailadressen.</item>
+        <item quantity="one">%s is geen geldig e-mailadres.</item>
+    </plurals>
+    <plurals name="drag_shadow_text">
+        <item quantity="other">%d artikelen verplaatsen</item>
+        <item quantity="one">\"%s\" verplaatsen</item>
+    </plurals>
+</resources>

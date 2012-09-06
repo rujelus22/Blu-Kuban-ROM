@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/filelistBackground" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/title_bar" android:background="#ff1a1a1a" android:paddingLeft="8.0dip" android:paddingTop="3.0dip" android:paddingRight="3.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/favorites_info" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.dropbox.android.widget.FavoritesListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/db_browser_list_item" android:scrollingCache="false" android:cacheColorHint="#00000000" android:divider="@drawable/line" android:dividerHeight="1.0px" android:layout_weight="1.0" android:fastScrollEnabled="@bool/fastScroll" />
+            <FrameLayout style="@style/BottomBar">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" style="@style/BottomBarContainer">
+                    <TextView android:layout_gravity="center_vertical" android:id="@id/favorites_status" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_weight="1.0" style="@style/favoritesText" />
+                    <Button android:layout_gravity="center_vertical" android:id="@id/favorites_refresh" android:background="@drawable/gray_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/favorites_refresh_button" android:drawableLeft="@drawable/button_update_icon" android:drawablePadding="6.0dip" android:layout_weight="0.0" style="@style/favoritesText" />
+                </LinearLayout>
+                <Button android:textSize="@dimen/buttonTextSize" android:layout_gravity="center" android:background="@drawable/gray_button" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@android:id/empty" android:background="@color/lightBlueBackground" android:padding="@dimen/emptyPageOuterPadding" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

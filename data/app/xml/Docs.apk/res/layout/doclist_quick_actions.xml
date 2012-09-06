@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <view android:id="@id/quick_actions_sharing" android:text="@string/menu_sharing" android:drawableTop="@drawable/icon_sharing" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+    <view android:id="@id/quick_actions_pin" android:text="@string/menu_pin" android:drawableTop="@drawable/ic_pin" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+    <view android:id="@id/quick_actions_send" android:text="@string/menu_send" android:drawableTop="@drawable/send_on" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+    <view android:id="@id/quick_actions_more" android:text="@string/menu_more" android:drawableTop="@drawable/ic_more_quick_action" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+</merge>

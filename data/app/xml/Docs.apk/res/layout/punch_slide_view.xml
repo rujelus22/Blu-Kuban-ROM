@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingTop="7.0dip" android:layout_width="24.0dip" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/slide_index" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/speaker_notes_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:src="@drawable/punch_speaker_notes_present" android:contentDescription="@string/punch_speaker_notes_present_content_description" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/thumbnail_border" android:background="@color/slide_thumbnail_activated" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.google.android.apps.docs.view.ConfigurableAspectWebView android:id="@id/thumbnail" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+</LinearLayout>

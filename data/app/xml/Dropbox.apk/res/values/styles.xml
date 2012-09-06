@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Dialog" parent="@android:style/Theme.Dialog" />
+    <style name="Theme" parent="@android:style/Theme.Black">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Light" parent="@android:style/Theme.Black">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.NoTitleBar" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.AlwaysDark.NoTitleBar" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.NoTitleBar.Fullscreen" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.AlwaysDark.NoTitleBar.Fullscreen" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Translucent.NoTitleBar" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="SingleCharacterPasscodeBox">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textSize">38.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:digits">0123456789</item>
+    </style>
+    <style name="Animation.QuickActions" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/quickaction_show</item>
+        <item name="android:windowExitAnimation">@anim/quickaction_hide</item>
+    </style>
+    <style name="StatusProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">12.0dip</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/status_progress_bar</item>
+        <item name="android:minHeight">12.0dip</item>
+    </style>
+    <style name="QuickactionButton">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">6.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowRadius">4.0</item>
+    </style>
+    <style name="GalleryChromeText">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowRadius">4.0</item>
+    </style>
+    <style name="GalleryButton" parent="@style/GalleryChromeText">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">6.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="TourButton">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textColor">@color/tourButtonText</item>
+        <item name="android:paddingTop">0.0px</item>
+        <item name="android:paddingBottom">0.0px</item>
+        <item name="android:layout_width">120.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="TourButtonLeft" parent="@style/TourButton">
+        <item name="android:background">@drawable/blue_arrow_left</item>
+        <item name="android:paddingLeft">18.0dip</item>
+    </style>
+    <style name="TourButtonRight" parent="@style/TourButton">
+        <item name="android:background">@drawable/blue_arrow_right</item>
+        <item name="android:paddingRight">18.0dip</item>
+    </style>
+    <style name="bigBoldBlueText">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/darkBlueText</item>
+    </style>
+    <style name="mediumBoldBlueText" parent="@style/bigBoldBlueText">
+        <item name="android:textSize">16.0sp</item>
+    </style>
+    <style name="tourBoldBlueText" parent="@style/bigBoldBlueText">
+        <item name="android:textSize">18.0sp</item>
+    </style>
+    <style name="bigishBoldBlueText" parent="@style/bigBoldBlueText">
+        <item name="android:textSize">20.0sp</item>
+    </style>
+    <style name="smallGrayText">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/mediumGrayText</item>
+    </style>
+    <style name="smallishGrayText" parent="@style/smallGrayText">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="favoritesText">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/button_update</item>
+    </style>
+    <style name="favoritesDisabled">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#ff999999</item>
+    </style>
+    <style name="Checkbox">
+        <item name="android:background">@drawable/btn_check_label_background</item>
+        <item name="android:button">@drawable/btn_check</item>
+    </style>
+    <style name="CheckboxLight" parent="@style/Checkbox">
+        <item name="android:button">@drawable/btn_check_light</item>
+    </style>
+    <style name="RadioButton">
+        <item name="android:background">@drawable/btn_radio_label_background</item>
+        <item name="android:button">@drawable/btn_radio</item>
+    </style>
+    <style name="BottomBar">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/silver_bottom_bar</item>
+        <item name="android:padding">3.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="LoginInput">
+        <item name="android:layout_gravity">top</item>
+    </style>
+    <style name="UploadButton">
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textColor">@color/greenButtonText</item>
+        <item name="android:background">@drawable/green_button</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="BottomBarContainer">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="NotificationText">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="NotificationTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="Theme.NoBackground" parent="@android:style/Theme.Black">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="Theme.NoBackgroundNoTitleBar" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+</resources>

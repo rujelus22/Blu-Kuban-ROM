@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Brug Google Voice til alle opkald</item>
+        <item>Brug kun Google Voice til internationale opkald</item>
+        <item>Brug ikke Google Voice til at foretage opkald</item>
+        <item>Spørg, hver gang jeg foretager et opkald</item>
+        <item>Spørg, hver gang jeg foretager et internationalt opkald</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Hvert 5. minut</item>
+        <item>Hvert 10. minut</item>
+        <item>Hvert 15. minut</item>
+        <item>Hvert 20. minut</item>
+        <item>Hvert 30. minut</item>
+        <item>Hvert 60. minut</item>
+        <item>Aldrig</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Brug mit nuværende Google Voice-nummer</item>
+        <item>Brug nummeret til denne telefon</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Opkald/sms-beskeder fra denne telefon vil vise mit Google Voice-nummer</item>
+        <item>Dette vil erstatte mit Google Voice-nummer</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Prøv igen med Google Voice</item>
+        <item>Opkald uden Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Foretag opkald med Google Voice</item>
+        <item>Opkald uden Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Ring til</item>
+        <item>Klik for at ringe</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via appen Google Voice</item>
+        <item>Via appen til beskeder</item>
+    </string-array>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@android:drawable/ic_menu_preferences" android:id="@id/menu_settings" android:title="@string/menu_settings" />
+    <item android:icon="@android:drawable/ic_menu_help" android:id="@id/menu_help" android:title="@string/menu_quick_hints" />
+    <item android:icon="@drawable/ic_menu_send_feedback" android:id="@id/menu_send_feedback" android:title="@string/menu_send_feedback" />
+</menu>

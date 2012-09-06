@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice-Nachrichten</item>
+        <item quantity="one">Eine Google Voice-Nachricht</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Sie haben %1$d ungelesene Nachrichten.</item>
+        <item quantity="one">Sie haben eine ungelesene Nachricht.</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">entgangene Anrufe</item>
+        <item quantity="one">entgangener Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">entgegengenommene Anrufe</item>
+        <item quantity="one">entgegengenommener Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">Mailbox-Nachrichten</item>
+        <item quantity="one">Mailbox-Nachricht</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">mitgehörte Anrufe</item>
+        <item quantity="one">mitgehörter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">Aufnahmen</item>
+        <item quantity="one">Aufnahme</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">Mailboxüberprüfungen</item>
+        <item quantity="one">Mailbox-Überprüfung</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">Einstellungen</item>
+        <item quantity="one">Einstellung</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">Texts</item>
+        <item quantity="one">Text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">Texts</item>
+        <item quantity="one">Text</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">getätigte Anrufe</item>
+        <item quantity="one">getätigter Anruf</item>
+    </plurals>
+</resources>

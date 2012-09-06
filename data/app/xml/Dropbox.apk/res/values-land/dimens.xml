@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loginChoiceTextLeft">10.0dip</dimen>
+    <dimen name="loginChoiceTextRight">10.0dip</dimen>
+    <dimen name="loginTextBottom">2.0dip</dimen>
+    <dimen name="loginTextBottomClose">0.0dip</dimen>
+    <dimen name="loginTextTop">2.0dip</dimen>
+    <dimen name="password_keyboard_key_height">44.0dip</dimen>
+    <dimen name="filelistEmptyPadding">54.0dip</dimen>
+    <dimen name="firstPicBottom">5.0dip</dimen>
+    <dimen name="firstPicTop">10.0dip</dimen>
+    <dimen name="firstPicLeft">60.0dip</dimen>
+    <dimen name="firstPicRight">60.0dip</dimen>
+    <dimen name="tourMaxPicHeight">300.0dip</dimen>
+    <dimen name="cameraUploadTextSpacing">4.0dip</dimen>
+    <dimen name="cameraUploadBottomEdgeMargin">4.0dip</dimen>
+    <dimen name="cameraUploadProgressSpacing">4.0dip</dimen>
+    <dimen name="cameraUploadThumbBottomMargin">4.0dip</dimen>
+    <dimen name="loginLogoHeight">60.0dip</dimen>
+    <dimen name="loginLogoBottom">0.0dip</dimen>
+    <dimen name="loginLogoTop">8.0dip</dimen>
+    <dimen name="loginTextLeftClose">0.0dip</dimen>
+</resources>

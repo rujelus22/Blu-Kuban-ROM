@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Ring samtal med Google Voice</item>
+        <item>Använd endast Google Voice vid internationella samtal</item>
+        <item>Använd inte Google Voice för några samtal</item>
+        <item>Fråga varje gång jag ringer</item>
+        <item>Fråga varje gång jag ringer ett internationellt samtal</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Var 5:e minut</item>
+        <item>Var 10:e minut</item>
+        <item>Var 15:e minut</item>
+        <item>Var 20:e minut</item>
+        <item>Var 30:e minut</item>
+        <item>Var 60:e minut</item>
+        <item>Aldrig</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Använd mitt befintliga Google Voice-nummer</item>
+        <item>Använd telefonens nummer</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Samtal/SMS från telefonen visar mitt Google Voice-nummer</item>
+        <item>Detta ersätter mitt Google Voice-nummer.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Försök igen med Google Voice</item>
+        <item>Ring utan Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Ring med Google Voice</item>
+        <item>Ring utan Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Ring</item>
+        <item>Klicka för att ringa</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>Via appen Google Voice</item>
+        <item>Via appen Meddelanden</item>
+    </string-array>
+</resources>

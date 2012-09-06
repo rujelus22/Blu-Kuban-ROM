@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:orderInCategory="10">
+        <item android:icon="@drawable/ic_menu_unsubscribe" android:id="@id/menu_unsubscribe" android:title="@string/menu_unsubscribe" android:showAsAction="never" />
+        <item android:icon="@drawable/ic_menu_edit" android:id="@id/menu_rename_subscription" android:title="@string/menu_rename_subscription" android:showAsAction="never" />
+        <item android:icon="@drawable/ic_menu_archive" android:id="@id/menu_change_folders" android:title="@string/menu_change_folders" android:showAsAction="never" />
+    </group>
+</menu>

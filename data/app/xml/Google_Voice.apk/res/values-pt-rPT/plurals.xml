@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s mensagens do Google Voice</item>
+        <item quantity="one">1 mensagem do Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Há %1$d mensagens não lidas</item>
+        <item quantity="one">Há uma mensagem não lida</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">chamadas não atendidas</item>
+        <item quantity="one">chamada não atendida</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">chamadas recebidas</item>
+        <item quantity="one">chamada recebida</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">mensagens de correio de voz</item>
+        <item quantity="one">correio de voz</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">ouvir</item>
+        <item quantity="one">ouvir</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">gravações</item>
+        <item quantity="one">gravação</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">verificações do correio de voz</item>
+        <item quantity="one">verificação do correio de voz</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">definições</item>
+        <item quantity="one">definição</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">textos</item>
+        <item quantity="one">texto</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">textos</item>
+        <item quantity="one">texto</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">chamadas efectuadas</item>
+        <item quantity="one">chamada efetuada</item>
+    </plurals>
+</resources>

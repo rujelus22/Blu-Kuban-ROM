@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.docs.view.LinearLayoutListView android:id="@id/list_view" android:background="@drawable/punch_dark_tiled" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" cakemix:childWidth="244.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:cakemix="http://schemas.android.com/apk/res/com.google.android.apps.docs" />

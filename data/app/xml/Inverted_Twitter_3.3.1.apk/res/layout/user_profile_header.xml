@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.twitter.android.widget.CardRowView android:layout_width="fill_parent" android:layout_height="wrap_content" twitter:single="true"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:twitter="http://schemas.android.com/apk/res/com.twitter.android">
+    <RelativeLayout android:background="@color/solid_black" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/badge" android:padding="@dimen/list_row_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/user_badge" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/font_size_default" android:textColor="@color/secondary_text" android:id="@id/description" android:paddingLeft="@dimen/list_row_padding" android:paddingRight="@dimen/list_row_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/badge" android:lineSpacingMultiplier="1.2" />
+        <TextView android:textSize="@dimen/font_size_default" android:textColor="@color/link_color" android:id="@id/url" android:paddingLeft="@dimen/list_row_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/description" android:lineSpacingMultiplier="1.2" />
+        <LinearLayout android:orientation="vertical" android:id="@id/stats_container" android:paddingTop="@dimen/list_row_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/url">
+            <View android:id="@id/divider_horizontal" android:background="@drawable/list_rule" android:layout_width="fill_parent" android:layout_height="@dimen/divider_thickness" />
+            <include android:id="@id/stats" layout="@layout/stats_row" />
+            <View android:background="@drawable/list_rule" android:layout_width="fill_parent" android:layout_height="@dimen/divider_thickness" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/stats_container">
+            <com.twitter.android.widget.TwitterRelativeLayout android:id="@id/button_bar" android:background="@null" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ButtonBar">
+                <com.twitter.android.widget.ShadowTextView android:gravity="center_vertical" android:id="@id/button_bar_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="@dimen/icon_spacing" style="@style/Button.Btn.Follow" />
+                <ImageButton android:gravity="center" android:id="@id/button_bar_more" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/standard_spacing" android:src="@drawable/ic_profile_menu" android:layout_toRightOf="@id/button_bar_action" style="@style/Button.Btn" />
+            </com.twitter.android.widget.TwitterRelativeLayout>
+            <ProgressBar android:layout_gravity="center" android:id="@id/loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" style="?android:attr/progressBarStyleSmall" />
+        </FrameLayout>
+    </RelativeLayout>
+</com.twitter.android.widget.CardRowView>

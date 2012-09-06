@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="*"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+    <TableRow android:id="@id/home_screen_row1" style="@style/HomeScreen.TableRow" />
+    <TableRow android:id="@id/home_screen_row2" android:layout_marginTop="0.0dip" style="@style/HomeScreen.TableRow" />
+    <TableRow android:id="@id/home_screen_row3" style="@style/HomeScreen.TableRow" />
+    <TableRow android:id="@id/home_screen_row4" style="@style/HomeScreen.TableRow" />
+</TableLayout>

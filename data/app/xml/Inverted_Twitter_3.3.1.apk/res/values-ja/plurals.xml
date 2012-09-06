@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="time_secs">
+        <item quantity="other">%d秒</item>
+        <item quantity="one">1秒</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="other">%d分</item>
+        <item quantity="one">1分</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="other">%d時間</item>
+        <item quantity="one">1時間</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="other">%d日</item>
+        <item quantity="one">1日</item>
+    </plurals>
+    <plurals name="social_proof">
+        <item quantity="other">\"%s\"さんと他のユーザーがツイートしました</item>
+        <item quantity="one">\"%s\"さんがツイートしました</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_summary_on">
+        <item quantity="other">%d人のユーザーから</item>
+        <item quantity="one">1人から</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_count">
+        <item quantity="other">%d人</item>
+        <item quantity="one">1人</item>
+    </plurals>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DragKnobNeighborBelow">
+        <item name="android:layout_width">@dimen/drag_knob_below_view_fix</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditorTitleBar">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="EditorTheme" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+    <style name="ToolbarButtonsFrame">
+        <item name="android:layout_marginTop">3.0dip</item>
+        <item name="android:layout_marginBottom">0.0dip</item>
+    </style>
+    <style name="HomeScreen" />
+    <style name="HomeScreen.AccountSwitcher" parent="@style/HomeScreen">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="TitleBar">
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="CakemixTheme" parent="@android:style/Theme.Holo">
+        <item name="android:buttonStyle">@android:style/Widget.Holo.Button</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:actionDropDownStyle">@style/ActionBar.DropDown</item>
+    </style>
+    <style name="CakemixTheme.Dialog" parent="@android:style/Theme.Holo.Dialog" />
+    <style name="CakemixTheme.Docs" parent="@android:style/Theme.Holo">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:actionBarStyle">@style/DocsActionBar</item>
+        <item name="android:actionDropDownStyle">@style/DocsActionBar.DropDown</item>
+        <item name="android:actionMenuTextColor">@color/action_bar_text</item>
+    </style>
+    <style name="CakemixTheme.Preferences" parent="@android:style/Theme.Holo" />
+    <style name="CakemixTheme.SlimTitle" parent="@style/CakemixTheme">
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="CakemixTheme.Translucent" parent="@style/CakemixTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="CakemixTheme.Upload" parent="@android:style/Theme.Holo" />
+    <style name="CakemixTheme.NoTitle" parent="@style/CakemixTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="ActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/dark_grey_background</item>
+    </style>
+    <style name="DocsActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:textColor">@color/action_bar_text</item>
+        <item name="android:background">@drawable/title_bg_plain</item>
+    </style>
+    <style name="DocsActionBar.DropDown" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+    </style>
+    <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/action_bar_background_color</item>
+    </style>
+    <style name="ActionBar.DropDown" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+    </style>
+    <style name="Scrub" />
+    <style name="Scrub.Callout" parent="@style/Scrub">
+        <item name="android:gravity">center</item>
+        <item name="android:background">?scrubberCalloutDrawable</item>
+        <item name="android:minWidth">200.0dip</item>
+    </style>
+    <style name="Scrub.Text" parent="@style/Scrub">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Scrub.Text.Chapter" parent="@style/Scrub.Text">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Scrub.Text.Page" parent="@style/Scrub.Text">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="CakemixTheme.WebView" parent="@style/CakemixTheme">
+        <item name="scrubberBackgroundDrawable">@drawable/scrubber_bottom_bar_bg_light</item>
+        <item name="scrubberDrawable">@drawable/scrubber_knob_day</item>
+        <item name="scrubberCalloutDrawable">@drawable/scrubber_callout_light</item>
+        <item name="scrubberTrackDrawable">@drawable/scrubber_track_light</item>
+        <item name="scrubberUndoDrawable">@drawable/scrubber_last_position_light</item>
+    </style>
+</resources>

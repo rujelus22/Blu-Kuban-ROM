@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <view android:id="@id/quick_actions_edit" android:text="@string/comment_action_edit" android:drawableTop="@drawable/icon_rename" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+    <view android:id="@id/quick_actions_delete" android:text="@string/comment_action_delete" android:drawableTop="@drawable/ic_delete_quick_action" class="com.google.android.apps.docs.view.StateButton" style="@style/QuickActionsMenu.IconEntry" />
+</merge>

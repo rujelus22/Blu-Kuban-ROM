@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/open_recomm_layout" android:background="@drawable/upgrade_dlg_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/open_recomm_title_layout" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/open_recomm_title_left_image" android:background="@drawable/open_recomm_title_open_img_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:scaleType="fitCenter" />
+        <TextView android:textSize="20.0dip" android:textColor="#ffffffff" android:gravity="left|center" android:id="@id/open_recomm_title" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:text="@string/open_recomm_title" android:layout_weight="1.0" />
+        <ImageView android:id="@id/open_recomm_title_seprate" android:background="#4c155496" android:visibility="gone" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center_horizontal" android:id="@id/open_recomm_title_right_layout" android:visibility="gone" android:layout_width="68.0dip" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/open_recomm_title_right_image" android:background="@drawable/open_recomm_title_recomm_img" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@id/open_recomm_list_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:textColor="#ffffffff" android:id="@id/open_recomm_open_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#4c155496" android:dividerHeight="1.0px" />
+        <com.estrongs.android.pop.view.RecommendListView android:textColor="#ffffffff" android:id="@id/open_recomm_recomm_list" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#4cafafaf" android:dividerHeight="1.0px" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/open_recomm_check_layout" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/open_recomm_default_check" android:background="@drawable/checkbox_off" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:scaleType="fitCenter" />
+        <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/textView1" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:text="@string/open_recomm_default" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

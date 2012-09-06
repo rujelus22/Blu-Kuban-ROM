@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_preference_entries">
+        <item>Utiliser Google Voice pour effectuer tous les appels</item>
+        <item>Utiliser uniquement Google Voice pour les appels internationaux</item>
+        <item>"N'utiliser Google Voice pour aucun appel"</item>
+        <item>"Me demander chaque fois que j'effectue un appel"</item>
+        <item>"Me demander chaque fois que j'effectue un appel international"</item>
+    </string-array>
+    <string-array name="mode_preference_benefits">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="update_interval_preference_entries">
+        <item>Toutes les 5 minutes</item>
+        <item>Toutes les 10 minutes</item>
+        <item>Toutes les 15 minutes</item>
+        <item>Toutes les 20 minutes</item>
+        <item>Toutes les 30 minutes</item>
+        <item>Toutes les 60 minutes</item>
+        <item>Jamais</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_options">
+        <item>Utiliser mon numéro Google Voice actuel</item>
+        <item>Utiliser ce numéro</item>
+    </string-array>
+    <string-array name="setup_carrier_provision_option_descriptions">
+        <item>Les appels effectués et les messages envoyés depuis ce téléphone afficheront mon numéro Google Voice.</item>
+        <item>Ce numéro remplace mon numéro Google Voice.</item>
+    </string-array>
+    <string-array name="failed_call_options">
+        <item>Réessayer avec Google Voice</item>
+        <item>Appeler sans Google Voice</item>
+    </string-array>
+    <string-array name="confirm_call_with_google_voice_options">
+        <item>Appeler avec Google Voice</item>
+        <item>Appeler sans Google Voice</item>
+    </string-array>
+    <string-array name="call_or_click_to_call_options">
+        <item>Appeler</item>
+        <item>Click-to-Call</item>
+    </string-array>
+    <string-array name="receive_text_messages_preference_options">
+        <item>"Via l'application Google Voice"</item>
+        <item>"Via l'application SMS/MMS"</item>
+    </string-array>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/error" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_dialog_alert" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:paddingLeft="16.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="1.0dip" android:text="@string/error_no_connection" android:layout_weight="1.0" />
+    <Button android:id="@id/retry" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingRight="20.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/button_retry" style="?android:attr/buttonStyleSmall" />
+</LinearLayout>

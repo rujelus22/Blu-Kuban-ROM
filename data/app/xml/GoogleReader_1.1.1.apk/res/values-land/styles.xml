@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NewsTicker.Title" parent="@style/NewsTicker">
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="NewsTicker.Label" parent="@style/NewsTicker">
+        <item name="android:visibility">gone</item>
+    </style>
+</resources>

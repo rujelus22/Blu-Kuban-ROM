@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:background="@color/compose_update_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.apps.plus.views.TypeableAudienceView android:id="@id/audience_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" />
+            <com.google.android.apps.plus.views.MentionMultiAutoCompleteTextView android:id="@id/compose_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" style="@style/ComposeUpdate.Editor" />
+            <RelativeLayout android:id="@id/skyjam_info" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/album_border" android:layout_width="@dimen/stream_skyjam_media_border_size" android:layout_height="@dimen/stream_skyjam_media_border_size" android:src="@drawable/album_border" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+                <ImageView android:id="@id/album" android:paddingLeft="2.0dip" android:paddingTop="2.0dip" android:layout_width="@dimen/stream_skyjam_media_size" android:layout_height="@dimen/stream_skyjam_media_size" android:src="@drawable/album_border" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+                <TextView android:textSize="@dimen/stream_skyjam_title_text_size" android:textStyle="bold" android:textColor="@color/stream_skyjam_title_color" android:id="@id/skyjam_header" android:paddingLeft="@dimen/stream_skyjam_right_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/album_border" android:layout_alignParentTop="true" />
+                <TextView android:textSize="@dimen/stream_skyjam_artist_text_size" android:textColor="@color/stream_skyjam_artist_color" android:id="@id/skyjam_subheader1" android:paddingLeft="@dimen/stream_skyjam_right_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/album_border" android:layout_below="@id/skyjam_header" />
+                <TextView android:textSize="@dimen/stream_skyjam_album_text_size" android:textColor="@color/stream_skyjam_album_color" android:id="@id/skyjam_subheader2" android:paddingLeft="@dimen/stream_skyjam_right_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/album_border" android:layout_below="@id/skyjam_subheader1" />
+            </RelativeLayout>
+            <TextView android:textSize="14.0sp" android:textColor="@color/solid_black" android:id="@id/footer_message" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

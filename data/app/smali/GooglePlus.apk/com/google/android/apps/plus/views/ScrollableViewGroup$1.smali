@@ -1,0 +1,55 @@
+.class final Lcom/google/android/apps/plus/views/ScrollableViewGroup$1;
+.super Ljava/lang/Object;
+.source "ScrollableViewGroup.java"
+
+# interfaces
+.implements Landroid/view/animation/Interpolator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/apps/plus/views/ScrollableViewGroup;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = null
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 49
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getInterpolation(F)F
+    .registers 4
+    .parameter "t"
+
+    .prologue
+    const/high16 v1, 0x3f80
+
+    .line 56
+    sub-float/2addr p1, v1
+
+    .line 57
+    mul-float v0, p1, p1
+
+    mul-float/2addr v0, p1
+
+    mul-float/2addr v0, p1
+
+    mul-float/2addr v0, p1
+
+    add-float/2addr v0, v1
+
+    return v0
+.end method

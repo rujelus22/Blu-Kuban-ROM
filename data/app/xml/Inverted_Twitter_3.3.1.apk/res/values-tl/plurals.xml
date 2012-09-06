@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="time_secs">
+        <item quantity="other">%ds</item>
+        <item quantity="one">1s</item>
+    </plurals>
+    <plurals name="time_mins">
+        <item quantity="other">%dm</item>
+        <item quantity="one">1m</item>
+    </plurals>
+    <plurals name="time_hours">
+        <item quantity="other">%dh</item>
+        <item quantity="one">1h</item>
+    </plurals>
+    <plurals name="time_days">
+        <item quantity="other">%dd</item>
+        <item quantity="one">1d</item>
+    </plurals>
+    <plurals name="social_proof">
+        <item quantity="other">Tinweet ni \"%s\" at ng iba pa</item>
+        <item quantity="one">Tinweet ni \"%s\"</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_summary_on">
+        <item quantity="other">Mula sa %d tao</item>
+        <item quantity="one">Mula sa 1 tao</item>
+    </plurals>
+    <plurals name="settings_notif_tweets_count">
+        <item quantity="other">%d tao</item>
+        <item quantity="one">1 tao</item>
+    </plurals>
+</resources>

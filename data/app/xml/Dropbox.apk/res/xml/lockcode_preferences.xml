@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="Dropbox Preferences" android:orderingFromXml="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/lock_code_settings_toggle_on" android:key="lock_code_settings_toggle" />
+    <Preference android:title="@string/lock_code_settings_change" android:key="lock_code_settings_change" />
+    <CheckBoxPreference android:title="@string/lock_code_settings_erase_data" android:key="lock_code_settings_erase_data" android:summary="@string/lock_code_settings_erase_data_prompt" />
+</PreferenceScreen>

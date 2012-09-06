@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.docs">
+    <View android:id="@id/pin_filler" android:background="@android:color/black" android:layout_width="@dimen/tablet_doclist_padding" android:layout_height="@dimen/pin_row_button_height" android:layout_below="@id/doc_entry_container" android:layout_alignParentLeft="true" />
+    <com.google.android.apps.docs.view.CustomButton android:id="@id/pin_update" android:layout_width="fill_parent" android:layout_height="@dimen/pin_row_button_height" android:layout_marginLeft="54.0dip" android:layout_marginRight="78.0dip" android:layout_toRightOf="@id/pin_filler" android:layout_below="@id/doc_entry_container" app:layout="@layout/pin_update_button" />
+    <com.google.android.apps.docs.view.CustomButton android:id="@id/pin_waiting" android:layout_width="fill_parent" android:layout_height="@dimen/pin_row_button_height" android:layout_marginLeft="54.0dip" android:layout_marginRight="78.0dip" android:layout_toRightOf="@id/pin_filler" android:layout_below="@id/doc_entry_container" app:layout="@layout/pin_waiting_button" />
+    <com.google.android.apps.docs.view.ProgressButton android:id="@id/pin_progress" android:layout_width="fill_parent" android:layout_height="@dimen/pin_row_button_height" android:layout_marginLeft="54.0dip" android:layout_marginRight="78.0dip" android:layout_toRightOf="@id/pin_filler" android:layout_below="@id/doc_entry_container" app:layout="@layout/progress_button" />
+</merge>

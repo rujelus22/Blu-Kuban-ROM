@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recording_popup_size">220.0dip</dimen>
+    <dimen name="bubble_dialog_marginTop">5.0dip</dimen>
+    <dimen name="language_swap_height">42.0dip</dimen>
+    <dimen name="suggest_text_box_height">56.0dip</dimen>
+    <dimen name="TextSize_ExtraTiny">13.5sp</dimen>
+    <dimen name="TextSize_Small">21.0sp</dimen>
+    <dimen name="TextSize_Default">24.0sp</dimen>
+    <dimen name="TextSize_Medium">27.0sp</dimen>
+    <dimen name="TextSize_MediumLarge">30.0sp</dimen>
+    <dimen name="TextSize_Large">33.0sp</dimen>
+    <dimen name="TextSize_Huge">40.5sp</dimen>
+</resources>

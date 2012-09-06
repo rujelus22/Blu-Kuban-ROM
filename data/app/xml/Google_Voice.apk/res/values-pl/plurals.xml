@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">Liczba wiadomości w usłudze Google Voice: %1$s</item>
+        <item quantity="one">1 wiadomość Google Voice</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">Nieprzeczytane wiadomości: %1$d</item>
+        <item quantity="one">Masz nieprzeczytaną wiadomość</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">połączenia nieodebrane</item>
+        <item quantity="one">nieodebrane połączenie</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">połączenia odebrane</item>
+        <item quantity="one">połączenie odebrane</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">wiadomości głosowe</item>
+        <item quantity="one">poczta głosowa</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">nasłuchiwane</item>
+        <item quantity="one">nasłuchiwanie</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">nagrania</item>
+        <item quantity="one">nagranie</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">sprawdzenia poczty głosowej</item>
+        <item quantity="one">sprawdzenie poczty głosowej</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">ustawienia</item>
+        <item quantity="one">ustawienie</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">tekstowe</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">tekstowe</item>
+        <item quantity="one">sms</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">połączenia wychodzące</item>
+        <item quantity="one">połączenie wychodzące</item>
+    </plurals>
+</resources>

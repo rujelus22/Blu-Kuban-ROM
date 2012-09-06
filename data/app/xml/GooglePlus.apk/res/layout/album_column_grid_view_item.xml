@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.apps.plus.views.AlbumColumnGridItemView android:layout_gravity="center" android:background="@drawable/missing_photo_background" android:scaleType="centerCrop"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

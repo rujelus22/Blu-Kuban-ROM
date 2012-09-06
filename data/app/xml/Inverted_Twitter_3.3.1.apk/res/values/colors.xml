@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="solid_white">#ffffffff</color>
+    <color name="solid_black">#ff000000</color>
+    <color name="solid_gray">#ffc0c0c0</color>
+    <color name="soft_black">#ff333333</color>
+    <color name="clear">#00000000</color>
+    <color name="primary_text">#ffffffff</color>
+    <color name="secondary_text">#ffc0c0c0</color>
+    <color name="timestamp_text">#ffc0c0c0</color>
+    <color name="title_shadow_color">#55000000</color>
+    <color name="link_color">#ff155496</color>
+    <color name="section_shadow_color">#ff888888</color>
+    <color name="mentioned">#ffc0c0c0</color>
+    <color name="action_bar">#ff1a1a1a</color>
+    <color name="action_bar_pressed">#ff252525</color>
+    <color name="action_bar_background">#ff000000</color>
+    <color name="button_text_disabled">#ff858585</color>
+    <color name="divider_dark">#ff4d4d4d</color>
+    <color name="at_sign">#ff155496</color>
+    <color name="notification">#ff155496</color>
+    <color name="image_overlay">#22000000</color>
+    <color name="bg_list">#ff252525</color>
+    <color name="translucent_black">#9a000000</color>
+    <color name="signup_error">#ff990000</color>
+    <color name="list_divider_color">#ff4d4d4d</color>
+    <color name="dot">#ff155496</color>
+    <color name="bg_pressed">#ff155496</color>
+    <color name="bg_focused">#ff1a1a1a</color>
+    <color name="card_stroke">#ff4d4d4d</color>
+    <color name="bg_image">#ff1a1a1a</color>
+    <color name="bg_player">#ff222222</color>
+    <color name="positive_color">#ff155496</color>
+    <color name="negative_color">#ff990000</color>
+</resources>

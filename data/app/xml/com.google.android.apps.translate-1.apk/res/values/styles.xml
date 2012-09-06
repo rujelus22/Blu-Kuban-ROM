@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="gf_PageHeader">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:id">@id/header</item>
+        <item name="android:background">@color/gf_header_background</item>
+        <item name="android:padding">@dimen/gf_padding</item>
+    </style>
+    <style name="gf_SectionHeader">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:drawable/dark_header</item>
+        <item name="android:paddingLeft">@dimen/gf_padding</item>
+    </style>
+    <style name="gf_Separator">
+        <item name="android:src">@android:drawable/divider_horizontal_dark</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="gf_ListItem">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/gf_list_item_padding</item>
+        <item name="android:paddingTop">3.0dip</item>
+        <item name="android:paddingRight">@dimen/gf_list_item_padding</item>
+        <item name="android:paddingBottom">3.0dip</item>
+        <item name="android:minHeight">@dimen/gf_list_item_height</item>
+    </style>
+    <style name="hintOverlay">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:background">#ff222222</item>
+        <item name="android:padding">6.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="indeterminateProgressBar">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal_white</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+    </style>
+    <style name="dictionary_result" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_Small</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="headword" parent="@style/dictionary_result">
+        <item name="android:textSize">@dimen/TextSize_Medium</item>
+    </style>
+    <style name="inner_headword" parent="@style/dictionary_result">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="container_label" parent="@style/dictionary_result">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="term_label" parent="@style/dictionary_result">
+        <item name="android:textSize">@dimen/TextSize_Small</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+    <style name="link" parent="@style/dictionary_result">
+        <item name="android:textSize">@dimen/TextSize_Small</item>
+        <item name="android:textColor">@color/unimportant_link</item>
+    </style>
+    <style name="entry_label" parent="@style/dictionary_result">
+        <item name="android:textSize">@dimen/TextSize_Small</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+    <style name="language_picker_primary" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_Default</item>
+        <item name="android:textColor">@color/language_picker_primary_color</item>
+    </style>
+    <style name="language_picker_spinner" parent="@android:style/Widget.Spinner" />
+    <style name="TextAppearance_ExtraTiny" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_ExtraTiny</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="TextAppearance_Small" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">@dimen/TextSize_Small</item>
+    </style>
+    <style name="TextAppearance_Default" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_Default</item>
+    </style>
+    <style name="TextAppearance_Medium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/TextSize_Medium</item>
+    </style>
+    <style name="TextAppearance_MediumLarge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_MediumLarge</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="TextAppearance_Large" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">@dimen/TextSize_Large</item>
+    </style>
+    <style name="TextAppearance_Huge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/TextSize_Huge</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="result_separator">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">?android:listDivider</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="chip_selected_translation">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/chip_selected_translation_text_color</item>
+    </style>
+    <style name="chip_unselected_translation">
+        <item name="android:textAppearance">@style/TextAppearance_Medium</item>
+        <item name="android:textColor">@color/chip_unselected_translation_text_color</item>
+    </style>
+    <style name="result_label">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dictionary_label_color</item>
+        <item name="android:layout_marginLeft">0.0dip</item>
+        <item name="android:layout_marginTop">14.0dip</item>
+        <item name="android:layout_marginRight">4.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="entry_summary">
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="entry_title">
+        <item name="android:textAppearance">@style/TextAppearance_Small</item>
+        <item name="android:textColor">@color/tertiary_text_color</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="translate_title_background">
+        <item name="android:background">@drawable/bg_translate_title</item>
+    </style>
+    <style name="translate_title">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textColor">@color/translate_title_colors</item>
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingBottom">2.0dip</item>
+    </style>
+    <style name="correctable_highlight" parent="@style/TextAppearance_MediumLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/correctable_highlight_color</item>
+    </style>
+    <style name="DefaultTranslateTheme" parent="@android:style/Theme.Holo">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">@dimen/translate_title_height</item>
+        <item name="android:windowTitleStyle">@style/translate_title</item>
+        <item name="android:windowTitleBackgroundStyle">@style/translate_title_background</item>
+    </style>
+    <style name="DefaultTranslateLightTheme" parent="@android:style/Theme.Black">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">@dimen/translate_title_height</item>
+        <item name="android:windowTitleStyle">@style/translate_title</item>
+        <item name="android:windowTitleBackgroundStyle">@style/translate_title_background</item>
+    </style>
+    <style name="DefaultTranslateLightNoTitleBarTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+    </style>
+    <style name="DefaultTranslateTranslucentTheme" parent="@android:style/Theme.Translucent">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">@dimen/translate_title_height</item>
+        <item name="android:windowTitleStyle">@style/translate_title</item>
+        <item name="android:windowTitleBackgroundStyle">@style/translate_title_background</item>
+    </style>
+    <style name="DefaultTranslateTranslucentNoTitleBarTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+    </style>
+    <style name="VoiceSearchDialogTheme" parent="@style/DefaultTranslateLightNoTitleBarTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="RecognitionTheme" parent="@style/DefaultTranslateTranslucentNoTitleBarTheme">
+        <item name="android:windowBackground">@color/translucent_black</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+    <style name="DefaultTranslateDialogTheme" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:textAppearance">@style/TextAppearance_Default</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance_Large</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance_Medium</item>
+        <item name="android:textAppearanceSmall">@style/TextAppearance_Small</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="HandwritingOverlayView" parent="@android:style/Theme.NoTitleBar">
+        <item name="handwritingStrokeColor">#ffffff00</item>
+        <item name="handwritingStrokeColorRecognized">#ffffaa00</item>
+        <item name="handwritingPenDownColor">#ffffff00</item>
+        <item name="handwritingPenUpColor">#ffffff00</item>
+    </style>
+    <style name="HandwritingOverlayView.White" parent="@android:style/Theme.NoTitleBar">
+        <item name="handwritingStrokeColor">#ff155496</item>
+        <item name="handwritingPenDownColor">#ff155496</item>
+        <item name="handwritingPenUpColor">#ff155496</item>
+    </style>
+</resources>

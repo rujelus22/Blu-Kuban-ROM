@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/item" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/NewsTicker.Title" />
+    <TextView android:textSize="11.0sp" android:textColor="#ff155496" android:gravity="bottom" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="6.0dip" android:singleLine="true" android:layout_below="@id/title" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="#ff155496" android:ellipsize="end" android:id="@id/source" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_toLeftOf="@id/date" android:layout_below="@id/title" android:layout_alignParentLeft="true" />
+</RelativeLayout>

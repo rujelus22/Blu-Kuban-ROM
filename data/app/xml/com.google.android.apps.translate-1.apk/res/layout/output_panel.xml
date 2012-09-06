@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/output_textview_panel" android:background="@drawable/chip_color_selected_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:paddingLeft="@dimen/dictionary_result_alignment_width" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/translation_panel" />
+    </LinearLayout>
+    <View android:id="@id/dictionary_divider" android:background="@color/input_panel_list_view_divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/chip_divider_margin" android:layout_marginRight="@dimen/chip_divider_margin" />
+    <LinearLayout android:paddingLeft="@dimen/dictionary_result_alignment_width" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/dictionary_panel" />
+    </LinearLayout>
+</LinearLayout>

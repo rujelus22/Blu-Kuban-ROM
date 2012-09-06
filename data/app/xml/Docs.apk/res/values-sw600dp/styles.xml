@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DocListView" parent="@style/DocListView_Tablet" />
+    <style name="UserFeedback" parent="@style/UserFeedback_Tablet" />
+    <style name="ActionBar" parent="@style/ActionBar_Tablet" />
+</resources>

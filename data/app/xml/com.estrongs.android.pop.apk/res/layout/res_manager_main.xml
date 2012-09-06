@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads">
+    <TabHost android:id="@id/tabs" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TabWidget android:id="@android:id/tabs" android:paddingLeft="1.0dip" android:paddingTop="4.0dip" android:paddingRight="1.0dip" android:layout_width="fill_parent" android:layout_height="68.0dip" />
+        <FrameLayout android:id="@android:id/tabcontent" android:paddingTop="68.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/recomm_layout" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@id/recomm_top_left" android:background="@drawable/recomm_top_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <ImageView android:id="@id/recomm_arrow" android:background="@drawable/recomm_top_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <ImageView android:id="@id/recomm_top_right" android:background="@drawable/recomm_top_right" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:layout_gravity="bottom|center" android:id="@id/recomm_title" android:background="#00000000" android:paddingBottom="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/recommend_title" />
+                    <ProgressBar android:layout_gravity="bottom|right|center" android:id="@id/recomm_list_refresh_bk" android:background="#00000000" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="4.0dip" />
+                </FrameLayout>
+                <FrameLayout android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <FrameLayout android:id="@id/recomm_get_list_ind_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ProgressBar android:layout_gravity="center" android:id="@id/recomm_list_refresh" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+                        <LinearLayout android:orientation="horizontal" android:id="@id/recomm_get_list_ind_fail_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                            <TextView android:layout_gravity="center" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get List Failed" />
+                            <Button android:layout_gravity="center" android:id="@id/recomm_get_list_button" android:layout_width="100.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:text="@string/menu_fresh" />
+                        </LinearLayout>
+                    </FrameLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/recomm_list_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <TextView android:textSize="12.0dip" android:textColor="#fffefefe" android:gravity="center_vertical" android:id="@id/recomm_channel_name" android:background="@drawable/recomm_channel_bk" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="20.0dip" android:text="@string/about_more" />
+                        <com.estrongs.android.pop.view.RecommendListView android:id="@id/recomm_list" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="12.0dip" android:textColor="#fffefefe" android:gravity="center_vertical" android:id="@id/recomm_ads_title" android:background="@drawable/recomm_channel_bk" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="20.0dip" android:text="@string/google_ad" />
+                <FrameLayout android:background="#ff303b45" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ProgressBar android:layout_gravity="center_horizontal" android:id="@id/recomm_ads_progress" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+                    <com.google.ads.AdView android:gravity="center_horizontal" android:id="@id/recomm_ads_content" android:background="#ff323d47" android:layout_width="fill_parent" android:layout_height="wrap_content" ads:adSize="BANNER" ads:adUnitId="a14bd9388dcf227" ads:loadAdOnCreate="false" />
+                </FrameLayout>
+                <ImageView android:background="@drawable/recomm_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <com.estrongs.android.pop.view.RealViewSwitcher android:id="@id/viewswitcher" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/content1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/loPicker" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <EditText android:gravity="center_vertical" android:id="@id/etFileChoosed" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Your file choosed" android:maxLines="1" android:scrollHorizontally="true" android:layout_weight="85.0" style="@style/editInputText" />
+                        <Button android:id="@id/btnPicker" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ok" />
+                        <Button android:id="@id/btnUseThisFolder" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/action_label_use_this_folder" />
+                    </LinearLayout>
+                    <com.estrongs.android.pop.view.FileExplorerGridView android:gravity="center" android:id="@id/myGrid1" android:padding="4.0dip" android:layoutAnimation="@anim/layout_grid_inverse_fade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:stretchMode="columnWidth" android:columnWidth="100.0dip" android:numColumns="auto_fit" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/content2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.estrongs.android.pop.view.FileExplorerGridView android:gravity="center" android:id="@id/myGrid2" android:padding="4.0dip" android:layoutAnimation="@anim/layout_grid_inverse_fade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:stretchMode="columnWidth" android:columnWidth="100.0dip" android:numColumns="auto_fit" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/content3" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.estrongs.android.pop.view.FileExplorerGridView android:gravity="center" android:id="@id/myGrid3" android:padding="4.0dip" android:layoutAnimation="@anim/layout_grid_inverse_fade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:stretchMode="columnWidth" android:columnWidth="100.0dip" android:numColumns="auto_fit" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/content4" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.estrongs.android.pop.view.FileExplorerGridView android:gravity="center" android:id="@id/myGrid4" android:padding="4.0dip" android:layoutAnimation="@anim/layout_grid_inverse_fade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:stretchMode="columnWidth" android:columnWidth="100.0dip" android:numColumns="auto_fit" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/content5" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.estrongs.android.pop.view.FileExplorerGridView android:gravity="center" android:id="@id/myGrid5" android:padding="4.0dip" android:layoutAnimation="@anim/layout_grid_inverse_fade" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/grid_selector" android:stretchMode="columnWidth" android:columnWidth="100.0dip" android:numColumns="auto_fit" />
+                </LinearLayout>
+            </com.estrongs.android.pop.view.RealViewSwitcher>
+            <include layout="@layout/toolbar" />
+        </FrameLayout>
+    </TabHost>
+</LinearLayout>

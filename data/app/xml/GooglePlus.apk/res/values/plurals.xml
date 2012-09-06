@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="album_photo_count">
+        <item quantity="other">%d photos</item>
+        <item quantity="zero">%d photos</item>
+        <item quantity="one">%d photo</item>
+    </plurals>
+    <plurals name="from_your_phone_selected_count">
+        <item quantity="other">%d selected</item>
+        <item quantity="one">%d selected</item>
+    </plurals>
+    <plurals name="delete_photo_dialog_title">
+        <item quantity="other">Delete these photos?</item>
+        <item quantity="one">Delete this photo?</item>
+    </plurals>
+    <plurals name="delete_remote_photo_dialog_message">
+        <item quantity="other">"Are you sure you want to delete these photos from this Google+ album? This action can't be undone."</item>
+        <item quantity="one">"Are you sure you want to delete this photo from this Google+ album? This action can't be undone."</item>
+    </plurals>
+    <plurals name="delete_local_photo_dialog_message">
+        <item quantity="other">"Are you sure you want to delete these photos from your device? They may be your only copies, and deleting them can't be undone."</item>
+        <item quantity="one">"Are you sure you want to delete this photo from your device? It may be your only copy, and deleting it can't be undone."</item>
+    </plurals>
+    <plurals name="delete_photo_pending">
+        <item quantity="other">Deleting photos…</item>
+        <item quantity="one">Deleting photo…</item>
+    </plurals>
+    <plurals name="event_face_pile_invited">
+        <item quantity="other">are invited</item>
+        <item quantity="one">is invited</item>
+    </plurals>
+    <plurals name="event_invitee_other_count">
+        <item quantity="other">+ %d Others</item>
+        <item quantity="one">+ %d Other</item>
+    </plurals>
+    <plurals name="event_face_pile_accepted">
+        <item quantity="other">are going</item>
+        <item quantity="one">is going</item>
+    </plurals>
+    <plurals name="event_face_pile_rejected">
+        <item quantity="other">are not going</item>
+        <item quantity="one">is not going</item>
+    </plurals>
+    <plurals name="event_face_pile_checked_in">
+        <item quantity="other">checked in</item>
+        <item quantity="one">checked in</item>
+    </plurals>
+    <plurals name="sign_out_message">
+        <item quantity="other">%d items waiting to be uploaded. Signing out will cancel all pending uploads.</item>
+        <item quantity="one">%d item waiting to be uploaded. Signing out will cancel the pending upload.</item>
+    </plurals>
+    <plurals name="plus_one_people_more_plus_ones">
+        <item quantity="other">+%d others</item>
+        <item quantity="one">+1 more</item>
+    </plurals>
+    <plurals name="plusoned_by_unknowns">
+        <item quantity="other">by %d people</item>
+        <item quantity="one">by 1 person</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_unknowns">
+        <item quantity="other">by you and %d others</item>
+        <item quantity="one">by you and 1 other</item>
+    </plurals>
+    <plurals name="plusoned_by_one_known_and_unknowns">
+        <item quantity="other">by %1$s and %2$d others</item>
+        <item quantity="one">by %s and 1 other</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_one_known_and_unknowns">
+        <item quantity="other">by you, %1$s, and %2$d others</item>
+        <item quantity="one">by you, %s, and 1 other</item>
+    </plurals>
+    <plurals name="plusoned_by_two_known_and_unknowns">
+        <item quantity="other">by %1$s, %2$s, and %3$d others</item>
+        <item quantity="one">by %1$s, %1$s, and 1 other</item>
+    </plurals>
+    <plurals name="plusoned_by_you_and_two_known_and_unknowns">
+        <item quantity="other">by you, %1$s, %2$s, and %3$d others</item>
+        <item quantity="one">by you, %1$s, %2$s, and 1 other</item>
+    </plurals>
+    <plurals name="comments">
+        <item quantity="other">%d comments</item>
+        <item quantity="one">%d comment</item>
+    </plurals>
+    <plurals name="delete_photo">
+        <item quantity="other">Delete photos</item>
+        <item quantity="one">Delete photo</item>
+    </plurals>
+    <plurals name="circle_entry_content_description">
+        <item quantity="other">%1$s; %2$d members</item>
+        <item quantity="one">%1$s; %2$d member</item>
+    </plurals>
+    <plurals name="notifications_ticker_text">
+        <item quantity="other">New Google+ notifications</item>
+        <item quantity="one">New Google+ notification</item>
+    </plurals>
+    <plurals name="notifications_content_text">
+        <item quantity="other">%1$s (%2$d)</item>
+        <item quantity="one">%1$s (%2$d)</item>
+    </plurals>
+    <plurals name="audience_display_selection_count">
+        <item quantity="other">%d selected</item>
+        <item quantity="one">%d selected</item>
+    </plurals>
+    <plurals name="circle_count_and_matched_email">
+        <item quantity="other">%1$d circles, %2$s</item>
+        <item quantity="one">%1$d circle, %2$s</item>
+    </plurals>
+    <plurals name="circle_selection_count">
+        <item quantity="other">%d circles</item>
+        <item quantity="one">%d circle</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_title">
+        <item quantity="other">Delete circles</item>
+        <item quantity="one">Delete circle</item>
+    </plurals>
+    <plurals name="delete_circles_dialog_message">
+        <item quantity="other">Do you want to permanently delete these circles?</item>
+        <item quantity="one">Do you want to permanently delete this circle?</item>
+    </plurals>
+    <plurals name="delete_circles_operation_pending">
+        <item quantity="other">Deleting circles…</item>
+        <item quantity="one">Deleting circle…</item>
+    </plurals>
+    <plurals name="circle_people_count">
+        <item quantity="other">%d people</item>
+        <item quantity="one">%d person</item>
+    </plurals>
+    <plurals name="remove_people_dialog_title">
+        <item quantity="other">Remove people</item>
+        <item quantity="one">Remove person</item>
+    </plurals>
+    <plurals name="remove_people_dialog_message">
+        <item quantity="other">Do you want to remove these people from this circle?</item>
+        <item quantity="one">Do you want to remove this person from this circle?</item>
+    </plurals>
+    <plurals name="add_people_operation_pending">
+        <item quantity="other">Adding people…</item>
+        <item quantity="one">Adding person…</item>
+    </plurals>
+    <plurals name="remove_people_operation_pending">
+        <item quantity="other">Removing people…</item>
+        <item quantity="one">Removing person…</item>
+    </plurals>
+    <plurals name="suggested_people_toast">
+        <item quantity="other">We found %d people you might know!</item>
+        <item quantity="one">We found a person you might know!</item>
+    </plurals>
+    <plurals name="dismiss_people_operation_pending">
+        <item quantity="other">Dismissing people…</item>
+        <item quantity="one">Dismissing person…</item>
+    </plurals>
+    <plurals name="circle_button_more_circles">
+        <item quantity="other">%d more</item>
+        <item quantity="one">%d more</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d mins</item>
+        <item quantity="one">%d min</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d hours</item>
+        <item quantity="one">%d hour</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d days</item>
+        <item quantity="one">%d day</item>
+    </plurals>
+    <plurals name="ads_plus_one_annotation_count_only">
+        <item quantity="other">%1$d other people also</item>
+        <item quantity="one">%1$d other person also</item>
+    </plurals>
+    <plurals name="profile_added_by">
+        <item quantity="other">"Added by
+%s people"</item>
+        <item quantity="zero">"Added by
+%s people"</item>
+        <item quantity="one">"Added by
+%s person"</item>
+    </plurals>
+    <plurals name="profile_local_review_count">
+        <item quantity="other">%d reviews</item>
+        <item quantity="one">%d review</item>
+    </plurals>
+    <plurals name="hangout_plus_others">
+        <item quantity="other">+ %d others</item>
+        <item quantity="one">+1 more</item>
+    </plurals>
+    <plurals name="card_hangout_with_people">
+        <item quantity="other">HANGOUT WITH %d PEOPLE</item>
+        <item quantity="one">HANGOUT WITH 1 PERSON</item>
+    </plurals>
+    <plurals name="stream_one_up_comment_count">
+        <item quantity="other">%d comments</item>
+        <item quantity="one">%d comment</item>
+    </plurals>
+    <plurals name="stream_one_up_stage_hangout_plus_others">
+        <item quantity="other">AND %d OTHERS</item>
+        <item quantity="one">AND 1 OTHER</item>
+    </plurals>
+    <plurals name="stream_one_up_stage_hangout_over">
+        <item quantity="other">%d PEOPLE HUNG OUT</item>
+        <item quantity="one">1 PERSON HUNG OUT</item>
+    </plurals>
+    <plurals name="plus_one_accessibility_description">
+        <item quantity="other">%d plus ones</item>
+        <item quantity="one">%d plus one</item>
+    </plurals>
+    <plurals name="accessibility_notification_count_description">
+        <item quantity="other">%d new Google+ notifications</item>
+        <item quantity="one">%d new Google+ notification</item>
+    </plurals>
+</resources>

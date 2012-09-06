@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/recomm_item_bk" android:background="@drawable/recomm_item_bk" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ImageView android:id="@id/recomm_item_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="4.0dip" android:src="@drawable/fex" android:scaleType="fitCenter" />
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_marginRight="4.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:id="@id/recomm_item_desc_layout" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:textSize="18.0dip" android:textColor="#ffffffff" android:gravity="bottom|left|center" android:layout_gravity="center" android:id="@id/recomm_item_name" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="6.0dip" android:text="ES文件管理器" android:scrollHorizontally="false" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="top|left|center" android:layout_gravity="center" android:id="@id/recomm_item_short_desc" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="千万用户，装机必备,一定要装啊，必须" android:scrollHorizontally="false" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/recomm_item_download_layout" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="24.0dip" android:layout_marginTop="2.0dip">
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="bottom|left|center" android:id="@id/recomm_item_download_size" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="1.0dip" android:text="13.1k/2.6M" android:scrollHorizontally="false" android:singleLine="true" />
+                    <TextView android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="bottom|right|center" android:id="@id/recomm_item_download_percent" android:paddingRight="3.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="1.0dip" android:text="15%" android:scrollHorizontally="false" android:singleLine="true" />
+                </LinearLayout>
+                <ProgressBar android:id="@id/recomm_item_download_progress" android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_marginTop="0.0dip" style="?android:attr/progressBarStyleHorizontal" />
+            </LinearLayout>
+        </FrameLayout>
+        <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/recomm_item_install_stop" android:background="@drawable/round_corner_button" android:layout_width="64.0dip" android:layout_height="26.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="6.0dip" android:text="停止" />
+    </LinearLayout>
+    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:id="@id/recomm_item_long_desc" android:background="#ff000000" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="fff" android:scrollHorizontally="false" />
+</LinearLayout>

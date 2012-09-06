@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/popup_arrow_up" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/popup_arrow_up" />
+    <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@id/popup_title" android:paddingBottom="2.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/popup_arrow_left" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/popup_arrow_left" />
+        <LinearLayout android:id="@id/popup_content_container" android:paddingLeft="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="2.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <ImageView android:id="@id/popup_arrow_right" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/popup_arrow_right" />
+    </LinearLayout>
+    <ImageView android:id="@id/popup_arrow_down" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/popup_arrow_down" />
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="unread_notification_info_multiple_items_title">
+        <item quantity="other">%1$s Google Voice संदेश</item>
+        <item quantity="one">1 Google Voice संदेश</item>
+    </plurals>
+    <plurals name="unread_notification_new_call">
+        <item quantity="other">%1$d बिना पढ़े संदेश हैं</item>
+        <item quantity="one">एक बिना पढ़ा संदेश है</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_missed">
+        <item quantity="other">छूटी कॉल</item>
+        <item quantity="one">छुटी कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_received">
+        <item quantity="other">प्राप्‍त कॉल</item>
+        <item quantity="one">प्राप्‍त कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_voicemail">
+        <item quantity="other">ध्‍वनिमेल</item>
+        <item quantity="one">ध्वनि मेल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_listen_in">
+        <item quantity="other">इसमें सुनें</item>
+        <item quantity="one">इसमें सुनें</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_recording">
+        <item quantity="other">रिकॉर्डिंग</item>
+        <item quantity="one">रिकॉर्ड कर रहा है</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_check_voicemail">
+        <item quantity="other">ध्‍वनिमेल जांच</item>
+        <item quantity="one">ध्‍वनिमेल जांच</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_settings">
+        <item quantity="other">सेटिंग</item>
+        <item quantity="one">सेटिंग</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_return">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_click2call">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_web_call">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_in">
+        <item quantity="other">पाठ</item>
+        <item quantity="one">पाठ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sms_out">
+        <item quantity="other">पाठ</item>
+        <item quantity="one">पाठ</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_call_through">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_google_talk">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+    <plurals name="phonecall_lc_type_sip">
+        <item quantity="other">की गई कॉल</item>
+        <item quantity="one">की गई कॉल</item>
+    </plurals>
+</resources>
